@@ -36,13 +36,13 @@ public class AztecCode {
             result = reader.decode(bitmap);
             return result.getText();
         } catch (NotFoundException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (ChecksumException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (FormatException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
 
