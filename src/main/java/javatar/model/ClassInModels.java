@@ -7,6 +7,7 @@ public class ClassInModels {
     private boolean has_image;
     private String link;
 
+
     @Override
     public String toString() {
         return "ClassInModels{" +
@@ -15,6 +16,7 @@ public class ClassInModels {
                 ", name_clear='" + name_clear + '\'' +
                 ", has_image=" + has_image +
                 ", link='" + link + '\'' +
+
                 '}';
     }
 }
