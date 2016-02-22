@@ -2,6 +2,7 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javatar.model.Response;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -25,6 +26,8 @@ public class JsonParserModels {
         try (Reader reader = new InputStreamReader(Files.newInputStream(path))) {
             Object p = gson.fromJson(reader, outputClass);
             System.out.println(p.toString());
+            Response response = new Response();
+            System.out.println(response);
        }
 
 
