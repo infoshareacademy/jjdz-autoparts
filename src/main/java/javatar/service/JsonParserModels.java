@@ -25,9 +25,8 @@ public class JsonParserModels {
         Path path = Paths.get(inFile);
         try (Reader reader = new InputStreamReader(Files.newInputStream(path))) {
             Object p = gson.fromJson(reader, outputClass);
-            System.out.println(p.toString());
-            Response response = new Response();
-            System.out.println(response);
+
+
        }
 
 

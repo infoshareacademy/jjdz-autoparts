@@ -8,6 +8,46 @@ public class ClassInModels {
     private String link;
 
 
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getName_clear() {
+        return name_clear;
+    }
+
+    public boolean isHas_image() {
+        return has_image;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setName_clear(String name_clear) {
+        this.name_clear = name_clear;
+    }
+
+    public void setHas_image(boolean has_image) {
+        this.has_image = has_image;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     @Override
     public String toString() {
         return "ClassInModels{" +
