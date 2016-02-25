@@ -2,31 +2,28 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javatar.model.Response;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import javatar.model.ClassInModels;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-
-import static org.apache.commons.lang3.builder.ToStringBuilder.*;
 
 
-public class JsonParserModels {
+public class JsonParserModels2 {
     public static void main(String[] args) throws ClassNotFoundException, IOException {
         String inFile = args[0];
-        String className = args[1];
+
         Gson gson = new GsonBuilder().create();
 
-        Class<?> outputClass = Class.forName(className);
+
         Path path = Paths.get(inFile);
         try (Reader reader = new InputStreamReader(Files.newInputStream(path))) {
-            Object p = gson.fromJson(reader, outputClass);
+            ClassInModels p = gson.fromJson(reader, ClassInModels.class);
             System.out.println(p.toString());
-
+            System.out.println(p.getName());
        }
 
 

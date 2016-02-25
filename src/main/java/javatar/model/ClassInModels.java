@@ -7,6 +7,13 @@ public class ClassInModels {
     private boolean has_image;
     private String link;
 
+    public ClassInModels(String id, String name, String name_clear, boolean has_image, String link) {
+        this.id = id;
+        this.name = name;
+        this.name_clear = name_clear;
+        this.has_image = has_image;
+        this.link = link;
+    }
 
     public String getId() {
         return id;
