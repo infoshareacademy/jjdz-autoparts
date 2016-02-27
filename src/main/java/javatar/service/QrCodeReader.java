@@ -1,19 +1,20 @@
 package javatar.service;
 
 import com.google.zxing.*;
-import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
-import com.google.zxing.qrcode.QRCodeWriter;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class AztecCode {
-    public static String readQRCode(String fileName) {
-        File file = new File(fileName);
+public class QrCodeReader {
+    public static String readQRCode() {
+
+        System.out.println("Wprowadź ścieżkę do pliku z QR kodem:");
+        String filePath = System.console().readLine();
+        File file = new File(filePath);
         BufferedImage image = null;
         BinaryBitmap bitmap = null;
         Result result = null;
@@ -24,7 +25,6 @@ public class AztecCode {
             RGBLuminanceSource source = new RGBLuminanceSource(image.getWidth(), image.getHeight(), pixels);
             bitmap = new BinaryBitmap(new HybridBinarizer(source));
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -50,7 +50,9 @@ public class AztecCode {
     }
 
     public static void main(String[] args) throws IOException, NotFoundException {
-        String filePath = "aztec.png";
-        System.out.println(readQRCode(filePath));
+
+        System.out.println(readQRCode());
     }
+
+
 }
