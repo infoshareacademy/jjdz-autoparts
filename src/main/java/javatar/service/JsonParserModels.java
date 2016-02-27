@@ -2,18 +2,12 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javatar.model.Response;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-
-import static org.apache.commons.lang3.builder.ToStringBuilder.*;
-
 
 public class JsonParserModels {
     public static void main(String[] args) throws ClassNotFoundException, IOException {
