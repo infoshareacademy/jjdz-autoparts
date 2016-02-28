@@ -5,6 +5,12 @@ public class Autopart {
     private String partName;
     private String partId;
 
+    public Autopart(AutopartCategoryList autopartCategoryList, String partName, String partId) {
+        this.autopartCategoryList = autopartCategoryList;
+        this.partName = partName;
+        this.partId = partId;
+    }
+
     public AutopartCategoryList getAutopartCategoryList() {
         return autopartCategoryList;
     }

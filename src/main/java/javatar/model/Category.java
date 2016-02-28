@@ -5,6 +5,12 @@ public class Category {
     private String categoryId;
     private boolean hasChildren;
 
+    public Category(String categoryName, String categoryId, boolean hasChildren) {
+        this.categoryName = categoryName;
+        this.categoryId = categoryId;
+        this.hasChildren = hasChildren;
+    }
+
     public String getCategoryName() {
         return categoryName;
     }

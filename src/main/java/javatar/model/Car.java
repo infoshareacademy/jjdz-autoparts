@@ -9,6 +9,16 @@ public class Car {
     private String typeId;
     private int productionYear;
 
+    public Car(String brandName, String brandId, String modelName, String modelId, String typeName, String typeId, int productionYear) {
+        this.brandName = brandName;
+        this.brandId = brandId;
+        this.modelName = modelName;
+        this.modelId = modelId;
+        this.typeName = typeName;
+        this.typeId = typeId;
+        this.productionYear = productionYear;
+    }
+
     public String getBrandName() {
         return brandName;
     }
