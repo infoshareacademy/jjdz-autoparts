@@ -15,6 +15,11 @@ public class ClassInModels {
         this.link = link;
     }
 
+    public ClassInModels() {
+
+    }
+
+
     public String getId() {
         return id;
     }
@@ -66,4 +71,6 @@ public class ClassInModels {
 
                 '}';
     }
+
+
 }
