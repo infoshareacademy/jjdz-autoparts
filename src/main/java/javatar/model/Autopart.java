@@ -1,9 +1,31 @@
 package javatar.model;
 
-/**
- * Created by michalcymerys on 13.02.16.
- */
 public class Autopart {
-    private String category;
-    private String name;
+    private AutopartCategoryList autopartCategoryList;
+    private String partName;
+    private String partId;
+
+    public AutopartCategoryList getAutopartCategoryList() {
+        return autopartCategoryList;
+    }
+
+    public void setAutopartCategoryList(AutopartCategoryList autopartCategoryList) {
+        this.autopartCategoryList = autopartCategoryList;
+    }
+
+    public String getPartName() {
+        return partName;
+    }
+
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
+
+    public String getPartId() {
+        return partId;
+    }
+
+    public void setPartId(String partId) {
+        this.partId = partId;
+    }
 }
