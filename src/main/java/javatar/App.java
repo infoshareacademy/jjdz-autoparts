@@ -5,10 +5,12 @@ import javatar.service.JsonParserModels;
 
 import java.util.Collection;
 
-/**
- * Created by aneta on 13.02.16.
- */
 public class App {
+    JsonParserModels json = new JsonParserModels();
+
+    public JsonParserModels getJson() {
+        return json;
+    }
 
 
 }
