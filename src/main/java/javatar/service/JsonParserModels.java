@@ -31,6 +31,7 @@ public class JsonParserModels {
 
         for (ClassInModels c : models.getData()) {
             if (c.getName().contains(searchToken.toUpperCase())) {
+
                 carID = c.getId();
                 return carID;
 
@@ -39,6 +40,11 @@ public class JsonParserModels {
         }
 
         return "";
+    }
+
+    public static String searchModel (String fileModels, String searchTokenModels) throws FileNotFoundException{
+
+        return fileModels;
     }
 
 
