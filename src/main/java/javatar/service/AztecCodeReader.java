@@ -11,15 +11,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AztecCodeReader {
-    public static String readAztecCode() {
 
-        System.out.println("Wprowadź ścieżkę do pliku z QR kodem:");
+
+    public static String ReadPath(){
+        System.out.println("Wprowadź ścieżkę do pliku z kodem Aztec:");
         String filePath;
         Scanner scanIn = new Scanner(System.in);
         filePath = scanIn.nextLine();
         scanIn.close();
+        return filePath;
+    }
 
-        File file = new File(filePath);
+    public  static String readAztecCode(File file) {
         boolean fileExists = file.exists();
         if (fileExists) {
             BufferedImage image = null;
@@ -54,10 +57,10 @@ public class AztecCodeReader {
         return null;
     }
 
-    public static void main(String[] args) throws IOException, NotFoundException {
-
-        System.out.println(readAztecCode());
-    }
+//    public static void main(String[] args) throws IOException, NotFoundException {
+//
+//        System.out.println(readAztecCode(ReadPath()));
+//    }
 
 
 }
