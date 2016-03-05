@@ -21,16 +21,16 @@ public class JsonParserBrandsTest {
         String path = "src/main/java/javatar/resources/v2.json";
         JsonParserBrands jsonParserList = new JsonParserBrands();
 
-        final CarsBrands model = new CarsBrands();
-        model.setName("OPEL");
-        final CarsBrands mdl2 = new CarsBrands();
-        mdl2.setName("ACURA");
-
-
-        List<CarsBrands> list = new ArrayList<>();
-        list.add(model);
-        list.add(mdl2);
-        list.add(mdl2);
+//        final CarsBrands model = new CarsBrands();
+//        model.setName("OPEL");
+//        final CarsBrands mdl2 = new CarsBrands();
+//        mdl2.setName("ACURA");
+//
+//
+//        List<CarsBrands> list = new ArrayList<>();
+//        list.add(model);
+//        list.add(mdl2);
+//        list.add(mdl2);
 
         try {
             String searchTest = jsonParserList.searchCarId(path, searchToken);
@@ -39,9 +39,9 @@ public class JsonParserBrandsTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        assertThat(list.get(0).getName(),is(equalTo("OPEL")));
-
-        assertThat(list.size(),is(equalTo(list.size())));
+//        assertThat(list.get(0).getName(),is(equalTo("OPEL")));
+//
+//        assertThat(list.size(),is(equalTo(list.size())));
 
     }
 
