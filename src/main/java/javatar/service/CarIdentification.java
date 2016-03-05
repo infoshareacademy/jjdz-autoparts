@@ -1,6 +1,5 @@
 package javatar.service;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -21,7 +20,7 @@ public class CarIdentification {
             default: brand = "";
         }
 
-        JsonParserModels brandFileName = new JsonParserModels();
+        JsonParserBrands brandFileName = new JsonParserBrands();
         String path = mainPath +"v2.json";
         String brandFileNameOut = brandFileName.searchCarId(path,brand);
         System.out.println(brandFileNameOut);

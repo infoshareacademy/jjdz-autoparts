@@ -1,15 +1,9 @@
 package javatar.service;
 
-import javatar.model.Car;
-import javatar.model.ClassInModels;
-import javatar.model.DataForm;
-import javatar.model.Models;
-import org.hamcrest.CoreMatchers;
+import javatar.model.CarsBrands;
 import org.junit.Test;
-import org.mockito.internal.matchers.NotNull;
 
 import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,21 +13,21 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 
-public class JsonParserModelsTest {
+public class JsonParserBrandsTest {
 
     @Test
     public void should_find_opel()  {
         String searchToken = "opel";
         String path = "src/main/java/javatar/resources/v2.json";
-        JsonParserModels jsonParserList = new JsonParserModels();
+        JsonParserBrands jsonParserList = new JsonParserBrands();
 
-        final ClassInModels model = new ClassInModels();
+        final CarsBrands model = new CarsBrands();
         model.setName("OPEL");
-        final ClassInModels mdl2 = new ClassInModels();
+        final CarsBrands mdl2 = new CarsBrands();
         mdl2.setName("ACURA");
 
 
-        List<ClassInModels> list = new ArrayList<>();
+        List<CarsBrands> list = new ArrayList<>();
         list.add(model);
         list.add(mdl2);
         list.add(mdl2);

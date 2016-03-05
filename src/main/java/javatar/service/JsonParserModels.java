@@ -2,19 +2,12 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javatar.model.ClassInModels;
-import javatar.model.DataForm;
-import javatar.model.Models;
+import javatar.model.CarsModels;
+import javatar.model.DataCarsModels;
 
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class JsonParserModels {
     public static void main (String[] args) throws ClassNotFoundException, IOException {
@@ -25,15 +18,21 @@ public class JsonParserModels {
 
     public static String searchCarId(String inFile, String searchToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
-        String carID = "";
+        String modelID = new String();
+        String modelName = new String();
+        Integer startYear = new Integer(0);
+        Integer endYear = new Integer(0);
 
-        DataForm models = gson.fromJson(new FileReader(inFile), DataForm.class);
+        DataCarsModels models = gson.fromJson(new FileReader(inFile), DataCarsModels.class);
 
-        for (ClassInModels c : models.getData()) {
+        for (CarsModels c : models.getData()) {
             if (c.getName().contains(searchToken.toUpperCase())) {
+                modelID = c.getId();
+                modelName = c.getName();
+                startYear = c.getStart_year();
+                endYear = c.getEnd_year();
 
-                carID = c.getId();
-                return carID;
+                return "";
 
             }
 

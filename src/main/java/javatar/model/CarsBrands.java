@@ -1,13 +1,13 @@
 package javatar.model;
 
-public class ClassInModels {
+public class CarsBrands {
     private String id;
     private String name;
     private String name_clear;
     private boolean has_image;
     private String link;
 
-    public ClassInModels(String id, String name, String name_clear, boolean has_image, String link) {
+    public CarsBrands(String id, String name, String name_clear, boolean has_image, String link) {
         this.id = id;
         this.name = name;
         this.name_clear = name_clear;
@@ -15,7 +15,7 @@ public class ClassInModels {
         this.link = link;
     }
 
-    public ClassInModels() {
+    public CarsBrands() {
 
     }
 
@@ -62,7 +62,7 @@ public class ClassInModels {
 
     @Override
     public String toString() {
-        return "ClassInModels{" +
+        return "CarsBrands{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", name_clear='" + name_clear + '\'' +
