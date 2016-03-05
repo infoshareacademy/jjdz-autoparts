@@ -1,1 +1,37 @@
-{"breadcrumbs":[{"link":"api\/v2\/find\/iv\/","title":"AC Autoparts"},{"link":"api\/v2\/find\/iv\/399\/","title":"428 Fastback (1967-1974)"}],"dataname":"AC \/ 428 Fastback (1967-1974)","datatype":"types","data":[{"id":"9lg","model_id":"399","brand_id":"iv","name":"7.0","end_year":"1974","end_month":"12","start_year":"1967","start_month":"01","ccm":"7003","kw":"257","hp":"350","cylinders":"8","engine":null,"engine_txt":"Silnik benzynowy","fuel":"benzyna","body":"hatchback","axle":null,"max_weight":null,"link":"\/api\/v2\/find\/iv\/399\/9lg"}]}
+{
+  "breadcrumbs": [
+    {
+      "link": "api\/v2\/find\/iv\/",
+      "title": "AC Autoparts"
+    },
+    {
+      "link": "api\/v2\/find\/iv\/399\/",
+      "title": "428 Fastback (1967-1974)"
+    }
+  ],
+  "dataname": "AC \/ 428 Fastback (1967-1974)",
+  "datatype": "types",
+  "data": [
+    {
+      "id": "9lg",
+      "model_id": "399",
+      "brand_id": "iv",
+      "name": "7.0",
+      "end_year": "1974",
+      "end_month": "12",
+      "start_year": "1967",
+      "start_month": "01",
+      "ccm": "7003",
+      "kw": "257",
+      "hp": "350",
+      "cylinders": "8",
+      "engine": null,
+      "engine_txt": "Silnik benzynowy",
+      "fuel": "benzyna",
+      "body": "hatchback",
+      "axle": null,
+      "max_weight": null,
+      "link": "\/api\/v2\/find\/iv\/399\/9lg"
+    }
+  ]
+}
