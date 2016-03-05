@@ -5,17 +5,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class CarIdentification {
+    public static void main(String[] args) throws IOException {
 
-    private String FirstStep () {
-        return "";
+        FindingCarManagement();
     }
-
-
-    public String FindingCarManagement() throws IOException {
+    public static String FindingCarManagement() throws IOException {
         String brand = new String();
-        String mainPath = "src/main/java/javatar/reasources/";
+        String mainPath = "src/main/java/javatar/resources/";
         System.out.println("Wybierz markę z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL");
-        //String readBuffer = System.in.toString();
         Scanner scanner = new Scanner(System.in);
         String modelNumber = scanner.nextLine();
 
@@ -26,14 +23,11 @@ public class CarIdentification {
 
         JsonParserModels brandFileName = new JsonParserModels();
         String path = mainPath +"v2.json";
-        String brandFileNameOut = brandFileName.searchCarId(brand,path);
+        String brandFileNameOut = brandFileName.searchCarId(path,brand);
         System.out.println(brandFileNameOut);
 
         return brandFileNameOut;
     }
-
-
-
 }
 
 
