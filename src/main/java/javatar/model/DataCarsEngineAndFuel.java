@@ -4,8 +4,8 @@ import java.util.Collection;
 
 public class DataCarsEngineAndFuel {
 
-    String datatype;
-    Collection<CarsEngineAndFuel> data;
+    private String datatype;
+    private Collection<CarsEngineAndFuel> data;
 
     public String getDatatype() {
         return datatype;

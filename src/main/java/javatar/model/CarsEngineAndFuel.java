@@ -1,9 +1,10 @@
 package javatar.model;
 
 public class CarsEngineAndFuel {
+    private String id = new String();
     private String model_id = new String();
     private String brand_id = new String();
-    private Integer name = new Integer(0);
+    private String name = new String();
     private Integer end_year = new Integer(0);
     private Integer end_month = new Integer(0);
     private Integer start_year = new Integer(0);
@@ -25,7 +26,16 @@ public class CarsEngineAndFuel {
 
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getModel_id() {
+
         return model_id;
     }
 
@@ -41,11 +51,11 @@ public class CarsEngineAndFuel {
         this.brand_id = brand_id;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 

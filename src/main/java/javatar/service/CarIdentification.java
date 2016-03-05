@@ -1,7 +1,12 @@
 package javatar.service;
 
+import javatar.model.CarsEngineAndFuel;
+import javatar.model.DataCarsEngineAndFuel;
+
 import java.io.IOException;
 import java.util.Scanner;
+
+import static javatar.service.JsonParserEngine.listAllEngineTypes;
 
 public class CarIdentification {
     public static void main(String[] args) throws IOException {
@@ -35,11 +40,9 @@ public class CarIdentification {
         String modelPath = mainPath + brandFileNameOut;
 
         System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi");
-        Scanner scannerModel = new Scanner(System.in);
-        String modelSelection = scannerModel.nextLine();
+        String modelSelection = scanner.nextLine();
         System.out.println("Wprowadź rok produkcji");
-        Scanner scannerYear = new Scanner(System.in);
-        Integer year = scannerYear.nextInt();
+        String year = scanner.nextLine();
         String model = new String();
 
         if (modelSelection.length() == 1) {
@@ -54,14 +57,22 @@ public class CarIdentification {
             model = modelSelection;
         }
 
-        String modelFileNameOut = modelId.searchCarId(modelPath+".json",model,year);
+        String modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, Integer.parseInt(year));
+
+        System.out.println("Wpisz ID silnika wyświetlane na końcu linii");
+
+        listAllEngineTypes(mainPath + modelFileNameOut + ".json");
 
 
-        //TODO foreach loop
+        String engineSelection = scanner.nextLine();
+        JsonParserEngine engineId = new JsonParserEngine();
+        String EgineFileNameOut = engineId.searchCarId(mainPath +modelFileNameOut+ ".json", engineSelection);
 
 
-        System.out.println(brandFileNameOut);
-        System.out.println(modelFileNameOut);
+
+        System.out.println(EgineFileNameOut);
+
+
         return brandFileNameOut;
     }
 }
