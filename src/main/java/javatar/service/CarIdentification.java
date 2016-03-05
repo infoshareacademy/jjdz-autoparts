@@ -1,6 +1,6 @@
 package javatar.service;
 
-import javatar.model.CarsEngineAndFuel;
+import javatar.model.Car;
 import javatar.model.DataCarsEngineAndFuel;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class CarIdentification {
         FindingCarManagement();
     }
 
-    public static String FindingCarManagement() throws IOException {
+    public static Car FindingCarManagement() throws IOException {
         String brand = new String();
         String mainPath = "src/main/java/javatar/resources/";
         System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL");
@@ -72,8 +72,16 @@ public class CarIdentification {
 
         System.out.println(EgineFileNameOut);
 
+        Car car = new Car();
+        car.setBrandName(brand);
+        car.setBrandId(brandFileNameOut);
+        car.setModelId(modelFileNameOut);
+        car.setModelName(model);
+        car.setProductionYear(Integer.parseInt(year));
 
-        return brandFileNameOut;
+        System.out.println(car);
+
+        return car;
     }
 }
 
