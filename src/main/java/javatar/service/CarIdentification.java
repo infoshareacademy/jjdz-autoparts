@@ -17,57 +17,87 @@ public class CarIdentification {
     public static Car FindingCarManagement() throws IOException {
         String brand = new String();
         String mainPath = "src/main/java/javatar/resources/";
-        System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL");
         Scanner scanner = new Scanner(System.in);
-        String brandSelection = scanner.nextLine();
-
-        if (brandSelection.length() == 1) {
-            switch (brandSelection) {
-                case "1":
-                    brand = "OPEL";
-                    break;
-                default:
-                    brand = "";
-            }
-        } else {
-            brand = brandSelection;
-        }
         JsonParserBrands brandFileName = new JsonParserBrands();
         String path = mainPath + "v2.json";
-        String brandFileNameOut = brandFileName.searchCarId(path, brand);
+        String brandFileNameOut = "Error";
 
-        JsonParserModels modelId = new JsonParserModels();
-        String modelPath = mainPath + brandFileNameOut;
+        //------------------------------------------------------------------------------------------------------
+        //Car brands section
+        //------------------------------------------------------------------------------------------------------
+        while (brandFileNameOut == "Error") {
+            System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL");
+            String brandSelection = scanner.nextLine();
 
-        System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi");
-        String modelSelection = scanner.nextLine();
-        System.out.println("Wprowadź rok produkcji");
-        String year = scanner.nextLine();
-        String model = new String();
-
-        if (modelSelection.length() == 1) {
-            switch (modelSelection) {
-                case "1":
-                    model = "ASTRA G kombi";
-                    break;
-                default:
-                    model = "";
+            if (brandSelection.length() == 1) {
+                switch (brandSelection) {
+                    case "1":
+                        brand = "OPEL";
+                        break;
+                    default:
+                        brand = "Error";
+                        break;
+                }
+            } else {
+                brand = brandSelection;
             }
-        } else {
-            model = modelSelection;
+
+
+            brandFileNameOut = brandFileName.searchCarId(path, brand);
         }
 
-        String modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, Integer.parseInt(year));
+        //------------------------------------------------------------------------------------------------------
+        //Car models section
+        //------------------------------------------------------------------------------------------------------
+        JsonParserModels modelId = new JsonParserModels();
+        String modelPath = mainPath + brandFileNameOut;
+        String modelFileNameOut = "Error";
+        String model = new String();
+        String year = new String();
 
-        System.out.println("Wpisz ID silnika wyświetlane na końcu linii");
+        while (modelFileNameOut == "Error") {
+            System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi");
+            String modelSelection = scanner.nextLine();
+            System.out.println("Wprowadź rok produkcji:");
+            year = scanner.nextLine();
 
-        HashMap<Integer, String> engineIdsMap = listAllEngineTypes(mainPath + modelFileNameOut + ".json");
 
+            if (modelSelection.length() == 1) {
+                switch (modelSelection) {
+                    case "1":
+                        model = "ASTRA G kombi";
+                        break;
+                    default:
+                        model = "Error";
+                        break;
+                }
+            } else {
+                model = modelSelection;
+            }
 
-        String engineSelection = scanner.nextLine();
-        String egineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
+            modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, Integer.parseInt(year));
+        }
+        //------------------------------------------------------------------------------------------------------
+        //CEngines and fuel section
+        //------------------------------------------------------------------------------------------------------
+        String engineFileNameOut = "Error";
+
+        while(engineFileNameOut=="Error") {
+
+            System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
+
+            HashMap<Integer, String> engineIdsMap = listAllEngineTypes(mainPath + modelFileNameOut + ".json");
+
+            String engineSelection = scanner.nextLine();
+            while (Integer.parseInt(engineSelection) > (engineIdsMap.size() - 1) || Integer.parseInt(engineSelection) < 0) {
+                System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
+                engineSelection = scanner.nextLine();
+            }
+
+            engineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
+        }
         JsonParserEngine engine = new JsonParserEngine();
-        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", egineFileNameOut);
+        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", engineFileNameOut);
 
         Car car = new Car();
         car.setBrandName(brand);
@@ -75,7 +105,7 @@ public class CarIdentification {
         car.setModelId(modelFileNameOut);
         car.setModelName(model);
         car.setProductionYear(Integer.parseInt(year));
-        car.setTypeId(egineFileNameOut);
+        car.setTypeId(engineFileNameOut);
         car.setTypeName(engineName);
 
         System.out.println(car);

@@ -31,7 +31,7 @@ public class JsonParserBrands {
 
         }
 
-        return "";
+        return "Error";
     }
 
 

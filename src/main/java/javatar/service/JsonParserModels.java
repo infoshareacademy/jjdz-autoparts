@@ -34,7 +34,7 @@ public class JsonParserModels {
 
         }
 
-        return "";
+        return "Error";
     }
 
 
