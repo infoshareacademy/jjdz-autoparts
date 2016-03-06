@@ -1,7 +1,6 @@
 package javatar.service;
 
 import javatar.model.Car;
-import javatar.model.DataCarsEngineAndFuel;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -66,7 +65,9 @@ public class CarIdentification {
 
 
         String engineSelection = scanner.nextLine();
-        String EgineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
+        String egineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
+        JsonParserEngine engine = new JsonParserEngine();
+        String engineName = engine.searchEngineType(mainPath+modelFileNameOut+".json",egineFileNameOut);
 
         Car car = new Car();
         car.setBrandName(brand);
@@ -74,7 +75,8 @@ public class CarIdentification {
         car.setModelId(modelFileNameOut);
         car.setModelName(model);
         car.setProductionYear(Integer.parseInt(year));
-        car.setTypeId(EgineFileNameOut);
+        car.setTypeId(egineFileNameOut);
+        car.setTypeName(engineName);
 
 
         System.out.println(car);
