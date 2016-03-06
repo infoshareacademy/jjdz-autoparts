@@ -16,7 +16,7 @@ public class CarIdentification {
 
     public static Car FindingCarManagement() throws IOException {
         String brand = new String();
-        String mainPath = "src/main/java/javatar/resources/";
+        String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
         JsonParserBrands brandFileName = new JsonParserBrands();
         String path = mainPath + "v2.json";

@@ -13,7 +13,7 @@ public class JsonParserBrandsTest {
     @Test
     public void should_find_opel() {
         String searchToken = "opel";
-        String path = "src/main/java/javatar/resources/v2.json";
+        String path = "src/main/resources/v2.json";
         JsonParserBrands jsonParserList = new JsonParserBrands();
 
 
