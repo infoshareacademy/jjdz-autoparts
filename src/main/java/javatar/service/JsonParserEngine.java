@@ -10,6 +10,7 @@ import javatar.model.DataCarsModels;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class JsonParserEngine {
     public static void main(String[] args) throws ClassNotFoundException, IOException {
@@ -40,18 +41,22 @@ public class JsonParserEngine {
         return "";
     }
 
-    public static void listAllEngineTypes(String inFile) throws FileNotFoundException {
+    public static HashMap<Integer,String> listAllEngineTypes(String inFile) throws FileNotFoundException {
 
         Gson gson = new GsonBuilder().create();
         int i = 0;
+        HashMap<Integer,String> engineIds = new HashMap<>();
 
         DataCarsEngineAndFuel engines = gson.fromJson(new FileReader(inFile), DataCarsEngineAndFuel.class);
 
         for (CarsEngineAndFuel c : engines.getData()) {
 
             System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " do " + c.getEnd_year().toString()+" ID: "+c.getId());
+            engineIds.put(i,c.getId());
             i++;
+
         }
+        return engineIds;
 
     }
 
