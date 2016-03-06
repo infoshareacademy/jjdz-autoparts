@@ -28,7 +28,7 @@ public class JsonParserEngine {
 
         for (CarsEngineAndFuel c : models.getData()) {
             if (c.getId().contains(engineToken)) {
-                engineType = c.getEngine()+", "+c.getEngine_txt();
+                engineType = c.getEngine() + ", " + c.getEngine_txt();
                 System.out.println(engineType);
                 return engineType;
 
@@ -40,18 +40,18 @@ public class JsonParserEngine {
     }
 
 
-    public static HashMap<Integer,String> listAllEngineTypes(String inFile) throws FileNotFoundException {
+    public static HashMap<Integer, String> listAllEngineTypes(String inFile) throws FileNotFoundException {
 
         Gson gson = new GsonBuilder().create();
         int i = 0;
-        HashMap<Integer,String> engineIds = new HashMap<>();
+        HashMap<Integer, String> engineIds = new HashMap<>();
 
         DataCarsEngineAndFuel engines = gson.fromJson(new FileReader(inFile), DataCarsEngineAndFuel.class);
 
         for (CarsEngineAndFuel c : engines.getData()) {
 
-            System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " do " + c.getEnd_year().toString()+" ID: "+c.getId());
-            engineIds.put(i,c.getId());
+            System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " do " + c.getEnd_year().toString() + " ID: " + c.getId());
+            engineIds.put(i, c.getId());
             i++;
 
         }

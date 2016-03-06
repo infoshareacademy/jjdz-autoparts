@@ -61,13 +61,13 @@ public class CarIdentification {
 
         System.out.println("Wpisz ID silnika wyświetlane na końcu linii");
 
-        HashMap<Integer,String> engineIdsMap = listAllEngineTypes(mainPath + modelFileNameOut + ".json");
+        HashMap<Integer, String> engineIdsMap = listAllEngineTypes(mainPath + modelFileNameOut + ".json");
 
 
         String engineSelection = scanner.nextLine();
         String egineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
         JsonParserEngine engine = new JsonParserEngine();
-        String engineName = engine.searchEngineType(mainPath+modelFileNameOut+".json",egineFileNameOut);
+        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", egineFileNameOut);
 
         Car car = new Car();
         car.setBrandName(brand);
@@ -77,7 +77,6 @@ public class CarIdentification {
         car.setProductionYear(Integer.parseInt(year));
         car.setTypeId(egineFileNameOut);
         car.setTypeName(engineName);
-
 
         System.out.println(car);
 

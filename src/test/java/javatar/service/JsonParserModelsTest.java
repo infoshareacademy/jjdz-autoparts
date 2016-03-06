@@ -1,20 +1,13 @@
 package javatar.service;
 
-import javatar.model.CarsBrands;
-import javatar.model.CarsModels;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
-/**
- * Created by anna wojtkiewicz on 05.03.2016.
- */
 public class JsonParserModelsTest {
 
     @Test

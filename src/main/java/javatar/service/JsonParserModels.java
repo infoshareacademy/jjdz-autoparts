@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class JsonParserModels {
-    public static void main (String[] args) throws ClassNotFoundException, IOException {
+    public static void main(String[] args) throws ClassNotFoundException, IOException {
         String inFile = args[0];
         String nameToken = args[1];
         int date = Integer.parseInt(args[2]);
@@ -36,7 +36,6 @@ public class JsonParserModels {
 
         return "";
     }
-
 
 
 }
