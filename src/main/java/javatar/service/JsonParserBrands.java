@@ -9,13 +9,13 @@ import javatar.model.DataCarsBrands;
 import java.io.*;
 
 public class JsonParserBrands {
-    public static void main (String[] args) throws ClassNotFoundException, IOException {
+    public  void main (String[] args) throws ClassNotFoundException, IOException {
         String inFile = args[0];
         String searchToken = args[1];
         searchCarId(inFile, searchToken);
     }
 
-    public static String searchCarId(String inFile, String searchToken) throws FileNotFoundException {
+    public String searchCarId(String inFile, String searchToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String carID = "";
 

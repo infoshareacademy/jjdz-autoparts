@@ -9,12 +9,12 @@ import java.util.Scanner;
 import static javatar.service.JsonParserEngine.listAllEngineTypes;
 
 public class CarIdentification {
-    public static void main(String[] args) throws IOException {
+    public void main(String[] args) throws IOException {
 
         FindingCarManagement();
     }
 
-    public static Car FindingCarManagement() throws IOException {
+    public Car FindingCarManagement() throws IOException {
         String brand = new String();
         String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);

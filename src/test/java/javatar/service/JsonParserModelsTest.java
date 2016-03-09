@@ -12,8 +12,8 @@ public class JsonParserModelsTest {
 
     @Test
     public void should_find_opel_astra_g_kombi() {
-        String searchToken = "opel astra g kombi";
-        String path = "src/main/java/javatar/resources/fy.json";
+        String searchToken = "astra g kombi";
+        String path = "src/main/resources/fy.json";
         Integer date = 2004;
         JsonParserModels jsonParserList = new JsonParserModels();
 

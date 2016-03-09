@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class JsonParserEngine {
-    public static void main(String[] args) throws ClassNotFoundException, IOException {
+    public  void main(String[] args) throws ClassNotFoundException, IOException {
         String inFile = args[0];
         String engineToken = args[1];
 
@@ -20,7 +20,7 @@ public class JsonParserEngine {
 
     }
 
-    public static String searchEngineType(String inFile, String engineToken) throws FileNotFoundException {
+    public  String searchEngineType(String inFile, String engineToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String engineType = new String();
 
