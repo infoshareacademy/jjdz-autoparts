@@ -3,6 +3,7 @@ package javatar.service;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -13,7 +14,7 @@ public class JsonParserBrandsTest {
     @Test
     public void should_find_opel() throws FileNotFoundException {
         String searchToken = "opel";
-        JsonParserBrands jsonParserList = new JsonParserBrands();
+        JsonParserBrands jsonParserList = new JsonParserBrands(new FileReader("src/test/resources/brands.json"));
 
 
         try {

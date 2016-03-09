@@ -3,6 +3,7 @@ package javatar.service;
 import javatar.model.Car;
 
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -23,13 +24,12 @@ public class CarIdentification {
         }
     }
 
-    public static Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
+    public static Car FindingCarByQCCodeAnswear(Car carIn, JsonParserBrands brandSearcher) throws FileNotFoundException {
         String mainPath = "src/main/resources/";
         String brandFileNameOut = "Error";
-        JsonParserBrands brandFileName = new JsonParserBrands();
 
         String brand = carIn.getBrandName();
-        brandFileNameOut = brandFileName.searchCarId(brand);
+        brandFileNameOut = brandSearcher.searchCarId(brand);
 
         JsonParserModels modelId = new JsonParserModels(mainPath + brandFileNameOut + ".json");
 
@@ -62,7 +62,7 @@ public class CarIdentification {
         String brand = new String();
         String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
-        JsonParserBrands brandFileName = new JsonParserBrands();
+        JsonParserBrands brandFileName = new JsonParserBrands(new FileReader("src/main/resources/v2.json"));
         String brandFileNameOut = "Error";
 
         //------------------------------------------------------------------------------------------------------
