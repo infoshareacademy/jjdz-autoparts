@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static javatar.service.JsonParserEngine.listAllEngineTypes;
 
 public class CarIdentification {
     public static void main(String[] args) throws IOException {
@@ -32,17 +31,17 @@ public class CarIdentification {
         String brand = carIn.getBrandName();
         brandFileNameOut = brandFileName.searchCarId(brand);
 
-        JsonParserModels modelId = new JsonParserModels();
-        String modelPath = mainPath + brandFileNameOut;
+        JsonParserModels modelId = new JsonParserModels(mainPath + brandFileNameOut + ".json");
+
         String modelFileNameOut = "Error";
         String model = carIn.getModelName();
         Integer year = carIn.getProductionYear();
         String engineFileNameOut = "Error";
-        JsonParserEngine engine = new JsonParserEngine();
+        JsonParserEngine engine = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
 
-        modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, year);
+        modelFileNameOut = modelId.searchCarId(model, year);
 
-        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", engineFileNameOut);
+        String engineName = engine.searchEngineType(engineFileNameOut);
 
 
         Car car = new Car();
@@ -93,7 +92,7 @@ public class CarIdentification {
         //------------------------------------------------------------------------------------------------------
         //Car models section
         //------------------------------------------------------------------------------------------------------
-        JsonParserModels modelId = new JsonParserModels();
+        JsonParserModels modelId = new JsonParserModels(mainPath + brandFileNameOut + ".json");
         String modelPath = mainPath + brandFileNameOut;
         String modelFileNameOut = "Error";
         String model = new String();
@@ -119,20 +118,21 @@ public class CarIdentification {
                 model = modelSelection;
             }
 
-            modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, Integer.parseInt(year));
+            modelFileNameOut = modelId.searchCarId(model, Integer.parseInt(year));
         }
         //------------------------------------------------------------------------------------------------------
         //CEngines and fuel section
         //------------------------------------------------------------------------------------------------------
         String engineFileNameOut = "Error";
+        final JsonParserEngine engine = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
 
         while (engineFileNameOut == "Error") {
 
             System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
 
-            HashMap<Integer, String> engineIdsMap = listAllEngineTypes(mainPath + modelFileNameOut + ".json");
-
+            HashMap<Integer, String> engineIdsMap = engine.listAllEngineTypes();
             String engineSelection = scanner.nextLine();
+
             while (Integer.parseInt(engineSelection) > (engineIdsMap.size() - 1) || Integer.parseInt(engineSelection) < 0) {
                 System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
                 engineSelection = scanner.nextLine();
@@ -140,8 +140,11 @@ public class CarIdentification {
 
             engineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
         }
-        JsonParserEngine engine = new JsonParserEngine();
-        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", engineFileNameOut);
+
+        JsonParserEngine engine1 = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
+        //TODO dopytaj dlaczego nie możesz tu skorzystać z engine
+        String engineName = engine1.searchEngineType(engineFileNameOut);
+
 
         Car car = new Car();
         car.setBrandName(brand);
