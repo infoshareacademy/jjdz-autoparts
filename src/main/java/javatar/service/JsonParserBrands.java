@@ -15,12 +15,10 @@ public class JsonParserBrands {
         searchCarId(searchToken);
     }
 
-    final static String DEFAULT_FILENAME = "src/main/resources/v2.json";
-    final FileReader reader;
+    private final Reader reader;
 
-    public JsonParserBrands() throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(DEFAULT_FILENAME);
+    public JsonParserBrands(Reader reader) {
+        this.reader = reader;
     }
 
     public String searchCarId(String searchToken) throws FileNotFoundException {
