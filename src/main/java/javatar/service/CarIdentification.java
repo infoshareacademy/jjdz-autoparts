@@ -2,6 +2,7 @@ package javatar.service;
 
 import javatar.model.Car;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -9,12 +10,56 @@ import java.util.Scanner;
 import static javatar.service.JsonParserEngine.listAllEngineTypes;
 
 public class CarIdentification {
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-        FindingCarManagement();
+        System.out.println("Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. QC code\r\n2. Na podstawie serii pytań");
+        Scanner scanner = new Scanner(System.in);
+        Integer answear = scanner.nextInt();
+        if (answear == 2) {
+            Car carReturned = FindingCarManagement();
+        } else {
+//            TODO QR code to be called
+//            Car answearQR =
+//            Car carReturned = FindingCarByQCCodeAnswear(answearQR);
+        }
     }
 
-    public Car FindingCarManagement() throws IOException {
+    public static Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
+        String mainPath = "src/main/resources/";
+        String brandFileNameOut = "Error";
+        JsonParserBrands brandFileName = new JsonParserBrands();
+
+        String brand = carIn.getBrandName();
+        brandFileNameOut = brandFileName.searchCarId(brand);
+
+        JsonParserModels modelId = new JsonParserModels();
+        String modelPath = mainPath + brandFileNameOut;
+        String modelFileNameOut = "Error";
+        String model = carIn.getModelName();
+        Integer year = carIn.getProductionYear();
+        String engineFileNameOut = "Error";
+        JsonParserEngine engine = new JsonParserEngine();
+
+        modelFileNameOut = modelId.searchCarId(modelPath + ".json", model, year);
+
+        String engineName = engine.searchEngineType(mainPath + modelFileNameOut + ".json", engineFileNameOut);
+
+
+        Car car = new Car();
+        car.setBrandName(brand);
+        car.setBrandId(brandFileNameOut);
+        car.setModelId(modelFileNameOut);
+        car.setModelName(model);
+        car.setProductionYear(year);
+        car.setTypeId(engineFileNameOut);
+        car.setTypeName(engineName);
+
+        System.out.println(car);
+
+        return car;
+    }
+
+    public static Car FindingCarManagement() throws IOException {
         String brand = new String();
         String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
@@ -81,7 +126,7 @@ public class CarIdentification {
         //------------------------------------------------------------------------------------------------------
         String engineFileNameOut = "Error";
 
-        while(engineFileNameOut=="Error") {
+        while (engineFileNameOut == "Error") {
 
             System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
 
