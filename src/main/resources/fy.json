@@ -1,0 +1,1882 @@
+{
+  "breadcrumbs": [
+    {
+      "link": "api\/v2\/find\/fy\/",
+      "title": "OPEL Autoparts"
+    }
+  ],
+  "dataname": "OPEL",
+  "datatype": "models",
+  "data": [
+    {
+      "id": "aa",
+      "name": "1900 A (81_, 86_, 87_, 88_)",
+      "end_year": "1975",
+      "end_month": "08",
+      "start_year": "1970",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/aa"
+    },
+    {
+      "id": "8ag",
+      "name": "ADAM",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/8ag"
+    },
+    {
+      "id": "2p3",
+      "name": "ADMIRAL A",
+      "end_year": "1969",
+      "end_month": "03",
+      "start_year": "1964",
+      "start_month": "04",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2p3"
+    },
+    {
+      "id": "14b",
+      "name": "ADMIRAL B",
+      "end_year": "1978",
+      "end_month": "01",
+      "start_year": "1969",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14b"
+    },
+    {
+      "id": "3gn",
+      "name": "AGILA (A) (H00)",
+      "end_year": "2007",
+      "end_month": "12",
+      "start_year": "2000",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3gn"
+    },
+    {
+      "id": "4z9",
+      "name": "AGILA (B) (H08)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2008",
+      "start_month": "04",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/4z9"
+    },
+    {
+      "id": "741",
+      "name": "AMPERA",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2011",
+      "start_month": "11",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/741"
+    },
+    {
+      "id": "4ah",
+      "name": "ANTARA",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2006",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/4ah"
+    },
+    {
+      "id": "7hx",
+      "name": "ARENA Autobus",
+      "end_year": "2001",
+      "end_month": "12",
+      "start_year": "1997",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7hx"
+    },
+    {
+      "id": "2qt",
+      "name": "ARENA Combi (THB)",
+      "end_year": "2001",
+      "end_month": "08",
+      "start_year": "1998",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2qt"
+    },
+    {
+      "id": "7hy",
+      "name": "ARENA nadwozie pe\u0142ne",
+      "end_year": "2001",
+      "end_month": "12",
+      "start_year": "1997",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7hy"
+    },
+    {
+      "id": "2qr",
+      "name": "ARENA nadwozie pe\u0142ne (TB, TF)",
+      "end_year": "2001",
+      "end_month": "08",
+      "start_year": "1998",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2qr"
+    },
+    {
+      "id": "aa",
+      "name": "ASCONA A (81_, 86_, 87_, 88_)",
+      "end_year": "1975",
+      "end_month": "08",
+      "start_year": "1970",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/aa"
+    },
+    {
+      "id": "14g",
+      "name": "ASCONA A Voyage (84_, 89_)",
+      "end_year": "1975",
+      "end_month": "08",
+      "start_year": "1970",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14g"
+    },
+    {
+      "id": "af",
+      "name": "ASCONA B (81_, 86_, 87_, 88_)",
+      "end_year": "1981",
+      "end_month": "08",
+      "start_year": "1975",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/af"
+    },
+    {
+      "id": "aj",
+      "name": "ASCONA C (81_, 86_, 87_, 88_)",
+      "end_year": "1988",
+      "end_month": "10",
+      "start_year": "1981",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/aj"
+    },
+    {
+      "id": "ao",
+      "name": "ASCONA C hatchback (84_, 89_)",
+      "end_year": "1988",
+      "end_month": "08",
+      "start_year": "1981",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/ao"
+    },
+    {
+      "id": "64b",
+      "name": "ASTRA A+ sedan (L69)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2007",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/64b"
+    },
+    {
+      "id": "at",
+      "name": "ASTRA F (56_, 57_)",
+      "end_year": "1998",
+      "end_month": "09",
+      "start_year": "1991",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/at"
+    },
+    {
+      "id": "3n0",
+      "name": "ASTRA F CLASSIC hatchback",
+      "end_year": "2002",
+      "end_month": "08",
+      "start_year": "1998",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3n0"
+    },
+    {
+      "id": "3n1",
+      "name": "ASTRA F CLASSIC kombi",
+      "end_year": "2005",
+      "end_month": "01",
+      "start_year": "1998",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3n1"
+    },
+    {
+      "id": "3mz",
+      "name": "ASTRA F CLASSIC sedan",
+      "end_year": "2002",
+      "end_month": "08",
+      "start_year": "1998",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3mz"
+    },
+    {
+      "id": "b5",
+      "name": "ASTRA F hatchback (53_, 54_, 58_, 59_)",
+      "end_year": "1998",
+      "end_month": "01",
+      "start_year": "1991",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/b5"
+    },
+    {
+      "id": "ax",
+      "name": "ASTRA F kabriolet (53_B)",
+      "end_year": "2001",
+      "end_month": "03",
+      "start_year": "1993",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/ax"
+    },
+    {
+      "id": "2nx",
+      "name": "ASTRA F kombi (51_, 52_)",
+      "end_year": "1998",
+      "end_month": "01",
+      "start_year": "1991",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2nx"
+    },
+    {
+      "id": "33y",
+      "name": "ASTRA F Van (55_)",
+      "end_year": "1999",
+      "end_month": "01",
+      "start_year": "1991",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/33y"
+    },
+    {
+      "id": "394",
+      "name": "ASTRA G coupe (F07_)",
+      "end_year": "2005",
+      "end_month": "05",
+      "start_year": "2000",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/394"
+    },
+    {
+      "id": "3jo",
+      "name": "ASTRA G Delvan (F70)",
+      "end_year": "2005",
+      "end_month": "04",
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3jo"
+    },
+    {
+      "id": "2my",
+      "name": "ASTRA G hatchback (F48_, F08_)",
+      "end_year": "2009",
+      "end_month": "12",
+      "start_year": "1998",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2my"
+    },
+    {
+      "id": "3ol",
+      "name": "ASTRA G kabriolet (F67)",
+      "end_year": "2005",
+      "end_month": "10",
+      "start_year": "2001",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3ol"
+    },
+    {
+      "id": "2mz",
+      "name": "ASTRA G kombi (F35_)",
+      "end_year": "2009",
+      "end_month": "12",
+      "start_year": "1998",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2mz"
+    },
+    {
+      "id": "3jo",
+      "name": "ASTRA G nadwozie pe\u0142ne (F70)",
+      "end_year": "2005",
+      "end_month": "04",
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3jo"
+    },
+    {
+      "id": "303",
+      "name": "ASTRA G sedan (F69_)",
+      "end_year": "2009",
+      "end_month": "12",
+      "start_year": "1998",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/303"
+    },
+    {
+      "id": "7ft",
+      "name": "ASTRA GTC J",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2011",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7ft"
+    },
+    {
+      "id": "3xz",
+      "name": "ASTRA H (L48)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2004",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3xz"
+    },
+    {
+      "id": "412",
+      "name": "ASTRA H GTC (L08)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2005",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/412"
+    },
+    {
+      "id": "3za",
+      "name": "ASTRA H kombi (L35)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2004",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3za"
+    },
+    {
+      "id": "73g",
+      "name": "ASTRA H nadwozie pe\u0142ne (L70)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2004",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/73g"
+    },
+    {
+      "id": "64b",
+      "name": "ASTRA H sedan (L69)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2007",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/64b"
+    },
+    {
+      "id": "412",
+      "name": "ASTRA H Sport Hatch (L08)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2005",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/412"
+    },
+    {
+      "id": "47u",
+      "name": "ASTRA H TwinTop (L67)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2005",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/47u"
+    },
+    {
+      "id": "73g",
+      "name": "ASTRA H Van (L70)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2004",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/73g"
+    },
+    {
+      "id": "6du",
+      "name": "ASTRA J",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2009",
+      "start_month": "12",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6du"
+    },
+    {
+      "id": "7zw",
+      "name": "ASTRA J sedan",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7zw"
+    },
+    {
+      "id": "6yu",
+      "name": "ASTRA J Sports Tourer",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2010",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6yu"
+    },
+    {
+      "id": "b7d",
+      "name": "ASTRA K",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2015",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/b7d"
+    },
+    {
+      "id": "cn",
+      "name": "CALIBRA A (85_)",
+      "end_year": "1997",
+      "end_month": "07",
+      "start_year": "1990",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/cn"
+    },
+    {
+      "id": "1gm",
+      "name": "CAMPO (TF_)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1987",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1gm"
+    },
+    {
+      "id": "8mu",
+      "name": "CASCADA (W13)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2013",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/8mu"
+    },
+    {
+      "id": "1v",
+      "name": "COMBO (71_)",
+      "end_year": "2001",
+      "end_month": "10",
+      "start_year": "1994",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1v"
+    },
+    {
+      "id": "3q7",
+      "name": "COMBO nadwozie pe\u0142ne \/ kombi",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2001",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3q7"
+    },
+    {
+      "id": "7q5",
+      "name": "COMBO nadwozie pe\u0142ne \/ kombi (X12)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7q5"
+    },
+    {
+      "id": "axp",
+      "name": "COMBO platforma \/ podwozie",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/axp"
+    },
+    {
+      "id": "3ur",
+      "name": "COMBO Tour",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2001",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3ur"
+    },
+    {
+      "id": "7q6",
+      "name": "COMBO Tour (X12)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7q6"
+    },
+    {
+      "id": "34h",
+      "name": "COMMODORE A",
+      "end_year": "1972",
+      "end_month": "01",
+      "start_year": "1967",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34h"
+    },
+    {
+      "id": "34i",
+      "name": "COMMODORE A coupe",
+      "end_year": "1972",
+      "end_month": "01",
+      "start_year": "1967",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34i"
+    },
+    {
+      "id": "23",
+      "name": "COMMODORE B",
+      "end_year": "1978",
+      "end_month": "07",
+      "start_year": "1972",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/23"
+    },
+    {
+      "id": "1z",
+      "name": "COMMODORE B coupe",
+      "end_year": "1978",
+      "end_month": "07",
+      "start_year": "1972",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1z"
+    },
+    {
+      "id": "2nt",
+      "name": "COMMODORE C (14_, 19_)",
+      "end_year": "1982",
+      "end_month": "12",
+      "start_year": "1978",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2nt"
+    },
+    {
+      "id": "29",
+      "name": "COMMODORE C kombi (61)",
+      "end_year": "1982",
+      "end_month": "12",
+      "start_year": "1980",
+      "start_month": "12",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/29"
+    },
+    {
+      "id": "5h",
+      "name": "CORSA A hatchback (93_, 94_, 98_, 99_)",
+      "end_year": "1993",
+      "end_month": "03",
+      "start_year": "1982",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5h"
+    },
+    {
+      "id": "1ej",
+      "name": "CORSA A nadwozie pe\u0142ne",
+      "end_year": "1994",
+      "end_month": "09",
+      "start_year": "1986",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1ej"
+    },
+    {
+      "id": "5e",
+      "name": "CORSA A TR (91_, 92_, 96_, 97_)",
+      "end_year": "1993",
+      "end_month": "03",
+      "start_year": "1982",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5e"
+    },
+    {
+      "id": "5m",
+      "name": "CORSA B (73_, 78_, 79_)",
+      "end_year": "2002",
+      "end_month": "12",
+      "start_year": "1993",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5m"
+    },
+    {
+      "id": "6dg",
+      "name": "CORSA B kombi (F35)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6dg"
+    },
+    {
+      "id": "3kx",
+      "name": "CORSA B nadwozie pe\u0142ne (73_)",
+      "end_year": "2000",
+      "end_month": "09",
+      "start_year": "1999",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3kx"
+    },
+    {
+      "id": "6dg",
+      "name": "CORSA B STATION WAGON (F35)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6dg"
+    },
+    {
+      "id": "3lj",
+      "name": "CORSA C (F08, F68)",
+      "end_year": "2009",
+      "end_month": "12",
+      "start_year": "2000",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3lj"
+    },
+    {
+      "id": "3q9",
+      "name": "CORSA C nadwozie pe\u0142ne (F08, W5L)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2000",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3q9"
+    },
+    {
+      "id": "64z",
+      "name": "CORSA CLASSIC sedan",
+      "end_year": "2005",
+      "end_month": "12",
+      "start_year": "1994",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/64z"
+    },
+    {
+      "id": "4bv",
+      "name": "CORSA D",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2006",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/4bv"
+    },
+    {
+      "id": "73d",
+      "name": "CORSA D Van",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2006",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/73d"
+    },
+    {
+      "id": "a5a",
+      "name": "CORSA E",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2014",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/a5a"
+    },
+    {
+      "id": "aj4",
+      "name": "CORSA E Van",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2014",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/aj4"
+    },
+    {
+      "id": "6dg",
+      "name": "CORSA SWING _ STATION WAGON (F35)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6dg"
+    },
+    {
+      "id": "847",
+      "name": "CORSA Utility pick-up",
+      "end_year": "2010",
+      "end_month": "12",
+      "start_year": "2003",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/847"
+    },
+    {
+      "id": "848",
+      "name": "CORSA Utility pick-up",
+      "end_year": "2004",
+      "end_month": "06",
+      "start_year": "1996",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/848"
+    },
+    {
+      "id": "14c",
+      "name": "DIPLOMAT A",
+      "end_year": "1969",
+      "end_month": "03",
+      "start_year": "1964",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14c"
+    },
+    {
+      "id": "14d",
+      "name": "DIPLOMAT A coupe",
+      "end_year": "1967",
+      "end_month": "10",
+      "start_year": "1965",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14d"
+    },
+    {
+      "id": "14e",
+      "name": "DIPLOMAT B",
+      "end_year": "1978",
+      "end_month": "08",
+      "start_year": "1969",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14e"
+    },
+    {
+      "id": "2o0",
+      "name": "FRONTERA A (5_MWL4)",
+      "end_year": "1998",
+      "end_month": "10",
+      "start_year": "1992",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2o0"
+    },
+    {
+      "id": "cg",
+      "name": "FRONTERA A Sport (5_SUD2)",
+      "end_year": "1998",
+      "end_month": "10",
+      "start_year": "1992",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/cg"
+    },
+    {
+      "id": "304",
+      "name": "FRONTERA B (6B_)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1998",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/304"
+    },
+    {
+      "id": "f5",
+      "name": "GT",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1968",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/f5"
+    },
+    {
+      "id": "4xt",
+      "name": "GT kabriolet",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2007",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/4xt"
+    },
+    {
+      "id": "5uy",
+      "name": "INSIGNIA",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2008",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5uy"
+    },
+    {
+      "id": "62q",
+      "name": "INSIGNIA kombi",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2008",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/62q"
+    },
+    {
+      "id": "5uz",
+      "name": "INSIGNIA sedan",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2008",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5uz"
+    },
+    {
+      "id": "149",
+      "name": "KADETT A",
+      "end_year": "1965",
+      "end_month": "08",
+      "start_year": "1962",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/149"
+    },
+    {
+      "id": "14a",
+      "name": "KADETT A coupe",
+      "end_year": "1965",
+      "end_month": "08",
+      "start_year": "1962",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14a"
+    },
+    {
+      "id": "14f",
+      "name": "KADETT A kombi",
+      "end_year": "1968",
+      "end_month": "08",
+      "start_year": "1963",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14f"
+    },
+    {
+      "id": "2ns",
+      "name": "KADETT B",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1965",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2ns"
+    },
+    {
+      "id": "1a",
+      "name": "KADETT B coupe",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1965",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1a"
+    },
+    {
+      "id": "2ny",
+      "name": "KADETT B kombi",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1965",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2ny"
+    },
+    {
+      "id": "1w",
+      "name": "KADETT C",
+      "end_year": "1979",
+      "end_month": "07",
+      "start_year": "1973",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1w"
+    },
+    {
+      "id": "1m",
+      "name": "KADETT C City",
+      "end_year": "1979",
+      "end_month": "07",
+      "start_year": "1973",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1m"
+    },
+    {
+      "id": "1r",
+      "name": "KADETT C coupe",
+      "end_year": "1979",
+      "end_month": "07",
+      "start_year": "1973",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1r"
+    },
+    {
+      "id": "1i",
+      "name": "KADETT C kombi",
+      "end_year": "1979",
+      "end_month": "07",
+      "start_year": "1973",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1i"
+    },
+    {
+      "id": "24",
+      "name": "KADETT D (31_-34_, 41_-44_)",
+      "end_year": "1984",
+      "end_month": "08",
+      "start_year": "1979",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/24"
+    },
+    {
+      "id": "47k",
+      "name": "KADETT D (32_,37_,39, _42)",
+      "end_year": "1984",
+      "end_month": "08",
+      "start_year": "1979",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/47k"
+    },
+    {
+      "id": "2nz",
+      "name": "KADETT D kombi (35_, 36_, 45_, 46_)",
+      "end_year": "1984",
+      "end_month": "08",
+      "start_year": "1979",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2nz"
+    },
+    {
+      "id": "2a",
+      "name": "KADETT E (39_, 49_)",
+      "end_year": "1993",
+      "end_month": "12",
+      "start_year": "1984",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2a"
+    },
+    {
+      "id": "1f7",
+      "name": "KADETT E Combo (38_, 48_)",
+      "end_year": "1994",
+      "end_month": "07",
+      "start_year": "1986",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1f7"
+    },
+    {
+      "id": "2q",
+      "name": "KADETT E hatchback (33_, 34_, 43_, 44_)",
+      "end_year": "1991",
+      "end_month": "08",
+      "start_year": "1984",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2q"
+    },
+    {
+      "id": "2f",
+      "name": "KADETT E kabriolet (43B_)",
+      "end_year": "1993",
+      "end_month": "02",
+      "start_year": "1986",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2f"
+    },
+    {
+      "id": "2l",
+      "name": "KADETT E kombi (35_, 36_, 45_, 46_)",
+      "end_year": "1991",
+      "end_month": "08",
+      "start_year": "1984",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2l"
+    },
+    {
+      "id": "34j",
+      "name": "KADETT E nadwozie pe\u0142ne (37_, 47_)",
+      "end_year": "1993",
+      "end_month": "09",
+      "start_year": "1984",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34j"
+    },
+    {
+      "id": "84n",
+      "name": "KADETT hatchback",
+      "end_year": "2000",
+      "end_month": "05",
+      "start_year": "1990",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/84n"
+    },
+    {
+      "id": "1e2",
+      "name": "KAPIT\u00c4N",
+      "end_year": "1963",
+      "end_month": "12",
+      "start_year": "1958",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1e2"
+    },
+    {
+      "id": "7w9",
+      "name": "KAPIT\u00c4N",
+      "end_year": "1958",
+      "end_month": "12",
+      "start_year": "1955",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7w9"
+    },
+    {
+      "id": "a4h",
+      "name": "KAPIT\u00c4N A",
+      "end_year": "1968",
+      "end_month": "12",
+      "start_year": "1964",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/a4h"
+    },
+    {
+      "id": "aog",
+      "name": "KARL",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2015",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/aog"
+    },
+    {
+      "id": "7b",
+      "name": "MANTA A (58_, 59_)",
+      "end_year": "1975",
+      "end_month": "08",
+      "start_year": "1970",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7b"
+    },
+    {
+      "id": "7g",
+      "name": "MANTA B (58_, 59_)",
+      "end_year": "1988",
+      "end_month": "08",
+      "start_year": "1975",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7g"
+    },
+    {
+      "id": "7k",
+      "name": "MANTA B CC (53_, 55_)",
+      "end_year": "1988",
+      "end_month": "08",
+      "start_year": "1975",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7k"
+    },
+    {
+      "id": "3t7",
+      "name": "MERIVA",
+      "end_year": "2010",
+      "end_month": "05",
+      "start_year": "2003",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3t7"
+    },
+    {
+      "id": "6lu",
+      "name": "MERIVA B",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2010",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6lu"
+    },
+    {
+      "id": "7xh",
+      "name": "MOKKA",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2012",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7xh"
+    },
+    {
+      "id": "2up",
+      "name": "MONTEREY A (UBS_)",
+      "end_year": "1998",
+      "end_month": "07",
+      "start_year": "1991",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2up"
+    },
+    {
+      "id": "2uo",
+      "name": "MONTEREY B",
+      "end_year": "1999",
+      "end_month": "08",
+      "start_year": "1998",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2uo"
+    },
+    {
+      "id": "93",
+      "name": "MONZA A (22_)",
+      "end_year": "1986",
+      "end_month": "08",
+      "start_year": "1978",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/93"
+    },
+    {
+      "id": "2a",
+      "name": "MONZA E (39_, 49_)",
+      "end_year": "1993",
+      "end_month": "12",
+      "start_year": "1984",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2a"
+    },
+    {
+      "id": "7e3",
+      "name": "MOVANO B Autobus",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2010",
+      "start_month": "12",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7e3"
+    },
+    {
+      "id": "6xq",
+      "name": "MOVANO B nadwozie pe\u0142ne",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2010",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6xq"
+    },
+    {
+      "id": "6xr",
+      "name": "MOVANO B platforma \/ podwozie",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2010",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6xr"
+    },
+    {
+      "id": "33c",
+      "name": "MOVANO Combi (J9)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1998",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/33c"
+    },
+    {
+      "id": "30s",
+      "name": "MOVANO nadwozie pe\u0142ne (F9)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/30s"
+    },
+    {
+      "id": "30t",
+      "name": "MOVANO platforma \/ podwozie (U9, E9)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1998",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/30t"
+    },
+    {
+      "id": "3h7",
+      "name": "MOVANO wywrotka (H9)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "1999",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3h7"
+    },
+    {
+      "id": "34l",
+      "name": "OLYMPIA A",
+      "end_year": "1971",
+      "end_month": "08",
+      "start_year": "1967",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34l"
+    },
+    {
+      "id": "34m",
+      "name": "OLYMPIA A coupe",
+      "end_year": "1971",
+      "end_month": "08",
+      "start_year": "1967",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34m"
+    },
+    {
+      "id": "1e1",
+      "name": "OLYMPIA REKORD",
+      "end_year": "1966",
+      "end_month": "08",
+      "start_year": "1953",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1e1"
+    },
+    {
+      "id": "1e4",
+      "name": "OLYMPIA REKORD kombi",
+      "end_year": "1960",
+      "end_month": "12",
+      "start_year": "1957",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1e4"
+    },
+    {
+      "id": "a7",
+      "name": "OMEGA A (16_, 17_, 19_)",
+      "end_year": "1994",
+      "end_month": "05",
+      "start_year": "1986",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/a7"
+    },
+    {
+      "id": "a3",
+      "name": "OMEGA A kombi (66_, 67_)",
+      "end_year": "1994",
+      "end_month": "05",
+      "start_year": "1986",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/a3"
+    },
+    {
+      "id": "2on",
+      "name": "OMEGA B (25_, 26_, 27_)",
+      "end_year": "2003",
+      "end_month": "07",
+      "start_year": "1994",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2on"
+    },
+    {
+      "id": "ac",
+      "name": "OMEGA B kombi (21_, 22_, 23_)",
+      "end_year": "2003",
+      "end_month": "07",
+      "start_year": "1994",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/ac"
+    },
+    {
+      "id": "f5",
+      "name": "OPEL",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1968",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/f5"
+    },
+    {
+      "id": "2ns",
+      "name": "RALLYE B",
+      "end_year": "1973",
+      "end_month": "08",
+      "start_year": "1965",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2ns"
+    },
+    {
+      "id": "1en",
+      "name": "REKORD A",
+      "end_year": "1965",
+      "end_month": "12",
+      "start_year": "1963",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1en"
+    },
+    {
+      "id": "34g",
+      "name": "REKORD A coupe",
+      "end_year": "1965",
+      "end_month": "12",
+      "start_year": "1963",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34g"
+    },
+    {
+      "id": "1eo",
+      "name": "REKORD B",
+      "end_year": "1966",
+      "end_month": "12",
+      "start_year": "1965",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1eo"
+    },
+    {
+      "id": "34o",
+      "name": "REKORD B coupe",
+      "end_year": "1967",
+      "end_month": "02",
+      "start_year": "1965",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34o"
+    },
+    {
+      "id": "34n",
+      "name": "REKORD B kombi",
+      "end_year": "1967",
+      "end_month": "03",
+      "start_year": "1965",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34n"
+    },
+    {
+      "id": "1s",
+      "name": "REKORD C",
+      "end_year": "1971",
+      "end_month": "12",
+      "start_year": "1966",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1s"
+    },
+    {
+      "id": "1n",
+      "name": "REKORD C coupe",
+      "end_year": "1971",
+      "end_month": "12",
+      "start_year": "1966",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1n"
+    },
+    {
+      "id": "1j",
+      "name": "REKORD C kombi",
+      "end_year": "1971",
+      "end_month": "12",
+      "start_year": "1966",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1j"
+    },
+    {
+      "id": "25",
+      "name": "REKORD D",
+      "end_year": "1977",
+      "end_month": "08",
+      "start_year": "1972",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/25"
+    },
+    {
+      "id": "20",
+      "name": "REKORD D coupe",
+      "end_year": "1977",
+      "end_month": "08",
+      "start_year": "1972",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/20"
+    },
+    {
+      "id": "1x",
+      "name": "REKORD D kombi",
+      "end_year": "1977",
+      "end_month": "08",
+      "start_year": "1972",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/1x"
+    },
+    {
+      "id": "8o1",
+      "name": "REKORD E",
+      "end_year": "1995",
+      "end_month": "12",
+      "start_year": "1983",
+      "start_month": "12",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/8o1"
+    },
+    {
+      "id": "2g",
+      "name": "REKORD E (17_-19_, 11_, 14_, 16_)",
+      "end_year": "1986",
+      "end_month": "08",
+      "start_year": "1977",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2g"
+    },
+    {
+      "id": "2b",
+      "name": "REKORD E kombi (61_, 66_, 67_)",
+      "end_year": "1986",
+      "end_month": "08",
+      "start_year": "1977",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2b"
+    },
+    {
+      "id": "34c",
+      "name": "REKORD P1",
+      "end_year": "1961",
+      "end_month": "09",
+      "start_year": "1957",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34c"
+    },
+    {
+      "id": "34k",
+      "name": "REKORD P1 kombi",
+      "end_year": "1961",
+      "end_month": "09",
+      "start_year": "1957",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34k"
+    },
+    {
+      "id": "34d",
+      "name": "REKORD P2",
+      "end_year": "1963",
+      "end_month": "01",
+      "start_year": "1960",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34d"
+    },
+    {
+      "id": "34f",
+      "name": "REKORD P2 coupe",
+      "end_year": "1963",
+      "end_month": "01",
+      "start_year": "1960",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34f"
+    },
+    {
+      "id": "34e",
+      "name": "REKORD P2 kombi",
+      "end_year": "1963",
+      "end_month": "01",
+      "start_year": "1960",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34e"
+    },
+    {
+      "id": "6t",
+      "name": "SENATOR A (29_)",
+      "end_year": "1987",
+      "end_month": "08",
+      "start_year": "1978",
+      "start_month": "02",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6t"
+    },
+    {
+      "id": "6y",
+      "name": "SENATOR B (29_)",
+      "end_year": "1993",
+      "end_month": "09",
+      "start_year": "1987",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/6y"
+    },
+    {
+      "id": "3u1",
+      "name": "SIGNUM",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2003",
+      "start_month": "05",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3u1"
+    },
+    {
+      "id": "188",
+      "name": "SINTRA",
+      "end_year": "1999",
+      "end_month": "04",
+      "start_year": "1996",
+      "start_month": "11",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/188"
+    },
+    {
+      "id": "3je",
+      "name": "SPEEDSTER",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2000",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3je"
+    },
+    {
+      "id": "2oo",
+      "name": "TIGRA (95_)",
+      "end_year": "2000",
+      "end_month": "12",
+      "start_year": "1994",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2oo"
+    },
+    {
+      "id": "3zi",
+      "name": "TIGRA TwinTop",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2004",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3zi"
+    },
+    {
+      "id": "dz",
+      "name": "VECTRA A (86_, 87_)",
+      "end_year": "1995",
+      "end_month": "11",
+      "start_year": "1988",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/dz"
+    },
+    {
+      "id": "2zr",
+      "name": "VECTRA A hatchback (88_, 89_)",
+      "end_year": "1995",
+      "end_month": "11",
+      "start_year": "1988",
+      "start_month": "04",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/2zr"
+    },
+    {
+      "id": "14r",
+      "name": "VECTRA B (36_)",
+      "end_year": "2002",
+      "end_month": "04",
+      "start_year": "1995",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14r"
+    },
+    {
+      "id": "14q",
+      "name": "VECTRA B hatchback (38_)",
+      "end_year": "2003",
+      "end_month": "07",
+      "start_year": "1995",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/14q"
+    },
+    {
+      "id": "187",
+      "name": "VECTRA B kombi (31_)",
+      "end_year": "2003",
+      "end_month": "07",
+      "start_year": "1996",
+      "start_month": "11",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/187"
+    },
+    {
+      "id": "3ri",
+      "name": "VECTRA C",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2002",
+      "start_month": "04",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3ri"
+    },
+    {
+      "id": "3ro",
+      "name": "VECTRA C GTS",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2002",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3ro"
+    },
+    {
+      "id": "3wu",
+      "name": "VECTRA C kombi",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2003",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3wu"
+    },
+    {
+      "id": "5m",
+      "name": "VITA B (73_, 78_, 79_)",
+      "end_year": "2002",
+      "end_month": "12",
+      "start_year": "1993",
+      "start_month": "03",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/5m"
+    },
+    {
+      "id": "3lj",
+      "name": "VITA C (F08, F68)",
+      "end_year": "2009",
+      "end_month": "12",
+      "start_year": "2000",
+      "start_month": "09",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3lj"
+    },
+    {
+      "id": "9w9",
+      "name": "VIVARO Combi",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2014",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/9w9"
+    },
+    {
+      "id": "3oj",
+      "name": "VIVARO Combi (J7)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2001",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3oj"
+    },
+    {
+      "id": "9wa",
+      "name": "VIVARO nadwozie pe\u0142ne",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2014",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/9wa"
+    },
+    {
+      "id": "3oi",
+      "name": "VIVARO nadwozie pe\u0142ne (F7)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2001",
+      "start_month": "08",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/3oi"
+    },
+    {
+      "id": "b8w",
+      "name": "VIVARO platforma \/ podwozie",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2014",
+      "start_month": "06",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/b8w"
+    },
+    {
+      "id": "56t",
+      "name": "VIVARO platforma \/ podwozie (E7)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2006",
+      "start_month": "01",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/56t"
+    },
+    {
+      "id": "34p",
+      "name": "ZAFIRA A (F75_)",
+      "end_year": "2005",
+      "end_month": "06",
+      "start_year": "1999",
+      "start_month": "04",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/34p"
+    },
+    {
+      "id": "472",
+      "name": "ZAFIRA B (A05)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2005",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/472"
+    },
+    {
+      "id": "73h",
+      "name": "ZAFIRA B Van",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2005",
+      "start_month": "07",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/73h"
+    },
+    {
+      "id": "7ia",
+      "name": "ZAFIRA C (P12)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2011",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7ia"
+    },
+    {
+      "id": "7ia",
+      "name": "ZAFIRA TOURER C (P12)",
+      "end_year": null,
+      "end_month": null,
+      "start_year": "2011",
+      "start_month": "10",
+      "vehicle_group": "personal",
+      "link": "\/api\/v2\/find\/fy\/7ia"
+    }
+  ]
+}

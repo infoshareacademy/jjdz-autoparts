@@ -9,17 +9,32 @@ import javatar.model.DataCarsBrands;
 import java.io.*;
 
 public class JsonParserBrands {
-    public static void main (String[] args) throws ClassNotFoundException, IOException {
-        String inFile = args[0];
-        String searchToken = args[1];
-        searchCarId(inFile, searchToken);
+    public void main(String[] args) throws ClassNotFoundException, IOException {
+
+        String searchToken = args[0];
+        searchCarId(searchToken);
     }
 
-    public static String searchCarId(String inFile, String searchToken) throws FileNotFoundException {
+    final static String DEFAULT_FILENAME = "src/main/resources/v2.json";
+    final FileReader reader;
+
+    public JsonParserBrands() throws FileNotFoundException {
+        //default filename
+        reader = new FileReader(DEFAULT_FILENAME);
+    }
+
+    public JsonParserBrands(String filename) throws FileNotFoundException {
+        //default filename
+        reader = new FileReader(filename);
+    }
+
+
+    public String searchCarId(String searchToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String carID = "";
 
-        DataCarsBrands models = gson.fromJson(new FileReader(inFile), DataCarsBrands.class);
+
+        DataCarsBrands models = gson.fromJson(reader, DataCarsBrands.class);
 
         for (CarsBrands c : models.getData()) {
             if (c.getName().contains(searchToken.toUpperCase())) {
@@ -31,10 +46,8 @@ public class JsonParserBrands {
 
         }
 
-        return "";
+        return "Error";
     }
-
-
 
 
 }

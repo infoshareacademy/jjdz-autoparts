@@ -1,0 +1,56 @@
+{
+  "breadcrumbs": [
+    {
+      "link": "api\/v2\/find\/go\/",
+      "title": "VW Autoparts"
+    },
+    {
+      "link": "api\/v2\/find\/go\/8o2\/",
+      "title": "JETTA VII SportWagon  (2013-present)"
+    },
+    {
+      "link": "api\/v2\/find\/go\/8o2\/2h61\/",
+      "title": "F 800 S (E8ST) () 83hp"
+    }
+  ],
+  "dataname": "VW \/ JETTA VII SportWagon  (2013-present) \/ F 800 S (E8ST)  \/ Autoparts catalogue",
+  "datatype": "tree",
+  "data": [
+    {
+      "id": "7t3",
+      "name": "Uk\u0142ad hamulcowy",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7t3"
+    },
+    {
+      "id": "7t5",
+      "name": "Uk\u0142ad zap\u0142onowy\/uk\u0142ad wspomagania rozruchu zimnego silnika",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7t5"
+    },
+    {
+      "id": "7t7",
+      "name": "Elektryka",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7t7"
+    },
+    {
+      "id": "7tg",
+      "name": "Serwis \/ inspekcja \/ przegl\u0105d - cz\u0119\u017cci",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7tg"
+    },
+    {
+      "id": "7zz",
+      "name": "System tworzenia mieszanki paliwowej",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7zz"
+    },
+    {
+      "id": "amw",
+      "name": "Dwu\u017clad",
+      "has_children": true,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/amw"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class JsonParserModels {
-    public static void main (String[] args) throws ClassNotFoundException, IOException {
+    public  void main(String[] args) throws ClassNotFoundException, IOException {
         String inFile = args[0];
         String nameToken = args[1];
         int date = Integer.parseInt(args[2]);
@@ -19,7 +19,7 @@ public class JsonParserModels {
 
     }
 
-    public static String searchCarId(String inFile, String nameToken, int date) throws FileNotFoundException {
+    public  String searchCarId(String inFile, String nameToken, int date) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String modelID = new String();
 
@@ -34,9 +34,8 @@ public class JsonParserModels {
 
         }
 
-        return "";
+        return "Error";
     }
-
 
 
 }
