@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class JsonParserBrandsTest {
 
     @Test
-    public void should_find_opel() {
+    public void should_find_opel() throws FileNotFoundException {
         String searchToken = "opel";
         JsonParserBrands jsonParserList = new JsonParserBrands();
 
