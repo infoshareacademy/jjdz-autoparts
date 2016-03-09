@@ -10,14 +10,15 @@ import java.io.*;
 
 public class JsonParserBrands {
     public  void main (String[] args) throws ClassNotFoundException, IOException {
-        String inFile = args[0];
-        String searchToken = args[1];
-        searchCarId(inFile, searchToken);
+
+        String searchToken = args[0];
+        searchCarId(searchToken);
     }
 
-    public String searchCarId(String inFile, String searchToken) throws FileNotFoundException {
+    public String searchCarId( String searchToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String carID = "";
+        String inFile = "src/main/resources/v2.json";
 
         DataCarsBrands models = gson.fromJson(new FileReader(inFile), DataCarsBrands.class);
 

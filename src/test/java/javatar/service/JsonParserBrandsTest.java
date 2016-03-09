@@ -13,12 +13,11 @@ public class JsonParserBrandsTest {
     @Test
     public void should_find_opel() {
         String searchToken = "opel";
-        String path = "src/main/resources/v2.json";
         JsonParserBrands jsonParserList = new JsonParserBrands();
 
 
         try {
-            String searchTest = jsonParserList.searchCarId(path, searchToken);
+            String searchTest = jsonParserList.searchCarId(searchToken);
             assertThat(searchTest, is(equalTo("fy")));
 
         } catch (FileNotFoundException e) {

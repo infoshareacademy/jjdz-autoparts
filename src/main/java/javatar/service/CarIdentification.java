@@ -19,7 +19,6 @@ public class CarIdentification {
         String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
         JsonParserBrands brandFileName = new JsonParserBrands();
-        String path = mainPath + "v2.json";
         String brandFileNameOut = "Error";
 
         //------------------------------------------------------------------------------------------------------
@@ -43,7 +42,7 @@ public class CarIdentification {
             }
 
 
-            brandFileNameOut = brandFileName.searchCarId(path, brand);
+            brandFileNameOut = brandFileName.searchCarId(brand);
         }
 
         //------------------------------------------------------------------------------------------------------
