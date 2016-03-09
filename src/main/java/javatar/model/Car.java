@@ -9,6 +9,19 @@ public class Car {
     private String typeId;
     private int productionYear;
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brandName='" + brandName + '\'' +
+                ", brandId='" + brandId + '\'' +
+                ", modelName='" + modelName + '\'' +
+                ", modelId='" + modelId + '\'' +
+                ", typeName='" + typeName + '\'' +
+                ", typeId='" + typeId + '\'' +
+                ", productionYear=" + productionYear +
+                '}';
+    }
+
     public Car(String brandName, String brandId, String modelName, String modelId, String typeName, String typeId, int productionYear) {
         this.brandName = brandName;
         this.brandId = brandId;
@@ -18,6 +31,7 @@ public class Car {
         this.typeId = typeId;
         this.productionYear = productionYear;
     }
+    public Car(){}
 
     public String getBrandName() {
         return brandName;

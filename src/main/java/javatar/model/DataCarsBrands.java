@@ -1,28 +1,23 @@
 package javatar.model;
 
-import com.sun.media.sound.ModelSource;
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-public class DataForm {
+public class DataCarsBrands {
 
     String datatype;
-    Collection<ClassInModels> data;
+    Collection<CarsBrands> data;
 
     public String getDatatype() {
         return datatype;
     }
 
-    public Collection<ClassInModels> getData() {
+    public Collection<CarsBrands> getData() {
         return data;
     }
 
     @Override
     public String toString() {
-        return "DataForm{" +
+        return "DataCarsBrands{" +
                 "datatype='" + datatype + '\'' +
                 ", data=" + data +
                 '}';
