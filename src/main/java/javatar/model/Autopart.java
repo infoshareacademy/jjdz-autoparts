@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Autopart {
-    private List<Category> categoryList;
+    private List<AutopartCategory> categoryList;
     private String partName;
     private String partId;
 
     public Autopart() {
-        this.categoryList = new ArrayList<Category>();
+        this.categoryList = new ArrayList<AutopartCategory>();
     }
 
-    public Autopart(List<Category> categoryList, String partName, String partId) {
+    public Autopart(List<AutopartCategory> categoryList, String partName, String partId) {
         this.categoryList = categoryList;
         this.partName = partName;
         this.partId = partId;
     }
 
-    public void addCategoryToList (Category category){
+    public void addCategoryToList (AutopartCategory category){
         this.categoryList.add(category);
     }
 
-    public List<Category> getCategoryList() {
+    public List<AutopartCategory> getCategoryList() {
         return categoryList;
     }
 
-    public void setCategoryList(List<Category> categoryList) {
+    public void setCategoryList(List<AutopartCategory> categoryList) {
         this.categoryList = categoryList;
     }
 
