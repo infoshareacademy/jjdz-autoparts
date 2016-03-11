@@ -16,7 +16,7 @@ public class JsonParserAutopartCategories {
     public void main(String[] args) throws ClassNotFoundException, IOException {
 
         String searchToken = args[0];
-        searchCategoryId(searchToken);
+//        searchCategoryId(searchToken);
     }
 
     final static String DEFAULT_FILENAME = "src/main/resources/2h61.json";
@@ -32,29 +32,25 @@ public class JsonParserAutopartCategories {
         reader = new FileReader(fileName);
     }
 
-    public String searchCategoryId(String searchToken) throws FileNotFoundException {
-        Gson gson = new GsonBuilder().create();
-        String categoryID = "";
-
-        JsonDataAutopartCategories models = gson.fromJson(reader, JsonDataAutopartCategories.class);
+    public AutopartCategory searchCategoryId(String searchToken, JsonDataAutopartCategories models) throws FileNotFoundException {
+        AutopartCategory foundCategory;
 
         for (AutopartCategory ac : models.getData()) {
-            if (ac.getName().contains(searchToken.toUpperCase())) {
+            if (ac.getName().contains(searchToken)) {
 
-                categoryID = ac.getId();
-                return categoryID;
-
+                foundCategory = new AutopartCategory(ac.getName(), ac.getId(), ac.isHas_children(), ac.getLink());
+                return foundCategory;
             }
 
         }
 
-        return "Error";
+        return new AutopartCategory(null,null,false,null);
     }
 
-    public Collection<AutopartCategory> getCategoryList(){
+    public JsonDataAutopartCategories getCategoryList(){
         Gson gson = new GsonBuilder().create();
         JsonDataAutopartCategories models = gson.fromJson(reader, JsonDataAutopartCategories.class);
-        return models.getData();
+        return models;
     }
 
 

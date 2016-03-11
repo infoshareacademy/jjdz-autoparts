@@ -1,10 +1,7 @@
 package javatar.service;
 
 
-import javatar.model.Autopart;
-import javatar.model.Car;
-import javatar.model.AutopartCategory;
-import javatar.model.JsonData;
+import javatar.model.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -51,14 +48,16 @@ public class AutopartIdentification {
 
         Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
         //// TODO: 10.03.16 pobranie samochodu z funkcji Anety 
-        
+
+        Scanner scanner = new Scanner(System.in);
         String mainPath = "src/main/resources/";
         String fileName = car.getTypeId();//carId
         String file = mainPath+fileName+".json";
+        String categoryName = fileName;
+        AutopartCategory currentCategory;
         JsonParserAutopartCategories jsonParser = new JsonParserAutopartCategories(file);
 
-        Collection<AutopartCategory> autopartCategories = jsonParser.getCategoryList();
-
+        JsonDataAutopartCategories dataAutopartCategories = jsonParser.getCategoryList();
         Autopart autopart = new Autopart();
         Map catMap = new HashMap<>();
 //        AutopartCategory chosenCategory;
@@ -67,24 +66,42 @@ public class AutopartIdentification {
         System.out.println("Pomóż nam pomóc sobie!");
 
         System.out.println("wybierz kategorię szukanej części: ");
-        int i = 1;
+//        Collection<AutopartCategory> autopartCategories = dataAutopartCategories.getData();
 
-        for (AutopartCategory ac :
-                autopartCategories) {
-            String counter = new Integer(i).toString();
-            catMap.put(i, ac.getName());
-            System.out.println(counter + ". " + catMap.get(i));
-            i++;
+        catMap = printCategories(dataAutopartCategories.getData());
+
+        String selectedCategory = scanner.nextLine();
+        if (selectedCategory.length() == 1) {
+            categoryName = (String) catMap.get(Integer.parseInt(selectedCategory.toString()));
+        } else {
+            categoryName = selectedCategory;
         }
 
+        currentCategory = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
+//        fileName = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
 
-        i=0;
 
-//        while (categoryHasChildren){
-//
-//            System.out.println("wybierz kategorię szukanej części: ");
-//            // TODO: 28.02.16 zapisanie kategorii z jsona do "categories"
-//
+        while (currentCategory.isHas_children()){
+
+            System.out.println("wybierz kategorię szukanej części: ");
+            file = mainPath + currentCategory.getId() + ".json";
+            jsonParser = new JsonParserAutopartCategories(file);
+            dataAutopartCategories = jsonParser.getCategoryList();
+
+
+            catMap = printCategories(dataAutopartCategories.getData());
+
+            selectedCategory = scanner.nextLine();
+            if (selectedCategory.length() == 1) {
+                categoryName = (String) catMap.get(Integer.parseInt(selectedCategory.toString()));
+            } else {
+                categoryName = selectedCategory;
+            }
+
+            currentCategory = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
+
+            // TODO: 28.02.16 zapisanie kategorii z jsona do "categories"
+
 //            //tymczasowa lista kategorii poziom
 //            AutopartCategory cat1 = new AutopartCategory("Silnik", "7sz", true);
 //            AutopartCategory cat2 = new AutopartCategory("Filtr", "7t2", true);
@@ -106,11 +123,29 @@ public class AutopartIdentification {
 //            } else {
 //                i++;
 //            }
-//        }
+        }
 
         // TODO: 28.02.16 wyświetl możliwe części
         
         System.out.println("koniec");
 
+    }
+
+    public static Map printCategories(Collection<AutopartCategory> autopartCategories) {
+        int i = 1;
+
+        Map catMap = new HashMap<>();
+
+        catMap.clear();
+
+        for (AutopartCategory ac :
+                autopartCategories) {
+            String counter = new Integer(i).toString();
+            catMap.put(i, ac.getName());
+            System.out.println(counter + ". " + catMap.get(i));
+            i++;
+        }
+
+        return catMap;
     }
 }

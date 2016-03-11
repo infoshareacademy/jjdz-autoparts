@@ -6,10 +6,11 @@ public class AutopartCategory {
     private boolean has_children;
     private String link;
 
-    public AutopartCategory(String name, String id, boolean has_children) {
+    public AutopartCategory(String name, String id, boolean has_children, String link) {
         this.name = name;
         this.id = id;
         this.has_children = has_children;
+        this.link = link;
     }
 
     public String getName() {
