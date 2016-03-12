@@ -11,20 +11,19 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class JsonParserEngine {
-    public  void main(String[] args) throws ClassNotFoundException, IOException {
-        String inFile = args[0];
-        String engineToken = args[1];
 
-        searchEngineType(inFile, engineToken);
-        listAllEngineTypes(inFile);
+    final FileReader reader;
 
+    public JsonParserEngine(String filename) throws FileNotFoundException {
+        //default filename
+        reader = new FileReader(filename);
     }
 
-    public  String searchEngineType(String inFile, String engineToken) throws FileNotFoundException {
+    public String searchEngineType(String engineToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String engineType = new String();
 
-        DataCarsEngineAndFuel models = gson.fromJson(new FileReader(inFile), DataCarsEngineAndFuel.class);
+        DataCarsEngineAndFuel models = gson.fromJson(reader, DataCarsEngineAndFuel.class);
 
         for (CarsEngineAndFuel c : models.getData()) {
             if (c.getId().contains(engineToken)) {
@@ -40,13 +39,13 @@ public class JsonParserEngine {
     }
 
 
-    public static HashMap<Integer, String> listAllEngineTypes(String inFile) throws FileNotFoundException {
+    public HashMap<Integer, String> listAllEngineTypes() throws FileNotFoundException {
 
         Gson gson = new GsonBuilder().create();
         int i = 0;
         HashMap<Integer, String> engineIds = new HashMap<>();
 
-        DataCarsEngineAndFuel engines = gson.fromJson(new FileReader(inFile), DataCarsEngineAndFuel.class);
+        DataCarsEngineAndFuel engines = gson.fromJson(reader, DataCarsEngineAndFuel.class);
 
         for (CarsEngineAndFuel c : engines.getData()) {
 

@@ -1,6 +1,7 @@
 package javatar.model;
 
 public class Car {
+    //// TODO: 10.03.16 mcymerys - zamiast stringow klasy carbrands i carmodel 
     private String brandName;
     private String brandId;
     private String modelName;

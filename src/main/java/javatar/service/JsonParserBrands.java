@@ -23,12 +23,6 @@ public class JsonParserBrands {
         reader = new FileReader(DEFAULT_FILENAME);
     }
 
-    public JsonParserBrands(String filename) throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(filename);
-    }
-
-
     public String searchCarId(String searchToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String carID = "";
