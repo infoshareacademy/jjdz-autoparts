@@ -25,7 +25,7 @@ public class CarIdentification {
     }
 
     public static Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
-        String mainPath = "src/main/resources/";
+        String mainPath = "src/AllegroCategoryObject/resources/";
         String brandFileNameOut = "Error";
         JsonParserBrands brandFileName = new JsonParserBrands();
 
@@ -61,7 +61,7 @@ public class CarIdentification {
 
     public static Car FindingCarManagement() throws IOException {
         String brand = new String();
-        String mainPath = "src/main/resources/";
+        String mainPath = "src/AllegroCategoryObject/resources/";
         Scanner scanner = new Scanner(System.in);
         JsonParserBrands brandFileName = new JsonParserBrands();
         String brandFileNameOut = "Error";

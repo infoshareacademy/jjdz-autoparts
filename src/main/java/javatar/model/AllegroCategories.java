@@ -47,4 +47,15 @@ public class AllegroCategories {
     public void setCatIsProductCatalogueEnabled(Integer catIsProductCatalogueEnabled) {
         this.catIsProductCatalogueEnabled = catIsProductCatalogueEnabled;
     }
+
+    @Override
+    public String toString() {
+        return "AllegroCategories{" +
+                "catId=" + catId +
+                ", catName='" + catName + '\'' +
+                ", catParent=" + catParent +
+                ", catPosition=" + catPosition +
+                ", catIsProductCatalogueEnabled=" + catIsProductCatalogueEnabled +
+                '}';
+    }
 }

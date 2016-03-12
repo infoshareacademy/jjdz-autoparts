@@ -15,7 +15,7 @@ public class JsonParserBrands {
         searchCarId(searchToken);
     }
 
-    final static String DEFAULT_FILENAME = "src/main/resources/v2.json";
+    final static String DEFAULT_FILENAME = "src/AllegroCategoryObject/resources/v2.json";
     final FileReader reader;
 
     public JsonParserBrands() throws FileNotFoundException {

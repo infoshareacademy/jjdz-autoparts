@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class JsonParserEngineTest {
-    String path = "src/main/resources/2mz.json";
+    String path = "src/AllegroCategoryObject/resources/2mz.json";
 
     @Test
     public void should_find_opel() {
