@@ -3,6 +3,7 @@ package javatar;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.Car;
+import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
 
 import java.io.IOException;
@@ -16,9 +17,14 @@ public class App {
 
         int userAnswer = Hello();
         Car userCar = CreateCar(userAnswer);
-        Autopart userAutopart = FindAutopart(userCar);
-        AutopartCategory userAutopartCategory = FindAutopartCategory(userAutopart);
-        System.out.println(findLink(userAutopartCategory));
+        Autopart userAutopart;
+        AutopartIdentification partFinder = new AutopartIdentification();
+        userAutopart = partFinder.findAutopart(userCar);
+
+//
+//        Autopart userAutopart = FindAutopart(userCar);
+//        AutopartCategory userAutopartCategory = FindAutopartCategory(userAutopart);
+//        System.out.println(findLink(userAutopartCategory));
 
 
     }
@@ -53,6 +59,7 @@ public class App {
     }
 
     private static Autopart FindAutopart(Car userCar) {
+
 
         return null;
     }

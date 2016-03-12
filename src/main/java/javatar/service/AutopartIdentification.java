@@ -10,12 +10,15 @@ import java.util.*;
 
 public class AutopartIdentification {
     //
-    private Autopart autopart;
-    private Car car;
+//    private Autopart autopart;
+//    private Car car;
 
-    public AutopartIdentification(Autopart autopart, Car car) {
-        this.autopart = autopart;
-        this.car = car;
+//    public AutopartIdentification(Autopart autopart, Car car) {
+//        this.autopart = autopart;
+//        this.car = car;
+//    }
+
+    public AutopartIdentification() {
     }
 
     public AutopartCategory chooseCategory(List<AutopartCategory> categories) throws IOException {
