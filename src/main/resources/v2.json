@@ -4315,8 +4315,8 @@
     },
     {
       "id": "go",
-      "name": "VW",
-      "name_clear": "vw",
+      "name": "VOLKSWAGEN",
+      "name_clear": "volkswagen",
       "has_image": true,
       "link": "\/api\/v2\/find\/go"
     },
