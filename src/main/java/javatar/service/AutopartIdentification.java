@@ -3,49 +3,14 @@ package javatar.service;
 
 import javatar.model.*;
 
-import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class AutopartIdentification {
-    //
-//    private Autopart autopart;
-//    private Car car;
-
-//    public AutopartIdentification(Autopart autopart, Car car) {
-//        this.autopart = autopart;
-//        this.car = car;
-//    }
 
     public AutopartIdentification() {
     }
-
-    public AutopartCategory chooseCategory(List<AutopartCategory> categories) throws IOException {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        AutopartCategory category = null;
-        String userChoice = null;
-
-        int i = 1;
-
-        for (AutopartCategory c : categories) {
-            System.out.println(i + ". " + c.getName());
-            i++;
-        }
-        System.out.println("podaj nazwę kategorii z listy: ");
-        userChoice = br.readLine();
-
-        for (AutopartCategory c : categories) {
-            if (userChoice.equals(c.getName())) {
-                return c;
-            }
-        }
-
-        return category;
-    }
-
 
     public Autopart findAutopart(Car car) throws IOException {
 //
@@ -53,13 +18,10 @@ public class AutopartIdentification {
 
         Scanner scanner = new Scanner(System.in);
         String mainPath = "src/main/resources/";
-        Map categoryMap = new HashMap<>();
-        Map autopartMap = new HashMap<>();
+        Map autopartMap;
         String name;
         AutopartCategory currentCategory;
         Autopart autopart = new Autopart();
-        JsonParserAutopartCategories jsonParser;
-        JsonDataAutopartCategories dataAutopartCategories;
         String selectedOption;
         JsonAutopart foundAutopart;
         JsonParserAutopart autopartParser;
@@ -68,42 +30,13 @@ public class AutopartIdentification {
         String fileName = car.getTypeId();//carId
         String file = mainPath + fileName + ".json";
 
-        jsonParser = new JsonParserAutopartCategories(file);
-        dataAutopartCategories = jsonParser.getCategoryList();
-
-        System.out.println("Wybierz kategorię szukanej części: ");
-
-        categoryMap = printCategories(dataAutopartCategories.getData());
-
-        selectedOption = scanner.nextLine();
-        if (selectedOption.length() == 1) {
-            name = categoryMap.get(Integer.parseInt(selectedOption.toString())).toString();
-        } else {
-            name = selectedOption;
-        }
-
-        currentCategory = jsonParser.searchCategoryId(name, dataAutopartCategories);
+        currentCategory = findCategory(file);
         autopart.addCategoryToList(currentCategory);
 
-
         while (currentCategory.isHas_children()) {
-
-            System.out.println("Wybierz kategorię szukanej części: ");
             file = mainPath + currentCategory.getId() + ".json";
-            jsonParser = new JsonParserAutopartCategories(file);
-            dataAutopartCategories = jsonParser.getCategoryList();
 
-
-            categoryMap = printCategories(dataAutopartCategories.getData());
-
-            selectedOption = scanner.nextLine();
-            if (selectedOption.length() == 1) {
-                name = categoryMap.get(Integer.parseInt(selectedOption.toString())).toString();
-            } else {
-                name = selectedOption;
-            }
-
-            currentCategory = jsonParser.searchCategoryId(name, dataAutopartCategories);
+            currentCategory = findCategory(file);
             autopart.addCategoryToList(currentCategory);
         }
 
@@ -134,13 +67,35 @@ public class AutopartIdentification {
         System.out.println("Numer: " + autopart.getPartId());
         System.out.println("Kategorie: ");
         int categoryNumber = 1;
-        for (AutopartCategory ac: autopart.getCategoryList()) {
+        for (AutopartCategory ac : autopart.getCategoryList()) {
             System.out.println(new Integer(categoryNumber).toString() + ". " + ac.getName());
             categoryNumber++;
         }
         System.out.println("The End");
 
         return autopart;
+    }
+
+    public static AutopartCategory findCategory(String file) throws FileNotFoundException {
+        String name;
+        Map categoryMap;
+        JsonParserAutopartCategories jsonParser;
+        JsonDataAutopartCategories dataAutopartCategories;
+
+        jsonParser = new JsonParserAutopartCategories(file);
+        dataAutopartCategories = jsonParser.getCategoryList();
+
+        System.out.println("Wybierz kategorię szukanej części: ");
+        categoryMap = printCategories(dataAutopartCategories.getData());
+
+        Scanner scanner = new Scanner(System.in);
+        String selectedOption = scanner.nextLine();
+        if (selectedOption.length() == 1) {
+            name = categoryMap.get(Integer.parseInt(selectedOption.toString())).toString();
+        } else {
+            name = selectedOption;
+        }
+        return jsonParser.searchCategoryId(name, dataAutopartCategories);
     }
 
     public static Map printCategories(Collection<AutopartCategory> autopartCategories) {
