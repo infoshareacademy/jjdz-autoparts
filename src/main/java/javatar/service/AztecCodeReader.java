@@ -57,7 +57,7 @@ public class AztecCodeReader {
         return null;
     }
 
-//    public static void main(String[] args) throws IOException, NotFoundException {
+//    public static void AllegroCategoryObject(String[] args) throws IOException, NotFoundException {
 //
 //        System.out.println(readAztecCode(ReadPath()));
 //    }
