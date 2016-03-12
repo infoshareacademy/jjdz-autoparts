@@ -76,7 +76,7 @@ public class AutopartIdentification {
         return autopart;
     }
 
-    public static AutopartCategory findCategory(String file) throws FileNotFoundException {
+    public AutopartCategory findCategory(String file) throws FileNotFoundException {
         String name;
         Map categoryMap;
         JsonParserAutopartCategories jsonParser;
@@ -98,7 +98,7 @@ public class AutopartIdentification {
         return jsonParser.searchCategoryId(name, dataAutopartCategories);
     }
 
-    public static Map printCategories(Collection<AutopartCategory> autopartCategories) {
+    public Map printCategories(Collection<AutopartCategory> autopartCategories) {
         int i = 1;
 
         Map catMap = new HashMap<>();
@@ -115,7 +115,7 @@ public class AutopartIdentification {
         return catMap;
     }
 
-    public static Map printAutoparts(Collection<JsonAutopart> autoparts) {
+    public Map printAutoparts(Collection<JsonAutopart> autoparts) {
         int i = 1;
 
         Map partMap = new HashMap<>();
