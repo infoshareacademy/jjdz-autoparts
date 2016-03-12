@@ -20,6 +20,12 @@ public class App {
         Autopart userAutopart;
         AutopartIdentification partFinder = new AutopartIdentification();
         userAutopart = partFinder.findAutopart(userCar);
+        String categoryName = userAutopart.getCategoryList().stream().toString();
+        System.out.println(categoryName);
+
+
+        /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
+        // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
 //
 //        Autopart userAutopart = FindAutopart(userCar);
