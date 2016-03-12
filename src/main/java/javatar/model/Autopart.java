@@ -6,6 +6,7 @@ import java.util.List;
 public class Autopart {
     private List<AutopartCategory> categoryList;
     private String partName;
+    private String partBrand;
     private String partId;
 
     public Autopart() {
@@ -16,6 +17,14 @@ public class Autopart {
         this.categoryList = categoryList;
         this.partName = partName;
         this.partId = partId;
+    }
+
+    public String getPartBrand() {
+        return partBrand;
+    }
+
+    public void setPartBrand(String partBrand) {
+        this.partBrand = partBrand;
     }
 
     public void addCategoryToList (AutopartCategory category){

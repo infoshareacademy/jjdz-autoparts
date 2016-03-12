@@ -44,7 +44,7 @@ public class JsonParserAutopartCategories {
 
         }
 
-        return new AutopartCategory(null,null,false,null);
+        return new AutopartCategory();
     }
 
     public JsonDataAutopartCategories getCategoryList(){

@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class AutopartIdentification {
-//
+    //
     private Autopart autopart;
     private Car car;
 
@@ -18,7 +18,7 @@ public class AutopartIdentification {
         this.car = car;
     }
 
-    public AutopartCategory chooseCategory (List<AutopartCategory> categories) throws IOException {
+    public AutopartCategory chooseCategory(List<AutopartCategory> categories) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -27,14 +27,14 @@ public class AutopartIdentification {
 
         int i = 1;
 
-        for(AutopartCategory c: categories){
-            System.out.println(i+". "+c.getName());
+        for (AutopartCategory c : categories) {
+            System.out.println(i + ". " + c.getName());
             i++;
         }
         System.out.println("podaj nazwę kategorii z listy: ");
         userChoice = br.readLine();
 
-        for(AutopartCategory c: categories){
+        for (AutopartCategory c : categories) {
             if (userChoice.equals(c.getName())) {
                 return c;
             }
@@ -44,91 +44,100 @@ public class AutopartIdentification {
     }
 
 
-    public static void main(String[] args) throws IOException {
-
-        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
-        //// TODO: 10.03.16 pobranie samochodu z funkcji Anety 
+    public Autopart findAutopart(Car car) throws IOException {
+//
+//        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
 
         Scanner scanner = new Scanner(System.in);
         String mainPath = "src/main/resources/";
-        String fileName = car.getTypeId();//carId
-        String file = mainPath+fileName+".json";
-        String categoryName = fileName;
+        Map categoryMap = new HashMap<>();
+        Map autopartMap = new HashMap<>();
+        String name;
         AutopartCategory currentCategory;
-        JsonParserAutopartCategories jsonParser = new JsonParserAutopartCategories(file);
-
-        JsonDataAutopartCategories dataAutopartCategories = jsonParser.getCategoryList();
         Autopart autopart = new Autopart();
-        Map catMap = new HashMap<>();
-//        AutopartCategory chosenCategory;
-//        AutopartIdentification autopartIdentification = new AutopartIdentification(autopart, car);
+        JsonParserAutopartCategories jsonParser;
+        JsonDataAutopartCategories dataAutopartCategories;
+        String selectedOption;
+        JsonAutopart foundAutopart;
+        JsonParserAutopart autopartParser;
+        JsonDataAutopart jsonDataAutopart;
 
-        System.out.println("Pomóż nam pomóc sobie!");
+        String fileName = car.getTypeId();//carId
+        String file = mainPath + fileName + ".json";
 
-        System.out.println("wybierz kategorię szukanej części: ");
-//        Collection<AutopartCategory> autopartCategories = dataAutopartCategories.getData();
+        jsonParser = new JsonParserAutopartCategories(file);
+        dataAutopartCategories = jsonParser.getCategoryList();
 
-        catMap = printCategories(dataAutopartCategories.getData());
+        System.out.println("Wybierz kategorię szukanej części: ");
 
-        String selectedCategory = scanner.nextLine();
-        if (selectedCategory.length() == 1) {
-            categoryName = (String) catMap.get(Integer.parseInt(selectedCategory.toString()));
+        categoryMap = printCategories(dataAutopartCategories.getData());
+
+        selectedOption = scanner.nextLine();
+        if (selectedOption.length() == 1) {
+            name = categoryMap.get(Integer.parseInt(selectedOption.toString())).toString();
         } else {
-            categoryName = selectedCategory;
+            name = selectedOption;
         }
 
-        currentCategory = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
-//        fileName = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
+        currentCategory = jsonParser.searchCategoryId(name, dataAutopartCategories);
+        autopart.addCategoryToList(currentCategory);
 
 
-        while (currentCategory.isHas_children()){
+        while (currentCategory.isHas_children()) {
 
-            System.out.println("wybierz kategorię szukanej części: ");
+            System.out.println("Wybierz kategorię szukanej części: ");
             file = mainPath + currentCategory.getId() + ".json";
             jsonParser = new JsonParserAutopartCategories(file);
             dataAutopartCategories = jsonParser.getCategoryList();
 
 
-            catMap = printCategories(dataAutopartCategories.getData());
+            categoryMap = printCategories(dataAutopartCategories.getData());
 
-            selectedCategory = scanner.nextLine();
-            if (selectedCategory.length() == 1) {
-                categoryName = (String) catMap.get(Integer.parseInt(selectedCategory.toString()));
+            selectedOption = scanner.nextLine();
+            if (selectedOption.length() == 1) {
+                name = categoryMap.get(Integer.parseInt(selectedOption.toString())).toString();
             } else {
-                categoryName = selectedCategory;
+                name = selectedOption;
             }
 
-            currentCategory = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
-
-            // TODO: 28.02.16 zapisanie kategorii z jsona do "categories"
-
-//            //tymczasowa lista kategorii poziom
-//            AutopartCategory cat1 = new AutopartCategory("Silnik", "7sz", true);
-//            AutopartCategory cat2 = new AutopartCategory("Filtr", "7t2", true);
-//            AutopartCategory cat3 = new AutopartCategory("Układ hamulcowy", "7t3", true);
-//            AutopartCategory cat4 = new AutopartCategory("Zawieszenie", "7t8", false);
-//            categories = new ArrayList<AutopartCategory>();
-//            categories.add(cat1);
-//            categories.add(cat2);
-//            categories.add(cat3);
-//            categories.add(cat4);
-//
-//            chosenCategory = autopartIdentification.chooseCategory(categories);
-//            autopart.addCategoryToList(chosenCategory);
-//            System.out.println("Wybrałeś: "+chosenCategory.getName());
-//            categoryHasChildren = chosenCategory.isHas_children();
-//            //infinite loop protection
-//            if(i == 2) {
-//                break;
-//            } else {
-//                i++;
-//            }
+            currentCategory = jsonParser.searchCategoryId(name, dataAutopartCategories);
+            autopart.addCategoryToList(currentCategory);
         }
 
-        // TODO: 28.02.16 wyświetl możliwe części
-        
-        System.out.println("koniec");
+        System.out.println("Wybierz część: ");
+        file = mainPath + currentCategory.getId() + ".json";
+        autopartParser = new JsonParserAutopart(file);
+        jsonDataAutopart = autopartParser.getAutopartList();
 
+        autopartMap = printAutoparts(jsonDataAutopart.getData());
+
+        selectedOption = scanner.nextLine();
+
+        if (selectedOption.length() == 1) {
+            name = autopartMap.get(Integer.parseInt(selectedOption.toString())).toString();
+        } else {
+            name = selectedOption;
+        }
+
+        foundAutopart = autopartParser.searchAutopartId(name, jsonDataAutopart);
+
+        autopart.setPartName(foundAutopart.getName());
+        autopart.setPartBrand(foundAutopart.getBrand_clear());
+        autopart.setPartId(foundAutopart.getNumber_clear());
+
+        System.out.println("Twoja część: ");
+        System.out.println("Nazwa: " + autopart.getPartName());
+        System.out.println("Producent: " + autopart.getPartBrand());
+        System.out.println("Numer: " + autopart.getPartId());
+        System.out.println("Kategorie: ");
+        int categoryNumber = 1;
+        for (AutopartCategory ac: autopart.getCategoryList()) {
+            System.out.println(new Integer(categoryNumber).toString() + ". " + ac.getName());
+            categoryNumber++;
+        }
+        System.out.println("The End");
+
+        return autopart;
     }
 
     public static Map printCategories(Collection<AutopartCategory> autopartCategories) {
@@ -138,8 +147,7 @@ public class AutopartIdentification {
 
         catMap.clear();
 
-        for (AutopartCategory ac :
-                autopartCategories) {
+        for (AutopartCategory ac : autopartCategories) {
             String counter = new Integer(i).toString();
             catMap.put(i, ac.getName());
             System.out.println(counter + ". " + catMap.get(i));
@@ -147,5 +155,22 @@ public class AutopartIdentification {
         }
 
         return catMap;
+    }
+
+    public static Map printAutoparts(Collection<JsonAutopart> autoparts) {
+        int i = 1;
+
+        Map partMap = new HashMap<>();
+
+        partMap.clear();
+
+        for (JsonAutopart ja : autoparts) {
+            String counter = new Integer(i).toString();
+            partMap.put(i, ja.getName());
+            System.out.println(counter + ". " + partMap.get(i));
+            i++;
+        }
+
+        return partMap;
     }
 }

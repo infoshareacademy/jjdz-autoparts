@@ -6,6 +6,9 @@ public class AutopartCategory {
     private boolean has_children;
     private String link;
 
+    public AutopartCategory() {
+    }
+
     public AutopartCategory(String name, String id, boolean has_children, String link) {
         this.name = name;
         this.id = id;
