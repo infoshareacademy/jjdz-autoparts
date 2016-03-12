@@ -73,13 +73,16 @@ public class CarIdentification {
         //Car brands section
         //------------------------------------------------------------------------------------------------------
         while (brandFileNameOut == "Error") {
-            System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL");
+            System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL\r\n2. VOLKSWAGEN");
             String brandSelection = scanner.nextLine();
 
             if (brandSelection.length() == 1) {
                 switch (brandSelection) {
                     case "1":
                         brand = "OPEL";
+                        break;
+                    case "2":
+                        brand = "VOLKSWAGEN";
                         break;
                     default:
                         brand = "Error";
@@ -103,7 +106,7 @@ public class CarIdentification {
         String year = new String();
 
         while (modelFileNameOut == "Error") {
-            System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi");
+            System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi\r\n2. JETTA VII SportWagon");
             String modelSelection = scanner.nextLine();
             System.out.println("Wprowadź rok produkcji:");
             year = scanner.nextLine();
@@ -113,6 +116,9 @@ public class CarIdentification {
                 switch (modelSelection) {
                     case "1":
                         model = "ASTRA G kombi";
+                        break;
+                    case "2":
+                        model = "JETTA VII SportWagon";
                         break;
                     default:
                         model = "Error";

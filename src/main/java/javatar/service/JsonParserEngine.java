@@ -49,9 +49,15 @@ public class JsonParserEngine {
 
         for (CarsEngineAndFuel c : engines.getData()) {
 
-            System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " do " + c.getEnd_year().toString() + " ID: " + c.getId());
-            engineIds.put(i, c.getId());
-            i++;
+            if (c.getEnd_year() == null) {
+                System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " ID: " + c.getId());
+                engineIds.put(i, c.getId());
+                i++;
+            } else {
+                System.out.println(i + ". " + "Typ silnika: " + c.getEngine() + ", " + c.getEngine_txt() + ", Rok produkcji od " + c.getStart_year().toString() + " do " + c.getEnd_year().toString() + " ID: " + c.getId());
+                engineIds.put(i, c.getId());
+                i++;
+            }
 
         }
         return engineIds;
