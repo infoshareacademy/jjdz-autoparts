@@ -9,22 +9,26 @@ import java.util.Scanner;
 
 
 public class CarIdentification {
-    public static void main(String[] args) throws IOException {
 
-        System.out.println("Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. QC code\r\n2. Na podstawie serii pytań");
-        Scanner scanner = new Scanner(System.in);
-        Integer answear = scanner.nextInt();
-        if (answear == 2) {
-            Car carReturned = FindingCarManagement();
-        } else {
-//            TODO QR code to be called
-//            Car answearQR =
-//            Car carReturned = FindingCarByQCCodeAnswear(answearQR);
-        }
+    public CarIdentification() {
     }
 
-    public static Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
-        String mainPath = "src/AllegroCategoryObject/resources/";
+//    public void main(String[] args) throws IOException {
+//
+//        System.out.println("Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. QC code\r\n2. Na podstawie serii pytań");
+//        Scanner scanner = new Scanner(System.in);
+//        Integer answear = scanner.nextInt();
+//        if (answear == 2) {
+//            Car carReturned = FindingCarManagement();
+//        } else {
+////            TODO QR code to be called
+////            Car answearQR =
+////            Car carReturned = FindingCarByQCCodeAnswear(answearQR);
+//        }
+//    }
+
+    public Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
+        String mainPath = "src/main/resources/";
         String brandFileNameOut = "Error";
         JsonParserBrands brandFileName = new JsonParserBrands();
 
@@ -58,9 +62,9 @@ public class CarIdentification {
         return car;
     }
 
-    public static Car FindingCarManagement() throws IOException {
+    public Car FindingCarManagement() throws IOException {
         String brand = new String();
-        String mainPath = "src/AllegroCategoryObject/resources/";
+        String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
         JsonParserBrands brandFileName = new JsonParserBrands();
         String brandFileNameOut = "Error";

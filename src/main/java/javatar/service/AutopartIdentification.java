@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class AutopartIdentification {
-//
+    //
     private Autopart autopart;
     private Car car;
 
@@ -18,7 +18,7 @@ public class AutopartIdentification {
         this.car = car;
     }
 
-    public AutopartCategory chooseCategory (List<AutopartCategory> categories) throws IOException {
+    public AutopartCategory chooseCategory(List<AutopartCategory> categories) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -27,14 +27,14 @@ public class AutopartIdentification {
 
         int i = 1;
 
-        for(AutopartCategory c: categories){
-            System.out.println(i+". "+c.getName());
+        for (AutopartCategory c : categories) {
+            System.out.println(i + ". " + c.getName());
             i++;
         }
         System.out.println("podaj nazwę kategorii z listy: ");
         userChoice = br.readLine();
 
-        for(AutopartCategory c: categories){
+        for (AutopartCategory c : categories) {
             if (userChoice.equals(c.getName())) {
                 return c;
             }
@@ -52,7 +52,7 @@ public class AutopartIdentification {
         Scanner scanner = new Scanner(System.in);
         String mainPath = "src/main/resources/";
         String fileName = car.getTypeId();//carId
-        String file = mainPath+fileName+".json";
+        String file = mainPath + fileName + ".json";
         String categoryName = fileName;
         AutopartCategory currentCategory;
         JsonParserAutopartCategories jsonParser = new JsonParserAutopartCategories(file);
@@ -81,7 +81,7 @@ public class AutopartIdentification {
 //        fileName = jsonParser.searchCategoryId(categoryName, dataAutopartCategories);
 
 
-        while (currentCategory.isHas_children()){
+        while (currentCategory.isHas_children()) {
 
             System.out.println("wybierz kategorię szukanej części: ");
             file = mainPath + currentCategory.getId() + ".json";
@@ -126,7 +126,7 @@ public class AutopartIdentification {
         }
 
         // TODO: 28.02.16 wyświetl możliwe części
-        
+
         System.out.println("koniec");
 
     }
