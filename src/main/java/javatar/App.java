@@ -7,6 +7,7 @@ import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,12 +18,17 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         int userAnswer = Hello();
-        Car userCar = CreateCar(userAnswer);
-        Autopart userAutopart;
-        AutopartIdentification partFinder = new AutopartIdentification();
-        userAutopart = partFinder.findAutopart(userCar);
-        String categoryName = userAutopart.getCategoryList().stream().toString();
-        System.out.println(categoryName);
+        try {
+            Car userCar = CreateCar(userAnswer);
+            Autopart userAutopart;
+            AutopartIdentification partFinder = new AutopartIdentification();
+            userAutopart = partFinder.findAutopart(userCar);
+            String categoryName = userAutopart.getCategoryList().stream().toString();
+            System.out.println(categoryName);
+        } catch (FileNotFoundException e) {
+            System.out.println("Nie znaleziono pliku");
+            System.exit(-1);
+        }
 
         AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
         allegroClassGenerator.MatchCategories(userAutopart);
