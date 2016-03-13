@@ -24,7 +24,7 @@ public class App {
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.findAutopart(userCar);
             String categoryName = userAutopart.getCategoryList().stream().toString();
-            System.out.println(userAutopart.toString());
+          //  System.out.println(userAutopart.toString());
 
 
             System.out.println("Kategoria allegro: ");

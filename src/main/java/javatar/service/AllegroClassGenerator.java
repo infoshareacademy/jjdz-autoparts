@@ -45,7 +45,7 @@ public class AllegroClassGenerator {
                     if (categories != null) {
                         if (CategoryNextLevel.getName().contains(categories.getCatName()) && categories.getCatParent() == categoryId) {
                             allegroCategoryNext = categories.getCatName();
-                            allegroCategoryLvl1 = allegroCategoryLvl1 + ", " + allegroCategoryNext;
+                            allegroCategoryLvl1 = allegroCategoryLvl1 + " -> " + allegroCategoryNext;
                         }
                     }
                 }
