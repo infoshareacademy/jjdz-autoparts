@@ -3,6 +3,7 @@ package javatar;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.Car;
+import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         int userAnswer = Hello();
         Car userCar = CreateCar(userAnswer);
@@ -23,7 +24,8 @@ public class App {
         String categoryName = userAutopart.getCategoryList().stream().toString();
         System.out.println(categoryName);
 
-
+        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+        allegroClassGenerator.MatchCategories(userAutopart);
         /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
         // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
