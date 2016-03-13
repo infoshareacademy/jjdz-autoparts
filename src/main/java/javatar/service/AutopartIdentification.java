@@ -14,7 +14,7 @@ public class AutopartIdentification {
     public AutopartIdentification() {
     }
 
-    public Autopart findAutopart(Car car) throws IOException {
+    public Autopart diagnoseAutopart(Car car) throws IOException {
 //
 //        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
 
@@ -24,6 +24,7 @@ public class AutopartIdentification {
         String name;
         AutopartCategory currentCategory;
         Autopart autopart = new Autopart();
+        List<AutopartCategory> partCategoryList = new ArrayList<AutopartCategory>();
         String selectedOption;
         JsonAutopart foundAutopart;
         JsonParserAutopart autopartParser;
@@ -33,35 +34,20 @@ public class AutopartIdentification {
         String file = mainPath + fileName + ".json";
 
         currentCategory = findCategory(file);
-        autopart.addCategoryToList(currentCategory);
+        partCategoryList.add(currentCategory);
 
         while (currentCategory.isHas_children()) {
             file = mainPath + currentCategory.getId() + ".json";
 
             currentCategory = findCategory(file);
-            autopart.addCategoryToList(currentCategory);
+            partCategoryList.add(currentCategory);
         }
 
-        System.out.println("Wybierz część: ");
         file = mainPath + currentCategory.getId() + ".json";
-        autopartParser = new JsonParserAutopart(file);
-        jsonDataAutopart = autopartParser.getAutopartList();
 
-        autopartMap = printAutoparts(jsonDataAutopart.getData());
+        autopart = findAutopart(file);
 
-        selectedOption = scanner.nextLine();
-
-        if (selectedOption.length() == NUMERIC_OPTION_LENGTH) {
-            name = autopartMap.get(Integer.parseInt(selectedOption.toString())).toString();
-        } else {
-            name = selectedOption;
-        }
-
-        foundAutopart = autopartParser.searchAutopartId(name, jsonDataAutopart);
-
-        autopart.setPartName(foundAutopart.getName());
-        autopart.setPartBrand(foundAutopart.getBrand_clear());
-        autopart.setPartId(foundAutopart.getNumber_clear());
+        autopart.setCategoryList(partCategoryList);
 
         System.out.println("Twoja część: ");
         System.out.println("Nazwa: " + autopart.getPartName());
@@ -73,10 +59,42 @@ public class AutopartIdentification {
             System.out.println(new Integer(categoryNumber).toString() + ". " + ac.getName());
             categoryNumber++;
         }
-        System.out.println("The End");
 
         return autopart;
     }
+
+    private Autopart findAutopart(String file) throws FileNotFoundException {
+        Autopart autopart = new Autopart();
+        JsonParserAutopart autopartParser;
+        JsonDataAutopart jsonDataAutopart;
+        Map autopartMap;
+        Scanner scanner = new Scanner(System.in);
+        String selectedOption;
+        String name;
+
+        autopartParser = new JsonParserAutopart(file);
+        jsonDataAutopart = autopartParser.getAutopartList();
+
+        System.out.println("Wybierz część: ");
+        autopartMap = printAutoparts(jsonDataAutopart.getData());
+
+        selectedOption = scanner.nextLine();
+
+        if (selectedOption.length() == NUMERIC_OPTION_LENGTH) {
+            name = autopartMap.get(Integer.parseInt(selectedOption.toString())).toString();
+        } else {
+            name = selectedOption;
+        }
+
+        JsonAutopart foundAutopart = autopartParser.searchAutopartId(name, jsonDataAutopart);
+
+        autopart.setPartName(foundAutopart.getName());
+        autopart.setPartBrand(foundAutopart.getBrand_clear());
+        autopart.setPartId(foundAutopart.getNumber_clear());
+
+        return autopart;
+    }
+
 
     public AutopartCategory findCategory(String file) throws FileNotFoundException {
         String name;
