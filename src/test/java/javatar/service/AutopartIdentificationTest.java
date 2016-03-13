@@ -13,7 +13,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.lang.System.setIn;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -21,6 +20,7 @@ public class AutopartIdentificationTest {
 
     @Mock
     private AutopartIdentification cut;
+    final static String inputData = "1";
 
     @Before
     public void setUp() {
@@ -41,8 +41,7 @@ public class AutopartIdentificationTest {
         AutopartCategory expected = new AutopartCategory("Układ hamulcowy", "7t3", true, "/api/v2/find/go/8o2/2h61/7t3");
         //when
         AutopartCategory actual = cut.findCategory(file);
-        String inputData = "1";
-        setIn(new java.io.ByteArrayInputStream(inputData.getBytes()));
+        System.setIn(new java.io.ByteArrayInputStream(inputData.getBytes()));
         //then
         assertEquals(expected, actual);
     }
