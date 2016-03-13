@@ -13,10 +13,40 @@ public class Autopart {
         this.categoryList = new ArrayList<AutopartCategory>();
     }
 
+    public Autopart(List<AutopartCategory> categoryList, String partName, String partBrand, String partId) {
+        this.categoryList = categoryList;
+        this.partName = partName;
+        this.partBrand = partBrand;
+        this.partId = partId;
+    }
+
     public Autopart(List<AutopartCategory> categoryList, String partName, String partId) {
         this.categoryList = categoryList;
         this.partName = partName;
         this.partId = partId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Autopart autopart = (Autopart) o;
+
+        if (!getCategoryList().equals(autopart.getCategoryList())) return false;
+        if (!getPartName().equals(autopart.getPartName())) return false;
+        if (!getPartBrand().equals(autopart.getPartBrand())) return false;
+        return getPartId().equals(autopart.getPartId());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getCategoryList().hashCode();
+        result = 31 * result + getPartName().hashCode();
+        result = 31 * result + getPartBrand().hashCode();
+        result = 31 * result + getPartId().hashCode();
+        return result;
     }
 
     public String getPartBrand() {

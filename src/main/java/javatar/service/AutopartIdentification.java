@@ -55,7 +55,7 @@ public class AutopartIdentification {
         return autopart;
     }
 
-    private Autopart findAutopart(String file) throws FileNotFoundException {
+    public Autopart findAutopart(String file) throws FileNotFoundException {
         Autopart autopart = new Autopart();
         JsonParserAutopart autopartParser;
         JsonDataAutopart jsonDataAutopart;
