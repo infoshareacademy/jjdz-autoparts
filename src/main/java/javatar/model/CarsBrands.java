@@ -19,6 +19,10 @@ public class CarsBrands {
 
     }
 
+    public CarsBrands(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public String getId() {
         return id;
