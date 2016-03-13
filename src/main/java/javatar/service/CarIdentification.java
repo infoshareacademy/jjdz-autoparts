@@ -1,6 +1,8 @@
 package javatar.service;
 
 import javatar.model.Car;
+import javatar.model.CarsBrands;
+import javatar.model.CarsModels;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,13 +34,14 @@ public class CarIdentification {
         String brandFileNameOut = "Error";
         JsonParserBrands brandFileName = new JsonParserBrands();
 
-        String brand = carIn.getBrandName();
+        String brand = carIn.getCarsBrand().getName();// carIn.getBrandName();
         brandFileNameOut = brandFileName.searchCarId(brand);
+
 
         JsonParserModels modelId = new JsonParserModels(mainPath + brandFileNameOut + ".json");
 
         String modelFileNameOut = "Error";
-        String model = carIn.getModelName();
+        String model = carIn.getCarsModel().getName();//carIn.getModelName();
         Integer year = carIn.getProductionYear();
         String engineFileNameOut = "Error";
         JsonParserEngine engine = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
@@ -49,10 +52,12 @@ public class CarIdentification {
 
 
         Car car = new Car();
-        car.setBrandName(brand);
-        car.setBrandId(brandFileNameOut);
-        car.setModelId(modelFileNameOut);
-        car.setModelName(model);
+        car.setCarsBrand(new CarsBrands(brandFileNameOut,brand));
+        car.setCarsModel(new CarsModels(modelFileNameOut,model));
+//        car.setBrandName(brand);
+//        car.setBrandId(brandFileNameOut);
+//        car.setModelId(modelFileNameOut);
+//        car.setModelName(model);
         car.setProductionYear(year);
         car.setTypeId(engineFileNameOut);
         car.setTypeName(engineName);
@@ -157,10 +162,12 @@ public class CarIdentification {
 
 
         Car car = new Car();
-        car.setBrandName(brand);
-        car.setBrandId(brandFileNameOut);
-        car.setModelId(modelFileNameOut);
-        car.setModelName(model);
+        car.setCarsBrand(new CarsBrands(brandFileNameOut,brand));
+        car.setCarsModel(new CarsModels(modelFileNameOut,model));
+//        car.setBrandName(brand);
+//        car.setBrandId(brandFileNameOut);
+//        car.setModelId(modelFileNameOut);
+//        car.setModelName(model);
         car.setProductionYear(Integer.parseInt(year));
         car.setTypeId(engineFileNameOut);
         car.setTypeName(engineName);

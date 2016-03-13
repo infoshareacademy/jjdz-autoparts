@@ -9,6 +9,8 @@ import java.util.*;
 
 public class AutopartIdentification {
 
+    public static final int NUMERIC_OPTION_LENGTH = 1;
+
     public AutopartIdentification() {
     }
 
@@ -49,7 +51,7 @@ public class AutopartIdentification {
 
         selectedOption = scanner.nextLine();
 
-        if (selectedOption.length() == 1) {
+        if (selectedOption.length() == NUMERIC_OPTION_LENGTH) {
             name = autopartMap.get(Integer.parseInt(selectedOption.toString())).toString();
         } else {
             name = selectedOption;
