@@ -17,18 +17,10 @@ public class AutopartIdentification {
     public Autopart diagnoseAutopart(Car car) throws IOException {
 //
 //        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
-
-        Scanner scanner = new Scanner(System.in);
         String mainPath = "src/main/resources/";
-        Map autopartMap;
-        String name;
         AutopartCategory currentCategory;
-        Autopart autopart = new Autopart();
-        List<AutopartCategory> partCategoryList = new ArrayList<AutopartCategory>();
-        String selectedOption;
-        JsonAutopart foundAutopart;
-        JsonParserAutopart autopartParser;
-        JsonDataAutopart jsonDataAutopart;
+        Autopart autopart;
+        List<AutopartCategory> partCategoryList = new ArrayList<>();
 
         String fileName = car.getTypeId();//carId
         String file = mainPath + fileName + ".json";
