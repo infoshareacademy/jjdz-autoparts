@@ -1,23 +1,37 @@
 package javatar.service;
 
 import javatar.model.Autopart;
+import javatar.model.AutopartCategory;
 import javatar.model.Car;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class AllegroClassGeneratorTest {
 
+
+
     @Test
-    public void testMatchCategories() throws Exception {
+    public void testMatch2Categories() throws Exception {
 
-//        CarIdentification carIdentification = new CarIdentification();
-//        Car carIdentified = carIdentification.FindingCarManagement();
-//        AutopartIdentification autopartIdentification = new AutopartIdentification();
-//        Autopart partIdentified = autopartIdentification.diagnoseAutopart(carIdentified);
-//
-//        System.out.println(carIdentified);
-//        System.out.println(partIdentified);
+        //given
+        Autopart autopart = new Autopart();
+        AutopartCategory categoryListElement = new AutopartCategory();
+        categoryListElement.setName("Chłodzenie silnika");
+        AutopartCategory categoryListElement2 = new AutopartCategory();
+        categoryListElement2.setName("Chłodnice");
+        autopart.addCategoryToList(categoryListElement);
+        autopart.addCategoryToList(categoryListElement2);
 
+
+        //when
+        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+        String s = allegroClassGenerator.MatchCategories(autopart);
+
+        //then
+        assertThat(s,is(equalTo(" -> Chłodzenie silnika -> Chłodnice")));
     }
+
 }

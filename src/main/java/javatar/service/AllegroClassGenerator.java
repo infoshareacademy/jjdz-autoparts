@@ -25,6 +25,7 @@ public class AllegroClassGenerator {
         AutopartCategory CategoryNextLevel = new AutopartCategory();
         int categoryId = 0;
         String allegroCategoryNext = "";
+        String returnCategory = "";
 
         for (int i = 0; i < allegroCategoriesMap.size(); i++) {
             AllegroCategories categories = allegroCategoriesMap.get(i);
@@ -51,9 +52,12 @@ public class AllegroClassGenerator {
                 }
             }
         }
-
-        String returnCategory = " -> "+allegroCategoryLvl1;
-
+        if(allegroCategoryLvl1!="") {
+             returnCategory = " -> " + allegroCategoryLvl1;
+        }
+        else{
+            returnCategory = allegroCategoryLvl1;
+        }
         return returnCategory;
     }
 
