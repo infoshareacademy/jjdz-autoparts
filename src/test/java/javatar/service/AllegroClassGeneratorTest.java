@@ -14,7 +14,7 @@ public class AllegroClassGeneratorTest {
 //        CarIdentification carIdentification = new CarIdentification();
 //        Car carIdentified = carIdentification.FindingCarManagement();
 //        AutopartIdentification autopartIdentification = new AutopartIdentification();
-//        Autopart partIdentified = autopartIdentification.findAutopart(carIdentified);
+//        Autopart partIdentified = autopartIdentification.diagnoseAutopart(carIdentified);
 //
 //        System.out.println(carIdentified);
 //        System.out.println(partIdentified);

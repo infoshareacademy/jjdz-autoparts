@@ -1,7 +1,6 @@
 package javatar;
 
 import javatar.model.Autopart;
-import javatar.model.AutopartCategory;
 import javatar.model.Car;
 import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
@@ -9,8 +8,6 @@ import javatar.service.CarIdentification;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -22,7 +19,7 @@ public class App {
             Car userCar = CreateCar(userAnswer);
             Autopart userAutopart;
             AutopartIdentification partFinder = new AutopartIdentification();
-            userAutopart = partFinder.findAutopart(userCar);
+            userAutopart = partFinder.diagnoseAutopart(userCar);
             String categoryName = userAutopart.getCategoryList().stream().toString();
           //  System.out.println(userAutopart.toString());
 
