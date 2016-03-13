@@ -15,30 +15,46 @@ public class AllegroClassGenerator {
     AutopartIdentification part = new AutopartIdentification();
     XMLParser xmlParser = new XMLParser();
 
-    public void MatchCategories(Autopart autopart) throws Exception {
+    public String MatchCategories(Autopart autopart) throws Exception {
 
         List<AutopartCategory> categoryList = autopart.getCategoryList();
         AutopartCategory autopartCategoryName = categoryList.get(0);
         String CategoryName = autopartCategoryName.getName();
+        String allegroCategoryLvl1 = "";
         Map<Integer, AllegroCategories> allegroCategoriesMap = xmlParser.AllegroCategoryObject();
-
-//        Map<Integer, AllegroCategories> categoriesMap = a.AllegroCategoryObject();
-//        String pozostale = categoriesMap.get(19024).getCatName();
+        AutopartCategory CategoryNextLevel = new AutopartCategory();
+        int categoryId = 0;
+        String allegroCategoryNext = "";
 
         for (int i = 0; i < allegroCategoriesMap.size(); i++) {
             AllegroCategories categories = allegroCategoriesMap.get(i);
             if (categories != null) {
 
-              //TODO  if (CategoryName.contains(categories.getCatName() &))
-                {
-
+                if ((CategoryName.contains(categories.getCatName())) && (categories.getCatParent() == 620)) {
+                    allegroCategoryLvl1 = categories.getCatName();
+                    categoryId = categories.getCatId();
 
 
                 }
+            }
 
 
+            if (categoryList.size() > 0) {
+                for (int k = 1; k < categoryList.size(); k++) {
+                    CategoryNextLevel = categoryList.get(k);
+                    if (categories != null) {
+                        if (CategoryNextLevel.getName().contains(categories.getCatName()) && categories.getCatParent() == categoryId) {
+                            allegroCategoryNext = categories.getCatName();
+                            allegroCategoryLvl1 = allegroCategoryLvl1 + ", " + allegroCategoryNext;
+                        }
+                    }
+                }
             }
         }
 
+
+        return allegroCategoryLvl1;
     }
+
+
 }
