@@ -28,13 +28,6 @@ public class AutopartIdentificationTest {
     }
 
     @Test
-    public void testFindAutopart() throws Exception {
-        //given
-        //when
-        //then
-    }
-
-    @Test
     public void testFindCategory() throws Exception {
         //given
         String file = "src/main/resources/2h61.json";

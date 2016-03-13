@@ -10,6 +10,7 @@ import java.util.*;
 public class AutopartIdentification {
 
     public static final int NUMERIC_OPTION_LENGTH = 1;
+    public static final String MAIN_PATH = "src/main/resources/";
 
     public AutopartIdentification() {
     }
@@ -17,25 +18,24 @@ public class AutopartIdentification {
     public Autopart diagnoseAutopart(Car car) throws IOException {
 //
 //        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
-        String mainPath = "src/main/resources/";
         AutopartCategory currentCategory;
         Autopart autopart;
         List<AutopartCategory> partCategoryList = new ArrayList<>();
 
         String fileName = car.getTypeId();//carId
-        String file = mainPath + fileName + ".json";
+        String file = MAIN_PATH + fileName + ".json";
 
         currentCategory = findCategory(file);
         partCategoryList.add(currentCategory);
 
         while (currentCategory.isHas_children()) {
-            file = mainPath + currentCategory.getId() + ".json";
+            file = MAIN_PATH + currentCategory.getId() + ".json";
 
             currentCategory = findCategory(file);
             partCategoryList.add(currentCategory);
         }
 
-        file = mainPath + currentCategory.getId() + ".json";
+        file = MAIN_PATH + currentCategory.getId() + ".json";
 
         autopart = findAutopart(file);
 
