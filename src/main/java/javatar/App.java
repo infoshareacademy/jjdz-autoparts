@@ -2,6 +2,7 @@ package javatar;
 
 import javatar.model.Autopart;
 import javatar.model.Car;
+import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
 
