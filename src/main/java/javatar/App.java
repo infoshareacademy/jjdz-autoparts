@@ -30,8 +30,8 @@ public class App {
             System.exit(-1);
         }
 
-        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
-        allegroClassGenerator.MatchCategories(userAutopart);
+//        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+//        allegroClassGenerator.MatchCategories(userAutopart);
         /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
         // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
