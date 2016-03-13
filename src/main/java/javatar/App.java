@@ -27,7 +27,7 @@ public class App {
             System.out.println("Kategoria allegro: ");
             AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
             String s = allegroClassGenerator.MatchCategories(userAutopart);
-            System.out.print("Motoryzacja -> Części samochodowe -> "+s);
+            System.out.print("Motoryzacja -> Części samochodowe"+s);
 
 
         } catch (FileNotFoundException e) {

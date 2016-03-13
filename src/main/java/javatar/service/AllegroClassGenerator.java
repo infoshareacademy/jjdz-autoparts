@@ -52,8 +52,9 @@ public class AllegroClassGenerator {
             }
         }
 
+        String returnCategory = " -> "+allegroCategoryLvl1;
 
-        return allegroCategoryLvl1;
+        return returnCategory;
     }
 
 
