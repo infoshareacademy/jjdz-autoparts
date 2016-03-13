@@ -3,6 +3,7 @@ package javatar;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.Car;
+import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
 
@@ -14,7 +15,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         int userAnswer = Hello();
         try {
@@ -23,20 +24,18 @@ public class App {
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.findAutopart(userCar);
             String categoryName = userAutopart.getCategoryList().stream().toString();
-            System.out.println(categoryName);
+            System.out.println(userAutopart.toString());
         } catch (FileNotFoundException e) {
             System.out.println("Nie znaleziono pliku");
             System.exit(-1);
         }
 
-
+//        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+//        allegroClassGenerator.MatchCategories(userAutopart);
         /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
         // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
-//
-//        Autopart userAutopart = FindAutopart(userCar);
-//        AutopartCategory userAutopartCategory = FindAutopartCategory(userAutopart);
-//        System.out.println(findLink(userAutopartCategory));
+
 
 
     }
@@ -70,28 +69,7 @@ public class App {
 
     }
 
-    private static Autopart FindAutopart(Car userCar) {
 
-
-        return null;
-    }
-
-    private static AutopartCategory FindAutopartCategory(Autopart userAutopart) {
-
-        return null;
-    }
-
-    private static String findLink(AutopartCategory userAutopartCategory) {
-
-        Map<Integer, String> categoryMap = new HashMap<Integer, String>();
-        int mapIndex = 0;
-//        while (userAutopartCategory.getParent() = 0) {
-//
-//            categoryMap.put(0, userAutopartCategory.getName());
-//            mapIndex++;
-//        }
-        return null;
-    }
 
 
 }

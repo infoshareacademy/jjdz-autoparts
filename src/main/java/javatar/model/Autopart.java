@@ -54,4 +54,14 @@ public class Autopart {
     public void setPartId(String partId) {
         this.partId = partId;
     }
+
+    @Override
+    public String toString() {
+        return "Autopart{" +
+                "categoryList=" + categoryList +
+                ", partName='" + partName + '\'' +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                '}';
+    }
 }

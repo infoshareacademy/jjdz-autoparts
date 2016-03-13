@@ -77,7 +77,7 @@ public class CarIdentification {
         //------------------------------------------------------------------------------------------------------
         //Car brands section
         //------------------------------------------------------------------------------------------------------
-        while (brandFileNameOut == "Error") {
+        //while (brandFileNameOut == "Error") {
             System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL\r\n2. VOLKSWAGEN");
             String brandSelection = scanner.nextLine();
 
@@ -99,7 +99,7 @@ public class CarIdentification {
 
 
             brandFileNameOut = brandFileName.searchCarId(brand);
-        }
+       // }
 
         //------------------------------------------------------------------------------------------------------
         //Car models section
@@ -110,7 +110,7 @@ public class CarIdentification {
         String model = new String();
         String year = new String();
 
-        while (modelFileNameOut == "Error") {
+        //while (modelFileNameOut == "Error") {
             System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi\r\n2. JETTA VII SportWagon");
             String modelSelection = scanner.nextLine();
             System.out.println("Wprowadź rok produkcji:");
@@ -134,7 +134,7 @@ public class CarIdentification {
             }
 
             modelFileNameOut = modelId.searchCarId(model, Integer.parseInt(year));
-        }
+       // }
         //------------------------------------------------------------------------------------------------------
         //CEngines and fuel section
         //------------------------------------------------------------------------------------------------------
