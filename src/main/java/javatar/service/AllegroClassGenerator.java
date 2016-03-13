@@ -29,7 +29,8 @@ public class AllegroClassGenerator {
             AllegroCategories categories = allegroCategoriesMap.get(i);
             if (categories != null) {
 
-                if (CategoryName.contains(categories.getCatName() &)) {
+              //TODO  if (CategoryName.contains(categories.getCatName() &))
+                {
 
 
 
