@@ -20,14 +20,21 @@ public class App {
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.diagnoseAutopart(userCar);
             String categoryName = userAutopart.getCategoryList().stream().toString();
-            System.out.println(userAutopart.toString());
+          //  System.out.println(userAutopart.toString());
+
+
+            System.out.println("Kategoria allegro: ");
+            AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+            String s = allegroClassGenerator.MatchCategories(userAutopart);
+            System.out.print("Motoryzacja -> Części samochodowe -> "+s);
+
+
         } catch (FileNotFoundException e) {
             System.out.println("Nie znaleziono pliku");
             System.exit(-1);
         }
 
-//        AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
-//        allegroClassGenerator.MatchCategories(userAutopart);
+
         /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
         // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
