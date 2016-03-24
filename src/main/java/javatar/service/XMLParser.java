@@ -2,6 +2,7 @@ package javatar.service;
 
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.sun.xml.internal.txw2.output.XmlSerializer;
 import javatar.model.AllegroCategories;
 
 import javax.xml.stream.XMLInputFactory;
@@ -15,16 +16,9 @@ import java.util.Map;
 
 public class XMLParser {
 
-
     AllegroCategories allegroCategories = null;
 
-//    public void ReturnAllegroMap() throws Exception {
-//
-//        AllegroCategories categories = AllegroCategoryObject();
-//
-//    }
-
-    public Map<Integer,AllegroCategories> AllegroCategoryObject () throws Exception {
+    public Map<Integer, AllegroCategories> AllegroCategoryObject() throws Exception {
 
 
         FileReader reader = new FileReader("src/main/resources/Allegro_cathegories_2016-02-13.xml");
@@ -36,18 +30,15 @@ public class XMLParser {
         Map<Integer, AllegroCategories> allegroCategoriesMap = new HashMap<>();
 
         while (sr.hasNext()) {
-            if (sr.next() == XMLStreamConstants.START_ELEMENT && sr.getLocalName()=="item") {
+            if (sr.next() == XMLStreamConstants.START_ELEMENT && sr.getLocalName() == "item") {
 
                 allegroCategories = xmlMapper.readValue(sr, AllegroCategories.class);
 
-                allegroCategoriesMap.put(allegroCategories.getCatId(),allegroCategories);
+                allegroCategoriesMap.put(allegroCategories.getCatId(), allegroCategories);
             }
 
 
         }
-    return allegroCategoriesMap;
+        return allegroCategoriesMap;
     }
-
-
-
 }

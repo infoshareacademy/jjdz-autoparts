@@ -7,27 +7,26 @@ import javatar.model.AutopartCategory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AllegroCategoryFinder {
 
-    CarIdentification car = new CarIdentification();
-    AutopartIdentification part = new AutopartIdentification();
     XMLParser xmlParser = new XMLParser();
+    int parentId = 620;
 
     public String MatchCategories(Autopart autopart) throws Exception {
 
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         Map<Integer, AllegroCategories> allegroCategoriesMap = xmlParser.AllegroCategoryObject();
         List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
-
-        int iter = 0;
+        String returnedData = "";
 
         for (int i = 0; i < allegroCategoriesMap.size(); i++) {
-            allegroCategoriesList.add(allegroCategoriesMap.get(i));
-            System.out.println(allegroCategoriesList.toString());
-            i++;
+            if (allegroCategoriesMap.get(i) != null) {
+                allegroCategoriesList.add(allegroCategoriesMap.get(i));
+            }
         }
 
         for (AutopartCategory p :
@@ -35,10 +34,21 @@ public class AllegroCategoryFinder {
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
                     .collect(Collectors.toList());
+            System.out.println(p.getName());
             System.out.println(blist.toString());
+
+            for (AllegroCategories filteredElements
+                    : blist
+                    ) {
+
+                if (filteredElements.getCatParent() == parentId) {
+                    returnedData = returnedData + " -> " + filteredElements.getCatName();
+                    parentId = filteredElements.getCatId();
+                }
+
+            }
         }
 
-
-        return "";
+        return returnedData;
     }
 }
