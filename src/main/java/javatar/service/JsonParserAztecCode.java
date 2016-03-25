@@ -2,6 +2,8 @@ package javatar.service;
 
 
 import com.google.gson.Gson;
+import javatar.model.Car;
+import javatar.model.CarFromAztec;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,11 +15,18 @@ import java.io.IOException;
  */
 public class JsonParserAztecCode {
 
-    private static  String USER_KEY = "qY2?0Pw!";
+    private final static String USER_KEY = "qY2?0Pw!";
+    private String sessionKey = null;
+
+
 
     private static OkHttpClient client = new OkHttpClient();
 
-    public static String run(String url) throws IOException {
+    public JsonParserAztecCode(String session) {
+        this.sessionKey = session;
+    }
+
+    private String getCarFromRest(String url) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -26,32 +35,35 @@ public class JsonParserAztecCode {
         return response.body().string();
     }
 
-    public static String[] getUserCar() {
+    private String getUserCar() {
 
         String json = null;
         try {
-           json = run("https://aztec.atena.pl/PWM2/rest/aztec/getbysession?sessionKey=glkt0&userKey=qY2?0Pw!");
-        //    json = run("src/main/resources/atenaAzterReturned.json");
+            json = getCarFromRest("https://aztec.atena.pl/PWM2/rest/aztec/getbysession?sessionKey=" + sessionKey + "&userKey=" + USER_KEY);
             System.out.println(json);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return json;
+    }
 
+    public String[] getUserCarData() {
         Gson gson = new Gson();
 
-        AtenaApi aa = gson.fromJson(json, AtenaApi.class);
+        CarFromAztec jsonCar = gson.fromJson(getUserCar(), CarFromAztec.class);
 
         return new String[]{
-               "d1: :" + aa.getDane().getD1(),
-                "d5: " + aa.getDane().getD5(),
-                "rok " + aa.getDane().getRok_produkcji()
+                jsonCar.getDane().getD1(),//Brand
+                jsonCar.getDane().getD5(),//Model
+                jsonCar.getDane().getRok_produkcji()
         };
     }
 
-    public static void main(String[] args) {
-        for(String str : getUserCar()){
-            System.out.println(str);
-        }
-    }
+
+//    public static void main(String[] args) {
+//        for (String str : getUserCar("kjsm4")) {
+//            System.out.println(str);
+//        }
+//    }
 
 }

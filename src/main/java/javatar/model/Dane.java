@@ -1,4 +1,4 @@
-package javatar.service;
+package javatar.model;
 
 /**
  * Created by Daniel on 21.03.2016.
@@ -40,7 +40,7 @@ public class Dane
 
     @Override
     public String toString() {
-        return "ClassPojo [D5 = " + D5 + ", Rok_produkcji = " + Rok_produkcji + ", D1 = " + D1 + "]";
+        return "[D5 = " + D5 + ", Rok_produkcji = " + Rok_produkcji + ", D1 = " + D1 + "]";
     }
 }
 
