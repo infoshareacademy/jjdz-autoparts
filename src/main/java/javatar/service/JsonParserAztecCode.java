@@ -4,6 +4,8 @@ package javatar.service;
 import com.google.gson.Gson;
 import javatar.model.Car;
 import javatar.model.CarFromAztec;
+import javatar.model.CarsBrands;
+import javatar.model.CarsModels;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -47,16 +49,28 @@ public class JsonParserAztecCode {
         return json;
     }
 
-    public String[] getUserCarData() {
+    public Car getUserCarData() {
         Gson gson = new Gson();
 
         CarFromAztec jsonCar = gson.fromJson(getUserCar(), CarFromAztec.class);
 
-        return new String[]{
-                jsonCar.getDane().getD1(),//Brand
-                jsonCar.getDane().getD5(),//Model
-                jsonCar.getDane().getRok_produkcji()
-        };
+        CarsBrands cb = new CarsBrands();
+        cb.setName(jsonCar.getDane().getD1());
+        CarsModels cm = new CarsModels();
+        cm.setName(jsonCar.getDane().getD5());
+        Car carFromAztec = new Car();
+        carFromAztec.setProductionYear(Integer.parseInt(jsonCar.getDane().getRok_produkcji()));
+        carFromAztec.setCarsBrand(cb);
+        carFromAztec.setCarsModel(cm);
+
+        return carFromAztec;
+
+
+//        return new String[]{
+//                jsonCar.getDane().getD1(),//Brand
+//                jsonCar.getDane().getD5(),//Model
+//                jsonCar.getDane().getRok_produkcji()
+//        };
     }
 
 
