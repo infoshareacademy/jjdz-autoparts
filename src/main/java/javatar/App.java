@@ -16,7 +16,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-       // JsonParserAztecCode car1 = new JsonParserAztecCode("6m7i1");
+        // JsonParserAztecCode car1 = new JsonParserAztecCode("6m7i1");
         //car1.getUserCar("kjsm4");
 
 
@@ -78,14 +78,14 @@ public class App {
     private static Car CreateCar(int answer) throws IOException {
         CarIdentification carFinder = new CarIdentification();
         if (answer == 2) {
-            Car carReturned = carFinder.FindingCarManagement();
-            return carReturned;
+            return carFinder.FindingCarManagement();
+
         } else if (answer == 1) {
 
             JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(GetSessionKey());
-            Car answerAztec = carFromAtenaApi.getUserCarData();
-                    Car carReturned = carFinder.FindingCarByQCCodeAnswear(answerAztec);
-            return carReturned;
+            Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
+            return carFinder.FindingCarByQCCodeAnswear(answerAztec);
+
         }
         return null;
 

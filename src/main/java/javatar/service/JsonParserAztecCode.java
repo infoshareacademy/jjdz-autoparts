@@ -11,18 +11,20 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-/**
- * Created by Daniel on 20.03.2016.
- */
 public class JsonParserAztecCode {
 
     private final static String USER_KEY = "qY2?0Pw!";
     private String sessionKey = null;
 
 
-
     private static OkHttpClient client = new OkHttpClient();
+
+    public JsonParserAztecCode() {
+    }
 
     public JsonParserAztecCode(String session) {
         this.sessionKey = session;
@@ -37,22 +39,30 @@ public class JsonParserAztecCode {
         return response.body().string();
     }
 
-    private String getUserCar() {
+    public String getUserCar() {
 
         String json = null;
         try {
             json = getCarFromRest("https://aztec.atena.pl/PWM2/rest/aztec/getbysession?sessionKey=" + sessionKey + "&userKey=" + USER_KEY);
-            System.out.println(json);
+            //          System.out.println(json);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return json;
     }
 
-    public Car getUserCarData() {
+    public Car getUserCarData(String jsonString) throws NumberFormatException {
         Gson gson = new Gson();
 
-        CarFromAztec jsonCar = gson.fromJson(getUserCar(), CarFromAztec.class);
+        CarFromAztec jsonCar = gson.fromJson(jsonString, CarFromAztec.class);
+        String aztecError = jsonCar.getDane().getError();
+
+        if (aztecError.equals("-4")) {
+            System.out.println("Błędny kod sesji");
+            System.exit(-1);
+            return null;
+        }
 
         CarsBrands cb = new CarsBrands();
         cb.setName(jsonCar.getDane().getD1());
@@ -74,7 +84,7 @@ public class JsonParserAztecCode {
     }
 
 
-//    public static void main(String[] args) {
+    //    public static void main(String[] args) {
 //        for (String str : getUserCar("kjsm4")) {
 //            System.out.println(str);
 //        }

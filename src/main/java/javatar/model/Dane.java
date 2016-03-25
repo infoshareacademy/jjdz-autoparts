@@ -1,19 +1,34 @@
 package javatar.model;
 
-/**
- * Created by Daniel on 21.03.2016.
- */
-public class Dane
-{
+public class Dane {
     private String D5;
 
     private String Rok_produkcji;
 
     private String D1;
 
+    private String Error;
+
+    private String ErrorText;
+
+    public String getErrorText() {
+        return ErrorText;
+    }
+
+    public void setErrorText(String ErrorText) {
+        this.ErrorText = ErrorText;
+    }
 
     public String getD5() {
         return D5;
+    }
+
+    public String getError() {
+        return Error;
+    }
+
+    public void setError(String Error) {
+        this.Error = Error;
     }
 
     public void setD5(String D5) {
