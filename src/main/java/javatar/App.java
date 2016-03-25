@@ -2,9 +2,11 @@ package javatar;
 
 import javatar.model.Autopart;
 import javatar.model.Car;
+import javatar.model.CarFromAztec;
 import javatar.service.AllegroClassGenerator;
 import javatar.service.AutopartIdentification;
 import javatar.service.CarIdentification;
+import javatar.service.JsonParserAztecCode;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,6 +16,10 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
+       // JsonParserAztecCode car1 = new JsonParserAztecCode("6m7i1");
+        //car1.getUserCar("kjsm4");
+
+
         int userAnswer = Hello();
         try {
             Car userCar = CreateCar(userAnswer);
@@ -21,13 +27,13 @@ public class App {
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.diagnoseAutopart(userCar);
             String categoryName = userAutopart.getCategoryList().stream().toString();
-          //  System.out.println(userAutopart.toString());
+            //  System.out.println(userAutopart.toString());
 
 
             System.out.println("Kategoria allegro: ");
             AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
             String s = allegroClassGenerator.MatchCategories(userAutopart);
-            System.out.print("Motoryzacja -> Części samochodowe"+s);
+            System.out.print("Motoryzacja -> Części samochodowe" + s);
 
 
         } catch (FileNotFoundException e) {
@@ -35,11 +41,9 @@ public class App {
             System.exit(-1);
         }
 
-
-        /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
-        // TODO: 12.03.16 znalezienie kategorii z autopart w xml
-
-
+//
+//        /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
+//        // TODO: 12.03.16 znalezienie kategorii z autopart w xml
 
 
     }
@@ -58,22 +62,34 @@ public class App {
 
     }
 
+    private static String GetSessionKey() {
+        String message = "Wprowadź kod sesji z aplikacji";
+        System.out.println(message);
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+        while (answer.isEmpty()) {
+            System.out.println(message);
+            answer = scanner.nextLine();
+        }
+        return answer;
+
+    }
+
     private static Car CreateCar(int answer) throws IOException {
         CarIdentification carFinder = new CarIdentification();
         if (answer == 2) {
             Car carReturned = carFinder.FindingCarManagement();
             return carReturned;
         } else if (answer == 1) {
-//            TODO QR code to be called
-//            Car answearQR =
-//            Car carReturned = FindingCarByQCCodeAnswear(answearQR);
-            return null;
+
+            JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(GetSessionKey());
+            Car answerAztec = carFromAtenaApi.getUserCarData();
+                    Car carReturned = carFinder.FindingCarByQCCodeAnswear(answerAztec);
+            return carReturned;
         }
         return null;
 
     }
-
-
 
 
 }
