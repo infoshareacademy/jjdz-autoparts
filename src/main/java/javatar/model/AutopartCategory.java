@@ -16,29 +16,6 @@ public class AutopartCategory {
         this.link = link;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        AutopartCategory that = (AutopartCategory) o;
-
-        if (isHas_children() != that.isHas_children()) return false;
-        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
-        if (getId() != null ? !getId().equals(that.getId()) : that.getId() != null) return false;
-        return getLink() != null ? getLink().equals(that.getLink()) : that.getLink() == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + (getId() != null ? getId().hashCode() : 0);
-        result = 31 * result + (isHas_children() ? 1 : 0);
-        result = 31 * result + (getLink() != null ? getLink().hashCode() : 0);
-        return result;
-    }
-
     public String getName() {
         return name;
     }
@@ -69,5 +46,15 @@ public class AutopartCategory {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "AutopartCategory{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", has_children=" + has_children +
+                ", link='" + link + '\'' +
+                '}';
     }
 }
