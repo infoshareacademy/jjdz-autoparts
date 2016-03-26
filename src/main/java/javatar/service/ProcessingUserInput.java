@@ -5,6 +5,8 @@ import javatar.model.Car;
 import java.io.IOException;
 
 public class ProcessingUserInput {
+    public ProcessingUserInput() {
+    }
 
     public Car CreateCar(int answer) throws IOException {
         ReadingUserInput userInput = new ReadingUserInput();
