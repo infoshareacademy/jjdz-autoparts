@@ -3,10 +3,7 @@ package javatar;
 import javatar.model.Autopart;
 import javatar.model.Car;
 import javatar.model.CarFromAztec;
-import javatar.service.AllegroClassGenerator;
-import javatar.service.AutopartIdentification;
-import javatar.service.CarIdentification;
-import javatar.service.JsonParserAztecCode;
+import javatar.service.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,10 +16,10 @@ public class App {
         // JsonParserAztecCode car1 = new JsonParserAztecCode("6m7i1");
         //car1.getUserCar("kjsm4");
 
-
-        int userAnswer = Hello();
+        ReadingUserInput userInput = new ReadingUserInput();
+        int userAnswer = userInput.Hello();
         try {
-            Car userCar = CreateCar(userAnswer);
+            Car userCar = userInput.CreateCar(userAnswer);
             Autopart userAutopart;
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.diagnoseAutopart(userCar);
@@ -49,47 +46,7 @@ public class App {
     }
 
 
-    private static int Hello() {
-        String message = "Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. Kod sesji aplikacji Atena Aztec Reader\r\n2. Na podstawie serii pytań";
-        System.out.println(message);
-        Scanner scanner = new Scanner(System.in);
-        int answer = scanner.nextInt();
-        while (answer != 1 && answer != 2) {
-            System.out.println(message);
-            answer = scanner.nextInt();
-        }
-        return answer;
 
-    }
-
-    private static String GetSessionKey() {
-        String message = "Wprowadź kod sesji z aplikacji";
-        System.out.println(message);
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
-        while (answer.isEmpty()) {
-            System.out.println(message);
-            answer = scanner.nextLine();
-        }
-        return answer;
-
-    }
-
-    private static Car CreateCar(int answer) throws IOException {
-        CarIdentification carFinder = new CarIdentification();
-        if (answer == 2) {
-            return carFinder.FindingCarManagement();
-
-        } else if (answer == 1) {
-
-            JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(GetSessionKey());
-            Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
-            return carFinder.FindingCarByQCCodeAnswear(answerAztec);
-
-        }
-        return null;
-
-    }
 
 
 }
