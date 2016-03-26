@@ -2,12 +2,12 @@ package javatar;
 
 import javatar.model.Autopart;
 import javatar.model.Car;
-import javatar.model.CarFromAztec;
-import javatar.service.*;
+import javatar.service.AllegroClassGenerator;
+import javatar.service.AutopartIdentification;
+import javatar.service.ProcessingUserInput;
+import javatar.service.ReadingUserInput;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
 
 public class App {
 
@@ -17,9 +17,10 @@ public class App {
         //car1.getUserCar("kjsm4");
 
         ReadingUserInput userInput = new ReadingUserInput();
+        ProcessingUserInput processingUserInput = new ProcessingUserInput();
         int userAnswer = userInput.Hello();
         try {
-            Car userCar = userInput.CreateCar(userAnswer);
+            Car userCar = processingUserInput.CreateCar(userAnswer);
             Autopart userAutopart;
             AutopartIdentification partFinder = new AutopartIdentification();
             userAutopart = partFinder.diagnoseAutopart(userCar);
