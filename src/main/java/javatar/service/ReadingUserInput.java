@@ -11,7 +11,7 @@ public class ReadingUserInput {
     }
 
     public int Hello() {
-        String message = "Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. Aztec 2d code\r\n2. Na podstawie serii pytań";
+        String message = "Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. Kod sesji z aplikacji Atena Aztec Reader\r\n2. Na podstawie serii pytań";
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
         int answer = scanner.nextInt();
