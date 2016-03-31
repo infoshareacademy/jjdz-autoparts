@@ -1,5 +1,7 @@
 package javatar.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Dane {
     private String D5;
 
@@ -10,6 +12,15 @@ public class Dane {
     private String Error;
 
     private String ErrorText;
+
+    @SerializedName("P.1")
+    private String silnik;
+
+
+
+    @SerializedName("P.3")
+
+    private String typ_paliwa;
 
     public String getErrorText() {
         return ErrorText;
@@ -52,10 +63,25 @@ public class Dane {
     public void setD1(String D1) {
         this.D1 = D1;
     }
+    public String getTyp_paliwa() {
+        return typ_paliwa;
+    }
+
+    public void setTyp_paliwa(String typ_paliwa) {
+        this.typ_paliwa = typ_paliwa;
+    }
+
+    public String getSilnik() {
+        return silnik;
+    }
+
+    public void setSilnik(String silnik) {
+        this.silnik = silnik;
+    }
 
     @Override
     public String toString() {
-        return "[D5 = " + D5 + ", Rok_produkcji = " + Rok_produkcji + ", D1 = " + D1 + "]";
+        return "[D5 = " + D5 + ", Rok_produkcji = " + Rok_produkcji + ", D1 = " + D1 + "silnik: " + silnik + " typ paliwa: " + typ_paliwa + "]";
     }
 }
 
