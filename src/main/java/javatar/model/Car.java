@@ -12,24 +12,10 @@ public class Car {
     private String typeId;
     private int productionYear;
     private String fuelType;
-
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
-
-    public String getFuelType() {
-        return fuelType;
-    }
-
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
-    }
-
     private String engine;
+
+
+
 
     @Override
     public String toString() {
@@ -146,5 +132,22 @@ public class Car {
     public void setProductionYear(int productionYear) {
         this.productionYear = productionYear;
     }
+
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    public String getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
 
 }
