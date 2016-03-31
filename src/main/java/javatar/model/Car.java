@@ -11,6 +11,25 @@ public class Car {
     private String typeName;
     private String typeId;
     private int productionYear;
+    private String fuelType;
+
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    public String getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    private String engine;
 
     @Override
     public String toString() {
