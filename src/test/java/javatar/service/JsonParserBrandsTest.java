@@ -27,4 +27,9 @@ public class JsonParserBrandsTest {
 
     }
 
+    @Test
+    public void list_all_engines() throws FileNotFoundException {
+        JsonParserBrands jsonParserList = new JsonParserBrands();
+        jsonParserList.listAllBrands();
+    }
 }
