@@ -7,19 +7,25 @@ import javatar.model.DataCarsEngineAndFuel;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class JsonParserEngine {
 
     final FileReader reader;
+//    final Object parsedFile;
 
     public JsonParserEngine(String filename) throws FileNotFoundException {
         //default filename
         reader = new FileReader(filename);
+//        JsonParserCommon parser = new JsonParserCommon(reader.toString());
+//        parsedFile = parser.parseFile("DataCarsEngineAndFuel");
     }
 
-    public String searchEngineType(String engineToken) throws FileNotFoundException {
+
+    public String searchEngineTypeByNumber(String engineToken) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         String engineType = new String();
 
@@ -38,11 +44,51 @@ public class JsonParserEngine {
         return "Error";
     }
 
+    public List<CarsEngineAndFuel> searchEngineTypeByTokens(String fuelType, String engineCapacity, String power ) {
+
+        String fuel_txt = "";
+
+        switch (fuelType) {
+            case "P":
+                fuel_txt = "benzyna";
+                break;
+            case "D":
+                fuel_txt = "olej napędowy";
+                break;
+            default:
+                fuel_txt = "Nie znaleziono";
+                break;
+        }
+
+        String capacity_txt = engineCapacity.substring(0, engineCapacity.length() - 6);
+        String powerSubs = power.substring(0, power.length() - 5);
+        int capacity = Integer.parseInt(capacity_txt);
+
+        Gson gson = new GsonBuilder().create();
+        DataCarsEngineAndFuel engines = gson.fromJson(reader, DataCarsEngineAndFuel.class);
+
+        List<CarsEngineAndFuel> enginesList = engines.getData();
+
+        final String finalFuel_txt = fuel_txt;
+        List<CarsEngineAndFuel> blist = enginesList.stream()
+                .filter(fuel -> fuel.getCcm().equals(capacity))
+                .filter(f -> f.getFuel().equals(finalFuel_txt))
+                .filter(f -> f.getKw().toString().equals(powerSubs))
+                .collect(Collectors.toList());
+
+        System.out.println(blist.toString());
+        System.out.println(blist.size());
+        System.out.println(powerSubs);
+        System.out.println(capacity);
+        System.out.println(fuel_txt);
+        return blist;
+    }
+
 
     public HashMap<Integer, String> listAllEngineTypes() throws FileNotFoundException {
 
         Gson gson = new GsonBuilder().create();
-        int i = 0;
+        int i = 1;
         HashMap<Integer, String> engineIds = new HashMap<>();
 
 

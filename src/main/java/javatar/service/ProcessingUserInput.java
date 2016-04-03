@@ -18,7 +18,7 @@ public class ProcessingUserInput {
 
             JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(userInput.GetSessionKey());
             Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
-            return carFinder.FindingCarByQCCodeAnswear(answerAztec);
+            return carFinder.FindingCarByQCCodeAnswer(answerAztec);
 
         }
         return null;

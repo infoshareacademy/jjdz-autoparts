@@ -178,4 +178,29 @@ public class CarsEngineAndFuel {
     public void setLink(String link) {
         this.link = link;
     }
+
+    @Override
+    public String toString() {
+        return "CarsEngineAndFuel{" +
+                "id='" + id + '\'' +
+                ", model_id='" + model_id + '\'' +
+                ", brand_id='" + brand_id + '\'' +
+                ", name='" + name + '\'' +
+                ", end_year=" + end_year +
+                ", end_month=" + end_month +
+                ", start_year=" + start_year +
+                ", start_month=" + start_month +
+                ", ccm=" + ccm +
+                ", kw=" + kw +
+                ", hp=" + hp +
+                ", cylinders=" + cylinders +
+                ", engine='" + engine + '\'' +
+                ", engine_txt='" + engine_txt + '\'' +
+                ", fuel='" + fuel + '\'' +
+                ", body='" + body + '\'' +
+                ", axle='" + axle + '\'' +
+                ", max_weight='" + max_weight + '\'' +
+                ", link='" + link + '\'' +
+                '}';
+    }
 }

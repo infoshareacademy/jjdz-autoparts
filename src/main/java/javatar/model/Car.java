@@ -13,6 +13,7 @@ public class Car {
     private int productionYear;
     private String fuelType;
     private String engine;
+    private String power;
 
 
 

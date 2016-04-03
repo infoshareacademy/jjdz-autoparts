@@ -25,11 +25,11 @@ public class CarIdentification {
 //        } else {
 ////            TODO QR code to be called
 ////            Car answearQR =
-////            Car carReturned = FindingCarByQCCodeAnswear(answearQR);
+////            Car carReturned = FindingCarByQCCodeAnswer(answearQR);
 //        }
 //    }
 
-    public Car FindingCarByQCCodeAnswear(Car carIn) throws FileNotFoundException {
+    public Car FindingCarByQCCodeAnswer(Car carIn) throws FileNotFoundException {
         String mainPath = "src/main/resources/";
         String brandFileNameOut = "Error";
         JsonParserBrands brandFileName = new JsonParserBrands();
@@ -48,7 +48,7 @@ public class CarIdentification {
 
         modelFileNameOut = modelId.searchCarId(model, year);
 
-        String engineName = engine.searchEngineType(engineFileNameOut);
+        String engineName = engine.searchEngineTypeByNumber(engineFileNameOut);
 
 
         Car car = new Car();
@@ -158,7 +158,7 @@ public class CarIdentification {
 
         JsonParserEngine engine1 = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
         //TODO dopytaj dlaczego nie możesz tu skorzystać z engine
-        String engineName = engine1.searchEngineType(engineFileNameOut);
+        String engineName = engine1.searchEngineTypeByNumber(engineFileNameOut);
 
 
         Car car = new Car();
