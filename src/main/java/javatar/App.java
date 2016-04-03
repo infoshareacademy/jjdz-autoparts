@@ -2,10 +2,7 @@ package javatar;
 
 import javatar.model.Autopart;
 import javatar.model.Car;
-import javatar.service.AllegroClassGenerator;
-import javatar.service.AutopartIdentification;
-import javatar.service.ProcessingUserInput;
-import javatar.service.ReadingUserInput;
+import javatar.service.*;
 
 import java.io.FileNotFoundException;
 
@@ -29,7 +26,7 @@ public class App {
 
 
             System.out.println("Kategoria allegro: ");
-            AllegroClassGenerator allegroClassGenerator = new AllegroClassGenerator();
+            AllegroCategoryFinder allegroClassGenerator = new AllegroCategoryFinder();
             String s = allegroClassGenerator.MatchCategories(userAutopart);
             System.out.print("Motoryzacja -> Części samochodowe" + s);
 

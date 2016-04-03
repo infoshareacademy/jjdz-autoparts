@@ -34,8 +34,8 @@ public class AllegroCategoryFinder {
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
                     .collect(Collectors.toList());
-            System.out.println(p.getName());
-            System.out.println(blist.toString());
+//            System.out.println(p.getName());
+//            System.out.println(blist.toString());
 
             for (AllegroCategories filteredElements
                     : blist
