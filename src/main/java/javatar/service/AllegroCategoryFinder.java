@@ -1,5 +1,6 @@
 package javatar.service;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
@@ -29,24 +30,27 @@ public class AllegroCategoryFinder {
             }
         }
 
-        for (AutopartCategory p :
-                autopartCategoryList) {
+       // for (int k = 0; k < autopartCategoryList.size(); k++) {
+
+
+             for (AutopartCategory p :
+                     autopartCategoryList) {
+            //AutopartCategory p = autopartCategoryList.get(k);
+            System.out.println(p.getName());
+                 System.out.println(parentId);
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
+                    .filter(
+                            category -> category.getCatParent() == parentId
+                    )
                     .collect(Collectors.toList());
-//            System.out.println(p.getName());
-//            System.out.println(blist.toString());
-
-            for (AllegroCategories filteredElements
-                    : blist
-                    ) {
-
-                if (filteredElements.getCatParent() == parentId) {
-                    returnedData = returnedData + " -> " + filteredElements.getCatName();
-                    parentId = filteredElements.getCatId();
-                }
-
+            System.out.println(blist.toString());
+            if (blist.size() != 0) {
+                AllegroCategories tmp = blist.get(0);
+                parentId = tmp.getCatId();
+                returnedData = returnedData + " -> " + tmp.getCatName();
             }
+//                 TODO dlaczego nie działa ostatni poziom filtrowania?
         }
 
         return returnedData;

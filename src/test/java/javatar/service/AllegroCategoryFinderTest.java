@@ -25,9 +25,9 @@ public class AllegroCategoryFinderTest {
         AutopartCategory categoryListElement2 = new AutopartCategory();
         categoryListElement2.setName("Chłodnice");
         autopart.addCategoryToList(categoryListElement2);
-//        AutopartCategory categoryListElement3 = new AutopartCategory();
-//        categoryListElement3.setName("Chłodnice oleju");
-//        autopart.addCategoryToList(categoryListElement3);
+        AutopartCategory categoryListElement3 = new AutopartCategory();
+        categoryListElement3.setName("Chłodnice oleju");
+        autopart.addCategoryToList(categoryListElement3);
 
         //when
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
@@ -46,16 +46,16 @@ public class AllegroCategoryFinderTest {
         AutopartCategory categoryListElement = new AutopartCategory();
         categoryListElement.setName("Części karoserii");
         autopart.addCategoryToList(categoryListElement);
-//        AutopartCategory categoryListElement2 = new AutopartCategory();
-//        categoryListElement2.setName("Cięgna drzwi");
-//        autopart.addCategoryToList(categoryListElement2);
+        AutopartCategory categoryListElement2 = new AutopartCategory();
+        categoryListElement2.setName("Cięgna drzwi");
+        autopart.addCategoryToList(categoryListElement2);
 
         //when
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
         String s = allegroCategoryFinder.MatchCategories(autopart);
 
         //then
-        //assertThat(s, is(equalTo(" -> Części karoserii -> Cięgna drzwi")));
+//        assertThat(s, is(equalTo(" -> Części karoserii -> Cięgna drzwi")));
         assertThat(s, is(equalTo(" -> Części karoserii")));
     }
 }
