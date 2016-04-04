@@ -2,74 +2,72 @@ package javatar.service;
 
 import javatar.model.Car;
 import javatar.model.CarsBrands;
+import javatar.model.CarsEngineAndFuel;
 import javatar.model.CarsModels;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class CarIdentification {
 
+    final String mainPath = "src/main/resources/";
+
     public CarIdentification() {
     }
 
-//    public void main(String[] args) throws IOException {
-//
-//        System.out.println("Wybierz metodę wprowadzania w wprowadź odpowiednią cyfrę:\r\n1. QC code\r\n2. Na podstawie serii pytań");
-//        Scanner scanner = new Scanner(System.in);
-//        Integer answear = scanner.nextInt();
-//        if (answear == 2) {
-//            Car carReturned = FindingCarManagement();
-//        } else {
-////            TODO QR code to be called
-////            Car answearQR =
-////            Car carReturned = FindingCarByQCCodeAnswer(answearQR);
-//        }
-//    }
-
-    public Car FindingCarByQCCodeAnswer(Car carIn) throws FileNotFoundException {
-        String mainPath = "src/main/resources/";
-        String brandFileNameOut = "Error";
-        JsonParserBrands brandFileName = new JsonParserBrands();
-
-        String brand = carIn.getCarsBrand().getName();// carIn.getBrandName();
-        brandFileNameOut = brandFileName.searchCarId(brand);
+    public Car FindingCarByAztecCodeAnswer(Car carIn) throws FileNotFoundException {
 
 
-        JsonParserModels modelId = new JsonParserModels(mainPath + brandFileNameOut + ".json");
+        CarsBrands carInBrand = carIn.getCarsBrand();
+        CarsModels canInModel = carIn.getCarsModel();
+        String carInEngineCapacity = carIn.getEngineCapacity();
+        String carInFuelType = carIn.getFuelType();
+        String carInEnginePower = carIn.getEnginePower();
+        int carInProductionYear = carIn.getProductionYear();
+        //CarsEngineAndFuel carInEngine =carIn.getEngine();
+        CarsEngineAndFuel engineOut = new CarsEngineAndFuel();
 
-        String modelFileNameOut = "Error";
-        String model = carIn.getCarsModel().getName();//carIn.getModelName();
-        Integer year = carIn.getProductionYear();
-        String engineFileNameOut = "Error";
-        JsonParserEngine engine = new JsonParserEngine(mainPath + modelFileNameOut + ".json");
-
-        modelFileNameOut = modelId.searchCarId(model, year);
-
-        String engineName = engine.searchEngineTypeByNumber(engineFileNameOut);
+        JsonParserBrands brands = new JsonParserBrands();
+        String carOutId = brands.searchCarId(carInBrand.getName());
+        JsonParserModels models = new JsonParserModels(mainPath + "/" + carOutId + ".json");
+        String modelOutId = models.searchCarId(canInModel.getName(), carInProductionYear);
+        JsonParserEngine engine = new JsonParserEngine(mainPath + "/" + modelOutId + ".json");
+        List<CarsEngineAndFuel> carEnginesList = engine.searchEngineTypeByTokens(carInFuelType, carInEngineCapacity, carInEnginePower);
 
 
-        Car car = new Car();
-        car.setCarsBrand(new CarsBrands(brandFileNameOut,brand));
-        car.setCarsModel(new CarsModels(modelFileNameOut,model));
-//        car.setBrandName(brand);
-//        car.setBrandId(brandFileNameOut);
-//        car.setModelId(modelFileNameOut);
-//        car.setModelName(model);
-        car.setProductionYear(year);
-        car.setTypeId(engineFileNameOut);
-        car.setTypeName(engineName);
+        if (carEnginesList.size() > 1) {
+            System.out.println("Znaleziono " + carEnginesList.size() + " typy silników pasujące do danych zawartych w kodzie Aztek");
+            System.out.println("Wybierz właściwy silnik i wprowadź jego numer");
+            for (int i = 0; i < carEnginesList.size(); i++) {
+                System.out.println(carEnginesList.get(i));
+                i++;
+            }
+            Scanner scanner = new Scanner(System.in);
+            int numberFromEnginesList = scanner.nextInt();
+            engineOut = carEnginesList.get(numberFromEnginesList);
 
-        System.out.println(car);
+        } else {
+            engineOut = carEnginesList.get(0);
+        }
 
-        return car;
+        carInBrand.setId(carOutId);
+        canInModel.setId(modelOutId);
+//        carInEngine.setId(engineOut.getId());
+        carIn.setCarsBrand(carInBrand);
+        carIn.setCarsModel(canInModel);
+//        carIn.setEngine(carInEngine);
+        carIn.setEngineID(engineOut.getId());
+        System.out.println(carIn);
+
+        return carIn;
     }
 
     public Car FindingCarManagement() throws IOException {
         String brand = new String();
-        String mainPath = "src/main/resources/";
         Scanner scanner = new Scanner(System.in);
         JsonParserBrands brandFileName = new JsonParserBrands();
         String brandFileNameOut = "Error";
@@ -78,28 +76,28 @@ public class CarIdentification {
         //Car brands section
         //------------------------------------------------------------------------------------------------------
         //while (brandFileNameOut == "Error") {
-            System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL\r\n2. VOLKSWAGEN");
-            String brandSelection = scanner.nextLine();
+        System.out.println("Wprowadź nazwę marki lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. OPEL\r\n2. VOLKSWAGEN");
+        String brandSelection = scanner.nextLine();
 
-            if (brandSelection.length() == 1) {
-                switch (brandSelection) {
-                    case "1":
-                        brand = "OPEL";
-                        break;
-                    case "2":
-                        brand = "VOLKSWAGEN";
-                        break;
-                    default:
-                        brand = "Error";
-                        break;
-                }
-            } else {
-                brand = brandSelection;
+        if (brandSelection.length() == 1) {
+            switch (brandSelection) {
+                case "1":
+                    brand = "OPEL";
+                    break;
+                case "2":
+                    brand = "VOLKSWAGEN";
+                    break;
+                default:
+                    brand = "Error";
+                    break;
             }
+        } else {
+            brand = brandSelection;
+        }
 
 
-            brandFileNameOut = brandFileName.searchCarId(brand);
-       // }
+        brandFileNameOut = brandFileName.searchCarId(brand);
+        // }
 
         //------------------------------------------------------------------------------------------------------
         //Car models section
@@ -111,30 +109,30 @@ public class CarIdentification {
         String year = new String();
 
         //while (modelFileNameOut == "Error") {
-            System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi\r\n2. JETTA VII SportWagon");
-            String modelSelection = scanner.nextLine();
-            System.out.println("Wprowadź rok produkcji:");
-            year = scanner.nextLine();
+        System.out.println("Wprowadź nazwę modelu lub wybierz z listy i wprowadź przyporządkowany jej numer:\r\n1. ASTRA G kombi\r\n2. JETTA VII SportWagon");
+        String modelSelection = scanner.nextLine();
+        System.out.println("Wprowadź rok produkcji:");
+        year = scanner.nextLine();
 
 
-            if (modelSelection.length() == 1) {
-                switch (modelSelection) {
-                    case "1":
-                        model = "ASTRA G kombi";
-                        break;
-                    case "2":
-                        model = "JETTA VII SportWagon";
-                        break;
-                    default:
-                        model = "Error";
-                        break;
-                }
-            } else {
-                model = modelSelection;
+        if (modelSelection.length() == 1) {
+            switch (modelSelection) {
+                case "1":
+                    model = "ASTRA G kombi";
+                    break;
+                case "2":
+                    model = "JETTA VII SportWagon";
+                    break;
+                default:
+                    model = "Error";
+                    break;
             }
+        } else {
+            model = modelSelection;
+        }
 
-            modelFileNameOut = modelId.searchCarId(model, Integer.parseInt(year));
-       // }
+        modelFileNameOut = modelId.searchCarId(model, Integer.parseInt(year));
+        // }
         //------------------------------------------------------------------------------------------------------
         //CEngines and fuel section
         //------------------------------------------------------------------------------------------------------
@@ -162,8 +160,8 @@ public class CarIdentification {
 
 
         Car car = new Car();
-        car.setCarsBrand(new CarsBrands(brandFileNameOut,brand));
-        car.setCarsModel(new CarsModels(modelFileNameOut,model));
+        car.setCarsBrand(new CarsBrands(brandFileNameOut, brand));
+        car.setCarsModel(new CarsModels(modelFileNameOut, model));
 //        car.setBrandName(brand);
 //        car.setBrandId(brandFileNameOut);
 //        car.setModelId(modelFileNameOut);

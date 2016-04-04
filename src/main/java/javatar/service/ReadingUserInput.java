@@ -41,7 +41,7 @@ public class ReadingUserInput {
 //
 //            JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(GetSessionKey());
 //            Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
-//            return carFinder.FindingCarByQCCodeAnswer(answerAztec);
+//            return carFinder.FindingCarByAztecCodeAnswer(answerAztec);
 //
 //        }
 //        return null;

@@ -11,9 +11,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class JsonParserAztecCode {
 
@@ -72,7 +69,7 @@ public class JsonParserAztecCode {
         carFromAztec.setProductionYear(Integer.parseInt(jsonCar.getDane().getRok_produkcji()));
         carFromAztec.setCarsBrand(cb);
         carFromAztec.setCarsModel(cm);
-        carFromAztec.setEngine(jsonCar.getDane().getSilnik());
+        carFromAztec.setEngineCapacity(jsonCar.getDane().getSilnik());
         carFromAztec.setFuelType(jsonCar.getDane().getTyp_paliwa());
         //System.out.println(jsonCar.toString());
 
