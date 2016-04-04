@@ -4,7 +4,7 @@ public class Car {
     //// TODO: 10.03.16 mcymerys - zamiast stringow klasy carbrands i carmodel
     private CarsBrands carsBrand;
     private CarsModels carsModel;
-    //    private String brandName;
+//    private String brandName;
 //    private String brandId;
 //    private String modelName;
 //    private String modelId;
@@ -81,8 +81,7 @@ public class Car {
         this.productionYear = productionYear;
     }
 
-    public Car() {
-    }
+    public Car(){}
 //
 //    public String getBrandName() {
 //        return brandName;

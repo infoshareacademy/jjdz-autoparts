@@ -16,11 +16,12 @@ public class Dane {
     @SerializedName("P.1")
     private String silnik;
 
-
-
     @SerializedName("P.3")
 
     private String typ_paliwa;
+
+    @SerializedName("P.2")
+    private String moc_silnika;
 
     public String getErrorText() {
         return ErrorText;
@@ -46,7 +47,6 @@ public class Dane {
         this.D5 = D5;
     }
 
-
     public String getRok_produkcji() {
         return Rok_produkcji;
     }
@@ -55,7 +55,6 @@ public class Dane {
         this.Rok_produkcji = Rok_produkcji;
     }
 
-
     public String getD1() {
         return D1;
     }
@@ -63,6 +62,7 @@ public class Dane {
     public void setD1(String D1) {
         this.D1 = D1;
     }
+
     public String getTyp_paliwa() {
         return typ_paliwa;
     }
@@ -77,6 +77,14 @@ public class Dane {
 
     public void setSilnik(String silnik) {
         this.silnik = silnik;
+    }
+
+    public String getMoc_silnika() {
+        return moc_silnika;
+    }
+
+    public void setMoc_silnika(String moc_silnika) {
+        this.moc_silnika = moc_silnika;
     }
 
     @Override

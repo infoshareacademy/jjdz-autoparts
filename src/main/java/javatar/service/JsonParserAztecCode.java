@@ -46,6 +46,7 @@ public class JsonParserAztecCode {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //   System.out.println(json);
         return json;
     }
 
@@ -71,6 +72,7 @@ public class JsonParserAztecCode {
         carFromAztec.setCarsModel(cm);
         carFromAztec.setEngineCapacity(jsonCar.getDane().getSilnik());
         carFromAztec.setFuelType(jsonCar.getDane().getTyp_paliwa());
+        carFromAztec.setEnginePower(jsonCar.getDane().getMoc_silnika());
         //System.out.println(jsonCar.toString());
 
         return carFromAztec;
