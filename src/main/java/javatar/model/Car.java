@@ -4,7 +4,7 @@ public class Car {
     //// TODO: 10.03.16 mcymerys - zamiast stringow klasy carbrands i carmodel
     private CarsBrands carsBrand;
     private CarsModels carsModel;
-//    private String brandName;
+    //    private String brandName;
 //    private String brandId;
 //    private String modelName;
 //    private String modelId;
@@ -13,9 +13,7 @@ public class Car {
     private int productionYear;
     private String fuelType;
     private String engine;
-
-
-
+    private String enginePower;
 
     @Override
     public String toString() {
@@ -59,7 +57,8 @@ public class Car {
         this.productionYear = productionYear;
     }
 
-    public Car(){}
+    public Car() {
+    }
 //
 //    public String getBrandName() {
 //        return brandName;
@@ -147,6 +146,14 @@ public class Car {
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
+    }
+
+    public String getEnginePower() {
+        return enginePower;
+    }
+
+    public void setEnginePower(String enginePower) {
+        this.enginePower = enginePower;
     }
 
 

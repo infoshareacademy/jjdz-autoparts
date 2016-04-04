@@ -11,9 +11,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class JsonParserAztecCode {
 
@@ -49,6 +46,7 @@ public class JsonParserAztecCode {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //   System.out.println(json);
         return json;
     }
 
@@ -74,6 +72,7 @@ public class JsonParserAztecCode {
         carFromAztec.setCarsModel(cm);
         carFromAztec.setEngine(jsonCar.getDane().getSilnik());
         carFromAztec.setFuelType(jsonCar.getDane().getTyp_paliwa());
+        carFromAztec.setEnginePower(jsonCar.getDane().getMoc_silnika());
         //System.out.println(jsonCar.toString());
 
         return carFromAztec;
