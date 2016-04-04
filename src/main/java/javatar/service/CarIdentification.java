@@ -145,11 +145,11 @@ public class CarIdentification {
 
             HashMap<Integer, String> engineIdsMap = engine.listAllEngineTypes();
             String engineSelection = scanner.nextLine();
-
-            while (Integer.parseInt(engineSelection) > (engineIdsMap.size() - 1) || Integer.parseInt(engineSelection) < 0) {
-                System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
-                engineSelection = scanner.nextLine();
-            }
+//
+//            while (Integer.parseInt(engineSelection) > (engineIdsMap.size() - 1) || Integer.parseInt(engineSelection) < 0) {
+//                System.out.println("Wpisz numer przyporządkowany właściwemu silnikowi:");
+//                engineSelection = scanner.nextLine();
+//            }
 
             engineFileNameOut = engineIdsMap.get(Integer.parseInt(engineSelection));
         }
