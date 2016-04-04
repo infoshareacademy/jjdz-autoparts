@@ -1,17 +1,17 @@
 package javatar.model;
 
-import java.util.Collection;
+import java.util.List;
 
 public class DataCarsEngineAndFuel {
 
     private String datatype;
-    private Collection<CarsEngineAndFuel> data;
+    private List<CarsEngineAndFuel> data;
 
     public String getDatatype() {
         return datatype;
     }
 
-    public Collection<CarsEngineAndFuel> getData() {
+    public List<CarsEngineAndFuel> getData() {
         return data;
     }
 

@@ -4,7 +4,7 @@ public class Car {
     //// TODO: 10.03.16 mcymerys - zamiast stringow klasy carbrands i carmodel
     private CarsBrands carsBrand;
     private CarsModels carsModel;
-    //    private String brandName;
+//    private String brandName;
 //    private String brandId;
 //    private String modelName;
 //    private String modelId;
@@ -12,19 +12,43 @@ public class Car {
     private String typeId;
     private int productionYear;
     private String fuelType;
-    private String engine;
+    private String engineCapacity;
     private String enginePower;
+    private String engineID;
+
+    public String getEngineID() {
+        return engineID;
+    }
+
+    public void setEngineID(String engineID) {
+        this.engineID = engineID;
+    }
 
     @Override
     public String toString() {
         return "Car{" +
-                "carsBrand=" + carsBrand.getName() +
-                ", carsModel=" + carsModel.getName() +
+                "carsBrand=" + carsBrand +
+                ", carsModel=" + carsModel +
                 ", typeName='" + typeName + '\'' +
                 ", typeId='" + typeId + '\'' +
                 ", productionYear=" + productionYear +
+                ", fuelType='" + fuelType + '\'' +
+                ", engineCapacity='" + engineCapacity + '\'' +
+                ", enginePower='" + enginePower + '\'' +
+                ", engineID='" + engineID + '\'' +
                 '}';
     }
+
+//    @Override
+//    public String toString() {
+//        return "Car{" +
+//                "carsBrand=" + carsBrand.getName() +
+//                ", carsModel=" + carsModel.getName() +
+//                ", typeName='" + typeName + '\'' +
+//                ", typeId='" + typeId + '\'' +
+//                ", productionYear=" + productionYear +
+//                '}';
+//    }
 
     //    @Override
 //    public String toString() {
@@ -57,8 +81,7 @@ public class Car {
         this.productionYear = productionYear;
     }
 
-    public Car() {
-    }
+    public Car(){}
 //
 //    public String getBrandName() {
 //        return brandName;
@@ -132,12 +155,12 @@ public class Car {
         this.productionYear = productionYear;
     }
 
-    public String getEngine() {
-        return engine;
+    public String getEngineCapacity() {
+        return engineCapacity;
     }
 
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public void setEngineCapacity(String engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 
     public String getFuelType() {
@@ -155,6 +178,4 @@ public class Car {
     public void setEnginePower(String enginePower) {
         this.enginePower = enginePower;
     }
-
-
 }

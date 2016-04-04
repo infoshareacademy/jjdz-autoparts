@@ -70,7 +70,7 @@ public class JsonParserAztecCode {
         carFromAztec.setProductionYear(Integer.parseInt(jsonCar.getDane().getRok_produkcji()));
         carFromAztec.setCarsBrand(cb);
         carFromAztec.setCarsModel(cm);
-        carFromAztec.setEngine(jsonCar.getDane().getSilnik());
+        carFromAztec.setEngineCapacity(jsonCar.getDane().getSilnik());
         carFromAztec.setFuelType(jsonCar.getDane().getTyp_paliwa());
         carFromAztec.setEnginePower(jsonCar.getDane().getMoc_silnika());
         //System.out.println(jsonCar.toString());
