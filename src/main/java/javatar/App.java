@@ -39,11 +39,6 @@ public class App {
             System.exit(-1);
         }
 
-//
-//        /// TODO: 12.03.16 parsowanie xml i pobarnie kategorii
-//        // TODO: 12.03.16 znalezienie kategorii z autopart w xml
-
-
     }
 
 
