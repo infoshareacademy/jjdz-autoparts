@@ -28,7 +28,10 @@ public class App {
             System.out.println("Kategoria allegro: ");
             AllegroCategoryFinder allegroClassGenerator = new AllegroCategoryFinder();
             String s = allegroClassGenerator.MatchCategories(userAutopart);
-            System.out.print("Motoryzacja -> Części samochodowe" + s);
+            System.out.println("Motoryzacja -> Części samochodowe" + s);
+
+            String allegroSearch = userAutopart.getPartBrand() + " " + userAutopart.getPartId();
+            System.out.println("Tekst do wpisania w wyszukuwarkę: " + allegroSearch);
 
 
         } catch (FileNotFoundException e) {
