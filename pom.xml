@@ -17,8 +17,22 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.1.0.Alpha7</version>
+            </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <!-- See https://docs.jboss.org/wildfly/plugins/maven/1.1.0.Alpha7/apidocs/org/wildfly/plugin/server/AddUser.html#set%28java.lang.String%29 -->
+        <wildfly.add-user>admin:Admin#70365:group:ManagementRealm:false</wildfly.add-user>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -73,6 +87,41 @@
             <version>3.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
+
+    <profiles>
+        <profile>
+            <!-- Być może jest plugin, który wystartowałby dockera z podanym image'm -->
+            <id>docker</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <configuration>
+                            <hostname>localhost</hostname>
+                            <port>19990</port>
+                            <username>admin</username>
+                            <password>Admin#70365</password>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
