@@ -11,7 +11,7 @@ import java.util.Collection;
 
 public class JsonParser {
 
-    final static String DEFAULT_FILENAME = "src/main/resources/v2.json";
+    final static String DEFAULT_FILENAME = "src/main/resources/json_data/v2.json";
     final FileReader reader;
 
     public JsonParser() throws FileNotFoundException {

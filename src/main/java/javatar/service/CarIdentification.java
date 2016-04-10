@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class CarIdentification {
 
-    final String mainPath = "src/main/resources/";
+    final String mainPath = "src/main/resources/json_data/";
 
     public CarIdentification() {
     }

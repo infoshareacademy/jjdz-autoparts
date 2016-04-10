@@ -18,7 +18,7 @@ public class JsonParserAutopart {
 //        searchCategoryId(searchToken);
     }
 
-    final static String DEFAULT_FILENAME = "src/main/resources/2h61.json";
+    final static String DEFAULT_FILENAME = "src/main/resources/json_data/2h61.json";
     final FileReader reader;
 
     public JsonParserAutopart() throws FileNotFoundException {
