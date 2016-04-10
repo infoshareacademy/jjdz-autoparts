@@ -18,7 +18,7 @@ public class JsonParserBrands {
         searchCarId(searchToken);
     }
 
-    final static String DEFAULT_FILENAME = "src/main/resources/v2.json";
+    final static String DEFAULT_FILENAME = "src/main/resources/json_data/v2.json";
     final FileReader reader;
 
     public JsonParserBrands() throws FileNotFoundException {

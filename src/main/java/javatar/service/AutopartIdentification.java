@@ -10,7 +10,7 @@ import java.util.*;
 public class AutopartIdentification {
 
     public static final int NUMERIC_OPTION_LENGTH = 1;
-    public static final String MAIN_PATH = "src/main/resources/";
+    public static final String MAIN_PATH = "src/main/resources/json_data/";
 
     public AutopartIdentification() {
     }
