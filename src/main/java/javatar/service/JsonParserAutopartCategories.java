@@ -13,22 +13,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class JsonParserAutopartCategories {
-    public void main(String[] args) throws ClassNotFoundException, IOException {
 
-        String searchToken = args[0];
-//        searchCategoryId(searchToken);
-    }
-
-    final static String DEFAULT_FILENAME = "src/main/resources/json_data/2h61.json";
     final FileReader reader;
 
-    public JsonParserAutopartCategories() throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(DEFAULT_FILENAME);
-    }
-
     public JsonParserAutopartCategories(String fileName) throws FileNotFoundException {
-        //default filename
         reader = new FileReader(fileName);
     }
 

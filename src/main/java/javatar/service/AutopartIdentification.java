@@ -16,8 +16,7 @@ public class AutopartIdentification {
     }
 
     public Autopart diagnoseAutopart(Car car) throws IOException {
-//
-//        Car car = new Car("AC", "iv", "428 Fastback", "399", "7.0", "2h61", 1970);
+
         AutopartCategory currentCategory;
         Autopart autopart;
         List<AutopartCategory> partCategoryList = new ArrayList<>();

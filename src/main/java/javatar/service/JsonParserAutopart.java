@@ -12,19 +12,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class JsonParserAutopart {
-    public void main(String[] args) throws ClassNotFoundException, IOException {
 
-        String searchToken = args[0];
-//        searchCategoryId(searchToken);
-    }
-
-    final static String DEFAULT_FILENAME = "src/main/resources/json_data/2h61.json";
     final FileReader reader;
-
-    public JsonParserAutopart() throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(DEFAULT_FILENAME);
-    }
 
     public JsonParserAutopart(String fileName) throws FileNotFoundException {
         reader = new FileReader(fileName);
