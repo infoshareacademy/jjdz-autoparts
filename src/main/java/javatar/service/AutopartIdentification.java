@@ -21,7 +21,7 @@ public class AutopartIdentification {
         Autopart autopart;
         List<AutopartCategory> partCategoryList = new ArrayList<>();
 
-        String fileName = car.getTypeId();//carId
+        String fileName = car.getTypeId();
         String file = MAIN_PATH + fileName + ".json";
 
         currentCategory = findCategory(file);

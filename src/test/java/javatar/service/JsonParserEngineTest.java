@@ -13,8 +13,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class JsonParserEngineTest {
-    String path = "src/main/resources/2mz.json";
-    String path2 = "src/main/resources/8o2.json";
+    String path = "src/main/resources/json_data/2mz.json";
+    String path2 = "src/main/resources/json_data/8o2.json";
 
     @Test
     public void should_find_opel() throws FileNotFoundException {
