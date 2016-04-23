@@ -1,6 +1,6 @@
 package javatar.service;
 
-import com.sun.xml.internal.bind.v2.TODO;
+
 import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
@@ -8,9 +8,7 @@ import javatar.model.AutopartCategory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class AllegroCategoryFinder {
 

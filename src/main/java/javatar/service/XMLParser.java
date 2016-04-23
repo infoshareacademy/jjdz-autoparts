@@ -2,7 +2,7 @@ package javatar.service;
 
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.sun.xml.internal.txw2.output.XmlSerializer;
+
 import javatar.model.AllegroCategories;
 
 import javax.xml.stream.XMLInputFactory;

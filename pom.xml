@@ -7,6 +7,7 @@
     <groupId>groupId</groupId>
     <artifactId>jjdz-autoparts</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
     <build>
         <plugins>
             <plugin>
@@ -55,6 +56,7 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>jdom</groupId>
@@ -71,11 +73,7 @@
             <artifactId>woodstox-core-asl</artifactId>
             <version>4.4.1</version>
         </dependency>
-        <dependency>
-            <groupId>groupId</groupId>
-            <artifactId>jjdz-autoparts</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -114,7 +112,7 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <configuration>
                             <hostname>localhost</hostname>
-                            <port>19990</port>
+                            <port>29990</port>
                             <username>admin</username>
                             <password>Admin#70365</password>
                         </configuration>
