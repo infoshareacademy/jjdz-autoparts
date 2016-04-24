@@ -6,8 +6,7 @@
 <body>
 
 <form method="POST" action="MyServlet">
-    Please enter your name: <input type="text" name="user_name"> <br/>
-    <select name="your_option">
+    Please select correct brand<select name="your_option">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

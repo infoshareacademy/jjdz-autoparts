@@ -2,7 +2,10 @@ package javatar.model;
 
 import java.util.Collection;
 
+
 public class DataCarsBrands {
+
+    private Long id;
 
     String datatype;
     Collection<CarsBrands> data;
