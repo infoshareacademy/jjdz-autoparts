@@ -5,25 +5,25 @@ import java.util.List;
 
 public class Autopart {
     private List<AutopartCategory> categoryList;
-    private String partName;
-    private String partBrand;
-    private String partId;
+    private String name;
+    private String brand;
+    private String id;
 
     public Autopart() {
         this.categoryList = new ArrayList<AutopartCategory>();
     }
 
-    public Autopart(List<AutopartCategory> categoryList, String partName, String partBrand, String partId) {
+    public Autopart(List<AutopartCategory> categoryList, String name, String brand, String id) {
         this.categoryList = categoryList;
-        this.partName = partName;
-        this.partBrand = partBrand;
-        this.partId = partId;
+        this.name = name;
+        this.brand = brand;
+        this.id = id;
     }
 
-    public Autopart(List<AutopartCategory> categoryList, String partName, String partId) {
+    public Autopart(List<AutopartCategory> categoryList, String name, String id) {
         this.categoryList = categoryList;
-        this.partName = partName;
-        this.partId = partId;
+        this.name = name;
+        this.id = id;
     }
 
     @Override
@@ -34,27 +34,27 @@ public class Autopart {
         Autopart autopart = (Autopart) o;
 
         if (!getCategoryList().equals(autopart.getCategoryList())) return false;
-        if (!getPartName().equals(autopart.getPartName())) return false;
-        if (!getPartBrand().equals(autopart.getPartBrand())) return false;
-        return getPartId().equals(autopart.getPartId());
+        if (!getName().equals(autopart.getName())) return false;
+        if (!getBrand().equals(autopart.getBrand())) return false;
+        return getId().equals(autopart.getId());
 
     }
 
     @Override
     public int hashCode() {
         int result = getCategoryList().hashCode();
-        result = 31 * result + getPartName().hashCode();
-        result = 31 * result + getPartBrand().hashCode();
-        result = 31 * result + getPartId().hashCode();
+        result = 31 * result + getName().hashCode();
+        result = 31 * result + getBrand().hashCode();
+        result = 31 * result + getId().hashCode();
         return result;
     }
 
-    public String getPartBrand() {
-        return partBrand;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setPartBrand(String partBrand) {
-        this.partBrand = partBrand;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public void addCategoryToList (AutopartCategory category){
@@ -69,29 +69,29 @@ public class Autopart {
         this.categoryList = categoryList;
     }
 
-    public String getPartName() {
-        return partName;
+    public String getName() {
+        return name;
     }
 
-    public void setPartName(String partName) {
-        this.partName = partName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPartId() {
-        return partId;
+    public String getId() {
+        return id;
     }
 
-    public void setPartId(String partId) {
-        this.partId = partId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "Autopart{" +
                 "categoryList=" + categoryList +
-                ", partName='" + partName + '\'' +
-                ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }

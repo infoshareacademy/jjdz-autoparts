@@ -7,7 +7,6 @@ import javatar.model.JsonData;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Collection;
 
 public class JsonParser {
 
@@ -32,9 +31,9 @@ public class JsonParser {
 //        Collection<Object> objects =  data.getAutopartData();
 
         for (Autopart a : data.getAutopartData()) {
-            if (a.getPartName().contains(searchToken.toUpperCase())) {
+            if (a.getName().contains(searchToken.toUpperCase())) {
 
-                partID = a.getPartId();
+                partID = a.getId();
                 return partID;
 
             }
