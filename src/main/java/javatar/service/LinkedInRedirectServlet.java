@@ -7,6 +7,9 @@ import com.github.scribejava.core.model.OAuthRequest;
 import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
+import com.google.gson.Gson;
+import javatar.model.CarFromAztec;
+import javatar.model.LinkedInUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,7 +43,16 @@ public class LinkedInRedirectServlet extends HttpServlet {
         service.signRequest(accessToken, requestName);
         final Response response = requestName.send();
         System.out.println(response.getCode());
-        System.out.println(response.getBody());
+        //System.out.println(response.getBody());
+
+        String linkedinJson = response.getBody();
+        System.out.println(linkedinJson);
+
+        Gson gson = new Gson();
+        LinkedInUser linkedInUser = gson.fromJson(linkedinJson, LinkedInUser.class);
+
+        System.out.println(linkedInUser.getFirstName());
+        System.out.println(linkedInUser.getLastName());
 
 
     }
