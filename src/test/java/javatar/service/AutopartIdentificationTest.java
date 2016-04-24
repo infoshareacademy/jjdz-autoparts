@@ -29,7 +29,7 @@ public class AutopartIdentificationTest {
     @Test
     public void testFindAutopart() throws Exception {
         //given
-        String file = "src/main/resources/7tz.json";
+        String file = "src/main/resources/json_data/7tz.json";
         List<AutopartCategory> partCategoryList = new ArrayList<>();
         Autopart expected = new Autopart(partCategoryList, "Jednostka hydrauliczna, układ hamulcowy", "bosch", "0265231022");
         //when
@@ -42,7 +42,7 @@ public class AutopartIdentificationTest {
     @Test
     public void testFindCategory() throws Exception {
         //given
-        String file = "src/main/resources/2h61.json";
+        String file = "src/main/resources/json_data/2h61.json";
         AutopartCategory expected = new AutopartCategory("Układ hamulcowy", "7t3", true, "/api/v2/find/go/8o2/2h61/7t3");
         //when
         System.setIn(new java.io.ByteArrayInputStream(inputData.getBytes()));
