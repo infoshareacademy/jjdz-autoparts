@@ -1,10 +1,11 @@
 package javatar.model;
 
-import javax.persistence.Entity;
 import java.util.Collection;
 
-@Entity
+
 public class DataCarsBrands {
+
+    private Long id;
 
     String datatype;
     Collection<CarsBrands> data;
