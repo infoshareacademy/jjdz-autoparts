@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Models")
-public class BrandsChosenOutServlet extends HttpServlet {
+public class ModelChoosingServlet extends HttpServlet {
 
 
     @Override

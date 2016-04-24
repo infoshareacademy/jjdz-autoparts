@@ -2,15 +2,16 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javatar.model.DataCarsModels;
 
+import javax.ejb.Stateless;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class JsonParserCommon {
+@Stateless
+public class JsonParserStateless {
     final FileReader reader;
 
-    public JsonParserCommon(String filename) throws FileNotFoundException {
+    public JsonParserStateless(String filename) throws FileNotFoundException {
         //default filename
         reader = new FileReader(filename);
     }

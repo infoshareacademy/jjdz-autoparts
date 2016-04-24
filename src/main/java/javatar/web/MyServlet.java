@@ -1,6 +1,6 @@
 package javatar.web;
 
-import javatar.service.FindingCarInJsonService;
+import javatar.service.FindingTokenInJsonService;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class MyServlet extends HttpServlet {
 
     @EJB
-    FindingCarInJsonService service;
+    FindingTokenInJsonService service;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
