@@ -1,7 +1,6 @@
 package javatar.web;
 
-import javatar.example.DataModel;
-import javatar.example.MyComponent;
+import javatar.service.FindingCarInJsonService;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -16,12 +15,11 @@ import java.io.IOException;
 public class MyServlet extends HttpServlet {
 
     @EJB
-    MyComponent component;
+    FindingCarInJsonService service;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String userName = req.getParameter("user_name");
         String optionString = req.getParameter("your_option");
 
         Integer option = 0;
@@ -29,9 +27,8 @@ public class MyServlet extends HttpServlet {
             option = Integer.valueOf(optionString);
         }
 
-        DataModel model = component.doSomeLogic(userName, option);
 
-        req.setAttribute("model", model);
+        req.setAttribute("option", option);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("output.jsp");
         dispatcher.forward(req, resp);
