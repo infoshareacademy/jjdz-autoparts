@@ -2,7 +2,6 @@ package javatar.web;
 
 import javatar.model.CarsBrands;
 import javatar.service.BrandsJsonCache;
-import javatar.service.FindingCarInJsonService;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -17,8 +16,7 @@ import java.util.Collection;
 @WebServlet(urlPatterns = "/Brands")
 public class BrandsChoosingServlet extends HttpServlet {
 
-    @EJB
-    FindingCarInJsonService service;
+
 
     @EJB
     BrandsJsonCache cache;
