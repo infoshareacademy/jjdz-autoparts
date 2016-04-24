@@ -41,9 +41,9 @@ public class AutopartIdentification {
         autopart.setCategoryList(partCategoryList);
 
         System.out.println("Twoja część: ");
-        System.out.println("Nazwa: " + autopart.getPartName());
-        System.out.println("Producent: " + autopart.getPartBrand());
-        System.out.println("Numer: " + autopart.getPartId());
+        System.out.println("Nazwa: " + autopart.getName());
+        System.out.println("Producent: " + autopart.getBrand());
+        System.out.println("Numer: " + autopart.getId());
         System.out.println("Kategorie: ");
         int categoryNumber = 1;
         for (AutopartCategory ac : autopart.getCategoryList()) {
@@ -79,9 +79,9 @@ public class AutopartIdentification {
 
         JsonAutopart foundAutopart = autopartParser.searchAutopartId(name, jsonDataAutopart);
 
-        autopart.setPartName(foundAutopart.getName());
-        autopart.setPartBrand(foundAutopart.getBrand_clear());
-        autopart.setPartId(foundAutopart.getNumber_clear());
+        autopart.setName(foundAutopart.getName());
+        autopart.setBrand(foundAutopart.getBrand_clear());
+        autopart.setId(foundAutopart.getNumber_clear());
 
         return autopart;
     }

@@ -24,7 +24,7 @@ public class App {
             String s = allegroClassGenerator.MatchCategories(userAutopart);
             System.out.println("Motoryzacja -> Części samochodowe" + s);
 
-            String allegroSearch = userAutopart.getPartBrand() + " " + userAutopart.getPartId();
+            String allegroSearch = userAutopart.getBrand() + " " + userAutopart.getId();
             System.out.println("Tekst do wpisania w wyszukuwarkę: " + allegroSearch);
 
         } catch (FileNotFoundException e) {
