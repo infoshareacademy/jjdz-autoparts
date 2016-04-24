@@ -1,4 +1,7 @@
-package javatar.example;
+package javatar.web;
+
+import javatar.example.DataModel;
+import javatar.example.MyComponent;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
