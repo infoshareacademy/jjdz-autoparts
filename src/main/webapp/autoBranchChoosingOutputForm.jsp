@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<form method="POST" action="/BrandsOut">
+<form method="GET" action="Models">
 
-    <P>Result: ${brandOut.result}</P>
+    <P>Result: ${brandOut}</P>
 
     <input type="submit" value="OK">
 </form>

@@ -16,8 +16,6 @@ import java.util.Collection;
 @WebServlet(urlPatterns = "/Brands")
 public class BrandsChoosingServlet extends HttpServlet {
 
-
-
     @EJB
     BrandsJsonCache cache;
 
@@ -32,4 +30,7 @@ public class BrandsChoosingServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("autoBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
+
+
+
 }

@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<form method="GET" action="/Brands">
+<form method="GET" action="Models">
 
-    <select name="your_option">
+    <select name="brand">
         <c:forEach items="${brands}" var="brand">
         <option value="${brand.id}">${brand.name}</option>
         </c:forEach>
