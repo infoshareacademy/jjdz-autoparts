@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/LinkedInRedirect")
@@ -53,6 +54,13 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         System.out.println(linkedInUser.getFirstName());
         System.out.println(linkedInUser.getLastName());
+
+        HttpSession session = req.getSession();
+
+        session.setAttribute("user", linkedInUser);
+
+        resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
+
 
 
     }
