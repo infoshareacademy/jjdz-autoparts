@@ -1,4 +1,4 @@
-package javatar.webapp;
+package javatar.web;
 
 import javatar.components.ResultComponent;
 import javatar.model.ResultDatabaseModel;
