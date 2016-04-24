@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/MyServlet")
-public class MyServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/Brands")
+public class BrandsChoosingServlet extends HttpServlet {
 
     @EJB
     FindingCarInJsonService service;
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String optionString = req.getParameter("your_option");
 
@@ -30,7 +30,7 @@ public class MyServlet extends HttpServlet {
 
         req.setAttribute("option", option);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("output.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("autoBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
 }

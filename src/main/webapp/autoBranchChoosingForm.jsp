@@ -1,3 +1,5 @@
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,13 +7,13 @@
 </head>
 <body>
 
-<form method="POST" action="MyServlet">
+<form method="POST" action="/Brands">
     Please enter your name: <input type="text" name="user_name"> <br/>
+
     <select name="your_option">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        <c:foreach items="${brands}" var="brand">
+        <option value="${brand.id}">${brand.name}</option>
+        </c:foreach>
     </select>
     <input type="submit" value="OK">
 </form>

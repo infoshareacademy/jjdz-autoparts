@@ -2,11 +2,13 @@ package javatar.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javatar.model.CarsBrands;
 import javatar.model.DataCarsBrands;
 
 import javax.ejb.Stateless;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Collection;
 
 @Stateless
 public class JsonParserBrandsStateless {
@@ -19,13 +21,13 @@ public class JsonParserBrandsStateless {
         reader = new FileReader(DEFAULT_FILENAME);
     }
 
-    public DataCarsBrands parseJsonFile() throws FileNotFoundException {
+    public Collection<CarsBrands> parseJsonFile() throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
-        String carID = "";
 
-        DataCarsBrands models = gson.fromJson(reader, DataCarsBrands.class);
+        DataCarsBrands brands = gson.fromJson(reader, DataCarsBrands.class);
+        Collection<CarsBrands> brandsData = brands.getData();
 
-        return models;
+        return brandsData;
     }
 }
 

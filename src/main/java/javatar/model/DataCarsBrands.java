@@ -1,7 +1,9 @@
 package javatar.model;
 
+import javax.persistence.Entity;
 import java.util.Collection;
 
+@Entity
 public class DataCarsBrands {
 
     String datatype;
