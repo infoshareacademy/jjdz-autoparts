@@ -15,7 +15,7 @@ public class JsonParserModels {
 //        String nameToken = args[1];
 //        int date = Integer.parseInt(args[2]);
 //
-//        searchCarId(nameToken, date);
+//        parseJsonFile(nameToken, date);
 //
 //    }
 

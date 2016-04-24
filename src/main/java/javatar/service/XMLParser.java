@@ -2,16 +2,13 @@ package javatar.service;
 
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-
 import javatar.model.AllegroCategories;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class XMLParser {
