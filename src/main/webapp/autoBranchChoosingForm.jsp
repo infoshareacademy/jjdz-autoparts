@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<form method="POST" action="/Brands">
-    Please enter your name: <input type="text" name="user_name"> <br/>
+<form method="GET" action="/Brands">
 
     <select name="your_option">
-        <c:foreach items="${brands}" var="brand">
+        <c:forEach items="${brands}" var="brand">
         <option value="${brand.id}">${brand.name}</option>
-        </c:foreach>
+        </c:forEach>
     </select>
+
     <input type="submit" value="OK">
 </form>
 

@@ -1,5 +1,7 @@
 package javatar.web;
 
+import javatar.model.CarsBrands;
+import javatar.service.BrandsJsonCache;
 import javatar.service.FindingCarInJsonService;
 
 import javax.ejb.EJB;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
 
 @WebServlet(urlPatterns = "/Brands")
 public class BrandsChoosingServlet extends HttpServlet {
@@ -17,18 +20,16 @@ public class BrandsChoosingServlet extends HttpServlet {
     @EJB
     FindingCarInJsonService service;
 
+    @EJB
+    BrandsJsonCache cache;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String optionString = req.getParameter("your_option");
 
-        Integer option = 0;
-        if (optionString != null && optionString.matches("[0-9]*")) {
-            option = Integer.valueOf(optionString);
-        }
+        Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
-
-        req.setAttribute("option", option);
+        req.setAttribute("brands", carsBrandsCollection);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("autoBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);
