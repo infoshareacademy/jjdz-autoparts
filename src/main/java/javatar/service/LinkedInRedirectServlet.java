@@ -57,7 +57,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        session.setAttribute("user", linkedInUser);
+        session.setAttribute("user", linkedInUser.getFirstName());
 
         resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
 
