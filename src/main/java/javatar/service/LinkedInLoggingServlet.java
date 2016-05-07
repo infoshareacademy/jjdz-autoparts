@@ -34,24 +34,5 @@ public class LinkedInLoggingServlet extends HttpServlet {
 
     }
 
-//    public static void main(String[] args) {
-//        final Scanner in = new Scanner(System.in);
-//        System.out.println(service.getAuthorizationUrl());
-//        final String code = in.nextLine();
-//        final OAuth2AccessToken accessToken = service.getAccessToken(code);
-//        final OAuthRequest requestName = new OAuthRequest(Verb.GET, String.format(PROTECTED_RESOURCE_URL, "lastName"),
-//                service);
-//        requestName.addHeader("x-li-format", "json");
-//        requestName.addHeader("Accept-Language", "en-EN");
-//        service.signRequest(accessToken, requestName);
-//        final Response response = requestName.send();
-//
-//        System.out.println(response.getCode());
-//        System.out.println(response.getBody());
-//
-//
-//
-//
-//    }
 
 }

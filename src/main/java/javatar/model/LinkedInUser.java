@@ -6,10 +6,11 @@ public class LinkedInUser {
 
     private String lastName;
 
-    private String headline;
+    private String emailAddress;
 
-    private String id;
-
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -17,14 +18,6 @@ public class LinkedInUser {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public String getHeadline() {
-        return headline;
-    }
-
-    public String getId() {
-        return id;
     }
 
 
