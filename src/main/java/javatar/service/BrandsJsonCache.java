@@ -26,7 +26,7 @@ public class BrandsJsonCache {
     @PostConstruct
     public void initialize() {
 
-        try (FileReader reader = new FileReader("src/main/resources/json_data/v2.json")) {
+        try (FileReader reader = new FileReader("z")) {
             Gson gson = new GsonBuilder().create();
 
             DataCarsBrands brands = gson.fromJson(reader, DataCarsBrands.class);

@@ -9,17 +9,17 @@ import java.io.FileReader;
 
 @Stateless
 public class JsonParserStateless {
-    final FileReader reader;
-
-    public JsonParserStateless(String filename) throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(filename);
-    }
-
-    public Object parseFile(String className) throws FileNotFoundException, NullPointerException, ClassNotFoundException {
-        Gson gson = new GsonBuilder().create();
-        Class<?> outputClass = Class.forName(className);
-        Object parsedFile = gson.fromJson(reader, outputClass);
-        return parsedFile;
-    }
+//    final FileReader reader;
+//
+//    public JsonParserStateless(String filename) throws FileNotFoundException {
+//        //default filename
+//        reader = new FileReader(filename);
+//    }
+//
+//    public Object parseFile(String className) throws FileNotFoundException, NullPointerException, ClassNotFoundException {
+//        Gson gson = new GsonBuilder().create();
+//        Class<?> outputClass = Class.forName(className);
+//        Object parsedFile = gson.fromJson(reader, outputClass);
+//        return parsedFile;
+//    }
 }
