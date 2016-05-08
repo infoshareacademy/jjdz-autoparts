@@ -22,26 +22,29 @@ import java.util.Collection;
 public class BrandsJsonCache {
 
     final Collection<CarsBrands> brandsData = new ArrayList<>();
+    final String url = "http://infoshareacademycom.2find.ru/api/v2?lang=polish";
 
     @PostConstruct
     public void initialize() {
 
-        try (FileReader reader = new FileReader("z")) {
+        HtmlReader reader = new HtmlReader();
+
+        try {
+            String readString = reader.getText(url);
             Gson gson = new GsonBuilder().create();
 
-            DataCarsBrands brands = gson.fromJson(reader, DataCarsBrands.class);
+            DataCarsBrands brands = gson.fromJson(readString, DataCarsBrands.class);
 
             System.out.println("brands.getData().size() = " + brands.getData().size());
             brandsData.addAll(brands.getData());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    public Collection<CarsBrands> returnBrandsCollection(){
+    public Collection<CarsBrands> returnBrandsCollection() {
         return brandsData;
     }
 

@@ -3,7 +3,7 @@ import java.net.*;
 import java.io.*;
 
 public class HtmlReader {
-        public static String getText(String url) throws Exception {
+        public String getText(String url) throws IOException {
             URL website = new URL(url);
             URLConnection connection = website.openConnection();
             BufferedReader in = new BufferedReader(
@@ -21,9 +21,5 @@ public class HtmlReader {
             return response.toString();
         }
 
-        public static void main(String[] args) throws Exception {
-            String content = URLConnectionReader.getText(args[0]);
-            System.out.println(content);
-        }
     }
 
