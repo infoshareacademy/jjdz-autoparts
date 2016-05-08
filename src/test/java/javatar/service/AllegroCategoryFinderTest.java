@@ -57,33 +57,35 @@ public class AllegroCategoryFinderTest {
 
     @Test
     public void test_matching_category_from_HashMap() {
+        //given
         Autopart autopart = new Autopart();
         AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Nadwozie");
+        categoryListElement.setName("Części karoserii");
         autopart.addCategoryToList(categoryListElement);
         AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("Silnik");
+        categoryListElement2.setName("Cięgna drzwi");
         autopart.addCategoryToList(categoryListElement2);
 
-        Integer s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        //when
+        String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
 
-        assertThat(s, is(equalTo(19089)));
-
+        //then
+        assertThat(s, is(equalTo("Części karoserii Cięgna drzwi;252811")));
     }
 
     @Test
     public void test_matching_category_from_HashMap_not_found() {
         Autopart autopart = new Autopart();
         AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Nadwozie");
+        categoryListElement.setName("Zabytkowe");
         autopart.addCategoryToList(categoryListElement);
         AutopartCategory categoryListElement2 = new AutopartCategory();
         categoryListElement2.setName("abc");
         autopart.addCategoryToList(categoryListElement2);
 
-        Integer s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
 
-        assertThat(s, is(equalTo(8683)));
+        assertThat(s, is(equalTo("http://allegro.pl/czesci-samochodowe-zabytkowe-1114")));
 
     }
 

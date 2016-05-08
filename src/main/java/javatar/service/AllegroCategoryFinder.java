@@ -8,7 +8,6 @@ import javatar.model.MappingHashmap;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AllegroCategoryFinder {
@@ -21,6 +20,8 @@ public class AllegroCategoryFinder {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
         String returnedData = "";
+        String returnedCategory = "";
+        List<String> outputCategories = new ArrayList<>();
 
         for (AutopartCategory p :
                 autopartCategoryList) {
@@ -34,15 +35,19 @@ public class AllegroCategoryFinder {
             if (blist.size() != 0) {
                 AllegroCategories tmp = blist.get(0);
                 parentId = tmp.getCatId();
-                returnedData = tmp.getCatName() + ";" + tmp.getCatId();
+                outputCategories.add(tmp.getCatName());
             }
 
         }
 
+        System.out.println(outputCategories.size());
+        returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+
         return returnedData;
+
     }
 
-    public Integer MatchCategoryFromHashMap(Autopart autopart) {
+    public String MatchCategoryFromHashMap(Autopart autopart) {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer categoryId = 0;
@@ -90,7 +95,7 @@ public class AllegroCategoryFinder {
         }
 
         if (!catName.isEmpty() && !catId.isEmpty()) {
-            url += "-" + catName.replaceAll(" ", "-").toLowerCase().replaceAll("[() .,]","")+ "-" + catId;
+            url += "-" + catName.replaceAll(" ", "-").toLowerCase().replaceAll("[() .,]", "") + "-" + catId;
         }
         return url.replace("ą", "a")
                 .replace("ę", "e")
