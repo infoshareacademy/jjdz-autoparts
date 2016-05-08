@@ -1,1 +1,30 @@
-{"breadcrumbs":[{"link":"api\/v2\/find\/go\/","title":"VW Autoparts"},{"link":"api\/v2\/find\/go\/8o2\/","title":"JETTA VII SportWagon  (2013-present)"},{"link":"api\/v2\/find\/go\/8o2\/2h61\/","title":"F 800 S (E8ST) () 83hp"},{"link":"api\/v2\/find\/go\/8o2\/2h61\/7t3","title":"Uk\u0142ad hamulcowy"}],"dataname":"VW \/ JETTA VII SportWagon  (2013-present) \/ F 800 S (E8ST)  \/ Uk\u0142ad hamulcowy","datatype":"tree","data":[{"id":"7tz","name":"ESP - dynamiczna regulacja toru jazdy","has_children":false,"link":"\/api\/v2\/find\/go\/8o2\/2h61\/7tz\/stock"}]}
+{
+  "breadcrumbs": [
+    {
+      "link": "api\/v2\/find\/go\/",
+      "title": "VW Autoparts"
+    },
+    {
+      "link": "api\/v2\/find\/go\/8o2\/",
+      "title": "JETTA VII SportWagon  (2013-present)"
+    },
+    {
+      "link": "api\/v2\/find\/go\/8o2\/2h61\/",
+      "title": "F 800 S (E8ST) () 83hp"
+    },
+    {
+      "link": "api\/v2\/find\/go\/8o2\/2h61\/7t3",
+      "title": "Uk\u0142ad hamulcowy"
+    }
+  ],
+  "dataname": "VW \/ JETTA VII SportWagon  (2013-present) \/ F 800 S (E8ST)  \/ Uk\u0142ad hamulcowy",
+  "datatype": "tree",
+  "data": [
+    {
+      "id": "7tz",
+      "name": "ESP - dynamiczna regulacja toru jazdy",
+      "has_children": false,
+      "link": "\/api\/v2\/find\/go\/8o2\/2h61\/7tz\/stock"
+    }
+  ]
+}

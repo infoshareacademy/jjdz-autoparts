@@ -1,27 +1,20 @@
 package javatar.model;
 
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Daniel on 21.03.2016.
  */
 public class CarFromAztec {
 
+    @SerializedName("Dane")
+    private CarFromAztecData CarFromAztecData;
 
-    private javatar.model.Dane Dane;
-
-    public Dane getDane()
+    public CarFromAztecData getCarFromAztecData()
     {
-        return Dane;
+        return CarFromAztecData;
     }
 
-    public void setDane(Dane Dane)
-    {
-        this.Dane = Dane;
-    }
 
-    @Override
-    public String toString()
-    {
-        return "[Dane = "+ Dane +"]";
-    }
 }

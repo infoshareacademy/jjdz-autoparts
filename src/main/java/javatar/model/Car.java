@@ -44,6 +44,16 @@ public class Car {
 
     public Car(){}
 
+    public Car(CarsBrands cb, CarsModels cm, CarFromAztec jsonCar){
+        this.carsBrand = cb;
+        this.carsModel = cm;
+        this.productionYear = (Integer.parseInt(jsonCar.getCarFromAztecData().getProductionYear()));
+        this.engineCapacity = jsonCar.getCarFromAztecData().getEngineCapacity();
+        this.fuelType = jsonCar.getCarFromAztecData().getFuelType();
+        this.enginePower = jsonCar.getCarFromAztecData().getEnginePower();
+
+    }
+
     public CarsBrands getCarsBrand() {
         return carsBrand;
     }
