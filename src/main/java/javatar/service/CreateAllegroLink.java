@@ -39,6 +39,7 @@ public class CreateAllegroLink {
 //        }
         Autopart autopartWithNewCategories = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
         System.out.println(autopartWithNewCategories.toString());
+        System.out.println(autopart.toString());
         try {
             matchCategories = allegroCategoryFinder.MatchCategories(autopartWithNewCategories);
         } catch (Exception e) {

@@ -27,7 +27,7 @@ public class CreateAllegroLinkTest {
     }
 
     @Test
-    public void test_create_allegro_link_not_in_HashMap() throws Exception {
+    public void test_create_allegro_link_no_subcategory() throws Exception {
         Autopart autopart = new Autopart();
         AutopartCategory categoryListElement = new AutopartCategory();
         categoryListElement.setName("Dwużlad");
