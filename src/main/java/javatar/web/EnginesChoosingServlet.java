@@ -1,5 +1,6 @@
 package javatar.web;
 
+import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.DataCarsModels;
 import javatar.service.JsonParserAll;
 
@@ -18,24 +19,24 @@ public class EnginesChoosingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        JsonParserAll parser =  new JsonParserAll();
+        JsonParserAll parser = new JsonParserAll();
 
         String modelOut = req.getParameter("model");
 
-//        String[] splitArray = brandOut.split(";");
-//        String brandId = splitArray[0];
-//        String brandName = splitArray[1];
-//        String brandLink = splitArray[2];
-//
-//        req.setAttribute("brandName", brandName);
-//        req.setAttribute("brandId", brandId);
-//
-//        String url = "//infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
-//
-//        DataCarsModels dataCarsModels = parser.parseModelFile(url);
-//        req.setAttribute("models", dataCarsModels);
+        String[] splitArray = modelOut.split(";");
+        String modelId = splitArray[0];
+        String modelName = splitArray[1];
+        String modelLink = splitArray[2];
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
+        req.setAttribute("modelName", modelName);
+        req.setAttribute("modelId", modelId);
+
+        String url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
+
+        DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
+        req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
 }

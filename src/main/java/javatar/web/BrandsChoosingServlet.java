@@ -27,7 +27,7 @@ public class BrandsChoosingServlet extends HttpServlet {
 
         req.setAttribute("brands", carsBrandsCollection);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("autoBranchChoosingForm.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
 
