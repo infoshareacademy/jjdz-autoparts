@@ -1,11 +1,11 @@
 package javatar.service;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javatar.example.DataModel;
+
 import javatar.model.DataCarsBrands;
 import javatar.model.DataCarsEngineAndFuel;
+import javatar.model.DataCarsModels;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class JsonParserAll {
     final String DEFAULT_URL = "http://infoshareacademycom.2find.ru/api/v2?lang=polish";
     HtmlReader reader = new HtmlReader();
     DataCarsBrands brands = null;
-    DataModel model = null;
+    DataCarsModels model = null;
     DataCarsEngineAndFuel engine = null;
 
     public DataCarsBrands parseCarFile() {
@@ -32,13 +32,13 @@ public class JsonParserAll {
         return brands;
     }
 
-    public DataModel parseModelFile(String url) {
+    public DataCarsModels parseModelFile(String url) {
 
         try {
             String readString = reader.getText(url);
             Gson gson = new GsonBuilder().create();
 
-            model = gson.fromJson(readString, DataModel.class);
+            model = gson.fromJson(readString, DataCarsModels.class);
 
         } catch (IOException e) {
             e.printStackTrace();
