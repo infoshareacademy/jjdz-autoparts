@@ -20,11 +20,11 @@ public class AllegroCategoryFinder {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
         String returnedData = "";
-        String returnedCategory = "";
         List<String> outputCategories = new ArrayList<>();
 
         for (AutopartCategory p :
                 autopartCategoryList) {
+
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
                     .filter(
@@ -39,72 +39,39 @@ public class AllegroCategoryFinder {
             }
 
         }
-
-        System.out.println(outputCategories.size());
-        returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
-
+        System.out.println(outputCategories.toString());
+        if (outputCategories.size() > 2) {
+            returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+        } else if (outputCategories.size() > 1) {
+            returnedData = outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+        }
+        System.out.println(returnedData);
         return returnedData;
 
     }
 
-    public String MatchCategoryFromHashMap(Autopart autopart) {
+    public Autopart MatchCategoryFromHashMap(Autopart autopart) {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer categoryId = 0;
+        List<AutopartCategory> outputAutopartCategoryList = new ArrayList<>();
+        AutopartCategory autopartCategory = new AutopartCategory();
 
         for (AutopartCategory p :
                 autopartCategoryList) {
             Integer tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
             if (tmpCategoryId != null) {
-                categoryId = tmpCategoryId;
+                autopartCategory.setName(p.getName());
+                autopartCategory.setId(tmpCategoryId.toString());
+                outputAutopartCategoryList.add(autopartCategory);
             }
         }
+        if (outputAutopartCategoryList.size() > 0) {
+            autopart.setCategoryList(outputAutopartCategoryList);
+        }
 
-
-        return categoryId;
+        return autopart;
     }
 
-    public String createAllegroLink(Autopart autopart) {
 
-        final Integer categoryId = MatchCategoryFromHashMap(autopart);
-        String catId = "";
-        List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
-        String catName = "";
-        String url = "http://allegro.pl/czesci-samochodowe";
-
-        try {
-            allegroCategoriesList = xmlParser.AllegroCategoryObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(categoryId);
-        if (categoryId != null) {
-            List<AllegroCategories> foundCategory = allegroCategoriesList.stream().filter(cId -> cId.getCatId().equals(categoryId)).collect(Collectors.toList());
-            System.out.println(foundCategory);
-            catName = foundCategory.get(0).getCatName();
-            catId = categoryId.toString();
-
-        } else {
-            try {
-                String[] categoryToSplit = MatchCategories(autopart).split(";");
-                catName = categoryToSplit[0];
-                catId = categoryToSplit[1];
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (!catName.isEmpty() && !catId.isEmpty()) {
-            url += "-" + catName.replaceAll(" ", "-").toLowerCase().replaceAll("[() .,]", "") + "-" + catId;
-        }
-        return url.replace("ą", "a")
-                .replace("ę", "e")
-                .replace("ś", "s")
-                .replace("ż", "z")
-                .replace("ć", "c")
-                .replace("ź", "z")
-                .replace("ń", "n")
-                .replace("ó", "o")
-                .replace("ł", "l");
-    }
 }
