@@ -41,12 +41,10 @@ public class JsonParserAztecCode {
         String json = null;
         try {
             json = getCarFromRest("https://aztec.atena.pl/PWM2/rest/aztec/getbysession?sessionKey=" + sessionKey + "&userKey=" + USER_KEY);
-            //          System.out.println(json);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //   System.out.println(json);
         return json;
     }
 
@@ -54,7 +52,7 @@ public class JsonParserAztecCode {
         Gson gson = new Gson();
 
         CarFromAztec jsonCar = gson.fromJson(jsonString, CarFromAztec.class);
-        String aztecError = jsonCar.getDane().getError();
+        String aztecError = jsonCar.getCarFromAztecData().getError();
 
         if (aztecError.equals("-4")) {
             System.out.println("Błędny kod sesji");
@@ -62,34 +60,12 @@ public class JsonParserAztecCode {
             return null;
         }
 
-        CarsBrands cb = new CarsBrands();
-        cb.setName(jsonCar.getDane().getD1());
-        CarsModels cm = new CarsModels();
-        cm.setName(jsonCar.getDane().getD5());
-        Car carFromAztec = new Car();
-        carFromAztec.setProductionYear(Integer.parseInt(jsonCar.getDane().getRok_produkcji()));
-        carFromAztec.setCarsBrand(cb);
-        carFromAztec.setCarsModel(cm);
-        carFromAztec.setEngineCapacity(jsonCar.getDane().getSilnik());
-        carFromAztec.setFuelType(jsonCar.getDane().getTyp_paliwa());
-        carFromAztec.setEnginePower(jsonCar.getDane().getMoc_silnika());
-        //System.out.println(jsonCar.toString());
+        CarsBrands cb = new CarsBrands(jsonCar);
+        CarsModels cm = new CarsModels(jsonCar);
 
-        return carFromAztec;
+        return new Car(cb, cm, jsonCar);
 
-
-//        return new String[]{
-//                jsonCar.getDane().getD1(),//Brand
-//                jsonCar.getDane().getD5(),//Model
-//                jsonCar.getDane().getRok_produkcji()
-//        };
     }
 
-
-    //    public static void main(String[] args) {
-//        for (String str : getUserCar("kjsm4")) {
-//            System.out.println(str);
-//        }
-//    }
 
 }

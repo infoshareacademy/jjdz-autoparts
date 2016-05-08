@@ -22,6 +22,11 @@ public class CarsBrands {
 
     }
 
+    public CarsBrands(CarFromAztec jsonCar) {
+        this.name = jsonCar.getCarFromAztecData().getCarBrand();
+    }
+
+
     public CarsBrands(String id, String name) {
         this.id = id;
         this.name = name;

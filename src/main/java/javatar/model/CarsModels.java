@@ -19,6 +19,10 @@ public class CarsModels {
         this.name = name;
     }
 
+    public CarsModels(CarFromAztec jsonCar) {
+        this.name = jsonCar.getCarFromAztecData().getCarModel();
+    }
+
     public String getId() {
         return id;
     }
