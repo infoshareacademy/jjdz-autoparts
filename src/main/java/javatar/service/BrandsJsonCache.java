@@ -22,26 +22,20 @@ import java.util.Collection;
 public class BrandsJsonCache {
 
     final Collection<CarsBrands> brandsData = new ArrayList<>();
+    DataCarsBrands brands = null;
+    JsonParserAll jsonParserAll = new JsonParserAll();
 
     @PostConstruct
     public void initialize() {
 
-        try (FileReader reader = new FileReader("src/main/resources/json_data/v2.json")) {
-            Gson gson = new GsonBuilder().create();
+        brands = jsonParserAll.parseCarFile();
 
-            DataCarsBrands brands = gson.fromJson(reader, DataCarsBrands.class);
-
-            System.out.println("brands.getData().size() = " + brands.getData().size());
-            brandsData.addAll(brands.getData());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("brands.getData().size() = " + brands.getData().size());
+        brandsData.addAll(brands.getData());
 
     }
 
-    public Collection<CarsBrands> returnBrandsCollection(){
+    public Collection<CarsBrands> returnBrandsCollection() {
         return brandsData;
     }
 

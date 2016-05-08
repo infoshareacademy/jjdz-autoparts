@@ -7,9 +7,13 @@
 </head>
 <body>
 
-<form method="POST" action="/BrandsOut">
+<form method="GET" action="Engines">
 
-    <P>Result: ${brandOut.result}</P>
+    <select name="model">
+        <c:forEach items="${models}" var="model">
+            <option value="${model.id};${model.name};${model.link}">${model.name}</option>
+        </c:forEach>
+    </select>
 
     <input type="submit" value="OK">
 </form>

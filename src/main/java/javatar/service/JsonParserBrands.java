@@ -12,11 +12,6 @@ import java.io.*;
 import java.util.HashMap;
 
 public class JsonParserBrands {
-    public void main(String[] args) throws ClassNotFoundException, IOException {
-
-        String searchToken = args[0];
-        searchCarId(searchToken);
-    }
 
     final static String DEFAULT_FILENAME = "src/main/resources/json_data/v2.json";
     final FileReader reader;

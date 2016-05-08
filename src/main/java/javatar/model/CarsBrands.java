@@ -4,7 +4,6 @@ public class CarsBrands {
 
 
     private String id;
-
     private String name;
     private String name_clear;
     private boolean has_image;

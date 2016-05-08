@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<form method="GET" action="/Brands">
+<form method="GET" action="Parts">
 
-    <select name="your_option">
-        <c:forEach items="${brands}" var="brand">
-        <option value="${brand.id}">${brand.name}</option>
+    <select name="part">
+        <c:forEach items="${parts}" var="part">
+            <option value="${part.id};${part.name};${part.link}">${part.name}</option>
         </c:forEach>
     </select>
 

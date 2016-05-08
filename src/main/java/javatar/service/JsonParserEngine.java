@@ -7,7 +7,6 @@ import javatar.model.DataCarsEngineAndFuel;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +19,7 @@ public class JsonParserEngine {
     public JsonParserEngine(String filename) throws FileNotFoundException {
         //default filename
         reader = new FileReader(filename);
-//        JsonParserCommon parser = new JsonParserCommon(reader.toString());
+//        JsonParserStateless parser = new JsonParserStateless(reader.toString());
 //        parsedFile = parser.parseFile("DataCarsEngineAndFuel");
     }
 
