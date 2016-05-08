@@ -11,7 +11,7 @@
 
     <select name="brand">
         <c:forEach items="${brands}" var="brand">
-        <option value="${brand.id}">${brand.name}</option>
+        <option value="${brand.id};${brand.name}">${brand.name}</option>
         </c:forEach>
     </select>
 

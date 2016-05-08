@@ -9,7 +9,11 @@
 
 <form method="GET" action="Models">
 
-    <P>Result: ${brandOut}</P>
+    <select name="model">
+        <c:forEach items="${models}" var="model">
+            <option value="${model.id};${model.name}">${model.name}</option>
+        </c:forEach>
+    </select>
 
     <input type="submit" value="OK">
 </form>

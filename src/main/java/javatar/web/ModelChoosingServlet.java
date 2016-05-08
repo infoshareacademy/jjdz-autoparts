@@ -17,9 +17,11 @@ public class ModelChoosingServlet extends HttpServlet {
 
 
         String brandOut = req.getParameter("brand");
+
+
         req.setAttribute("brandOut", brandOut);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("autoBranchChoosingOutputForm.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
 }
