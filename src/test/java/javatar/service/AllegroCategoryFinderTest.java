@@ -56,38 +56,33 @@ public class AllegroCategoryFinderTest {
     }
 
     @Test
-    public void test_matching_category_from_HashMap() {
+    public void testMatch0Categories() throws Exception {
+
         //given
         Autopart autopart = new Autopart();
-        AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Części karoserii");
-        autopart.addCategoryToList(categoryListElement);
-        AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("Cięgna drzwi");
-        autopart.addCategoryToList(categoryListElement2);
 
         //when
-        Autopart autopartOut = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String s = allegroCategoryFinder.MatchCategories(autopart);
 
         //then
-        //TODO wymyśl jakiś sensowny test
-        assertThat(autopartOut.getCategoryList().size(), is(equalTo(2)));
+        assertThat(s, is(equalTo(";620")));
     }
 
     @Test
-    public void test_matching_category_from_HashMap_not_found() {
+    public void test_matching_category_from_HashMap() {
         Autopart autopart = new Autopart();
         AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Zabytkowe");
+        categoryListElement.setName("Układ chłodzenia");
         autopart.addCategoryToList(categoryListElement);
         AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("abc");
+        categoryListElement2.setName("Chłodnice");
         autopart.addCategoryToList(categoryListElement2);
 
-        Autopart autopartOut = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        //when
+        String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
 
-        //TODO wymyśl jakiś sensowny test
-        assertThat(autopartOut.getCategoryList().size(), is(equalTo(2)));
+        //then
+        assertThat(s, is(equalTo("Chłodzenie silnika chłodnice;18690")));
 
     }
 

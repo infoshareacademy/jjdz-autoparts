@@ -8,6 +8,7 @@ import javatar.model.MappingHashmap;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class AllegroCategoryFinder {
@@ -43,40 +44,43 @@ public class AllegroCategoryFinder {
             returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
         } else if (outputCategories.size() > 0) {
             returnedData = outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+        } else {
+            returnedData = ";" + parentId;
         }
         return returnedData;
 
     }
 
-    public Autopart MatchCategoryFromHashMap(Autopart autopart) {
+    public String MatchCategoryFromHashMap(Autopart autopart) {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer categoryId = 0;
         Integer tmpCategoryId = 0;
         List<AutopartCategory> outputAutopartCategoryList = new ArrayList<>();
         AutopartCategory autopartCategory = new AutopartCategory();
+        List<String> outputCategories = new ArrayList<>();
+        String returnedData = "";
+        List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
+
         try {
-            List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
+            allegroCategoriesList = xmlParser.AllegroCategoryObject();
         } catch (Exception e) {
             e.printStackTrace();
         }
         for (AutopartCategory p :
                 autopartCategoryList) {
             tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
-            if (tmpCategoryId != null) {
+            if (tmpCategoryId != null && !outputAutopartCategoryList.contains(tmpCategoryId)) {
                 autopartCategory.setName(p.getName());
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
             }
         }
-//        if (outputAutopartCategoryList.size() > 0) {
-//            autopart.setCategoryList(outputAutopartCategoryList);
-//        }
-//
-        autopartCategoryList.stream().filter(cat -> cat.get)
+        System.out.println(outputAutopartCategoryList.toString());
 
 
-        return autopart;
+
+        return returnedData;
     }
 
 
