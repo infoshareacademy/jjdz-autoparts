@@ -8,14 +8,39 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-public class AllegroCategoryFinderTest {
 
+public class CreateAllegroLinkTest {
     AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
+    CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Test
-    public void test_match_3_categories() throws Exception {
+    public void test_create_allegro_link() throws Exception {
+        Autopart autopart = new Autopart();
+        AutopartCategory categoryListElement = new AutopartCategory();
+        categoryListElement.setName("Układ chłodzenia");
+        autopart.addCategoryToList(categoryListElement);
 
-        //given
+        String link = createAllegroLink.createAllegroLink(autopart);
+
+        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-chlodzenie-silnika-18689")));
+
+    }
+
+    @Test
+    public void test_create_allegro_link_no_subcategory() throws Exception {
+        Autopart autopart = new Autopart();
+        AutopartCategory categoryListElement = new AutopartCategory();
+        categoryListElement.setName("Dwużlad");
+        autopart.addCategoryToList(categoryListElement);
+
+        String link = createAllegroLink.createAllegroLink(autopart);
+
+        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-620")));
+
+    }
+
+    @Test
+    public void test_create_allegro_link_chlodnice() throws Exception {
         Autopart autopart = new Autopart();
         AutopartCategory categoryListElement = new AutopartCategory();
         categoryListElement.setName("Chłodzenie silnika");
@@ -27,12 +52,9 @@ public class AllegroCategoryFinderTest {
         categoryListElement3.setName("Chłodnice oleju");
         autopart.addCategoryToList(categoryListElement3);
 
-        //when
+        String link = createAllegroLink.createAllegroLink(autopart);
 
-        String s = allegroCategoryFinder.MatchCategories(autopart);
-
-        //then
-        assertThat(s, is(equalTo("Chłodnice Chłodnice oleju;251083")));
+        assertThat(link,is(equalTo("http://allegro.pl/chlodnice-chlodnice-oleju-251083")));
 
     }
 
@@ -48,24 +70,20 @@ public class AllegroCategoryFinderTest {
         categoryListElement2.setName("Maski");
         autopart.addCategoryToList(categoryListElement2);
 
-        //when
-        String s = allegroCategoryFinder.MatchCategories(autopart);
+        String link = createAllegroLink.createAllegroLink(autopart);
 
-        //then
-       assertThat(s, is(equalTo("Części samochodowe Części karoserii;4094")));
+        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-czesci-karoserii-4094")));
     }
 
     @Test
-    public void test_does_not_match_category() throws Exception {
+    public void test_does_not_match_any_category() throws Exception {
 
         //given
         Autopart autopart = new Autopart();
 
-        //when
-        String s = allegroCategoryFinder.MatchCategories(autopart);
+        String link = createAllegroLink.createAllegroLink(autopart);
 
-        //then
-        assertThat(s, is(equalTo("Części samochodowe 620")));
+        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-620")));
     }
 
     @Test
@@ -79,12 +97,10 @@ public class AllegroCategoryFinderTest {
         autopart.addCategoryToList(categoryListElement2);
 
         //when
-        String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String link = createAllegroLink.createAllegroLink(autopart);
 
-        //then
-        assertThat(s, is(equalTo("Chłodzenie silnika Chłodnice;18690")));
+        assertThat(link,is(equalTo("http://allegro.pl/chlodzenie-silnika-chlodnice-18690")));
 
     }
-
 
 }

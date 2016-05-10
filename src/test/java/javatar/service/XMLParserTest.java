@@ -3,6 +3,7 @@ package javatar.service;
 import javatar.model.AllegroCategories;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.*;
@@ -12,12 +13,10 @@ public class XMLParserTest {
     @Test
     public void testAllegroCategoryObject() throws Exception {
 
-        XMLParser a = new XMLParser();
-        Map<Integer, AllegroCategories> categoriesMap = a.AllegroCategoryObject();
-        String pozostale = categoriesMap.get(19024).getCatName();
+        XMLParser xmlParser = new XMLParser();
+        List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
 
-        assertTrue(categoriesMap.size() > 10);
-        assertEquals("", "Pozostałe", pozostale);
+        assertTrue(allegroCategoriesList.size() > 10000);
 
     }
 }

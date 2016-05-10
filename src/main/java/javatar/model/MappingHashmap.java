@@ -17,7 +17,7 @@ public class MappingHashmap {
         put("Silnik",19089);
         put("Układ wydechowy",19085);
         put("Filtr",49236);
-        put("Układ chłodzenia",19100);
+        put("Układ chłodzenia",18689);
         put("Zawieszenie / tłumienie",8683);
         put("Układ kierowniczy",252243);
         put("Zawieszenie osi / prowadzenie kół / koła",8683);

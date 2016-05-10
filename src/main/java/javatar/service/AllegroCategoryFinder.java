@@ -4,10 +4,10 @@ package javatar.service;
 import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
+import javatar.model.MappingHashmap;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class AllegroCategoryFinder {
@@ -18,39 +18,76 @@ public class AllegroCategoryFinder {
     public String MatchCategories(Autopart autopart) throws Exception {
 
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
-        Map<Integer, AllegroCategories> allegroCategoriesMap = xmlParser.AllegroCategoryObject();
-        List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
+        List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
         String returnedData = "";
+        List<String> outputCategories = new ArrayList<>();
 
-        for (int i = 0; i < allegroCategoriesMap.size(); i++) {
-            if (allegroCategoriesMap.get(i) != null) {
-                allegroCategoriesList.add(allegroCategoriesMap.get(i));
-            }
-        }
+        for (AutopartCategory p :
+                autopartCategoryList) {
 
-       // for (int k = 0; k < autopartCategoryList.size(); k++) {
-
-
-             for (AutopartCategory p :
-                     autopartCategoryList) {
-            //AutopartCategory p = autopartCategoryList.get(k);
-            System.out.println(p.getName());
-                 System.out.println(parentId);
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
                     .filter(
                             category -> category.getCatParent() == parentId
                     )
                     .collect(Collectors.toList());
-            System.out.println(blist.toString());
+
             if (blist.size() != 0) {
                 AllegroCategories tmp = blist.get(0);
                 parentId = tmp.getCatId();
-                returnedData = returnedData + " -> " + tmp.getCatName();
+                outputCategories.add(tmp.getCatName());
             }
-//                 TODO dlaczego nie działa ostatni poziom filtrowania?
+        }
+        System.out.println(outputCategories.toString());
+        if (outputCategories.size() > 1) {
+            returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+        } else if (outputCategories.size() > 0) {
+            returnedData = "Części samochodowe " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+        } else {
+            returnedData = "Części samochodowe " + parentId;
+        }
+        return returnedData;
+
+    }
+
+    public String MatchCategoryFromHashMap(Autopart autopart) {
+        List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
+        MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
+        Integer tmpCategoryId = 0;
+        List<AutopartCategory> outputAutopartCategoryList = new ArrayList<>();
+        AutopartCategory autopartCategory = new AutopartCategory();
+        String returnedData = "";
+        List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
+
+        try {
+            allegroCategoriesList = xmlParser.AllegroCategoryObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (AutopartCategory p :
+                autopartCategoryList) {
+            tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
+            if (tmpCategoryId != null && !outputAutopartCategoryList.toString().contains(tmpCategoryId.toString())) {
+                autopartCategory.setName(p.getName());
+                autopartCategory.setId(tmpCategoryId.toString());
+                outputAutopartCategoryList.add(autopartCategory);
+                p.setId(tmpCategoryId.toString());
+                final Integer catIdForLambda = tmpCategoryId;
+                List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(catIdForLambda)).collect(Collectors.toList());
+                p.setName(collect.get(0).getCatName());
+            }
+        }
+
+        autopart.setCategoryList(autopartCategoryList);
+
+        try {
+            returnedData = MatchCategories(autopart);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return returnedData;
     }
+
+
 }
