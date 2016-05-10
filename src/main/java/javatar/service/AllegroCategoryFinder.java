@@ -74,11 +74,20 @@ public class AllegroCategoryFinder {
                 autopartCategory.setName(p.getName());
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
+                p.setId(tmpCategoryId.toString());
+                final Integer ccc = tmpCategoryId;
+                List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(ccc)).collect(Collectors.toList());
+                p.setName(collect.get(0).getCatName());
             }
         }
-        System.out.println(outputAutopartCategoryList.toString());
 
+        autopart.setCategoryList(autopartCategoryList);
 
+        try {
+            returnedData = MatchCategories(autopart);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return returnedData;
     }

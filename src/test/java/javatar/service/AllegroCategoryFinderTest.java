@@ -82,7 +82,7 @@ public class AllegroCategoryFinderTest {
         String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
 
         //then
-        assertThat(s, is(equalTo("Chłodzenie silnika chłodnice;18690")));
+        assertThat(s, is(equalTo("Chłodzenie silnika Chłodnice;18690")));
 
     }
 
