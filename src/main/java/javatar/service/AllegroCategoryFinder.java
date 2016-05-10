@@ -8,7 +8,6 @@ import javatar.model.MappingHashmap;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class AllegroCategoryFinder {
@@ -43,9 +42,9 @@ public class AllegroCategoryFinder {
         if (outputCategories.size() > 1) {
             returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
         } else if (outputCategories.size() > 0) {
-            returnedData = outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+            returnedData = "Części samochodowe " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
         } else {
-            returnedData = ";" + parentId;
+            returnedData = "Części samochodowe " + parentId;
         }
         return returnedData;
 

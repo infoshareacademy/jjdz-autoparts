@@ -65,7 +65,7 @@ public class AllegroCategoryFinderTest {
         String s = allegroCategoryFinder.MatchCategories(autopart);
 
         //then
-        assertThat(s, is(equalTo(";620")));
+        assertThat(s, is(equalTo("620")));
     }
 
     @Test
