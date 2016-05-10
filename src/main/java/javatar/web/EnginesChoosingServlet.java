@@ -22,6 +22,7 @@ public class EnginesChoosingServlet extends HttpServlet {
         JsonParserAll parser = new JsonParserAll();
 
         String modelOut = req.getParameter("model");
+        String brandName = req.getParameter("brandName");
 
         String[] splitArray = modelOut.split(";");
         String modelId = splitArray[0];
@@ -30,6 +31,7 @@ public class EnginesChoosingServlet extends HttpServlet {
 
         req.setAttribute("modelName", modelName);
         req.setAttribute("modelId", modelId);
+        req.setAttribute("brandName", brandName);
 
         String url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
 
