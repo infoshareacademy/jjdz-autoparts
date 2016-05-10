@@ -1,11 +1,6 @@
 package javatar.service;
 
-import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class CreateAllegroLink {
     public String createAllegroLink(Autopart autopart) {

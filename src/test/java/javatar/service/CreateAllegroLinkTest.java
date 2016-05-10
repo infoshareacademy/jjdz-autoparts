@@ -59,7 +59,7 @@ public class CreateAllegroLinkTest {
     }
 
     @Test
-    public void testMatch2Categories() throws Exception {
+    public void test_match_2_categories() throws Exception {
 
         //given
         Autopart autopart = new Autopart();
@@ -72,11 +72,11 @@ public class CreateAllegroLinkTest {
 
         String link = createAllegroLink.createAllegroLink(autopart);
 
-        assertThat(link,is(equalTo("http://allegro.pl/czesci-karoserii-maski-254558")));
+        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-czesci-karoserii-4094")));
     }
 
     @Test
-    public void testMatch0Categories() throws Exception {
+    public void test_does_not_match_any_category() throws Exception {
 
         //given
         Autopart autopart = new Autopart();

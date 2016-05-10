@@ -13,7 +13,7 @@ public class AllegroCategoryFinderTest {
     AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
 
     @Test
-    public void testMatch3Categories() throws Exception {
+    public void test_match_3_categories() throws Exception {
 
         //given
         Autopart autopart = new Autopart();
@@ -37,7 +37,7 @@ public class AllegroCategoryFinderTest {
     }
 
     @Test
-    public void testMatch2Categories() throws Exception {
+    public void test_match_2_categories() throws Exception {
 
         //given
         Autopart autopart = new Autopart();
@@ -45,18 +45,18 @@ public class AllegroCategoryFinderTest {
         categoryListElement.setName("Części karoserii");
         autopart.addCategoryToList(categoryListElement);
         AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("Cięgna drzwi");
+        categoryListElement2.setName("Maski");
         autopart.addCategoryToList(categoryListElement2);
 
         //when
         String s = allegroCategoryFinder.MatchCategories(autopart);
 
         //then
-       assertThat(s, is(equalTo("Części karoserii Cięgna drzwi;252811")));
+       assertThat(s, is(equalTo("Części samochodowe Części karoserii;4094")));
     }
 
     @Test
-    public void testMatch0Categories() throws Exception {
+    public void test_does_not_match_category() throws Exception {
 
         //given
         Autopart autopart = new Autopart();
@@ -65,7 +65,7 @@ public class AllegroCategoryFinderTest {
         String s = allegroCategoryFinder.MatchCategories(autopart);
 
         //then
-        assertThat(s, is(equalTo("620")));
+        assertThat(s, is(equalTo("Części samochodowe 620")));
     }
 
     @Test

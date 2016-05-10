@@ -53,11 +53,9 @@ public class AllegroCategoryFinder {
     public String MatchCategoryFromHashMap(Autopart autopart) {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
-        Integer categoryId = 0;
         Integer tmpCategoryId = 0;
         List<AutopartCategory> outputAutopartCategoryList = new ArrayList<>();
         AutopartCategory autopartCategory = new AutopartCategory();
-        List<String> outputCategories = new ArrayList<>();
         String returnedData = "";
         List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
@@ -69,13 +67,13 @@ public class AllegroCategoryFinder {
         for (AutopartCategory p :
                 autopartCategoryList) {
             tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
-            if (tmpCategoryId != null && !outputAutopartCategoryList.contains(tmpCategoryId)) {
+            if (tmpCategoryId != null && !outputAutopartCategoryList.toString().contains(tmpCategoryId.toString())) {
                 autopartCategory.setName(p.getName());
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
                 p.setId(tmpCategoryId.toString());
-                final Integer ccc = tmpCategoryId;
-                List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(ccc)).collect(Collectors.toList());
+                final Integer catIdForLambda = tmpCategoryId;
+                List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(catIdForLambda)).collect(Collectors.toList());
                 p.setName(collect.get(0).getCatName());
             }
         }
