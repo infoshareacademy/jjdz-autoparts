@@ -4,7 +4,6 @@ import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.service.CreateAllegroLink;
 
-import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,8 +17,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/AllegroLink")
 public class AllegroCategoryServlet extends HttpServlet {
 
-    @EJB
-    CreateAllegroLink createAllegroLink;
+    CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

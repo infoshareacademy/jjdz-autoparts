@@ -6,7 +6,7 @@ public class MappingHashmap {
 
     //String name from Json file, Integer allegro catId
 
-    public static HashMap<String, Integer> JsonXmlMapping = new HashMap<String, Integer>() {{
+    public HashMap<String, Integer> JsonXmlMapping = new HashMap<String, Integer>() {{
         put("Układ hamulcowy",19105);
         put("Układ zapłonowy/układ wspomagania rozruchu zimnego silnika",620);
         put("Elektryka",19029);

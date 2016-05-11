@@ -4,6 +4,7 @@ package javatar.service;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javatar.model.AllegroCategories;
 
+import javax.servlet.ServletContext;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
