@@ -5,6 +5,9 @@ import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.MappingHashmap;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.stream.Collectors;
 
 public class AllegroCategoryFinder {
 
+    private static final Logger LOGGER = LogManager.getLogger();
     XMLParser xmlParser = new XMLParser();
     int parentId = 620;
 
@@ -22,20 +26,21 @@ public class AllegroCategoryFinder {
         String returnedData = "";
         List<String> outputCategories = new ArrayList<>();
 
+        LOGGER.info("Autoparts Catategory list containes {} elements", allegroCategoriesList.size());
         for (AutopartCategory p :
                 autopartCategoryList) {
-
             List<AllegroCategories> blist = allegroCategoriesList.stream()
                     .filter(category -> category.getCatName().contentEquals(p.getName()))
                     .filter(
                             category -> category.getCatParent() == parentId
                     )
                     .collect(Collectors.toList());
-
+        LOGGER.info("Filtered list of allegro categories has size: {}",blist.size());
             if (blist.size() != 0) {
                 AllegroCategories tmp = blist.get(0);
                 parentId = tmp.getCatId();
                 outputCategories.add(tmp.getCatName());
+
             }
         }
         System.out.println(outputCategories.toString());
@@ -46,6 +51,7 @@ public class AllegroCategoryFinder {
         } else {
             returnedData = "Części samochodowe " + parentId;
         }
+        LOGGER.info("Category found: {}",returnedData);
         return returnedData;
 
     }
@@ -74,7 +80,9 @@ public class AllegroCategoryFinder {
                 p.setId(tmpCategoryId.toString());
                 final Integer catIdForLambda = tmpCategoryId;
                 List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(catIdForLambda)).collect(Collectors.toList());
+                LOGGER.info("Old category name: {}",p.getName());
                 p.setName(collect.get(0).getCatName());
+                LOGGER.info("New category name: {}",p.getName());
             }
         }
 
