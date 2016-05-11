@@ -9,8 +9,13 @@
 
 <form method="GET" action="Engines">
 
+
+    <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
+    <br>
+
+
     <select name="model">
-        <c:forEach items="${models}" var="model">
+        <c:forEach items="${models}" var="model" >
             <option value="${model.id};${model.name};${model.link}">${model.name}</option>
         </c:forEach>
     </select>

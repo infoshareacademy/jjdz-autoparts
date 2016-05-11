@@ -9,6 +9,12 @@
 
 <form method="GET" action="Parts">
 
+    <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
+    <br>
+
+    <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
+    <br>
+
     <select name="engine">
         <c:forEach items="${engines}" var="engine">
             <option value="${engine.id};${engine.name};${engine.link}">${engine.name}</option>
