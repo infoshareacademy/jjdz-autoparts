@@ -43,7 +43,7 @@ public class MappingHashmap {
         put("System zamykania",18892);
     }};
 
-    public static int getAllegroCategoryId (String name){
+    public int getAllegroCategoryId (String name){
 
         return JsonXmlMapping.get(name);
     }

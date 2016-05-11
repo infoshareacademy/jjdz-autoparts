@@ -1,12 +1,12 @@
 package javatar.service;
 
 import javatar.model.Autopart;
-
 public class CreateAllegroLink {
+
     public String createAllegroLink(Autopart autopart) {
 
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
-        String matchedCategory = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String matchedCategory = allegroCategoryFinder.matchCategoryFromHashMap(autopart);
 
         String url = "http://allegro.pl/";
 

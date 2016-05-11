@@ -21,7 +21,7 @@ public class App {
 
             System.out.println("Kategoria allegro: ");
             AllegroCategoryFinder allegroClassGenerator = new AllegroCategoryFinder();
-            String s = allegroClassGenerator.MatchCategories(userAutopart);
+            String s = allegroClassGenerator.matchCategories(userAutopart);
             System.out.println("Motoryzacja -> Części samochodowe" + s);
 
             String allegroSearch = userAutopart.getBrand() + " " + userAutopart.getId();
