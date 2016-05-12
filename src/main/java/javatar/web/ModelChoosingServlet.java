@@ -2,6 +2,8 @@ package javatar.web;
 
 import javatar.model.DataCarsModels;
 import javatar.service.JsonParserAll;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +15,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Models")
 public class ModelChoosingServlet extends HttpServlet {
-
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,7 +34,9 @@ public class ModelChoosingServlet extends HttpServlet {
 
         String url = "http://infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
 
+        LOGGER.info("Chosen model file name: {}; resources link: {}",brandName,url);
         DataCarsModels dataCarsModels = parser.parseModelFile(url);
+        LOGGER.info("Data parsed on model file has size: {}",dataCarsModels.getData().size());
         req.setAttribute("models", dataCarsModels.getData());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");

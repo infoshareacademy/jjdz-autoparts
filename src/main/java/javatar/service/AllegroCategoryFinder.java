@@ -5,7 +5,6 @@ import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.MappingHashmap;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -57,6 +56,7 @@ public class AllegroCategoryFinder {
     }
 
     public String MatchCategoryFromHashMap(Autopart autopart) {
+        LOGGER.info("Input autopart: {}", autopart);
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer tmpCategoryId = 0;
@@ -69,6 +69,7 @@ public class AllegroCategoryFinder {
             allegroCategoriesList = xmlParser.AllegroCategoryObject();
         } catch (Exception e) {
             e.printStackTrace();
+            LOGGER.error("Failed to create allegroCategoriesList");
         }
         for (AutopartCategory p :
                 autopartCategoryList) {
@@ -87,13 +88,16 @@ public class AllegroCategoryFinder {
         }
 
         autopart.setCategoryList(autopartCategoryList);
+        LOGGER.info("Autopart sent to MatchCategories function: {}", autopart);
 
         try {
             returnedData = MatchCategories(autopart);
         } catch (Exception e) {
             e.printStackTrace();
+            LOGGER.error("Failed to use MatchCategories function");
         }
 
+        LOGGER.info("MatchCategoryFromHashMap output String: {}", returnedData);
         return returnedData;
     }
 

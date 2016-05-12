@@ -2,6 +2,8 @@ package javatar.service;
 
 import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -10,7 +12,6 @@ import static org.junit.Assert.*;
 
 
 public class CreateAllegroLinkTest {
-    AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Test
