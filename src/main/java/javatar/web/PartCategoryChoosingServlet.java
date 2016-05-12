@@ -1,5 +1,6 @@
 package javatar.web;
 
+import javatar.model.JsonDataAutopart;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
 
@@ -45,15 +46,21 @@ public class PartCategoryChoosingServlet extends HttpServlet {
 	    req.setAttribute("brandName", brandName);
 	    req.setAttribute("categoryName", categoryName);
 	    req.setAttribute("isFirstCat", false);
-        req.setAttribute("hasChildren", hasChildren);
+        req.setAttribute("hasChildren", Boolean.parseBoolean(hasChildren));
 
         String url = "http://infoshareacademycom.2find.ru" + categoryLink + "?lang=polish";
+        RequestDispatcher dispatcher;
 
-        //TODO Michał jesli chcesz z tego skorzystać to poniżej uzupełnij klasę o właściwy typ danych i do JsonParserAll dodaj swoją metodę
-        JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
-        req.setAttribute("categories", autopartCategories.getData());
+        if (Boolean.parseBoolean(hasChildren)) {
+            JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
+            req.setAttribute("categories", autopartCategories.getData());
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("PartCategoryChoosingForm.jsp");
+        } else {
+            JsonDataAutopart autopart = parser.parsePartFile(url);
+            req.setAttribute("parts", autopart.getData());
+        }
+
+        dispatcher = req.getRequestDispatcher("PartCategoryChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
 }
