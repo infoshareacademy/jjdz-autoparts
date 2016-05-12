@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
 
 
 public class CreateAllegroLinkTest {
-    AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Test

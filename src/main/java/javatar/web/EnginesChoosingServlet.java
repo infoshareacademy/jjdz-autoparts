@@ -3,6 +3,8 @@ package javatar.web;
 import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.DataCarsModels;
 import javatar.service.JsonParserAll;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +16,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Engines")
 public class EnginesChoosingServlet extends HttpServlet {
-
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,7 +36,7 @@ public class EnginesChoosingServlet extends HttpServlet {
         req.setAttribute("brandName", brandName);
 
         String url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
-
+        LOGGER.info("Chosen brand file name: {}; chosen model file name: {}; resources link: {}",brandName,modelName,url);
         DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
         req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
 
