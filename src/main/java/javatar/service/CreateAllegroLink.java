@@ -10,9 +10,10 @@ public class CreateAllegroLink {
     public String createAllegroLink(Autopart autopart) {
         LOGGER.info("Input autopart element: {}",autopart);
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
-        String matchedCategory = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String matchedCategory = allegroCategoryFinder.matchCategoryFromHashMap(autopart);
 
         String url = "http://allegro.pl/";
+
         url += matchedCategory.replaceAll(" ", "-").replace(";", "-").toLowerCase().replaceAll("[().,]", "");
         String urlFinal = url.replace("ą", "a")
                 .replace("ę", "e")

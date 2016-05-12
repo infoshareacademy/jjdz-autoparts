@@ -29,7 +29,7 @@ public class AllegroCategoryFinderTest {
 
         //when
 
-        String s = allegroCategoryFinder.MatchCategories(autopart);
+        String s = allegroCategoryFinder.matchCategories(autopart);
 
         //then
         assertThat(s, is(equalTo("Chłodnice Chłodnice oleju;251083")));
@@ -49,7 +49,7 @@ public class AllegroCategoryFinderTest {
         autopart.addCategoryToList(categoryListElement2);
 
         //when
-        String s = allegroCategoryFinder.MatchCategories(autopart);
+        String s = allegroCategoryFinder.matchCategories(autopart);
 
         //then
        assertThat(s, is(equalTo("Części samochodowe Części karoserii;4094")));
@@ -62,7 +62,7 @@ public class AllegroCategoryFinderTest {
         Autopart autopart = new Autopart();
 
         //when
-        String s = allegroCategoryFinder.MatchCategories(autopart);
+        String s = allegroCategoryFinder.matchCategories(autopart);
 
         //then
         assertThat(s, is(equalTo("Części samochodowe 620")));
@@ -79,7 +79,7 @@ public class AllegroCategoryFinderTest {
         autopart.addCategoryToList(categoryListElement2);
 
         //when
-        String s = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String s = allegroCategoryFinder.matchCategoryFromHashMap(autopart);
 
         //then
         assertThat(s, is(equalTo("Chłodzenie silnika Chłodnice;18690")));

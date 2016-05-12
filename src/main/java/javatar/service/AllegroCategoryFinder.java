@@ -18,7 +18,7 @@ public class AllegroCategoryFinder {
     XMLParser xmlParser = new XMLParser();
     int parentId = 620;
 
-    public String MatchCategories(Autopart autopart) throws Exception {
+    public String matchCategories(Autopart autopart) throws Exception {
 
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
@@ -57,6 +57,7 @@ public class AllegroCategoryFinder {
 
     public String MatchCategoryFromHashMap(Autopart autopart) {
         LOGGER.info("Input autopart: {}", autopart);
+    public String matchCategoryFromHashMap(Autopart autopart) {
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer tmpCategoryId = 0;
@@ -66,16 +67,18 @@ public class AllegroCategoryFinder {
         List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
         try {
-            allegroCategoriesList = xmlParser.AllegroCategoryObject();
+            allegroCategoriesList = xmlParser.allegroCategoryObject();
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("Failed to create allegroCategoriesList");
         }
         for (AutopartCategory p :
                 autopartCategoryList) {
-            tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
+            String nameTmp = p.getName();
+            tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(nameTmp);
+
             if (tmpCategoryId != null && !outputAutopartCategoryList.toString().contains(tmpCategoryId.toString())) {
-                autopartCategory.setName(p.getName());
+                autopartCategory.setName(nameTmp);
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
                 p.setId(tmpCategoryId.toString());
@@ -91,7 +94,7 @@ public class AllegroCategoryFinder {
         LOGGER.info("Autopart sent to MatchCategories function: {}", autopart);
 
         try {
-            returnedData = MatchCategories(autopart);
+            returnedData = matchCategories(autopart);
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("Failed to use MatchCategories function");
