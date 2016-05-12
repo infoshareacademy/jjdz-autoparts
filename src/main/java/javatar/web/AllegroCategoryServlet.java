@@ -1,16 +1,21 @@
 package javatar.web;
 
+import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
+import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
 import javatar.service.CreateAllegroLink;
+import javatar.service.XMLParser;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +23,20 @@ import java.util.List;
 public class AllegroCategoryServlet extends HttpServlet {
 
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
+    XMLParser xmlParser = null;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Autopart autopart = new Autopart();
+        AutopartAllegroListModel autopartAllegroListModel = null;
+        Autopart autopart = null;
         List<AutopartCategory> categoryList = new ArrayList<>();
         AutopartCategory categoryInList1 = new AutopartCategory();
         AutopartCategory categoryInList2 = new AutopartCategory();
+        ServletContext servletContext = null;
+        InputStream allegroCategoriesFile = servletContext.getResourceAsStream("src/main/resources/Allegro_cathegories_2016-02-13.xml");
+        List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+
 
         //***********************************************************************************
         //TODO ta część jest tylko do testów - usunąć po ukończeniu wszystkich formularzy
@@ -66,7 +77,9 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopart.setBrand(brand);
         autopart.setCategoryList(categoryList);
 
-        String allegroLink = createAllegroLink.createAllegroLink(autopart);
+        autopartAllegroListModel.setAutopart(autopart);
+        autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
+        String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel);
 
         req.setAttribute("allegroLink", allegroLink);
         req.setAttribute("partName",name);

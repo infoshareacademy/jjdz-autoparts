@@ -13,6 +13,7 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,19 +21,14 @@ public class XMLParser {
     private static final Logger LOGGER = LogManager.getLogger();
     AllegroCategories allegroCategories = null;
 
-    public List<AllegroCategories> allegroCategoryObject() {
 
-        FileReader reader = null;
-        try {
-            reader = new FileReader("src/main/resources/Allegro_cathegories_2016-02-13.xml");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public List<AllegroCategories> allegroCategoryObject(InputStream allegroCategoriesFile) {
+        LOGGER.info("InputStream:{}",allegroCategoriesFile);
         XMLInputFactory f = XMLInputFactory.newFactory();
 
         XMLStreamReader sr = null;
         try {
-            sr = f.createXMLStreamReader(reader);
+            sr = f.createXMLStreamReader(allegroCategoriesFile);
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
