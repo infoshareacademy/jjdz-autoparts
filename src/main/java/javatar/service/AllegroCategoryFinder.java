@@ -21,7 +21,7 @@ public class AllegroCategoryFinder {
     public String matchCategories(Autopart autopart) throws Exception {
 
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
-        List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
+        List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject();
         String returnedData = "";
         List<String> outputCategories = new ArrayList<>();
 
@@ -55,9 +55,8 @@ public class AllegroCategoryFinder {
 
     }
 
-    public String MatchCategoryFromHashMap(Autopart autopart) {
-        LOGGER.info("Input autopart: {}", autopart);
     public String matchCategoryFromHashMap(Autopart autopart) {
+        LOGGER.info("Input autopart: {}", autopart);
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
         Integer tmpCategoryId = 0;

@@ -22,8 +22,6 @@ public class XMLParser {
 
     public List<AllegroCategories> allegroCategoryObject() {
 
-        FileReader reader = new FileReader("src/main/resources/Allegro_cathegories_2016-02-13.xml");
-
         FileReader reader = null;
         try {
             reader = new FileReader("src/main/resources/Allegro_cathegories_2016-02-13.xml");
