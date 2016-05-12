@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import javatar.model.DataCarsBrands;
 import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.DataCarsModels;
+import javatar.model.JsonDataAutopartCategories;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class JsonParserAll {
     DataCarsBrands brands = null;
     DataCarsModels model = null;
     DataCarsEngineAndFuel engine = null;
+    JsonDataAutopartCategories category = null;
 
     public DataCarsBrands parseCarFile() {
 
@@ -60,6 +62,21 @@ public class JsonParserAll {
         }
 
         return engine;
+    }
+
+    public JsonDataAutopartCategories parseCategoryFile(String url) {
+
+        try {
+            String readString = reader.getText(url);
+            Gson gson = new GsonBuilder().create();
+
+            category = gson.fromJson(readString, JsonDataAutopartCategories.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return category;
     }
 
 }
