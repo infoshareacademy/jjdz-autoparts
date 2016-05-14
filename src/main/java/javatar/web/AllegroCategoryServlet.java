@@ -81,6 +81,10 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
         System.out.println(autopartAllegroListModel.getAllegroCategories().size());
         System.out.println(autopartAllegroListModel.getAutopart().toString());
+
+        //******************************
+
+
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel) + "?string=" + autopart.getName() + " " + autopart.getBrand() + " " + autopart.getId();
 
         req.setAttribute("allegroLink", allegroLink);
