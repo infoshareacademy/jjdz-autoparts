@@ -1,18 +1,24 @@
 package javatar.service;
 
+import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
+import javatar.model.AutopartAllegroListModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
 
 public class CreateAllegroLink {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public String createAllegroLink(Autopart autopart) {
+    public String createAllegroLink(AutopartAllegroListModel autopartAllegroListModel ) {
+        Autopart autopart = autopartAllegroListModel.getAutopart();
         LOGGER.info("Input autopart element: {}",autopart);
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
-        String matchedCategory = allegroCategoryFinder.MatchCategoryFromHashMap(autopart);
+        String matchedCategory = allegroCategoryFinder.matchCategoryFromHashMap(autopartAllegroListModel);
 
         String url = "http://allegro.pl/";
+
         url += matchedCategory.replaceAll(" ", "-").replace(";", "-").toLowerCase().replaceAll("[().,]", "");
         String urlFinal = url.replace("ą", "a")
                 .replace("ę", "e")

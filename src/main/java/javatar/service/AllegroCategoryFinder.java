@@ -1,10 +1,7 @@
 package javatar.service;
 
 
-import javatar.model.AllegroCategories;
-import javatar.model.Autopart;
-import javatar.model.AutopartCategory;
-import javatar.model.MappingHashmap;
+import javatar.model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,13 +12,13 @@ import java.util.stream.Collectors;
 public class AllegroCategoryFinder {
 
     private static final Logger LOGGER = LogManager.getLogger();
-    XMLParser xmlParser = new XMLParser();
     int parentId = 620;
 
-    public String MatchCategories(Autopart autopart) throws Exception {
+    public String matchCategories(AutopartAllegroListModel autopartAllegroListModel) throws Exception {
 
+        Autopart autopart = autopartAllegroListModel.getAutopart();
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
-        List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
+        List<AllegroCategories> allegroCategoriesList = autopartAllegroListModel.getAllegroCategories();
         String returnedData = "";
         List<String> outputCategories = new ArrayList<>();
 
@@ -55,7 +52,8 @@ public class AllegroCategoryFinder {
 
     }
 
-    public String MatchCategoryFromHashMap(Autopart autopart) {
+    public String matchCategoryFromHashMap(AutopartAllegroListModel autopartAllegroListModel) {
+        Autopart autopart = autopartAllegroListModel.getAutopart();
         LOGGER.info("Input autopart: {}", autopart);
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
         MappingHashmap xmlAllegroCategoriesMap = new MappingHashmap();
@@ -63,19 +61,15 @@ public class AllegroCategoryFinder {
         List<AutopartCategory> outputAutopartCategoryList = new ArrayList<>();
         AutopartCategory autopartCategory = new AutopartCategory();
         String returnedData = "";
-        List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
+        List<AllegroCategories> allegroCategoriesList = autopartAllegroListModel.getAllegroCategories();
 
-        try {
-            allegroCategoriesList = xmlParser.AllegroCategoryObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            LOGGER.error("Failed to create allegroCategoriesList");
-        }
         for (AutopartCategory p :
                 autopartCategoryList) {
-            tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(p.getName());
+            String nameTmp = p.getName();
+            tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(nameTmp);
+
             if (tmpCategoryId != null && !outputAutopartCategoryList.toString().contains(tmpCategoryId.toString())) {
-                autopartCategory.setName(p.getName());
+                autopartCategory.setName(nameTmp);
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
                 p.setId(tmpCategoryId.toString());
@@ -90,8 +84,9 @@ public class AllegroCategoryFinder {
         autopart.setCategoryList(autopartCategoryList);
         LOGGER.info("Autopart sent to MatchCategories function: {}", autopart);
 
+        autopartAllegroListModel.setAutopart(autopart);
         try {
-            returnedData = MatchCategories(autopart);
+            returnedData = matchCategories(autopartAllegroListModel);
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("Failed to use MatchCategories function");
