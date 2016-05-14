@@ -20,7 +20,7 @@ public class PartCategoryChoosingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
-
+        req.setCharacterEncoding("UTF-8");
         String categoryName = null;
         String categoryOut = req.getParameter("category");
         String brandName = req.getParameter("brandName");

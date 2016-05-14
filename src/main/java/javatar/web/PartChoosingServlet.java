@@ -1,7 +1,5 @@
 package javatar.web;
 
-import javatar.model.JsonDataAutopart;
-import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +18,7 @@ public class PartChoosingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
-
+        req.setCharacterEncoding("UTF-8");
         String categoryName = req.getParameter("categoryName");
         String partOut = req.getParameter("part");
         String brandName = req.getParameter("brandName");

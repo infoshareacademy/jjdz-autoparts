@@ -1,6 +1,5 @@
 package javatar.web;
 
-import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
 
@@ -20,7 +19,7 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
-
+        req.setCharacterEncoding("UTF-8");
         String engineOut = req.getParameter("engine");
         String brandName = req.getParameter("brandName");
         String modelName = req.getParameter("modelName");

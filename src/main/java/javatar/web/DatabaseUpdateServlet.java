@@ -21,6 +21,7 @@ public class DatabaseUpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.setCharacterEncoding("UTF-8");
         String partName = req.getParameter("partName");
         String partBrand = req.getParameter("partBrand");
         String partId = req.getParameter("partId");

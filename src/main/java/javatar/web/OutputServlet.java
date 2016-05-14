@@ -1,8 +1,5 @@
 package javatar.web;
 
-import javatar.model.DataCarsEngineAndFuel;
-import javatar.service.JsonParserAll;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +14,7 @@ public class OutputServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.setCharacterEncoding("UTF-8");
         RequestDispatcher dispatcher = req.getRequestDispatcher("Output.jsp");
         dispatcher.forward(req, resp);
     }

@@ -1,7 +1,6 @@
 package javatar.web;
 
 import javatar.model.DataCarsEngineAndFuel;
-import javatar.model.DataCarsModels;
 import javatar.service.JsonParserAll;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +21,7 @@ public class EnginesChoosingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
-
+        req.setCharacterEncoding("UTF-8");
         String modelOut = req.getParameter("model");
         String brandName = req.getParameter("brandName");
 
