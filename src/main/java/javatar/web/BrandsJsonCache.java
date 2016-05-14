@@ -3,6 +3,8 @@ package javatar.web;
 import javatar.model.CarsBrands;
 import javatar.model.DataCarsBrands;
 import javatar.service.JsonParserAll;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Lock;
@@ -17,6 +19,7 @@ import java.util.Collection;
 @Lock(LockType.READ)
 public class BrandsJsonCache {
 
+    private static final Logger LOGGER = LogManager.getLogger();
     final Collection<CarsBrands> brandsData = new ArrayList<>();
     DataCarsBrands brands = null;
     JsonParserAll jsonParserAll = new JsonParserAll();
@@ -26,8 +29,8 @@ public class BrandsJsonCache {
 
         brands = jsonParserAll.parseCarFile();
 
-        System.out.println("brands.getData().size() = " + brands.getData().size());
         brandsData.addAll(brands.getData());
+        LOGGER.info("brands.getData().size(): {}", brands.getData().size());
 
     }
 

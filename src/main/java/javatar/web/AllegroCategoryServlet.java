@@ -5,6 +5,8 @@ import javatar.model.Autopart;
 import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
 import javatar.service.CreateAllegroLink;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -20,6 +22,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/AllegroLink")
 public class AllegroCategoryServlet extends HttpServlet {
 
+    private static final Logger LOGGER = LogManager.getLogger();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @EJB
@@ -58,6 +61,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel) + "?string=" + autopart.getName() + " " + autopart.getBrand() + " " + autopart.getId();
+        LOGGER.info("Created allegro link: {}", allegroLink);
 
         req.setAttribute("allegroLink", allegroLink);
         req.setAttribute("partName", name);
