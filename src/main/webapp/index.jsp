@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,6 +20,13 @@
 </head>
 <body>
 
+<script>
+    $(document).ready(function () {
+
+    });
+
+</script>
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -30,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts">Autoparts</a>
+            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -48,23 +56,30 @@
         <h1>Wyszukiwarka części samochodowych</h1>
         <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
         <div class="row">
-            <div class="col-xs-6 col-lg-4">
-                <p>
-                    <a href="LinkedInLogging">
-                        <img border="0" alt="W3Schools"
-                             src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
-                             width="215" height="41">
-                    </a>
+
+
+            <%--<% if (session.getAttribute("user") == "null") %>--%>
+            <c:choose>
+                <c:when test="${sessionScope.user == null}">
+
+                <div id="linkedIn" class="col-xs-12 col-lg-12">
+                    <p>
+                        <a href="LinkedInLogging">
+                            <img border="0" alt="W3Schools"
+                                 src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
+                                 width="215" height="41">
+                        </a>
+                    </p>
+                </div>
+
+                </c:when>
+            </c:choose>
+
+            <div id="user">
+                <h1>Pomyślnie zalogowałeś się do portalu</h1>
+                <p>Witaj <%= session.getAttribute("user") %>
                 </p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-                <p>Google</p>
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-4">
-                <p>Facebok</p>
-            </div><!--/.col-xs-6.col-lg-4-->
-
-
+            </div>
         </div>
 
 

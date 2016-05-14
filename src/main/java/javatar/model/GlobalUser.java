@@ -48,5 +48,8 @@ public class GlobalUser {
         this.eMail = eMail;
     }
 
-
+    @Override
+    public String toString() {
+        return  firstName + " " + lastName;
+    }
 }
