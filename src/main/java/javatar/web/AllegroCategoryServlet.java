@@ -27,8 +27,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
         List<AutopartCategory> categoryList = new ArrayList<>();
-        AutopartCategory categoryInList1 = new AutopartCategory();
-        AutopartCategory categoryInList2 = new AutopartCategory();
+        AutopartCategory autopartCategory;
         AllegroCategoriesCache allegroCategoriesCache = new AllegroCategoriesCache();
         List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFomFile();
 
