@@ -12,7 +12,7 @@
     <c:if test="${hasChildren == false}">
         <c:set var="formAction" value="Parts"/>
     </c:if>
-    <form method="GET" action="${formAction}">
+    <form method="POST" action="${formAction}">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
 
@@ -28,10 +28,7 @@
         <c:if test="${hasChildren == true}">
             <select name="category">
                 <c:forEach items="${categories}" var="category">
-                    <option value="${category.id};
-                        ${category.name};
-                        ${category.link};
-                        ${category.has_children}">${category.name}</option>
+                    <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
                 </c:forEach>
             </select>
         </c:if>
@@ -39,10 +36,7 @@
         <c:if test="${hasChildren == false}">
             <select name="part">
                 <c:forEach items="${parts}" var="part">
-                    <option value="${part.brand};
-                        ${part.number_clear};
-                        ${part.name};
-                        ${part.link}">${part.brand} ${part.name}</option>
+                    <option value="${part.brand};${part.number_clear};${part.name};${part.link}">${part.brand} ${part.name}</option>
                 </c:forEach>
             </select>
         </c:if>
