@@ -12,7 +12,7 @@
 
     Wybraną część możesz wyszukać w kategorii allegro: <a href="${allegroLink}">${allegroLink}</a>
     <br><br>
-    Jako hasło wyszukiwania wpisz: ${partName} ${partBrand} ${partId}
+    <%--Jako hasło wyszukiwania wpisz: ${partName} ${partBrand} ${partId}--%>
 
 </form>
 

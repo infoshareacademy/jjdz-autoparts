@@ -2,6 +2,7 @@ package javatar.model;
 
 import static javatar.model.AccountType.LinkedIn;
 
+
 public class GlobalUser {
 
     private AccountType accountType;
@@ -48,5 +49,8 @@ public class GlobalUser {
         this.eMail = eMail;
     }
 
-
+    @Override
+    public String toString() {
+        return  firstName + " " + lastName;
+    }
 }
