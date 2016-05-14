@@ -23,7 +23,7 @@ import java.util.List;
 public class AllegroCategoryServlet extends HttpServlet {
 
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
-    XMLParser xmlParser = null;
+    XMLParser xmlParser = new XMLParser();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,9 +34,9 @@ public class AllegroCategoryServlet extends HttpServlet {
         AutopartCategory categoryInList1 = new AutopartCategory();
         AutopartCategory categoryInList2 = new AutopartCategory();
         ServletContext servletContext = null;
-        InputStream allegroCategoriesFile = servletContext.getResourceAsStream("src/main/resources/Allegro_cathegories_2016-02-13.xml");
+        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
         List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
-
+        System.out.println("allegroCategoriesList = " + allegroCategoriesList.size());
 
         //***********************************************************************************
         //TODO ta część jest tylko do testów - usunąć po ukończeniu wszystkich formularzy
