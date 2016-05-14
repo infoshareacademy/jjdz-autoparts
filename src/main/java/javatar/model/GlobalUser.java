@@ -2,6 +2,7 @@ package javatar.model;
 
 import static javatar.model.AccountType.LinkedIn;
 
+
 public class GlobalUser {
 
     private AccountType accountType;

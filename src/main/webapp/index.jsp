@@ -60,26 +60,29 @@
 
             <%--<% if (session.getAttribute("user") == "null") %>--%>
             <c:choose>
+
                 <c:when test="${sessionScope.user == null}">
-
-                <div id="linkedIn" class="col-xs-12 col-lg-12">
-                    <p>
-                        <a href="LinkedInLogging">
-                            <img border="0" alt="W3Schools"
-                                 src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
-                                 width="215" height="41">
-                        </a>
-                    </p>
-                </div>
-
+                    <div id="linkedIn" class="col-xs-12 col-lg-12">
+                        <p>
+                            <a href="LinkedInLogging">
+                                <img border="0" alt="W3Schools"
+                                     src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
+                                     width="215" height="41">
+                            </a>
+                        </p>
+                    </div>
                 </c:when>
+
+                <c:otherwise>
+                    <div id="user">
+                        <h1>Pomyślnie zalogowałeś się do portalu</h1>
+                        <p>Witaj <%= session.getAttribute("user") %>
+                        </p>
+                    </div>
+                </c:otherwise>
+
             </c:choose>
 
-            <div id="user">
-                <h1>Pomyślnie zalogowałeś się do portalu</h1>
-                <p>Witaj <%= session.getAttribute("user") %>
-                </p>
-            </div>
         </div>
 
 
