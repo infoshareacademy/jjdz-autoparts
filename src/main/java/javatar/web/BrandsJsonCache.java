@@ -1,18 +1,14 @@
-package javatar.service;
+package javatar.web;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import javatar.model.CarsBrands;
 import javatar.model.DataCarsBrands;
+import javatar.service.JsonParserAll;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
