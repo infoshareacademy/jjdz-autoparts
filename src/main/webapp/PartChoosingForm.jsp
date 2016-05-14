@@ -5,7 +5,7 @@
 <head>
     <title>Infoshare Academy</title>
 </head>
-    <form method="GET" action="Parts2">
+    <form method="POST" action="AllegroLink">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
 

@@ -12,7 +12,7 @@
     <c:if test="${hasChildren == false}">
         <c:set var="formAction" value="Parts"/>
     </c:if>
-    <form method="GET" action="${formAction}">
+    <form method="POST" action="${formAction}">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
 

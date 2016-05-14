@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form method="GET" action="Models">
+<form method="POST" action="Models">
 
     <select name="brand">
         <c:forEach items="${brands}" var="brand">

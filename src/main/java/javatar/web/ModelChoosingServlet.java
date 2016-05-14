@@ -18,7 +18,7 @@ public class ModelChoosingServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
 
