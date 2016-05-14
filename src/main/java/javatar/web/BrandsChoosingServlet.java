@@ -1,7 +1,6 @@
 package javatar.web;
 
 import javatar.model.CarsBrands;
-import javatar.service.BrandsJsonCache;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;

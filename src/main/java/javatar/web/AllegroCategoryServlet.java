@@ -5,17 +5,14 @@ import javatar.model.Autopart;
 import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
 import javatar.service.CreateAllegroLink;
-import javatar.service.XMLParser;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +20,6 @@ import java.util.List;
 public class AllegroCategoryServlet extends HttpServlet {
 
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
-    XMLParser xmlParser = new XMLParser();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,10 +27,11 @@ public class AllegroCategoryServlet extends HttpServlet {
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
         List<AutopartCategory> categoryList = new ArrayList<>();
-        AutopartCategory autopartCategory;
-        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
-        System.out.println("allegroCategoriesList = " + allegroCategoriesList.size());
+        AutopartCategory categoryInList1 = new AutopartCategory();
+        AutopartCategory categoryInList2 = new AutopartCategory();
+        AllegroCategoriesCache allegroCategoriesCache = new AllegroCategoriesCache();
+        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFomFile();
+
 
 
         String autopartAsString = req.getParameter("part");

@@ -61,12 +61,12 @@
                     <div class="col-xs-6 col-lg-6">
                         <h2>Samochód</h2>
                         <p>Opis </p>
-                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                        <%--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>--%>
                     </div><!--/.col-xs-6.col-lg-4-->
                     <div class="col-xs-6 col-lg-6">
                         <h2>Link allegro</h2>
                         <p><a href="${allegroLink}">${allegroLink}</a></p>
-                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                        <%--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>--%>
                     </div><!--/.col-xs-6.col-lg-4-->
 
                 </div>
