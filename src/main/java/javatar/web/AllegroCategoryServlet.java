@@ -6,6 +6,7 @@ import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
 import javatar.service.CreateAllegroLink;
 
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,9 @@ public class AllegroCategoryServlet extends HttpServlet {
 
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
+    @EJB
+    AllegroCategoriesCache allegroCategoriesCache;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -29,10 +33,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         Autopart autopart = new Autopart();
         List<AutopartCategory> categoryList = new ArrayList<>();
         AutopartCategory autopartCategory;
-        AllegroCategoriesCache allegroCategoriesCache = new AllegroCategoriesCache();
-        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFomFile();
-
-
+        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFromFile();
 
         String autopartAsString = req.getParameter("part");
 
@@ -43,13 +44,11 @@ public class AllegroCategoryServlet extends HttpServlet {
         String[] categoriesSplit = req.getParameter("categoryName").split(" -> ");
 
 
-        for (int i=0; i<categoriesSplit.length; i++) {
+        for (int i = 0; i < categoriesSplit.length; i++) {
             autopartCategory = new AutopartCategory();
             autopartCategory.setName(categoriesSplit[i]);
             categoryList.add(autopartCategory);
         }
-
-        System.out.println(categoryList.toString());
 
         autopart.setId(id);
         autopart.setName(name);
@@ -58,8 +57,6 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
-        System.out.println(autopartAllegroListModel.getAllegroCategories().size());
-        System.out.println(autopartAllegroListModel.getAutopart().toString());
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel) + "?string=" + autopart.getName() + " " + autopart.getBrand() + " " + autopart.getId();
 
         req.setAttribute("allegroLink", allegroLink);

@@ -24,12 +24,11 @@ public class AllegroCategoriesCache {
     public void initialize() {
 
         InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
-        System.out.println("allegroCategoriesList = " + allegroCategoriesList.size());
+        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
 
     }
 
-    public List<AllegroCategories> returnAllegroCategoriesFomFile() {
+    public List<AllegroCategories> returnAllegroCategoriesFromFile() {
         return allegroCategoriesList;
     }
 

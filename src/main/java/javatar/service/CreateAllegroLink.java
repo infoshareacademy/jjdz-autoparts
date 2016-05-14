@@ -1,17 +1,16 @@
 package javatar.service;
 
-import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartAllegroListModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
-
 public class CreateAllegroLink {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public String createAllegroLink(AutopartAllegroListModel autopartAllegroListModel ) {
+        System.out.println("Input autopart = "+ autopartAllegroListModel.getAutopart().toString());
+        System.out.println("Input category list =    "+ autopartAllegroListModel.getAutopart().getCategoryList().toString());
         Autopart autopart = autopartAllegroListModel.getAutopart();
         LOGGER.info("Input autopart element: {}",autopart);
         AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();

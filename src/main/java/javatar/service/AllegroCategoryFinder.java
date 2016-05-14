@@ -62,18 +62,21 @@ public class AllegroCategoryFinder {
         AutopartCategory autopartCategory = new AutopartCategory();
         String returnedData = "";
         List<AllegroCategories> allegroCategoriesList = autopartAllegroListModel.getAllegroCategories();
+        System.out.println("allegroCategoriesList.size() = " + allegroCategoriesList.size());
 
         for (AutopartCategory p :
                 autopartCategoryList) {
             String nameTmp = p.getName();
             tmpCategoryId = xmlAllegroCategoriesMap.JsonXmlMapping.get(nameTmp);
+            System.out.println("nameTmp = " + nameTmp);
+            System.out.println("tmpCategoryId = " + tmpCategoryId);
 
             if (tmpCategoryId != null && !outputAutopartCategoryList.toString().contains(tmpCategoryId.toString())) {
                 autopartCategory.setName(nameTmp);
                 autopartCategory.setId(tmpCategoryId.toString());
                 outputAutopartCategoryList.add(autopartCategory);
                 p.setId(tmpCategoryId.toString());
-                final Integer catIdForLambda = tmpCategoryId;
+                Integer catIdForLambda = tmpCategoryId;
                 List<AllegroCategories> collect = allegroCategoriesList.stream().filter(cat -> cat.getCatId().equals(catIdForLambda)).collect(Collectors.toList());
                 LOGGER.info("Old category name: {}", p.getName());
                 if (!collect.isEmpty()) {
