@@ -14,42 +14,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-    <title>Car selecting form</title>
+    <title>Infoshare Academy</title>
 </head>
 
 <body>
-<script>
-    $(document).ready(function () {
+    <script>
+        $(document).ready(function () {
 
-    });
+        });
 
-</script>
+    </script>
+
     <div class="container">
         <form method="POST" action="PartCategory" class="form-horizontal" role="form">
+            <div class="form-group">
 
+                <label for="basic">Marka: </label>
             <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
             <br>
 
+                <label for="basic">Model: </label>
             <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
             <br>
 
+                <label for="basic">Silnik: </label>
             <Input type="hidden" value="${engineName}" name="engineName" >${engineName}
             <br>
-            <div class="form-group">
-                <label for="basic" class="col-lg-2 control-label">Wybierz kategorię</label>
 
-                <!--todo: pobieranie danych i dodawanie nowej opcji do wyszukania po wyborze poprzedniej-->
-                <!--todo: przycisk akceptacji? dynamiczna zmiana? wybierasz kategorie i pojawia sie podkategoria nizej, jesli zmieniasz kategorie to usuwaja sie wszystkie i
-                todo: pojawia tylko jeden poziom nizej-->
-                <div class="col-lg-10">
-                    <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
-                        <c:forEach items="${categories}" var="category">
-                            <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
-                        </c:forEach>
-                    </select>
-                </div>
+            <label for="basic" class="col-lg-2 control-label">Wybierz kategorię</label>
 
-                <input type="submit" value="OK">
+            <div class="col-lg-10">
+                <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
+                    <c:forEach items="${categories}" var="category">
+                        <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
+                    </c:forEach>
+                </select>
+            </div>
+
+            <input type="submit" value="OK">
             </div>
         </form>
     </div>

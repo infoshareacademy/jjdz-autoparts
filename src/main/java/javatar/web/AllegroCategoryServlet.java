@@ -31,46 +31,25 @@ public class AllegroCategoryServlet extends HttpServlet {
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
         List<AutopartCategory> categoryList = new ArrayList<>();
-        AutopartCategory categoryInList1 = new AutopartCategory();
-        AutopartCategory categoryInList2 = new AutopartCategory();
-        ServletContext servletContext = null;
+        AutopartCategory autopartCategory;
         InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
         List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
         System.out.println("allegroCategoriesList = " + allegroCategoriesList.size());
 
-        //***********************************************************************************
-        //TODO ta część jest tylko do testów - usunąć po ukończeniu wszystkich formularzy
-        //***********************************************************************************
-        String name = "CHŁODNICA OLEJU";
-        String brand = "VOYAGER";
-        String id = "";
-        String category1 = "Chłodnice";
-        String category2 = "Chłodnice oleju";
-        categoryInList1.setName(category1);
-        categoryList.add(categoryInList1);
-        categoryInList2.setName(category2);
-        categoryList.add(categoryInList2);
 
-        //***********************************************************************************
+        String autopartAsString = req.getParameter("part");
 
+        String[] splitArray = autopartAsString.split(";");
+        String brand = splitArray[0];
+        String id = splitArray[1];
+        String name = splitArray[2];
+        String[] categoriesSplit = req.getParameter("categoryName").split(" -> ");
 
-        //TODO tą część należy odkomentować i uzupełnić po ukonczeniu wszystkich formularzy
-//        String autopartAsString = req.getParameter("autopart");
-//
-//        String[] splitArray = autopartAsString.split(";");
-//        String name = splitArray[0];
-//        String brand = splitArray[1];
-//        String id = splitArray[2];
-//        String category1 = splitArray[3];
-//        String category2 = splitArray[4];
-//        if (!category1.isEmpty() {
-//            categoryInList1.setName(category1);
-//            categoryList.add(categoryInList1);
-//        }
-//        if (!category2.isEmpty()) {
-//            categoryInList2.setName(category2);
-//            categoryList.add(categoryInList2);
-//        }
+        for (int i=0; i<categoriesSplit.length; i++) {
+            autopartCategory = new AutopartCategory();
+            autopartCategory.setName(categoriesSplit[i]);
+            categoryList.add(autopartCategory);
+        }
 
         autopart.setId(id);
         autopart.setName(name);

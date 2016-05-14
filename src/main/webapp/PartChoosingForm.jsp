@@ -5,6 +5,9 @@
 <head>
     <title>Infoshare Academy</title>
 </head>
+<%--todo: usunąć po sprawdzeniu czy na pewno nie używane (tak samo z servletem)--%>
+<%--todo: SPRAWDZIC I POPRAWIC KODOWANIE ZNAKÓW --%>
+
     <form method="POST" action="AllegroLink">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
@@ -26,15 +29,6 @@
 
         <Input type="hidden" value="${partName}" name="partName" >${partName}
         <br>
-
-        <%--<select name="part">--%>
-            <%--<c:forEach items="${parts}" var="part">--%>
-                <%--<option value="${part.brand};--%>
-                <%--${part.number_clear};--%>
-                <%--${part.name};--%>
-                <%--${part.link}">${part.brand} ${part.name}</option>--%>
-            <%--</c:forEach>--%>
-        <%--</select>--%>
 
         <input type="submit" value="OK">
     </form>
