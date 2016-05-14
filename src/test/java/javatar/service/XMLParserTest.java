@@ -3,8 +3,8 @@ package javatar.service;
 import javatar.model.AllegroCategories;
 import org.junit.Test;
 
+import java.io.InputStream;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,9 @@ public class XMLParserTest {
     public void testAllegroCategoryObject() throws Exception {
 
         XMLParser xmlParser = new XMLParser();
-        List<AllegroCategories> allegroCategoriesList = xmlParser.AllegroCategoryObject();
+        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
+        List<AllegroCategories> allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+        System.out.println("allegroCategoriesList.size() = " + allegroCategoriesList.size());
 
         assertTrue(allegroCategoriesList.size() > 10000);
 

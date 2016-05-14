@@ -6,7 +6,7 @@
     <title>Infoshare Academy</title>
 </head>
 <body>
-    <form method="GET" action="PartCategory">
+    <form method="POST" action="PartCategory">
 
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
