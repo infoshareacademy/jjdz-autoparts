@@ -49,7 +49,7 @@
 <%--</nav>--%>
 
 <div class="container">
-    <form method="POST" action="Models" class="form-horizontal" role="form">
+    <form method="GET" action="Models" class="form-horizontal" role="form">
         <div class="row">
             <div class="form-group">
                 <label class="col-lg-2 control-label">Wybierz kategorię</label>

@@ -16,7 +16,7 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");

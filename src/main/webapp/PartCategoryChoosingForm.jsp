@@ -12,7 +12,7 @@
     <c:if test="${hasChildren == false}">
         <c:set var="formAction" value="AllegroLink"/>
     </c:if>
-    <form method="POST" action="${formAction}">
+    <form method="GET" action="${formAction}">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
 

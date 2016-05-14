@@ -26,7 +26,7 @@
     </script>
 
     <div class="container">
-        <form method="POST" action="PartCategory" class="form-horizontal" role="form">
+        <form method="GET" action="PartCategory" class="form-horizontal" role="form">
             <div class="form-group">
 
                 <label for="basic">Marka: </label>

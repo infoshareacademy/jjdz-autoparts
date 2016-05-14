@@ -22,7 +22,7 @@ public class AllegroCategoryServlet extends HttpServlet {
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
@@ -42,11 +42,14 @@ public class AllegroCategoryServlet extends HttpServlet {
         String name = splitArray[2];
         String[] categoriesSplit = req.getParameter("categoryName").split(" -> ");
 
+
         for (int i=0; i<categoriesSplit.length; i++) {
             autopartCategory = new AutopartCategory();
             autopartCategory.setName(categoriesSplit[i]);
             categoryList.add(autopartCategory);
         }
+
+        System.out.println(categoryList.toString());
 
         autopart.setId(id);
         autopart.setName(name);

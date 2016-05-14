@@ -8,7 +8,7 @@
 <%--todo: usunąć po sprawdzeniu czy na pewno nie używane (tak samo z servletem)--%>
 <%--todo: SPRAWDZIC I POPRAWIC KODOWANIE ZNAKÓW --%>
 
-    <form method="POST" action="AllegroLink">
+    <form method="GET" action="AllegroLink">
         <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
         <br>
 

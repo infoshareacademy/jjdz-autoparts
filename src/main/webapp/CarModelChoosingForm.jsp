@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form method="POST" action="Engines">
+<form method="GET" action="Engines">
 
 
     <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
