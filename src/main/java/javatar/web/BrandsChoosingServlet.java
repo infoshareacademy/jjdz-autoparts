@@ -1,6 +1,8 @@
 package javatar.web;
 
 import javatar.model.CarsBrands;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -15,6 +17,8 @@ import java.util.Collection;
 @WebServlet(urlPatterns = "/Brands")
 public class BrandsChoosingServlet extends HttpServlet {
 
+    private static final Logger LOGGER = LogManager.getLogger();
+
     @EJB
     BrandsJsonCache cache;
 
@@ -25,7 +29,7 @@ public class BrandsChoosingServlet extends HttpServlet {
         Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
         req.setAttribute("brands", carsBrandsCollection);
-
+        LOGGER.info("carsBransdCollection has size: {}",carsBrandsCollection.size());
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);
     }
