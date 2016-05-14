@@ -28,8 +28,8 @@ public class AllegroCategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        AutopartAllegroListModel autopartAllegroListModel = null;
-        Autopart autopart = null;
+        AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
+        Autopart autopart = new Autopart();
         List<AutopartCategory> categoryList = new ArrayList<>();
         AutopartCategory categoryInList1 = new AutopartCategory();
         AutopartCategory categoryInList2 = new AutopartCategory();
@@ -48,7 +48,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         String category2 = "Chłodnice oleju";
         categoryInList1.setName(category1);
         categoryList.add(categoryInList1);
-        categoryInList1.setName(category2);
+        categoryInList2.setName(category2);
         categoryList.add(categoryInList2);
 
         //***********************************************************************************
@@ -79,6 +79,8 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
+        System.out.println(autopartAllegroListModel.getAllegroCategories().size());
+        System.out.println(autopartAllegroListModel.getAutopart().toString());
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel);
 
         req.setAttribute("allegroLink", allegroLink);

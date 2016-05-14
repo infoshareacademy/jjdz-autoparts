@@ -10,8 +10,6 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -19,24 +17,18 @@ import java.util.List;
 
 public class XMLParser {
     private static final Logger LOGGER = LogManager.getLogger();
-    AllegroCategories allegroCategories = null;
+    AllegroCategories allegroCategories = new AllegroCategories();
 
 
     public List<AllegroCategories> allegroCategoryObject(InputStream allegroCategoriesFile) {
         LOGGER.info("InputStream:{}",allegroCategoriesFile);
         XMLInputFactory f = XMLInputFactory.newFactory();
-
-        XMLStreamReader sr = null;
-        try {
-            sr = f.createXMLStreamReader(allegroCategoriesFile);
-        } catch (XMLStreamException e) {
-            e.printStackTrace();
-        }
         XmlMapper xmlMapper = new XmlMapper();
 
         List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
         try {
+            XMLStreamReader sr = f.createXMLStreamReader(allegroCategoriesFile);
             while (sr.hasNext()) {
                 if (sr.next() == XMLStreamConstants.START_ELEMENT && sr.getLocalName() == "item") {
 
@@ -49,9 +41,11 @@ public class XMLParser {
             }
         } catch (XMLStreamException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
+
+
         LOGGER.info("Output list of allegro categories has size: {}",allegroCategoriesList.size());
         return allegroCategoriesList;
     }
