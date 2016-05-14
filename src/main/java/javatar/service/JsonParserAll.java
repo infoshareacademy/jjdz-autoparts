@@ -3,9 +3,7 @@ package javatar.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import javatar.model.DataCarsBrands;
-import javatar.model.DataCarsEngineAndFuel;
-import javatar.model.DataCarsModels;
+import javatar.model.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,6 +14,8 @@ public class JsonParserAll {
     DataCarsBrands brands = null;
     DataCarsModels model = null;
     DataCarsEngineAndFuel engine = null;
+    JsonDataAutopartCategories category = null;
+    JsonDataAutopart part = null;
 
     public DataCarsBrands parseCarFile() {
 
@@ -60,6 +60,36 @@ public class JsonParserAll {
         }
 
         return engine;
+    }
+
+    public JsonDataAutopartCategories parseCategoryFile(String url) {
+
+        try {
+            String readString = reader.getText(url);
+            Gson gson = new GsonBuilder().create();
+
+            category = gson.fromJson(readString, JsonDataAutopartCategories.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return category;
+    }
+
+    public JsonDataAutopart parsePartFile(String url) {
+
+        try {
+            String readString = reader.getText(url);
+            Gson gson = new GsonBuilder().create();
+
+            part = gson.fromJson(readString, JsonDataAutopart.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return part;
     }
 
 }
