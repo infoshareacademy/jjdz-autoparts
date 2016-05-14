@@ -1,17 +1,20 @@
 <%@ taglib prefix="c"
            uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Latest compiled and minified CSS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
-    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>
-    <title>Infoshare Academy</title>
+    <title>Brand selecting form</title>
 </head>
 <body>
 
@@ -21,16 +24,16 @@
         <label class="col-lg-2 control-label">Wybierz kategorię</label>
 
         <div class="col-lg-10">
-            <select name="brand" data-live-search="true" class="selectpicker">
+            <select name="brand" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                 <c:forEach items="${brands}" var="brand">
                     <option
                             value="${brand.id};${brand.name};${brand.link}">${brand.name}</option>
                 </c:forEach>
             </select>
         </div>
+        <input type="submit" value="OK">
     </div>
 
-    <input type="submit" value="OK">
 </form>
 
 </body>
