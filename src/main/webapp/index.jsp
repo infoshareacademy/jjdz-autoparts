@@ -78,6 +78,7 @@
                         <h1>Pomyślnie zalogowałeś się do portalu</h1>
                         <p>Witaj <%= session.getAttribute("user") %>
                         </p>
+                        <a href="Brands">Wyszukiwanie części</a>
                     </div>
                 </c:otherwise>
 

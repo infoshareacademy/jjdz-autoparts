@@ -1,14 +1,25 @@
 package javatar.model;
 
+import javax.persistence.*;
+
 import static javatar.model.AccountType.LinkedIn;
 
-
+@Entity
+//@Table(name = "Users")
 public class GlobalUser {
 
-    private AccountType accountType;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Column(name = "Usr_id")
+    private Long id;
+    //@Column(name = "Usr_Name")
     private String firstName;
+    //@Column(name = "Usr_LastName")
     private String lastName;
+    //@Column(name = "Usr_eMail")
     private String eMail;
+    //@Column(name = "Usr_accountType")
+    private AccountType accountType;
 
     public GlobalUser(LinkedInUser linkedInUser) {
         this.accountType = LinkedIn;
@@ -17,8 +28,19 @@ public class GlobalUser {
         this.eMail = linkedInUser.getEmailAddress();
     }
 
+    public GlobalUser() {
+    }
+
     public AccountType getAccountType() {
         return accountType;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setAccountType(AccountType accountType) {
