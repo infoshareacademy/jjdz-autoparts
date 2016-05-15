@@ -23,7 +23,6 @@ public class SessionData implements Serializable {
     }
 
     public boolean isLoggedIn() {
-        System.out.println("AAAAA" + (user != null));
         return (user != null);
     }
 

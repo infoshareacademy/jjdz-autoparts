@@ -2,27 +2,27 @@ package javatar.model;
 
 import javax.persistence.*;
 
-import static javatar.model.AccountType.LinkedIn;
+import static javatar.model.AccountType.LINKEDIN;
 
 @Entity
-//@Table(name = "Users")
+//@Table(name = "users")
 public class GlobalUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "Usr_id")
+    @Column( unique = true, nullable = false)
     private Long id;
-    //@Column(name = "Usr_Name")
+//    @Column(name = "Usr_Name")
     private String firstName;
-    //@Column(name = "Usr_LastName")
+//    @Column(name = "Usr_LastName")
     private String lastName;
-    //@Column(name = "Usr_eMail")
+//    @Column(name = "Usr_eMail")
     private String eMail;
-    //@Column(name = "Usr_accountType")
+//    @Column(name = "Usr_accountType")
     private AccountType accountType;
 
     public GlobalUser(LinkedInUser linkedInUser) {
-        this.accountType = LinkedIn;
+        this.accountType = LINKEDIN;
         this.firstName = linkedInUser.getFirstName();
         this.lastName = linkedInUser.getLastName();
         this.eMail = linkedInUser.getEmailAddress();
@@ -73,6 +73,6 @@ public class GlobalUser {
 
     @Override
     public String toString() {
-        return  firstName + " " + lastName;
+        return firstName + " " + lastName;
     }
 }
