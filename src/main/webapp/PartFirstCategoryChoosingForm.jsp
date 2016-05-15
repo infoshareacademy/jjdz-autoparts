@@ -8,42 +8,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="css/forms-template.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-    <title>Infoshare Academy</title>
+    <title>Engine selecting form</title>
 </head>
-
 <body>
-    <script>
-        $(document).ready(function () {
+<script>
+    $(document).ready(function () {
 
-        });
+    });
 
-    </script>
-
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <form method="GET" action="PartCategory" class="form-horizontal" role="form">
-            <div class="form-group">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/jjdz-autoparts">Home</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container lower forms-template">
+    <h1>Wyszukiwarka części samochodowych</h1>
+    <p class="lead">Wybierz parametry właściwe dla wyszukiwanej części</p>
 
-                <label for="basic">Marka: </label>
-            <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
-            <br>
+    <form method="GET" action="PartCategory" class="form-horizontal" role="form">
+        <div class="row">
+            <p class="col-lg-6" align="right">Wybrana marka samochodu:</p>
+            <p class="col-lg-6" align="left"> ${brandName}</p>
 
-                <label for="basic">Model: </label>
-            <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
-            <br>
+        </div>
+        <div class="row">
+            <p class="col-lg-6" align="right"> Wybrany model samochodu:</p>
+            <p class="col-lg-6" align="left">${modelName}</p>
+        </div>
+        <div class="row">
+            <p class="col-lg-6" align="right">Wybrany silnik:</p>
+            <p class="col-lg-6" align="left"> ${engineName}</p>
 
-                <label for="basic">Silnik: </label>
-            <Input type="hidden" value="${engineName}" name="engineName" >${engineName}
-            <br>
+        </div>
 
-            <label for="basic" class="col-lg-2 control-label">Wybierz kategorię</label>
+        <div class="form-group row lower">
+            <label class="col-lg-3 control-label"><b>Wybierz kategorię</b></label>
+            <div class="col-lg-6">
 
-            <div class="col-lg-10">
                 <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
@@ -52,9 +76,9 @@
             </div>
 
             <input type="submit" value="OK">
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 </body>
 </html>

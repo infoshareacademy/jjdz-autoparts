@@ -49,29 +49,25 @@
 
 <div class="container lower forms-template">
     <h1>Wyszukiwarka części samochodowych</h1>
-    <p class="lead" >Wybierz parametry właściwe dla wyszukiwanej części</p>
+    <p class="lead">Wybierz parametry właściwe dla wyszukiwanej części</p>
 
     <form method="GET" action="Models" class="form-horizontal" role="form">
-        <div class="row lower">
-            <div class="form-group">
-                <label class="col-lg-3 control-label"><b>Wybierz markę samochodu</b></label>
 
-                <div class="col-lg-6">
-                    <select name="brand" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
-                        <c:forEach items="${brands}" var="brand">
-                            <option
-                                    value="${brand.id};${brand.name};${brand.link}">${brand.name}</option>
-                        </c:forEach>
-                    </select>
+        <div class="form-group row lower">
+            <label class="col-lg-3 control-label"><b>Wybierz markę samochodu</b></label>
 
-                </div>
-                <input class="col-lg-1" type="submit" value="OK" class="button-middle">
+            <div class="col-lg-6">
+                <select name="brand" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+                    <c:forEach items="${brands}" var="brand">
+                        <option
+                                value="${brand.id};${brand.name};${brand.link}">${brand.name}</option>
+                    </c:forEach>
+                </select>
+
             </div>
+            <input class="col-lg-1 button-middle" type="submit" value="OK">
         </div>
-
     </form>
-</div>
-
 </div>
 </body>
 </html>
