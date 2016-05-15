@@ -1,5 +1,5 @@
 package javatar.model;
 
 public enum AccountType {
-    LINKEDIN, Google, Facebook
+    LINKEDIN, GOOGLE, FACEBOOK
 }
