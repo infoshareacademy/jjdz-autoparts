@@ -75,7 +75,7 @@
                 </select>
             </div>
 
-            <input type="submit" value="OK">
+            <input class="col-lg-1 button-middle" type="submit" value="OK">
         </div>
     </form>
 </div>
