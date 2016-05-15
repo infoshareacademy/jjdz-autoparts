@@ -147,28 +147,41 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.2</version>
+        </dependency>
     </dependencies>
 
 
     <profiles>
-        <profile>
-            <!-- Być może jest plugin, który wystartowałby dockera z podanym image'm -->
-            <id>docker</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.wildfly.plugins</groupId>
-                        <artifactId>wildfly-maven-plugin</artifactId>
-                        <configuration>
-                            <hostname>localhost</hostname>
-                            <port>29990</port>
-                            <username>admin</username>
-                            <password>Admin#70365</password>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+        <!--<profile>-->
+            <!--&lt;!&ndash; Być może jest plugin, który wystartowałby dockera z podanym image'm &ndash;&gt;-->
+            <!--<id>docker</id>-->
+            <!--<build>-->
+                <!--<plugins>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.wildfly.plugins</groupId>-->
+                        <!--<artifactId>wildfly-maven-plugin</artifactId>-->
+                        <!--<configuration>-->
+                            <!--<hostname>localhost</hostname>-->
+                            <!--<port>29990</port>-->
+                            <!--<username>admin</username>-->
+                            <!--<password>Admin#70365</password>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+                <!--</plugins>-->
+            <!--</build>-->
+        <!--</profile>-->
     </profiles>
 
 </project>

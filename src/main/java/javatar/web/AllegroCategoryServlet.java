@@ -1,14 +1,12 @@
 package javatar.web;
 
-import javatar.model.AllegroCategories;
-import javatar.model.Autopart;
-import javatar.model.AutopartAllegroListModel;
-import javatar.model.AutopartCategory;
+import javatar.model.*;
 import javatar.service.CreateAllegroLink;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +23,9 @@ public class AllegroCategoryServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
+    @Inject
+    FormData formData;
+
     @EJB
     AllegroCategoriesCache allegroCategoriesCache;
 
@@ -34,8 +35,6 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
-        List<AutopartCategory> categoryList = new ArrayList<>();
-        AutopartCategory autopartCategory;
         List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFromFile();
 
         String autopartAsString = req.getParameter("part");
@@ -44,19 +43,15 @@ public class AllegroCategoryServlet extends HttpServlet {
         String brand = splitArray[0];
         String id = splitArray[1];
         String name = splitArray[2];
-        String[] categoriesSplit = req.getParameter("categoryName").split(" -> ");
 
-
-        for (int i = 0; i < categoriesSplit.length; i++) {
-            autopartCategory = new AutopartCategory();
-            autopartCategory.setName(categoriesSplit[i]);
-            categoryList.add(autopartCategory);
-        }
+        formData.setPartBrand(brand);
+        formData.setPartId(id);
+        formData.setPartName(name);
 
         autopart.setId(id);
         autopart.setName(name);
         autopart.setBrand(brand);
-        autopart.setCategoryList(categoryList);
+        autopart.createCategoryListByNames(formData.getPartCategories());
 
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
