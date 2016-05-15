@@ -58,7 +58,7 @@
             <div class="col-lg-6">
                 <select name="model" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${models}" var="model">
-                        <option value="${model.id};${model.name};${model.link}">${model.name}</option>
+                        <option value="${model.name};${model.link}">${model.name}</option>
                     </c:forEach>
                 </select>
             </div>

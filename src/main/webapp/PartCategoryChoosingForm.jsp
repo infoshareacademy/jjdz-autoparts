@@ -78,7 +78,7 @@
                 <c:if test="${hasChildren == true}">
                     <select name="category" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                         <c:forEach items="${categories}" var="category">
-                            <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
+                            <option value="${category.name};${category.link};${category.has_children}">${category.name}</option>
                         </c:forEach>
                     </select>
                 </c:if>

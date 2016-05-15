@@ -65,7 +65,7 @@
 
                 <select name="engine" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${engines}" var="engine">
-                        <option value="${engine.id};${engine.name};${engine.link}">${engine.name}</option>
+                        <option value="${engine.name};${engine.link}">${engine.name}</option>
                     </c:forEach>
                 </select>
             </div>
