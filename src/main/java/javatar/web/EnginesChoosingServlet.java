@@ -1,10 +1,12 @@
 package javatar.web;
 
 import javatar.model.DataCarsEngineAndFuel;
+import javatar.model.FormData;
 import javatar.service.JsonParserAll;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,25 +19,27 @@ import java.io.IOException;
 public class EnginesChoosingServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
 
+    @Inject
+    FormData formData;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
         String modelOut = req.getParameter("model");
-        String brandName = req.getParameter("brandName");
 
         String[] splitArray = modelOut.split(";");
-        String modelId = splitArray[0];
-        String modelName = splitArray[1];
-        String modelLink = splitArray[2];
+        String modelName = splitArray[0];
+        String modelLink = splitArray[1];
 
         req.setAttribute("modelName", modelName);
-        req.setAttribute("modelId", modelId);
-        req.setAttribute("brandName", brandName);
+        req.setAttribute("brandName", formData.getCarBrand());
+
+        formData.setCarModel(modelName);
 
         String url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
-        LOGGER.info("Chosen brand file name: {}; chosen model file name: {}; resources link: {}",brandName,modelName,url);
+        LOGGER.info("Chosen brand file name: {}; chosen model file name: {}; resources link: {}",formData.getCarBrand(),modelName,url);
         DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
         req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
 

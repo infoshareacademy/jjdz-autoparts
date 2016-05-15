@@ -20,29 +20,25 @@
 
 <form method="GET" action="Output.jsp">
 
-
-    <%--Wybraną część możesz wyszukać w kategorii allegro: <a href="${allegroLink}">${allegroLink}</a>--%>
-    <%--<br><br>--%>
-    <%--Jako hasło wyszukiwania wpisz: ${partName} ${partBrand} ${partId}--%>
-
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://github.com/infoshareacademy/jjdz-autoparts">Autoparts</a>
+                <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Wyniki</a></li>
+                    <li><a href="/jjdz-autoparts">Home</a></li>
                 </ul>
-            </div><!-- /.nav-collapse -->
-        </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
 
     <div class="container">
 
@@ -59,14 +55,13 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6 col-lg-6">
-                        <h2>Samochód</h2>
-                        <p>Opis </p>
-                        <%--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>--%>
+                        <h2>Dodaj do koszyka</h2>
+                        <input type="submit" value="${partName} ${partBrand} ${partId}"/>
+
                     </div><!--/.col-xs-6.col-lg-4-->
                     <div class="col-xs-6 col-lg-6">
                         <h2>Link allegro</h2>
                         <p><a href="${allegroLink}">${allegroLink}</a></p>
-                        <%--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>--%>
                     </div><!--/.col-xs-6.col-lg-4-->
 
                 </div>

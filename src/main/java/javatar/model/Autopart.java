@@ -85,6 +85,14 @@ public class Autopart {
         this.id = id;
     }
 
+
+    public void createCategoryListByNames (List<String> categoryNames) {
+        for (String categoryName:
+             categoryNames) {
+            this.addCategoryToList(new AutopartCategory(categoryName));
+        }
+    }
+
     @Override
     public String toString() {
         return "Autopart{" +
