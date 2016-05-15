@@ -29,16 +29,13 @@
         <form method="GET" action="PartCategory" class="form-horizontal" role="form">
             <div class="form-group">
 
-                <label for="basic">Marka: </label>
-            <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
+                <label for="basic">Marka: </label>${brandName}
             <br>
 
-                <label for="basic">Model: </label>
-            <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
+                <label for="basic">Model: </label>${modelName}
             <br>
 
-                <label for="basic">Silnik: </label>
-            <Input type="hidden" value="${engineName}" name="engineName" >${engineName}
+                <label for="basic">Silnik: </label>${engineName}
             <br>
 
             <label for="basic" class="col-lg-2 control-label">Wybierz kategorię</label>
@@ -46,7 +43,7 @@
             <div class="col-lg-10">
                 <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
                     <c:forEach items="${categories}" var="category">
-                        <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
+                        <option value="${category.name};${category.link};${category.has_children}">${category.name}</option>
                     </c:forEach>
                 </select>
             </div>

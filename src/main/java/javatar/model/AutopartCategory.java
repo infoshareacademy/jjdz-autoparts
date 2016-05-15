@@ -1,5 +1,7 @@
 package javatar.model;
 
+import java.util.List;
+
 public class AutopartCategory {
     private String name;
     private String id;
@@ -14,6 +16,10 @@ public class AutopartCategory {
         this.id = id;
         this.has_children = has_children;
         this.link = link;
+    }
+
+    public AutopartCategory(String name) {
+        this.name = name;
     }
 
     @Override

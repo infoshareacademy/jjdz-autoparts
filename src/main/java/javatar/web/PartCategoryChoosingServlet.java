@@ -1,9 +1,11 @@
 package javatar.web;
 
+import javatar.model.FormData;
 import javatar.model.JsonDataAutopart;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,37 +17,38 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/PartCategory")
 public class PartCategoryChoosingServlet extends HttpServlet {
 
+    @Inject
+    FormData formData;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
-        String categoryName = null;
+        String categories;
         String categoryOut = req.getParameter("category");
-        String brandName = req.getParameter("brandName");
-        String modelName = req.getParameter("modelName");
-        String engineName = req.getParameter("engineName");
-
-        if(req.getParameterMap().containsKey("categoryName")) {
-            categoryName = req.getParameter("categoryName");
-        }
 
 
         String[] splitArray = categoryOut.split(";");
-        if(categoryName != null) {
-            categoryName += " -> " + splitArray[1];
-        } else {
-            categoryName = splitArray[1];
-        }
-        String categoryLink = splitArray[2];
-        String hasChildren= splitArray[3];
+        String categoryName = splitArray[0];
+        String categoryLink = splitArray[1];
+        String hasChildren= splitArray[2];
 
-        req.setAttribute("engineName", engineName);
-	    req.setAttribute("modelName", modelName);
-	    req.setAttribute("brandName", brandName);
-	    req.setAttribute("categoryName", categoryName);
-	    req.setAttribute("isFirstCat", false);
+        formData.addPartCategory(categoryName);
+        categories = formData.getPartCategories().get(0);
+
+        if(formData.getPartCategories().size() > 1)
+        {
+            for (int i=1; i<formData.getPartCategories().size(); i++)
+            {
+                categories += " -> " + formData.getPartCategories().get(i);
+            }
+        }
+
+        req.setAttribute("engineName", formData.getCarEngine());
+	    req.setAttribute("modelName", formData.getCarModel());
+	    req.setAttribute("brandName", formData.getCarBrand());
+	    req.setAttribute("categoryName", categories);
         req.setAttribute("hasChildren", Boolean.parseBoolean(hasChildren));
 
         String url = "http://infoshareacademycom.2find.ru" + categoryLink + "?lang=polish";
