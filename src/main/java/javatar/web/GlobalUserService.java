@@ -17,7 +17,27 @@ public class GlobalUserService {
     @PersistenceContext
     EntityManager em;
 
-    public GlobalUser getGlobalUserByAccountAndEmail(String email, AccountType account) {
+    public GlobalUser getGLobalUser (LinkedInUser linkedInUser){
+
+        if(isExists(linkedInUser.getEmailAddress(), AccountType.LINKEDIN)){
+            return getGlobalUserByAccountAndEmail(linkedInUser.getEmailAddress(), AccountType.LINKEDIN);
+
+        }
+        else {
+            GlobalUser user =new GlobalUser(linkedInUser);
+            addGlobalUser(user);
+            return user;
+        }
+
+    }
+
+    private boolean isExists (String email, AccountType type ) {
+        GlobalUser user = getGlobalUserByAccountAndEmail(email, type);
+        return user != null;
+
+    }
+
+    private GlobalUser getGlobalUserByAccountAndEmail(String email, AccountType account) {
         List<GlobalUser> globalUsers= em.createQuery("select u from GlobalUser u where u.eMail = :email and u.accountType = :accountType", GlobalUser.class )
                 .setParameter("email", email)
                 .setParameter("accountType", account)
@@ -32,28 +52,8 @@ public class GlobalUserService {
 
     }
 
-    public void addGlobalUser(GlobalUser user) {
+    private void addGlobalUser(GlobalUser user) {
         em.persist(user);
-
-    }
-
-    public boolean isExists (String email, AccountType type ) {
-        GlobalUser user = getGlobalUserByAccountAndEmail(email, type);
-        return user != null;
-
-    }
-
-    public GlobalUser getGLobalUser (LinkedInUser linkedInUser){
-
-        if(isExists(linkedInUser.getEmailAddress(), AccountType.LINKEDIN)){
-            return getGlobalUserByAccountAndEmail(linkedInUser.getEmailAddress(), AccountType.LINKEDIN);
-
-        }
-        else {
-            GlobalUser user =new GlobalUser(linkedInUser);
-            addGlobalUser(user);
-            return user;
-        }
 
     }
 
