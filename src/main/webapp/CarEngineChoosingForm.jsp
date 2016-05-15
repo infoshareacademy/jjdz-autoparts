@@ -9,15 +9,15 @@
 
 <form method="GET" action="PartFirstCategory">
 
-    <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
+    ${brandName}
     <br>
 
-    <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
+    ${modelName}
     <br>
 
     <select name="engine">
         <c:forEach items="${engines}" var="engine">
-            <option value="${engine.id};${engine.name};${engine.link}">${engine.name}</option>
+            <option value="${engine.name};${engine.link}">${engine.name}</option>
         </c:forEach>
     </select>
 

@@ -13,22 +13,23 @@
         <c:set var="formAction" value="AllegroLink"/>
     </c:if>
     <form method="GET" action="${formAction}">
-        <Input type="hidden" value="${brandName}" name="brandName" >${brandName}
+
+        ${brandName}
         <br>
 
-        <Input type="hidden" value="${modelName}" name="modelName" >${modelName}
+        ${modelName}
         <br>
 
-        <Input type="hidden" value="${engineName}" name="engineName" >${engineName}
+        ${engineName}
         <br>
 
-        <Input type="hidden" value="${categoryName}" name="categoryName" >${categoryName}
+        ${categoryName}
         <br>
 
         <c:if test="${hasChildren == true}">
             <select name="category">
                 <c:forEach items="${categories}" var="category">
-                    <option value="${category.id};${category.name};${category.link};${category.has_children}">${category.name}</option>
+                    <option value="${category.name};${category.link};${category.has_children}">${category.name}</option>
                 </c:forEach>
             </select>
         </c:if>
