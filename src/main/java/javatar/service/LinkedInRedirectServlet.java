@@ -8,11 +8,14 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 import com.google.gson.Gson;
+import javatar.model.AccountType;
 import javatar.model.CarFromAztec;
 import javatar.model.GlobalUser;
 import javatar.model.LinkedInUser;
+import javatar.web.GlobalUserService;
 import javatar.web.SessionData;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +35,9 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
     @Inject
     SessionData sessionData;
+
+    @EJB
+    GlobalUserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,7 +65,9 @@ public class LinkedInRedirectServlet extends HttpServlet {
         Gson gson = new Gson();
         LinkedInUser linkedInUser = gson.fromJson(linkedinJson, LinkedInUser.class);
 
-        GlobalUser user = new GlobalUser(linkedInUser);
+        GlobalUser user = userService.getGLobalUser(linkedInUser);
+
+//        GlobalUser user = new GlobalUser(linkedInUser);
 
 //        HttpSession session = req.getSession();
 //        session.setAttribute("user", user);

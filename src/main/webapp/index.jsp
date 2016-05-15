@@ -72,6 +72,7 @@
                         <p>Witaj ${ sessionData.getUserData() }
                         </p>
                         <a href="Brands">Wyszukiwanie części</a>
+                        <a href="logout">Wyloguj się</a>
                     </div>
                 </c:otherwise>
 
