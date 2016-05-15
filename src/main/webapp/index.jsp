@@ -20,14 +20,6 @@
 </head>
 <body>
 
-<script>
-    $(document).ready(function () {
-
-    });
-
-</script>
-
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -55,13 +47,14 @@
     <div class="starter-template">
         <h1>Wyszukiwarka części samochodowych</h1>
         <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
+
         <div class="row">
 
 
             <%--<% if (session.getAttribute("user") == "null") %>--%>
             <c:choose>
 
-                <c:when test="${sessionScope.user == null}">
+                <c:when test="${!sessionData.isLoggedIn()}">
                     <div id="linkedIn" class="col-xs-12 col-lg-12">
                         <p>
                             <a href="LinkedInLogging">
@@ -76,7 +69,7 @@
                 <c:otherwise>
                     <div id="user">
                         <h1>Pomyślnie zalogowałeś się do portalu</h1>
-                        <p>Witaj <%= session.getAttribute("user") %>
+                        <p>Witaj ${ sessionData.getUserData() }
                         </p>
                         <a href="Brands">Wyszukiwanie części</a>
                     </div>

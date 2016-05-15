@@ -11,7 +11,9 @@ import com.google.gson.Gson;
 import javatar.model.CarFromAztec;
 import javatar.model.GlobalUser;
 import javatar.model.LinkedInUser;
+import javatar.web.SessionData;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +28,10 @@ public class LinkedInRedirectServlet extends HttpServlet {
     private final static String CLIENT_ID = "77xs0912y99z8t";
     private final static String CLIENT_CONFIDENTIAL_ID = "XpW20vY3AXkmqoOI";
     private static final String PROTECTED_RESOURCE_URL = "https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address)";
+
+
+    @Inject
+    SessionData sessionData;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,8 +61,11 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         GlobalUser user = new GlobalUser(linkedInUser);
 
-        HttpSession session = req.getSession();
-        session.setAttribute("user", user);
+//        HttpSession session = req.getSession();
+//        session.setAttribute("user", user);
+
+        sessionData.logIn(user.getFirstName() + " " + user.getLastName());
+        System.out.println(user);
 
         resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
 
