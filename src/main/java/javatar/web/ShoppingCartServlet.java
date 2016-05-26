@@ -2,6 +2,7 @@ package javatar.web;
 
 import javatar.model.*;
 import javatar.service.CreateAllegroLink;
+import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/Cart")
@@ -25,6 +27,13 @@ public class ShoppingCartServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    SessionData sessionData;
+
+    @EJB
+    FormDataTableService formDataTableService;
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -34,6 +43,11 @@ public class ShoppingCartServlet extends HttpServlet {
         req.setAttribute("partBrand", formData.getPartBrand());
         req.setAttribute("partId", formData.getPartId());
         req.setAttribute("allegroLink", formData.getAllegroLink());
+
+        formDataTableService.sendResults(formData,
+                sessionData.getUserData(),
+                LocalDateTime.now(),
+                formData.getAllegroLink());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

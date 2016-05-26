@@ -48,4 +48,27 @@ public class FormDataTable {
         this.localDateTime = localDateTime;
     }
 
+    public FormDataTable(FormData formData, String userName, LocalDateTime localDateTime) {
+        this.formData = formData;
+        this.userName = userName;
+        this.localDateTime = localDateTime;
+    }
+
+    public FormDataTable(FormData formData, String userName) {
+        this.formData = formData;
+        this.userName = userName;
+    }
+
+    public FormDataTable() {
+    }
+
+    @Override
+    public String toString() {
+        return "FormDataTable{" +
+                "id=" + id +
+                ", formData=" + formData +
+                ", userName='" + userName + '\'' +
+                ", localDateTime=" + localDateTime +
+                '}';
+    }
 }

@@ -95,4 +95,18 @@ public class FormData implements Serializable {
         }
         this.partCategories.add(categoryName);
     }
+
+    @Override
+    public String toString() {
+        return "FormData{" +
+                "carBrand='" + carBrand + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carEngine='" + carEngine + '\'' +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                ", allegroLink='" + allegroLink + '\'' +
+                ", partCategories=" + partCategories +
+                '}';
+    }
 }

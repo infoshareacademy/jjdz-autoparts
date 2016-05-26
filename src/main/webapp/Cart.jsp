@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<form method="POST" action="Cart">
+<form method="GET" action="CRUD">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -48,7 +48,7 @@
         <h1>Wyszukiwarka części samochodowych</h1>
         <p class="lead">Zarządzaj swoim koszykiem</p>
         <div class="row">
-
+            <input type="submit" value="akcja" align="center"/>
 
         </div>
 
@@ -56,7 +56,7 @@
 
 </form>
 
-<form method="GET" action="CRUD">
+<form method="POST" action="CRUD">
     <div class="container">
         <div class="forms-template">
             <input type="submit" value="Zakończ pracę z aplikacją" align="center"/>

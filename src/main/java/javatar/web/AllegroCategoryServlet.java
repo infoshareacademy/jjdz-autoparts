@@ -27,9 +27,6 @@ public class AllegroCategoryServlet extends HttpServlet {
     @Inject
     FormData formData;
 
-    @Inject
-    SessionData sessionData;
-
     @EJB
     FormDataTableService formDataTableService;
 
@@ -51,10 +48,6 @@ public class AllegroCategoryServlet extends HttpServlet {
         String id = splitArray[1];
         String name = splitArray[2];
 
-        formData.setPartBrand(brand);
-        formData.setPartId(id);
-        formData.setPartName(name);
-
         autopart.setId(id);
         autopart.setName(name);
         autopart.setBrand(brand);
@@ -63,18 +56,18 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel) + "?string=" + autopart.getName() + " " + autopart.getBrand() + " " + autopart.getId();
+
         formData.setAllegroLink(allegroLink);
+        formData.setPartBrand(brand);
+        formData.setPartId(id);
+        formData.setPartName(name);
+
         LOGGER.info("Created allegro link: {}", allegroLink);
 
         req.setAttribute("allegroLink", allegroLink);
         req.setAttribute("partName", name);
         req.setAttribute("partBrand", brand);
         req.setAttribute("partId", id);
-
-        formDataTableService.sendResults(formData,
-                sessionData.getUserData(),
-                LocalDateTime.now(),
-                allegroLink);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
