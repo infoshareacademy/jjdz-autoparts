@@ -38,10 +38,10 @@ public class ShoppingCartServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
     }
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
-        dispatcher.forward(req, resp);
-    }
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
+//        dispatcher.forward(req, resp);
+//    }
 }
