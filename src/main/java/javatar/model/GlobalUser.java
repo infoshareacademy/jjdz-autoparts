@@ -75,4 +75,29 @@ public class GlobalUser {
     public String toString() {
         return firstName + " " + lastName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GlobalUser that = (GlobalUser) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (eMail != null ? !eMail.equals(that.eMail) : that.eMail != null) return false;
+        return accountType == that.accountType;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (eMail != null ? eMail.hashCode() : 0);
+        result = 31 * result + (accountType != null ? accountType.hashCode() : 0);
+        return result;
+    }
 }
