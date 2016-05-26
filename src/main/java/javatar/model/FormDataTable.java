@@ -15,7 +15,6 @@ public class FormDataTable {
 
     private String userName;
     private LocalDateTime localDateTime;
-    private String allegroLink;
 
     public Long getId() {
         return id;
@@ -49,11 +48,4 @@ public class FormDataTable {
         this.localDateTime = localDateTime;
     }
 
-    public String getAllegroLink() {
-        return allegroLink;
-    }
-
-    public void setAllegroLink(String allegroLink) {
-        this.allegroLink = allegroLink;
-    }
 }

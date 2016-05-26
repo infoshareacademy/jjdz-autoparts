@@ -21,7 +21,7 @@ public class FormDataTableService {
         formResults.setFormData(formData);
         formResults.setUserName(user);
         formResults.setLocalDateTime(dateTime);
-        formResults.setAllegroLink(allegroLink);
+        //formResults.setAllegroLink(allegroLink);
 
         em.persist(formResults);
 

@@ -1,15 +1,13 @@
 package javatar.web;
 
-import javatar.model.AllegroCategories;
-import javatar.model.Autopart;
-import javatar.model.AutopartAllegroListModel;
-import javatar.model.FormData;
+import javatar.model.*;
 import javatar.service.CreateAllegroLink;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,6 +25,15 @@ public class ShoppingCartServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+//    @EJB
+//    Persistence em;
+//
+    @Inject
+    SessionData sessionData;
+//
+//    @EJB
+//    CRUDDataModel crudDataModel;
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -36,6 +43,10 @@ public class ShoppingCartServlet extends HttpServlet {
         req.setAttribute("partBrand", formData.getPartBrand());
         req.setAttribute("partId", formData.getPartId());
         req.setAttribute("allegroLink", formData.getAllegroLink());
+
+        System.out.println("SessionData= " + sessionData.getUserData().toString());
+//        crudDataModel.setFormData(formData);
+//        crudDataModel.setUserId(user.getId());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
