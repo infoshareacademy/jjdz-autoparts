@@ -11,8 +11,7 @@
     <link href="css/forms-template.css" rel="stylesheet">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-            crossorigin="anonymous"></script>
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"/>
 
     <title>Infoshare Acedemy</title>
 
@@ -42,12 +41,16 @@
 
     <div class="starter-template">
         <h1>Wyszukiwarka części samochodowych</h1>
-        <p class="lead">Dziękujemy za skorzystanie z naszej aplikacji</p>
+        <p class="lead">Zarządzaj swoim koszykiem</p>
 
 
 
     </div>
 </div>
+<form method="POST" action="CRUD">
+
+
+</form>
 <form method="GET" action="Output.jsp">
 <div class="container">
 
