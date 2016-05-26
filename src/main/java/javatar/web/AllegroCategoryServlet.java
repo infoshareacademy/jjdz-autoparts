@@ -56,6 +56,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
         String allegroLink = createAllegroLink.createAllegroLink(autopartAllegroListModel) + "?string=" + autopart.getName() + " " + autopart.getBrand() + " " + autopart.getId();
+        formData.setAllegroLink(allegroLink);
         LOGGER.info("Created allegro link: {}", allegroLink);
 
         req.setAttribute("allegroLink", allegroLink);

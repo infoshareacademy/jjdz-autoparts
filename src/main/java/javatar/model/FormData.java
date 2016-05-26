@@ -18,6 +18,8 @@ public class FormData implements Serializable {
     private String partBrand;
     private String partId;
     private String partName;
+    private String allegroLink;
+
     @ElementCollection
     private List<String> partCategories;
 
@@ -67,6 +69,14 @@ public class FormData implements Serializable {
 
     public void setPartName(String partName) {
         this.partName = partName;
+    }
+
+    public String getAllegroLink() {
+        return allegroLink;
+    }
+
+    public void setAllegroLink(String allegroLink) {
+        this.allegroLink = allegroLink;
     }
 
     public List<String> getPartCategories() {
