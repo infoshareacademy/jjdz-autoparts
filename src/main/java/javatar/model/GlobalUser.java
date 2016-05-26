@@ -2,27 +2,27 @@ package javatar.model;
 
 import javax.persistence.*;
 
-import static javatar.model.AccountType.LinkedIn;
+import static javatar.model.AccountType.LINKEDIN;
 
 @Entity
-//@Table(name = "Users")
+//@Table(name = "users")
 public class GlobalUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "Usr_id")
+    @Column( unique = true, nullable = false)
     private Long id;
-    //@Column(name = "Usr_Name")
+//    @Column(name = "Usr_Name")
     private String firstName;
-    //@Column(name = "Usr_LastName")
+//    @Column(name = "Usr_LastName")
     private String lastName;
-    //@Column(name = "Usr_eMail")
+//    @Column(name = "Usr_eMail")
     private String eMail;
-    //@Column(name = "Usr_accountType")
+//    @Column(name = "Usr_accountType")
     private AccountType accountType;
 
     public GlobalUser(LinkedInUser linkedInUser) {
-        this.accountType = LinkedIn;
+        this.accountType = LINKEDIN;
         this.firstName = linkedInUser.getFirstName();
         this.lastName = linkedInUser.getLastName();
         this.eMail = linkedInUser.getEmailAddress();
@@ -73,6 +73,31 @@ public class GlobalUser {
 
     @Override
     public String toString() {
-        return  firstName + " " + lastName;
+        return firstName + " " + lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GlobalUser that = (GlobalUser) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (eMail != null ? !eMail.equals(that.eMail) : that.eMail != null) return false;
+        return accountType == that.accountType;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (eMail != null ? eMail.hashCode() : 0);
+        result = 31 * result + (accountType != null ? accountType.hashCode() : 0);
+        return result;
     }
 }

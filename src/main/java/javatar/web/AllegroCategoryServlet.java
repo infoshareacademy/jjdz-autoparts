@@ -2,6 +2,7 @@ package javatar.web;
 
 import javatar.model.*;
 import javatar.service.CreateAllegroLink;
+import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -25,6 +26,12 @@ public class AllegroCategoryServlet extends HttpServlet {
 
     @Inject
     FormData formData;
+
+    @Inject
+    SessionData sessionData;
+
+    @EJB
+    FormDataTableService formDataTableService;
 
     @EJB
     AllegroCategoriesCache allegroCategoriesCache;
@@ -63,6 +70,11 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setAttribute("partName", name);
         req.setAttribute("partBrand", brand);
         req.setAttribute("partId", id);
+
+        formDataTableService.sendResults(formData,
+                sessionData.getUserData(),
+                LocalDateTime.now(),
+                allegroLink);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
