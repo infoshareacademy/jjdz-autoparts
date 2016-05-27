@@ -41,22 +41,33 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<form method="GET" action="CRUD">
-    <div class="container lower forms-template">
 
-        <h1>Wyszukiwarka części samochodowych</h1>
-        <p class="lead">Zarządzaj swoim koszykiem</p>
-        <div class="row">
+<div class="container lower forms-template">
 
-            <ul class="list-group">
-                <c:forEach items="${crudViewList}" var="list">
-                    <li class="list-group-item">${list.partBrand} ${list.partName} ${list.partId} <input type="submit" value="Usuń z koszyka" name="remove"/></li>
-                </c:forEach>
-            </ul>
-        </div>
+    <h1>Wyszukiwarka części samochodowych</h1>
+    <p class="lead">Zarządzaj swoim koszykiem</p>
+    <div class="row">
 
+        <ul class="list-group">
+            <c:forEach items="${crudViewList}" var="list">
+                <form method="GET" action="CRUD">
+                    <li class="list-group-item"><input type="hidden" name="listId"
+                                                       value="${list.id}"/>${list.partBrand} ${list.partName} ${list.partId}
+                        <input type="submit" value="Usuń z koszyka" name="remove"/></li>
+                </form>
+            </c:forEach>
+        </ul>
     </div>
 
+</div>
+
+
+<form metod="GET" action="Brands">
+    <div class="container">
+        <div class="forms-template">
+            <input type="submit" value="Wyszukaj nową część" align="center"/>
+        </div>
+    </div>
 </form>
 
 <form method="POST" action="Output.jsp">
@@ -64,7 +75,6 @@
         <div class="forms-template">
             <input type="submit" value="Zakończ pracę z aplikacją" align="center"/>
         </div>
-
     </div>
 </form>
 <hr>

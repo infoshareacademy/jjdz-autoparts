@@ -7,6 +7,7 @@ import javatar.model.FormDataTable;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -44,6 +45,10 @@ public class CRUDService {
 
         return resultList;
 
+    }
 
+    public void removeCRUDValuesFormDB(Long idToRemove){
+        CRUD crud = em.find(CRUD.class, idToRemove);
+        em.remove(crud);
     }
 }

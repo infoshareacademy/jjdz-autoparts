@@ -31,23 +31,17 @@ public class CRUDManagementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
+
+        String listId = req.getParameter("listId");
+        crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
+
         List<CRUD> crudValuesFromDB = crudService.getCRUDValuesFromDB();
-
         req.setAttribute("crudViewList",crudValuesFromDB);
-
-        String remove = req.getParameter("remove");
-
-        if(isNotEmpty(remove)){
-            System.out.println("Zwrócono remove" + remove.toString());
-        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);
     }
 
-    private boolean isNotEmpty(String remove) {
-        return !remove.isEmpty();
-    }
 
 
 }
