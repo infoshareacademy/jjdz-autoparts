@@ -30,7 +30,7 @@ public class FormDataTableService {
     }
 
     public List<FormDataTable> getFormDataTable() {
-        List<FormDataTable> resultList = em.createQuery("select new FormDataTable (fdt.formData, fdt.userName, fdt.localDateTime) " +
+                List<FormDataTable> resultList = em.createQuery("select fdt " +
                         "from FormDataTable fdt"
                 , FormDataTable.class).getResultList();
         System.out.println("resultList.toString() = " + resultList.toString());

@@ -1,7 +1,9 @@
 package javatar.web;
 
+import javatar.model.CRUD;
 import javatar.model.FormData;
 import javatar.model.FormDataTable;
+import javatar.service.CRUDService;
 import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,14 +26,17 @@ public class CRUDServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+//    @Inject
+//    FormDataTableService formDataTableService;
+
     @Inject
-    FormDataTableService formDataTableService;
+    CRUDService crudService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
-        List<FormDataTable> formDataTable = formDataTableService.getFormDataTable();
+        List<CRUD> formDataTable = crudService.getFormDataTable();
 
         System.out.println(formDataTable.toString());
 
