@@ -1,14 +1,12 @@
 package javatar.web;
 
+
 import javatar.model.CRUD;
 import javatar.model.FormData;
-import javatar.model.FormDataTable;
 import javatar.service.CRUDService;
-import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/CRUD")
-public class CRUDServlet extends HttpServlet {
+public class CRUDManagementServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Inject
@@ -33,19 +31,23 @@ public class CRUDServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
-        List<CRUD> formDataTable = crudService.getFormDataTable();
+        List<CRUD> crudValuesFromDB = crudService.getCRUDValuesFromDB();
 
-        System.out.println(formDataTable.toString());
+        req.setAttribute("crudViewList",crudValuesFromDB);
 
+        String remove = req.getParameter("remove");
+
+        if(isNotEmpty(remove)){
+            System.out.println("Zwrócono remove" + remove.toString());
+        }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("Output.jsp");
-        dispatcher.forward(req, resp);
+    private boolean isNotEmpty(String remove) {
+        return !remove.isEmpty();
     }
+
+
 }

@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<form method="POST" action="Cart">
+<form method="POST" action="AddingToCart">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -64,7 +64,7 @@
 
 </form>
 
-<form method="GET" action="Cart.jsp">
+<form method="GET" action="Cart">
     <div class="container">
         <div class="forms-template">
             <input type="submit" value="Przejdź do koszyka" align="center"/>

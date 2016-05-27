@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/Cart")
+@WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {
 
     private static final Logger LOGGER = LogManager.getLogger();

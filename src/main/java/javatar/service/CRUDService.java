@@ -36,7 +36,7 @@ public class CRUDService {
 
     }
 
-    public List<CRUD> getFormDataTable() {
+    public List<CRUD> getCRUDValuesFromDB() {
         List<CRUD> resultList = em.createQuery("select c " +
                         "from CRUD c"
                 , CRUD.class).getResultList();

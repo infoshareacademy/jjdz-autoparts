@@ -21,42 +21,45 @@
 </head>
 <body>
 
-<form method="GET" action="CRUD">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/jjdz-autoparts">Home</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
         </div>
-    </nav>
-
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/jjdz-autoparts">Home</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<form method="GET" action="CRUD">
     <div class="container lower forms-template">
 
         <h1>Wyszukiwarka części samochodowych</h1>
         <p class="lead">Zarządzaj swoim koszykiem</p>
         <div class="row">
-            <input type="submit" value="akcja" align="center"/>
 
+            <ul class="list-group">
+                <c:forEach items="${crudViewList}" var="list">
+                    <li class="list-group-item">${list.partBrand} ${list.partName} ${list.partId} <input type="submit" value="Usuń z koszyka" name="remove"/></li>
+                </c:forEach>
+            </ul>
         </div>
 
     </div>
 
 </form>
 
-<form method="POST" action="CRUD">
+<form method="POST" action="Output.jsp">
     <div class="container">
         <div class="forms-template">
             <input type="submit" value="Zakończ pracę z aplikacją" align="center"/>
