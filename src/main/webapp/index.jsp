@@ -35,8 +35,6 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -46,8 +44,11 @@
 
     <div class="starter-template">
         <h1>Wyszukiwarka części samochodowych</h1>
-        <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
-
+        <c:choose>
+            <c:when test="${!sessionData.isLoggedIn()}">
+                <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
+            </c:when>
+        </c:choose>
         <div class="row">
 
 
@@ -69,10 +70,25 @@
                 <c:otherwise>
                     <div id="user">
                         <h1>Pomyślnie zalogowałeś się do portalu</h1>
-                        <p>Witaj ${ sessionData.getUserData() }
-                        </p>
-                        <a href="Brands">Wyszukiwanie części</a>
-                        <a href="logout">Wyloguj się</a>
+                        <h2>Witaj ${ sessionData.getUserData() }
+                        </h2>
+                        <div class="row">
+                            <div class="col-xs-6 col-lg-6">
+                                <h3> Wyszukiwanie części</h3>
+                                <a href="Brands">
+                                    <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
+                                         width="300" height="200">
+                                </a>
+
+                            </div>
+                            <div class="col-xs-6 col-lg-6">
+                                <h3>Wyloguj się</h3>
+                                <a href="logout">
+                                    <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
+                                         width="218" height="88">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </c:otherwise>
 

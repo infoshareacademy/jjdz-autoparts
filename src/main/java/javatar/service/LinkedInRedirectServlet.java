@@ -14,6 +14,8 @@ import javatar.model.GlobalUser;
 import javatar.model.LinkedInUser;
 import javatar.web.GlobalUserService;
 import javatar.web.SessionData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -27,6 +29,8 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/LinkedInRedirect")
 public class LinkedInRedirectServlet extends HttpServlet {
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private final static String CLIENT_ID = "77xs0912y99z8t";
     private final static String CLIENT_CONFIDENTIAL_ID = "XpW20vY3AXkmqoOI";
@@ -62,20 +66,24 @@ public class LinkedInRedirectServlet extends HttpServlet {
         final Response response = requestName.send();
 
         String linkedinJson = response.getBody();
+
+        LOGGER.debug("LinkedIn JSon file: {}", linkedinJson);
+
         Gson gson = new Gson();
         LinkedInUser linkedInUser = gson.fromJson(linkedinJson, LinkedInUser.class);
 
+        LOGGER.debug("Creating LinkedIn user. Email: {}, Name: {}, Surname: {}", linkedInUser.getEmailAddress(), linkedInUser.getFirstName(), linkedInUser.getLastName());
+
         GlobalUser user = userService.getGLobalUser(linkedInUser);
 
-//        GlobalUser user = new GlobalUser(linkedInUser);
-
-//        HttpSession session = req.getSession();
-//        session.setAttribute("user", user);
+        LOGGER.debug("Global user {}", user.geteMail());
 
         sessionData.logIn(user.getFirstName() + " " + user.getLastName());
         System.out.println(user);
 
         resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
+
+        LOGGER.debug("Redirect to main page");
 
 
     }
