@@ -26,9 +26,6 @@ public class CRUDServlet extends HttpServlet {
     @Inject
     FormData formData;
 
-//    @Inject
-//    FormDataTableService formDataTableService;
-
     @Inject
     CRUDService crudService;
 
