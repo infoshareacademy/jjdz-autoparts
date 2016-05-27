@@ -1,0 +1,87 @@
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Infoshare Acedemy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="css/forms-template.css" rel="stylesheet">
+
+    <![endif]-->
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/jjdz-autoparts">Home</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container lower forms-template">
+
+    <h1>Wyszukiwarka części samochodowych</h1>
+    <p class="lead">Zarządzaj swoim koszykiem</p>
+    <div class="row">
+
+        <ul class="list-group">
+            <c:forEach items="${crudViewList}" var="list">
+                <form method="GET" action="CRUD">
+                    <li class="list-group-item"><input type="hidden" name="listId"
+                                                       value="${list.id}"/>${list.partBrand} ${list.partName} ${list.partId}
+                        <input type="submit" value="Usuń z koszyka" name="remove"/></li>
+                </form>
+            </c:forEach>
+        </ul>
+    </div>
+
+</div>
+
+
+<form metod="GET" action="Brands">
+    <div class="container">
+        <div class="forms-template">
+            <input type="submit" value="Wyszukaj nową część" align="center"/>
+        </div>
+    </div>
+</form>
+
+<form method="POST" action="Output.jsp">
+    <div class="container">
+        <div class="forms-template">
+            <input type="submit" value="Zakończ pracę z aplikacją" align="center"/>
+        </div>
+    </div>
+</form>
+<hr>
+<footer>
+    <div class="col-xs-2 col-lg-2" text-align="center">
+        <p>&copy; Javatar</p>
+    </div>
+</footer>
+</body>
+</html>
