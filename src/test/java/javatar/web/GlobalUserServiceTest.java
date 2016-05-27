@@ -4,6 +4,7 @@ import javatar.model.AccountType;
 import javatar.model.GlobalUser;
 import javatar.model.LinkedInUser;
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.core.api.annotation.Inject;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
