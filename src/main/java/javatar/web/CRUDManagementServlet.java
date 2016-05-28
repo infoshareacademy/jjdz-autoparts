@@ -2,6 +2,7 @@ package javatar.web;
 
 
 import javatar.model.CRUD;
+import javatar.model.CRUDwithDuplicatedFlag;
 import javatar.model.FormData;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
@@ -36,7 +37,19 @@ public class CRUDManagementServlet extends HttpServlet {
         crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
 
         List<CRUD> crudValuesFromDB = crudService.getCRUDValuesFromDB();
-        req.setAttribute("crudViewList",crudValuesFromDB);
+
+        List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags =crudService.getListWithFlags();
+
+
+        System.out.println("cruDwithDuplicatedFlags.toString()" + cruDwithDuplicatedFlags.toString());
+        req.setAttribute("crudFlagList",cruDwithDuplicatedFlags);
+
+//        List<CarInCRUD> carsInCRUDs = crudService.selectCarsFromCrud();
+//        req.setAttribute("car",carsInCRUDs);
+//
+//        List<PartInCRUD> partinCRUDs = crudService.selectPartsForCar(carsInCRUDs.get(0));
+//        req.setAttribute("parts",partinCRUDs);
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);
