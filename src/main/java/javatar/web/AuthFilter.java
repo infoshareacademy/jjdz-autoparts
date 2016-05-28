@@ -36,7 +36,7 @@ public class AuthFilter implements Filter {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             HttpServletResponse httpServletResponse = (HttpServletResponse) response;
             httpServletResponse.sendRedirect("/jjdz-autoparts");
-            LOGGER.debug("User is empty. Redirect to main page");
+            LOGGER.debug("User is empty. Redirecting to main page");
             return;
         }
 
