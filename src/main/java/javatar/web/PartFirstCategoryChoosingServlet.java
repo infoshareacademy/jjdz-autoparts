@@ -32,9 +32,9 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
         String engineLink = splitArray[1];
 
         req.setAttribute("engineName", engineName);
-	    req.setAttribute("modelName", formData.getCarModel());
-	    req.setAttribute("brandName", formData.getCarBrand());
-	    req.setAttribute("isFirstCat", true);
+        req.setAttribute("modelName", formData.getCarModel());
+        req.setAttribute("brandName", formData.getCarBrand());
+        req.setAttribute("isFirstCat", true);
 
         formData.setCarEngine(engineName);
 

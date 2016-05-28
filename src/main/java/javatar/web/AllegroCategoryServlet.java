@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -68,14 +67,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartId(id);
         formData.setPartName(name);
 
-        formDataTableService.sendResults(formData, sessionData.getUserData(),LocalDateTime.now());
-
-        List<FormDataTable> result =  formDataTableService.getFormDataTable();
-        System.out.println("------------------------");
-        System.out.println(result.get(0).getLocalDateTime());
-        System.out.println(result.get(0).getUserName());
-        System.out.println(result.get(0).getFormData().getCarBrand());
-        System.out.println("------------------------");
+        formDataTableService.sendResults();
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 

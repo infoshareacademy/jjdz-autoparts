@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SessionScoped
-public class FormPartCategories implements Serializable{
+public class FormPartCategories implements Serializable {
 
     private List<String> partCategories;
 
@@ -18,10 +18,8 @@ public class FormPartCategories implements Serializable{
         this.partCategories = partCategories;
     }
 
-    public void addPartCategory(String categoryName)
-    {
-        if(this.partCategories == null)
-        {
+    public void addPartCategory(String categoryName) {
+        if (this.partCategories == null) {
             this.partCategories = new ArrayList<>();
         }
         this.partCategories.add(categoryName);

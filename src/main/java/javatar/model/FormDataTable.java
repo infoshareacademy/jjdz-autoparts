@@ -11,7 +11,7 @@ public class FormDataTable {
     private Long id;
 
     @Embedded
-    private FormData2 formData;
+    private FormData formData;
 
     private String userName;
     private LocalDateTime localDateTime;
@@ -24,11 +24,11 @@ public class FormDataTable {
         this.id = id;
     }
 
-    public FormData2 getFormData() {
+    public FormData getFormData() {
         return formData;
     }
 
-    public void setFormData(FormData2 formData) {
+    public void setFormData(FormData formData) {
         this.formData = formData;
     }
 

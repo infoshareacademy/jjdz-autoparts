@@ -1,13 +1,8 @@
 package javatar.model;
 
 import javax.enterprise.context.SessionScoped;
-import javax.persistence.CollectionTable;
-import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @SessionScoped
 @Embeddable
@@ -21,8 +16,18 @@ public class FormData implements Serializable {
     private String partName;
     private String allegroLink;
 
-    @ElementCollection
-    private List<String> partCategories;
+    public FormData() {
+    }
+
+    public FormData(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, String allegroLink) {
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.carEngine = carEngine;
+        this.partBrand = partBrand;
+        this.partId = partId;
+        this.partName = partName;
+        this.allegroLink = allegroLink;
+    }
 
     public String getCarBrand() {
         return carBrand;
@@ -80,23 +85,6 @@ public class FormData implements Serializable {
         this.allegroLink = allegroLink;
     }
 
-    public List<String> getPartCategories() {
-        return partCategories;
-    }
-
-    public void setPartCategories(List<String> partCategories) {
-        this.partCategories = partCategories;
-    }
-
-    public void addPartCategory(String categoryName)
-    {
-        if(this.partCategories == null)
-        {
-            this.partCategories = new ArrayList<>();
-        }
-        this.partCategories.add(categoryName);
-    }
-
     @Override
     public String toString() {
         return "FormData{" +
@@ -107,7 +95,6 @@ public class FormData implements Serializable {
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
-                ", partCategories=" + partCategories +
                 '}';
     }
 }
