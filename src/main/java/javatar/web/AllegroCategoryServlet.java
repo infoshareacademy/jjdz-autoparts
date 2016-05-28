@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -26,6 +25,12 @@ public class AllegroCategoryServlet extends HttpServlet {
 
     @Inject
     FormData formData;
+
+    @Inject
+    FormPartCategories categories;
+
+    @Inject
+    SessionData sessionData;
 
     @EJB
     FormDataTableService formDataTableService;
@@ -51,7 +56,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopart.setId(id);
         autopart.setName(name);
         autopart.setBrand(brand);
-        autopart.createCategoryListByNames(formData.getPartCategories());
+        autopart.createCategoryListByNames(categories.getPartCategories());
 
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
@@ -61,6 +66,8 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartBrand(brand);
         formData.setPartId(id);
         formData.setPartName(name);
+
+        formDataTableService.sendResults();
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 
