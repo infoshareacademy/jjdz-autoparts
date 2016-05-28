@@ -14,92 +14,71 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
-
+    <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
     <title>Infoshare Acedemy</title>
 
 </head>
 <body>
+<t:navbar></t:navbar>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href=https://github.com/infoshareacademy/jjdz-autoparts>Autoparts</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
 
-<div class="container">
-
-    <div class="starter-template">
-        <h1>Wyszukiwarka części samochodowych</h1>
-        <c:choose>
-            <c:when test="${!sessionData.isLoggedIn()}">
-                <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
-            </c:when>
-        </c:choose>
-        <div class="row">
-
-
-            <%--<% if (session.getAttribute("user") == "null") %>--%>
+        <div class="starter-template">
+            <h1>Wyszukiwarka części samochodowych</h1>
             <c:choose>
-
                 <c:when test="${!sessionData.isLoggedIn()}">
-                    <div id="linkedIn" class="col-xs-12 col-lg-12">
-                        <p>
-                            <a href="LinkedInLogging">
-                                <img border="0" alt="W3Schools"
-                                     src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
-                                     width="215" height="41">
-                            </a>
-                        </p>
-                    </div>
+                    <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
                 </c:when>
+            </c:choose>
+            <div class="row">
 
-                <c:otherwise>
-                    <div id="user">
-                        <h1>Pomyślnie zalogowałeś się do portalu</h1>
-                        <h2>Witaj ${ sessionData.getUserData() }
-                        </h2>
-                        <div class="row">
-                            <div class="col-xs-6 col-lg-6">
-                                <h3> Wyszukiwanie części</h3>
-                                <a href="Brands">
-                                    <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
-                                         width="300" height="200">
-                                </a>
+                <c:choose>
 
-                            </div>
-                            <div class="col-xs-6 col-lg-6">
-                                <h3>Wyloguj się</h3>
-                                <a href="logout">
-                                    <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
-                                         width="218" height="88">
+                    <c:when test="${!sessionData.isLoggedIn()}">
+                        <div id="linkedIn" class="col-xs-12 col-lg-12">
+                            <p>
+                                <a href="LinkedInLogging">
+                                    <img border="0" alt="W3Schools"
+                                         src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
+                                         width="215" height="41">
                                 </a>
+                            </p>
+                        </div>
+                    </c:when>
+
+                    <c:otherwise>
+                        <div id="user">
+                            <h1>Pomyślnie zalogowałeś się do portalu</h1>
+                            <h2>Witaj ${ sessionData.getUserData() }
+                            </h2>
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-6">
+                                    <h3> Wyszukiwanie części</h3>
+                                    <a href="Brands">
+                                        <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
+                                             width="300" height="200">
+                                    </a>
+
+                                </div>
+                                <div class="col-xs-6 col-lg-6">
+                                    <h3>Wyloguj się</h3>
+                                    <a href="logout">
+                                        <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
+                                             width="218" height="88">
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </c:otherwise>
+                    </c:otherwise>
 
-            </c:choose>
+                </c:choose>
+
+            </div>
+
 
         </div>
-
-
     </div>
-</div>
-
 
 </body>
+
 </html>
