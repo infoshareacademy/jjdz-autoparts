@@ -15,6 +15,7 @@ import java.io.IOException;
 public class JsonParserAztecCode {
 
     private final static String USER_KEY = "qY2?0Pw!";
+    public static final String ERROR_BAD_SESSION_FROM_ATENA = "-4";
     private String sessionKey = null;
 
 
@@ -54,7 +55,7 @@ public class JsonParserAztecCode {
         CarFromAztec jsonCar = gson.fromJson(jsonString, CarFromAztec.class);
         String aztecError = jsonCar.getCarFromAztecData().getError();
 
-        if (aztecError.equals("-4")) {
+        if (aztecError.equals(ERROR_BAD_SESSION_FROM_ATENA)) {
             System.out.println("Błędny kod sesji");
             System.exit(-1);
             return null;

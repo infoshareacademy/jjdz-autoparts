@@ -1,17 +1,16 @@
 package javatar.model;
 
-import javax.enterprise.context.SessionScoped;
-import javax.persistence.ElementCollection;
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@SessionScoped
-@Embeddable
-public class FormData implements Serializable {
-
+@Entity
+public class CRUD {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String userName;
     private String carBrand;
     private String carModel;
     private String carEngine;
@@ -20,8 +19,21 @@ public class FormData implements Serializable {
     private String partName;
     private String allegroLink;
 
-    @ElementCollection
-    private List<String> partCategories;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getCarBrand() {
         return carBrand;
@@ -79,34 +91,18 @@ public class FormData implements Serializable {
         this.allegroLink = allegroLink;
     }
 
-    public List<String> getPartCategories() {
-        return partCategories;
-    }
-
-    public void setPartCategories(List<String> partCategories) {
-        this.partCategories = partCategories;
-    }
-
-    public void addPartCategory(String categoryName)
-    {
-        if(this.partCategories == null)
-        {
-            this.partCategories = new ArrayList<>();
-        }
-        this.partCategories.add(categoryName);
-    }
-
     @Override
     public String toString() {
-        return "FormData{" +
-                "carBrand='" + carBrand + '\'' +
+        return "CRUD{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", carBrand='" + carBrand + '\'' +
                 ", carModel='" + carModel + '\'' +
                 ", carEngine='" + carEngine + '\'' +
                 ", partBrand='" + partBrand + '\'' +
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
-                ", partCategories=" + partCategories +
                 '}';
     }
 }

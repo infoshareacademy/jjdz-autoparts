@@ -4,6 +4,8 @@ import com.github.scribejava.apis.LinkedInApi20;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.*;
 import com.github.scribejava.core.oauth.OAuth20Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +18,7 @@ import java.util.Scanner;
 @WebServlet(urlPatterns = "/LinkedInLogging")
 public class LinkedInLoggingServlet extends HttpServlet {
 
-
+    private static final Logger LOGGER = LogManager.getLogger();
     private final static String CLIENT_ID = "77xs0912y99z8t";
     private final static String CLIENT_CONFIDENTIAL_ID = "XpW20vY3AXkmqoOI";
 
@@ -30,8 +32,9 @@ public class LinkedInLoggingServlet extends HttpServlet {
                 .callback("http://localhost:8080/jjdz-autoparts/LinkedInRedirect")
                 .build(LinkedInApi20.instance());
 
-       resp.sendRedirect(service.getAuthorizationUrl());
+        resp.sendRedirect(service.getAuthorizationUrl());
 
+        LOGGER.debug("Logging user");
     }
 
 

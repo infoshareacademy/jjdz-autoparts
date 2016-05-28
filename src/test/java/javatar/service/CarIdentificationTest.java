@@ -18,17 +18,6 @@ import static org.junit.Assert.*;
 public class CarIdentificationTest {
 
     @Test
-    public void should_find_opel_file_name() throws FileNotFoundException, IOException {
-      // String brand = new String;
-//       CarIdentification brand = new CarIdentification();
-//        String s = brand.FindingCarManagement();
-//        assertThat(String.valueOf(s),is(equalTo("fy")));
-//
-// TODO
-
-    }
-
-    @Test
     public void should_define_car_by_astec_code_answer() throws FileNotFoundException {
         //given
         CarIdentification ci = new CarIdentification();

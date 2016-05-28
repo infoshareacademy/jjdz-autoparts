@@ -43,9 +43,9 @@ public class AllegroCategoryFinder {
         if (outputCategories.size() > 1) {
             returnedData = outputCategories.get(outputCategories.size() - 2) + " " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
         } else if (outputCategories.size() > 0) {
-            returnedData = "Części samochodowe " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
+            returnedData = "czesci samochodowe " + outputCategories.get(outputCategories.size() - 1) + ";" + parentId;
         } else {
-            returnedData = "Części samochodowe " + parentId;
+            returnedData = "czesci samochodowe " + parentId;
         }
         LOGGER.info("Category found: {}", returnedData);
         return returnedData;
