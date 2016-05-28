@@ -11,7 +11,7 @@ public class FormDataTable {
     private Long id;
 
     @Embedded
-    private FormData formData;
+    private FormData2 formData;
 
     private String userName;
     private LocalDateTime localDateTime;
@@ -24,11 +24,11 @@ public class FormDataTable {
         this.id = id;
     }
 
-    public FormData getFormData() {
+    public FormData2 getFormData() {
         return formData;
     }
 
-    public void setFormData(FormData formData) {
+    public void setFormData(FormData2 formData) {
         this.formData = formData;
     }
 
@@ -46,20 +46,6 @@ public class FormDataTable {
 
     public void setLocalDateTime(LocalDateTime localDateTime) {
         this.localDateTime = localDateTime;
-    }
-
-    public FormDataTable(FormData formData, String userName, LocalDateTime localDateTime) {
-        this.formData = formData;
-        this.userName = userName;
-        this.localDateTime = localDateTime;
-    }
-
-    public FormDataTable(FormData formData, String userName) {
-        this.formData = formData;
-        this.userName = userName;
-    }
-
-    public FormDataTable() {
     }
 
     @Override

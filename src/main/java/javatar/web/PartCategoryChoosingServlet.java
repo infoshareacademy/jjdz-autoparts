@@ -1,6 +1,7 @@
 package javatar.web;
 
 import javatar.model.FormData;
+import javatar.model.FormPartCategories;
 import javatar.model.JsonDataAutopart;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
@@ -20,6 +21,9 @@ public class PartCategoryChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    FormPartCategories formPartCategories;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -34,14 +38,14 @@ public class PartCategoryChoosingServlet extends HttpServlet {
         String categoryLink = splitArray[1];
         String hasChildren= splitArray[2];
 
-        formData.addPartCategory(categoryName);
-        categories = formData.getPartCategories().get(0);
+        formPartCategories.addPartCategory(categoryName);
+        categories = formPartCategories.getPartCategories().get(0);
 
-        if(formData.getPartCategories().size() > 1)
+        if(formPartCategories.getPartCategories().size() > 1)
         {
-            for (int i=1; i<formData.getPartCategories().size(); i++)
+            for (int i=1; i<formPartCategories.getPartCategories().size(); i++)
             {
-                categories += " -> " + formData.getPartCategories().get(i);
+                categories += " -> " + formPartCategories.getPartCategories().get(i);
             }
         }
 

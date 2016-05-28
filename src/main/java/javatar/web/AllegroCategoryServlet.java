@@ -27,6 +27,12 @@ public class AllegroCategoryServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    FormPartCategories categories;
+
+    @Inject
+    SessionData sessionData;
+
     @EJB
     FormDataTableService formDataTableService;
 
@@ -51,7 +57,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         autopart.setId(id);
         autopart.setName(name);
         autopart.setBrand(brand);
-        autopart.createCategoryListByNames(formData.getPartCategories());
+        autopart.createCategoryListByNames(categories.getPartCategories());
 
         autopartAllegroListModel.setAutopart(autopart);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
@@ -61,6 +67,15 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartBrand(brand);
         formData.setPartId(id);
         formData.setPartName(name);
+
+        formDataTableService.sendResults(formData, sessionData.getUserData(),LocalDateTime.now());
+
+        List<FormDataTable> result =  formDataTableService.getFormDataTable();
+        System.out.println("------------------------");
+        System.out.println(result.get(0).getLocalDateTime());
+        System.out.println(result.get(0).getUserName());
+        System.out.println(result.get(0).getFormData().getCarBrand());
+        System.out.println("------------------------");
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 

@@ -1,7 +1,6 @@
 package javatar.model;
 
 import javax.enterprise.context.SessionScoped;
-import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
@@ -11,7 +10,7 @@ import java.util.List;
 
 @SessionScoped
 @Embeddable
-public class FormData implements Serializable {
+public class FormData2 implements Serializable {
 
     private String carBrand;
     private String carModel;
@@ -20,9 +19,6 @@ public class FormData implements Serializable {
     private String partId;
     private String partName;
     private String allegroLink;
-
-    @ElementCollection
-    private List<String> partCategories;
 
     public String getCarBrand() {
         return carBrand;
@@ -80,23 +76,6 @@ public class FormData implements Serializable {
         this.allegroLink = allegroLink;
     }
 
-    public List<String> getPartCategories() {
-        return partCategories;
-    }
-
-    public void setPartCategories(List<String> partCategories) {
-        this.partCategories = partCategories;
-    }
-
-    public void addPartCategory(String categoryName)
-    {
-        if(this.partCategories == null)
-        {
-            this.partCategories = new ArrayList<>();
-        }
-        this.partCategories.add(categoryName);
-    }
-
     @Override
     public String toString() {
         return "FormData{" +
@@ -107,7 +86,6 @@ public class FormData implements Serializable {
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
-                ", partCategories=" + partCategories +
                 '}';
     }
 }
