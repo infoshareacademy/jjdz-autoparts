@@ -1,15 +1,12 @@
 package javatar.web;
 
-import javatar.model.*;
+import javatar.model.FormData;
 import javatar.service.CRUDService;
-import javatar.service.CreateAllegroLink;
-import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
-import javax.persistence.Persistence;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,8 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {

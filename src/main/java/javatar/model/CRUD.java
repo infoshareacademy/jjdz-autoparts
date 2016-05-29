@@ -1,9 +1,6 @@
 package javatar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CRUD {
@@ -11,13 +8,28 @@ public class CRUD {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String userName;
-    private String carBrand;
-    private String carModel;
-    private String carEngine;
-    private String partBrand;
-    private String partId;
-    private String partName;
     private String allegroLink;
+    @Embedded
+    private CarInCRUD car;
+    @Embedded
+    private PartInCRUD part;
+
+    public PartInCRUD getPart() {
+        return part;
+    }
+
+    public void setPart(PartInCRUD partinCRUD) {
+        this.part = partinCRUD;
+    }
+
+    public CarInCRUD getCar() {
+        return car;
+    }
+
+    public void setCar(CarInCRUD car) {
+        this.car = car;
+    }
+
 
     public Long getId() {
         return id;
@@ -35,54 +47,6 @@ public class CRUD {
         this.userName = userName;
     }
 
-    public String getCarBrand() {
-        return carBrand;
-    }
-
-    public void setCarBrand(String carBrand) {
-        this.carBrand = carBrand;
-    }
-
-    public String getCarModel() {
-        return carModel;
-    }
-
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
-    }
-
-    public String getCarEngine() {
-        return carEngine;
-    }
-
-    public void setCarEngine(String carEngine) {
-        this.carEngine = carEngine;
-    }
-
-    public String getPartBrand() {
-        return partBrand;
-    }
-
-    public void setPartBrand(String partBrand) {
-        this.partBrand = partBrand;
-    }
-
-    public String getPartId() {
-        return partId;
-    }
-
-    public void setPartId(String partId) {
-        this.partId = partId;
-    }
-
-    public String getPartName() {
-        return partName;
-    }
-
-    public void setPartName(String partName) {
-        this.partName = partName;
-    }
-
     public String getAllegroLink() {
         return allegroLink;
     }
@@ -96,13 +60,11 @@ public class CRUD {
         return "CRUD{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
-                ", carBrand='" + carBrand + '\'' +
-                ", carModel='" + carModel + '\'' +
-                ", carEngine='" + carEngine + '\'' +
-                ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
-                ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
+                ", car=" + car +
+                ", part=" + part +
                 '}';
     }
+
+
 }
