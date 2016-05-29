@@ -31,25 +31,25 @@
 
                 <version>1.1.0.Alpha7</version>
 
-                <configuration>
+                <!--<configuration>-->
 
-                    <beforeDeployment>
+                    <!--<beforeDeployment>-->
 
-                        <commands>
+                        <!--<commands>-->
 
-                            <command>data-source add --jndi-name=java:jboss/datasources/financesDS --name=financesDS
+                            <!--<command>data-source add &#45;&#45;jndi-name=java:jboss/datasources/financesDS &#45;&#45;name=financesDS-->
 
-                                --connection-url=jdbc:h2:file:~/finances;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1
+                                <!--&#45;&#45;connection-url=jdbc:h2:file:~/finances;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1-->
 
-                                --driver-name=h2 --user-name=sa --password=sa
+                                <!--&#45;&#45;driver-name=h2 &#45;&#45;user-name=sa &#45;&#45;password=sa-->
 
-                            </command>
+                            <!--</command>-->
 
-                        </commands>
+                        <!--</commands>-->
 
-                    </beforeDeployment>
+                    <!--</beforeDeployment>-->
 
-                </configuration>
+                <!--</configuration>-->
 
             </plugin>
 
