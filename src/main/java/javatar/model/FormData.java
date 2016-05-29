@@ -15,11 +15,12 @@ public class FormData implements Serializable {
     private String partId;
     private String partName;
     private String allegroLink;
+    private String engineLookupString;
 
     public FormData() {
     }
 
-    public FormData(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, String allegroLink) {
+    public FormData(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, String allegroLink, String engineLookupString) {
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.carEngine = carEngine;
@@ -27,6 +28,7 @@ public class FormData implements Serializable {
         this.partId = partId;
         this.partName = partName;
         this.allegroLink = allegroLink;
+        this.engineLookupString = engineLookupString;
     }
 
     public String getCarBrand() {
@@ -85,6 +87,14 @@ public class FormData implements Serializable {
         this.allegroLink = allegroLink;
     }
 
+    public String getEngineLookupString() {
+        return engineLookupString;
+    }
+
+    public void setEngineLookupString(String engineLookupString) {
+        this.engineLookupString = engineLookupString;
+    }
+
     @Override
     public String toString() {
         return "FormData{" +
@@ -95,6 +105,8 @@ public class FormData implements Serializable {
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
+                ", engineLookupString='" + engineLookupString + '\'' +
                 '}';
     }
+
 }

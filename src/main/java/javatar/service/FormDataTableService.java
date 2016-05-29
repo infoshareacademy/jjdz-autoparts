@@ -33,7 +33,8 @@ public class FormDataTableService {
                 formData.getPartBrand(),
                 formData.getPartName(),
                 formData.getPartId(),
-                formData.getAllegroLink()));
+                formData.getAllegroLink(),
+                formData.getEngineLookupString()));
         formResults.setUserName(sessionData.getUserData());
         formResults.setLocalDateTime(LocalDateTime.now());
 

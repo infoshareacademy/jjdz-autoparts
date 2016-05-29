@@ -35,11 +35,14 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
         String engineLink = splitArray[1];
 
         req.setAttribute("engineName", engineName);
-        req.setAttribute("modelName", formData.getCarModel());
-        req.setAttribute("brandName", formData.getCarBrand());
+//        req.setAttribute("modelName", formData.getCarModel());
+//        req.setAttribute("brandName", formData.getCarBrand());
+        req.setAttribute("modelName", req.getParameter("modelName"));
+        req.setAttribute("brandName", req.getParameter("brandName"));
         req.setAttribute("isFirstCat", true);
 
         formData.setCarEngine(engineName);
+        formData.setEngineLookupString(engineOut);
 
         String url = "http://infoshareacademycom.2find.ru" + engineLink + "?lang=polish";
 

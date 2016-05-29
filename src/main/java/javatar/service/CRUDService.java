@@ -31,6 +31,7 @@ public class CRUDService {
         partinCRUD.setPartId(formData.getPartId());
         crud.setPart(partinCRUD);
         crud.setUserName(user);
+        crud.setEngineLink(formData.getEngineLookupString());
 
 
         System.out.println("Result sent to DB: " + crud.toString());

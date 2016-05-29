@@ -41,12 +41,12 @@
                     </div>
                     <div class="col-lg-8">
 
-                        <%--<li class="list-group-item">--%>
-                            <input type="hidden" name="listId" value="${list.crud.id}"/>
-                                ${list.crud.part.partBrand} ${list.crud.part.partName} ${list.crud.part.partId}
-                            <input type="submit" value="Usuń z koszyka" name="remove"/>
+                            <%--<li class="list-group-item">--%>
+                        <input type="hidden" name="listId" value="${list.crud.id}"/>
+                            ${list.crud.part.partBrand} ${list.crud.part.partName} ${list.crud.part.partId}
+                        <input type="submit" value="Usuń z koszyka" name="remove"/>
                     </div>
-                    <%--</li>--%>
+                        <%--</li>--%>
                 </form>
             </c:forEach>
 
@@ -59,19 +59,26 @@
 <form metod="GET" action="Brands">
     <div class="container">
         <div class="forms-template">
-            <input type="submit" value="Wyszukaj nową część" align="center"/>
+            <input type="submit" value="Wyszukaj nową część dla dowolnego samochodu" align="center"/>
         </div>
     </div>
 </form>
 <form metod="GET" action="PartFirstCategory">
-    <div class="container">
-        <div class="forms-template">
-            <input type="submit" value="Wyszukaj nową część dla samochodu ${listId.carBrand}" align="center"/>
-            <input type="hidden" value="${listId.carBrand}" name="carBrand"/>
-            <input type="hidden" value="${listId.carModel}" name="carModel"/>
-            <input type="hidden" value="${listId.carEngine}" name="carEngine"/>
-        </div>
-    </div>
+    <c:forEach items="${crudViewList}" var="list">
+        <div class="col-lg-4">
+        <c:if test="${list.flag==0}">
+            </div>
+            <div class="container">
+                <div class="forms-template">
+                    <input type="submit" value="Wyszukaj nową część dla samochodu: ${list.crud.car.carBrand} ${list.crud.car.carModel} ${list.crud.car.carEngine}"
+                           align="center"/>
+                    <input type="hidden" value=" ${list.crud.engineLink}" name="engine"/>
+                    <input type="hidden" value=" ${list.crud.car.carModel}" name="modelName"/>
+                    <input type="hidden" value=" ${list.crud.car.carBrand}" name="brandName"/>
+                </div>
+            </div>
+        </c:if>
+    </c:forEach>
 </form>
 
 <form method="POST" action="Output.jsp">

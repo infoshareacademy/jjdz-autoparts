@@ -55,6 +55,8 @@
             </div>
             <input class="col-lg-1 button-middle" type="submit" value="OK">
         </div>
+        <input type="hidden" value=" ${modelName}" name="modelName"/>
+        <input type="hidden" value="  ${brandName}" name="brandName"/>
 
     </form>
 </div>

@@ -9,10 +9,22 @@ public class CRUD {
     private Long id;
     private String userName;
     private String allegroLink;
+    private String engineLink;
+
     @Embedded
     private CarInCRUD car;
+
     @Embedded
     private PartInCRUD part;
+
+
+    public String getEngineLink() {
+        return engineLink;
+    }
+
+    public void setEngineLink(String engineLink) {
+        this.engineLink = engineLink;
+    }
 
     public PartInCRUD getPart() {
         return part;
@@ -61,6 +73,7 @@ public class CRUD {
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
+                ", engineLink='" + engineLink + '\'' +
                 ", car=" + car +
                 ", part=" + part +
                 '}';

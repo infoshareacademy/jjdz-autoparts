@@ -1,13 +1,12 @@
 package javatar.web;
 
         import javatar.model.CRUDwithDuplicatedFlag;
-import javatar.model.FormData;
-import javatar.service.GetCRUDwithDuplFlagService;
+        import javatar.service.CRUDService;
+        import javatar.service.GetCRUDwithDuplFlagService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,11 +20,11 @@ import java.util.List;
 public class CartViewServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    @Inject
-    FormData formData;
-
     @EJB
     GetCRUDwithDuplFlagService getValueWithFlag;
+
+    @EJB
+    CRUDService crudService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
