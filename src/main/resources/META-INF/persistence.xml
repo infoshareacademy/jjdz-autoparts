@@ -10,7 +10,7 @@
         <properties>
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />-->
             <!--<property name="hibernate.archive.autodetection" value="class" />-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+            <property name="hibernate.dialect" value="javatar.model.CustomMysqlDialect" />
             <!--<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />-->
             <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/autoparts" />-->
             <!--<property name="hibernate.connection.username" value="root" />-->
