@@ -11,6 +11,7 @@ import java.util.List;
 @Stateless
 public class CRUDService {
 
+    private static final Integer DEFAULT_FLAG = 0;
     @PersistenceContext
     EntityManager em;
 
@@ -48,28 +49,41 @@ public class CRUDService {
                         "from CRUD c " +
                         "order by c.car.carBrand, c.car.carModel, c.car.carEngine, c.part.partBrand, c.part.partName, c.part.partId, c.id "
                 , CRUD.class).getResultList();
-        System.out.println("Entire CRUD from DB = " + resultList.toString());
 
         return resultList;
 
     }
 
 
-
-    public List<CRUDwithDuplicatedFlag> getListWithFlags() {
-
-        CRUDViewService crudViewService = new CRUDViewService();
-        List<CarInCRUD> carInCRUDList = em.createQuery("select c.car " +
-                        "from CRUD c "
-                , CarInCRUD.class).getResultList();
-        System.out.println("Lista aut: " + carInCRUDList.toString());
-
+    public List<CRUDwithDuplicatedFlag> getListWithFlags(CarInCRUD car, List<CRUD> crudList) {
         List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags = new ArrayList<>();
-        for (CarInCRUD car :
-                carInCRUDList) {
-            cruDwithDuplicatedFlags = crudViewService.duplicatedCarFlag(car);
+        Integer duplicatedFlag = 0;
+
+        for (CRUD crudElement :
+                crudList) {
+            System.out.println("crudElement.getCar() = "+crudElement.getCar());
+            System.out.println("car = " + car);
+            if (crudElement.getCar().equals(car)) {
+                System.out.println("Updated CRUD row: " + crudElement.toString());
+                CRUDwithDuplicatedFlag newListElement = new CRUDwithDuplicatedFlag();
+                newListElement.setCrud(crudElement);
+                newListElement.setFlag(duplicatedFlag);
+                cruDwithDuplicatedFlags.add(newListElement);
+                duplicatedFlag++;
+            } else {
+                System.out.println("crudElement not updated = " + crudElement.toString());
+            }
         }
         return cruDwithDuplicatedFlags;
     }
+
+    public List<CarInCRUD> returnCarsDisctinct() {
+        List<CarInCRUD> carInCRUDList = em.createQuery("select distinct c.car " +
+                        "from CRUD c "
+                , CarInCRUD.class).getResultList();
+        System.out.println("Lista aut: " + carInCRUDList.toString());
+        return carInCRUDList;
+    }
+
 
 }

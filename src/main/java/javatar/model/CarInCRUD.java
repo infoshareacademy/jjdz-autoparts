@@ -40,4 +40,27 @@ public class CarInCRUD {
                 ", carEngine='" + carEngine + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CarInCRUD carInCRUD = (CarInCRUD) o;
+
+        if (getCarBrand() != null ? !getCarBrand().equals(carInCRUD.getCarBrand()) : carInCRUD.getCarBrand() != null)
+            return false;
+        if (getCarModel() != null ? !getCarModel().equals(carInCRUD.getCarModel()) : carInCRUD.getCarModel() != null)
+            return false;
+        return getCarEngine() != null ? getCarEngine().equals(carInCRUD.getCarEngine()) : carInCRUD.getCarEngine() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getCarBrand() != null ? getCarBrand().hashCode() : 0;
+        result = 31 * result + (getCarModel() != null ? getCarModel().hashCode() : 0);
+        result = 31 * result + (getCarEngine() != null ? getCarEngine().hashCode() : 0);
+        return result;
+    }
 }

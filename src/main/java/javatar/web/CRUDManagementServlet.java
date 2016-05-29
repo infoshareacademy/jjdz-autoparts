@@ -1,13 +1,12 @@
 package javatar.web;
 
 
-import javatar.model.CRUD;
-import javatar.model.CRUDwithDuplicatedFlag;
-import javatar.model.FormData;
+import javatar.model.*;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,12 +24,13 @@ public class CRUDManagementServlet extends HttpServlet {
     @Inject
     FormData formData;
 
-    @Inject
+    @EJB
     CRUDService crudService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        System.out.println("CRUD servlet is running");
         req.setCharacterEncoding("UTF-8");
 
         String listId = req.getParameter("listId");
@@ -38,11 +38,12 @@ public class CRUDManagementServlet extends HttpServlet {
 
         List<CRUD> crudValuesFromDB = crudService.getCRUDValuesFromDB();
 
-        List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags =crudService.getListWithFlags();
-
-
-        System.out.println("cruDwithDuplicatedFlags.toString()" + cruDwithDuplicatedFlags.toString());
-        req.setAttribute("crudFlagList",cruDwithDuplicatedFlags);
+        System.out.println("Servlet -- > udValuesFromDB.toString() = " + crudValuesFromDB.toString());
+//
+//        List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags =crudService.getListWithFlags();
+//        System.out.println("Servlet --> cruDwithDuplicatedFlags.toString()" + cruDwithDuplicatedFlags.toString());
+//
+//        req.setAttribute("crudFlagList",cruDwithDuplicatedFlags);
 
 //        List<CarInCRUD> carsInCRUDs = crudService.selectCarsFromCrud();
 //        req.setAttribute("car",carsInCRUDs);
