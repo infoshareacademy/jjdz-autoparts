@@ -19,6 +19,8 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -26,6 +28,7 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String engineOut = req.getParameter("engine");
 
+       // engines.setEngines(engineOut);
 
         String[] splitArray = engineOut.split(";");
         String engineName = splitArray[0];
