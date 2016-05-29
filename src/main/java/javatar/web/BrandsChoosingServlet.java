@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,13 +23,25 @@ public class BrandsChoosingServlet extends HttpServlet {
     @EJB
     BrandsJsonCache cache;
 
+    @Inject
+    SessionData sessionData;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 
         req.setCharacterEncoding("UTF-8");
         Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
+        sessionData.setErrorMessage(null);
+        if (carsBrandsCollection.isEmpty())
+        {
+            sessionData.setErrorMessage("BŁĄD! Brak marek samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+
         req.setAttribute("brands", carsBrandsCollection);
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
         LOGGER.info("carsBransdCollection has size: {}",carsBrandsCollection.size());
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
         dispatcher.forward(req, resp);

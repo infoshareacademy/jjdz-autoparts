@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -75,6 +76,24 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setAttribute("partName", name);
         req.setAttribute("partBrand", brand);
         req.setAttribute("partId", id);
+
+        sessionData.setErrorMessage(null);
+        if (allegroLink.length()<1 || allegroLink == null)
+        {
+            sessionData.setErrorMessage(sessionData.getErrorMessage() + "BŁĄD! Brak modeli samochodowych do wyświetlenia!/n");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+
+        FormDataTable fdt = new FormDataTable();
+        fdt.setFormData(formData);
+        fdt.setUserName(sessionData.getUserData());
+        fdt.setLocalDateTime(LocalDateTime.now());
+        if (formDataTableService.isAnyFormDataTableFieldEmpty(fdt))
+        {
+            sessionData.setErrorMessage(sessionData.getErrorMessage() + "BŁĄD! Puste dane wysyłane do bazy!/n");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

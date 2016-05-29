@@ -37,6 +37,12 @@
 
     <form method="GET" action="Models" class="form-horizontal" role="form">
 
+        <c:if test="${not empty errorMessage}">
+            <div class="errorMessage">
+                <c:out value="${errorMessage}"/>
+            </div>
+        </c:if>
+
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz markę samochodu</b></label>
 

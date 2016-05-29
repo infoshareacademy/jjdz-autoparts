@@ -5,6 +5,8 @@ import javatar.model.FormPartCategories;
 import javatar.model.JsonDataAutopart;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -17,9 +19,13 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/PartCategory")
 public class PartCategoryChoosingServlet extends HttpServlet {
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @Inject
     FormData formData;
+
+    @Inject
+    SessionData sessionData;
 
     @Inject
     FormPartCategories formPartCategories;
@@ -27,6 +33,7 @@ public class PartCategoryChoosingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        sessionData.setErrorMessage(null);
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
         String categories;
@@ -59,11 +66,23 @@ public class PartCategoryChoosingServlet extends HttpServlet {
         if (Boolean.parseBoolean(hasChildren)) {
             JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
             req.setAttribute("categories", autopartCategories.getData());
+            if (autopartCategories.getData().isEmpty())
+            {
+                sessionData.setErrorMessage("BŁĄD! Brak kategorii częśći samochodowych do wyświetlenia!");
+                LOGGER.error(sessionData.getErrorMessage());
+            }
 
         } else {
             JsonDataAutopart autopart = parser.parsePartFile(url);
             req.setAttribute("parts", autopart.getData());
+            if (autopart.getData().isEmpty())
+            {
+                sessionData.setErrorMessage("BŁĄD! Brak częśći samochodowych do wyświetlenia!");
+                LOGGER.error(sessionData.getErrorMessage());
+            }
         }
+
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
 
         dispatcher = req.getRequestDispatcher("PartCategoryChoosingForm.jsp");
         dispatcher.forward(req, resp);
