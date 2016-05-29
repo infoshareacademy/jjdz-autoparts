@@ -85,6 +85,8 @@
         <div class="forms-template">
             <input type="submit" value="Wyszukaj nową część dla samochodu ${listId.carBrand}" align="center"/>
             <input type="hidden" value="${listId.carBrand}" name="carBrand"/>
+            <input type="hidden" value="${listId.carModel}" name="carModel"/>
+            <input type="hidden" value="${listId.carEngine}" name="carEngine"/>
         </div>
     </div>
 </form>

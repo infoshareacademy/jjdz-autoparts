@@ -3,6 +3,7 @@ package javatar.web;
 
 import javatar.model.*;
 import javatar.service.CRUDService;
+import javatar.service.GetCRUDwithDuplFlagService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,6 +28,9 @@ public class CRUDManagementServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
+    @EJB
+    GetCRUDwithDuplFlagService getValueWithFlag;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -36,20 +40,9 @@ public class CRUDManagementServlet extends HttpServlet {
         String listId = req.getParameter("listId");
         crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
 
-        List<CRUD> crudValuesFromDB = crudService.getCRUDValuesFromDB();
+        List<CRUDwithDuplicatedFlag> crudViewList = getValueWithFlag.getCruDwithDuplicatedFlags();
 
-        System.out.println("Servlet -- > udValuesFromDB.toString() = " + crudValuesFromDB.toString());
-//
-//        List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags =crudService.getListWithFlags();
-//        System.out.println("Servlet --> cruDwithDuplicatedFlags.toString()" + cruDwithDuplicatedFlags.toString());
-//
-//        req.setAttribute("crudFlagList",cruDwithDuplicatedFlags);
-
-//        List<CarInCRUD> carsInCRUDs = crudService.selectCarsFromCrud();
-//        req.setAttribute("car",carsInCRUDs);
-//
-//        List<PartInCRUD> partinCRUDs = crudService.selectPartsForCar(carsInCRUDs.get(0));
-//        req.setAttribute("parts",partinCRUDs);
+        req.setAttribute("crudViewList",crudViewList);
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
