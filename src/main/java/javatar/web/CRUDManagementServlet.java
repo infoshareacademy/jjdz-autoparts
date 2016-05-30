@@ -41,9 +41,10 @@ public class CRUDManagementServlet extends HttpServlet {
         crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
 
         List<CRUDwithDuplicatedFlag> crudViewList = getValueWithFlag.getCruDwithDuplicatedFlags();
-
         req.setAttribute("crudViewList",crudViewList);
 
+        List<CarInCRUD> cars = crudService.returnCarsDisctinct();
+        req.setAttribute("cars",cars);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);

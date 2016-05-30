@@ -43,7 +43,7 @@
 
                             <%--<li class="list-group-item">--%>
                         <input type="hidden" name="listId" value="${list.crud.id}"/>
-                            ${list.crud.part.partBrand} ${list.crud.part.partName} ${list.crud.part.partId}
+                            ${list.crud.partBrand} ${list.crud.partName} ${list.crud.partId}
                         <input type="submit" value="Usuń z koszyka" name="remove"/>
                     </div>
                         <%--</li>--%>
@@ -64,20 +64,19 @@
     </div>
 </form>
 <form metod="GET" action="PartFirstCategory">
-    <c:forEach items="${crudViewList}" var="list">
+    <c:forEach items="${cars}" var="cars">
         <div class="col-lg-4">
-        <c:if test="${list.flag==0}">
             </div>
             <div class="container">
                 <div class="forms-template">
-                    <input type="submit" value="Wyszukaj nową część dla samochodu: ${list.crud.car.carBrand} ${list.crud.car.carModel} ${list.crud.car.carEngine}"
+                    <p>Wyszukaj nową część dla samochodu o marce: ${cars.carBrand}, modelu: ${cars.carModel}, pojemności silnika: ${cars.carEngine}</p>
+                    <input type="submit" value="Wyszukaj"
                            align="center"/>
-                    <input type="hidden" value=" ${list.crud.engineLink}" name="engine"/>
-                    <input type="hidden" value=" ${list.crud.car.carModel}" name="modelName"/>
-                    <input type="hidden" value=" ${list.crud.car.carBrand}" name="brandName"/>
+                    <input type="hidden" value="${cars.engineLink}" name="engine"/>
+                    <input type="hidden" value="${cars.carModel}" name="modelName"/>
+                    <input type="hidden" value="${cars.carBrand}" name="brandName"/>
                 </div>
             </div>
-        </c:if>
     </c:forEach>
 </form>
 

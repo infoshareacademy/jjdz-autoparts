@@ -9,29 +9,36 @@ public class CRUD {
     private Long id;
     private String userName;
     private String allegroLink;
-    private String engineLink;
 
     @Embedded
     private CarInCRUD car;
 
-    @Embedded
-    private PartInCRUD part;
+    private String partBrand;
+    private String partId;
+    private String partName;
 
-
-    public String getEngineLink() {
-        return engineLink;
+    public String getPartBrand() {
+        return partBrand;
     }
 
-    public void setEngineLink(String engineLink) {
-        this.engineLink = engineLink;
+    public void setPartBrand(String partBrand) {
+        this.partBrand = partBrand;
     }
 
-    public PartInCRUD getPart() {
-        return part;
+    public String getPartId() {
+        return partId;
     }
 
-    public void setPart(PartInCRUD partinCRUD) {
-        this.part = partinCRUD;
+    public void setPartId(String partId) {
+        this.partId = partId;
+    }
+
+    public String getPartName() {
+        return partName;
+    }
+
+    public void setPartName(String partName) {
+        this.partName = partName;
     }
 
     public CarInCRUD getCar() {
@@ -41,7 +48,6 @@ public class CRUD {
     public void setCar(CarInCRUD car) {
         this.car = car;
     }
-
 
     public Long getId() {
         return id;
@@ -73,9 +79,10 @@ public class CRUD {
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
-                ", engineLink='" + engineLink + '\'' +
                 ", car=" + car +
-                ", part=" + part +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
                 '}';
     }
 

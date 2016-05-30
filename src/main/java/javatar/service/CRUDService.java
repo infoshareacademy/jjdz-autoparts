@@ -20,18 +20,16 @@ public class CRUDService {
 
         CRUD crud = new CRUD();
         CarInCRUD carInCRUD = new CarInCRUD();
-        PartInCRUD partinCRUD = new PartInCRUD();
         carInCRUD.setCarBrand(formData.getCarBrand());
         carInCRUD.setCarEngine(formData.getCarEngine());
         carInCRUD.setCarModel(formData.getCarModel());
+        carInCRUD.setEngineLink(formData.getEngineLookupString());
         crud.setCar(carInCRUD);
         crud.setAllegroLink(formData.getAllegroLink());
-        partinCRUD.setPartBrand(formData.getPartBrand());
-        partinCRUD.setPartName(formData.getPartName());
-        partinCRUD.setPartId(formData.getPartId());
-        crud.setPart(partinCRUD);
+        crud.setPartBrand(formData.getPartBrand());
+        crud.setPartName(formData.getPartName());
+        crud.setPartId(formData.getPartId());
         crud.setUserName(user);
-        crud.setEngineLink(formData.getEngineLookupString());
 
 
         System.out.println("Result sent to DB: " + crud.toString());
@@ -48,7 +46,7 @@ public class CRUDService {
     public List<CRUD> getCRUDValuesFromDB() {
         List<CRUD> resultList = em.createQuery("select c " +
                         "from CRUD c " +
-                        "order by c.car.carBrand, c.car.carModel, c.car.carEngine, c.part.partBrand, c.part.partName, c.part.partId, c.id "
+                        "order by c.car.carBrand, c.car.carModel, c.car.carEngine,c.partBrand, c.partName, c.partId, c.id "
                 , CRUD.class).getResultList();
 
         return resultList;

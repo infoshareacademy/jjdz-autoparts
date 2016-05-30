@@ -1,6 +1,7 @@
 package javatar.web;
 
         import javatar.model.CRUDwithDuplicatedFlag;
+        import javatar.model.CarInCRUD;
         import javatar.service.CRUDService;
         import javatar.service.GetCRUDwithDuplFlagService;
 import org.apache.logging.log4j.LogManager;
@@ -33,6 +34,9 @@ public class CartViewServlet extends HttpServlet {
         List<CRUDwithDuplicatedFlag> crudViewList = getValueWithFlag.getCruDwithDuplicatedFlags();
 
         req.setAttribute("crudViewList",crudViewList);
+
+        List<CarInCRUD> cars = crudService.returnCarsDisctinct();
+        req.setAttribute("cars",cars);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);
