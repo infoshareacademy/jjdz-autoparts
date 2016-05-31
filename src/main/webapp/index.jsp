@@ -52,7 +52,7 @@
                             <h2>Witaj ${ sessionData.getUserData() }
                             </h2>
                             <div class="row">
-                                <div class="col-xs-6 col-lg-6">
+                                <div class="col-xs-12 col-lg-6">
                                     <h3> Wyszukiwanie części</h3>
                                     <a href="Brands">
                                         <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
@@ -60,7 +60,7 @@
                                     </a>
 
                                 </div>
-                                <div class="col-xs-6 col-lg-6">
+                                <div class="col-xs-12 col-lg-6">
                                     <h3>Wyloguj się</h3>
                                     <a href="logout">
                                         <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
