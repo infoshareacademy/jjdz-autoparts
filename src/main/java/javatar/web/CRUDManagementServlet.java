@@ -3,7 +3,6 @@ package javatar.web;
 
 import javatar.model.*;
 import javatar.service.CRUDService;
-import javatar.service.GetCRUDwithDuplFlagService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

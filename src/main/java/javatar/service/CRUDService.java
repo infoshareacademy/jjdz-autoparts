@@ -5,7 +5,6 @@ import javatar.model.*;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -39,12 +38,12 @@ public class CRUDService {
     }
 
     public void removeCRUDValuesFormDB(Long idToRemove) {
-        CRUD crud = em.find(CRUD.class, idToRemove);
-        em.remove(crud);
+        PartInCRUD partInCrud = em.find(CRUD.class, idToRemove);
+        em.remove(partInCrud);
     }
 
-    public List<CRUD> getCRUDValuesFromDB() {
-        List<CRUD> resultList = em.createQuery("select c " +
+    public List<PartInCRUD> getCRUDValuesFromDB() {
+        List<PartInCRUD> resultList = em.createQuery("select c " +
                         "from CRUD c " +
                         "order by c.car.carBrand, c.car.carModel, c.car.carEngine,c.partBrand, c.partName, c.partId, c.id "
                 , CRUD.class).getResultList();
@@ -53,28 +52,6 @@ public class CRUDService {
 
     }
 
-
-    public List<CRUDwithDuplicatedFlag> getListWithFlags(CarInCRUD car, List<CRUD> crudList) {
-        List<CRUDwithDuplicatedFlag> cruDwithDuplicatedFlags = new ArrayList<>();
-        Integer duplicatedFlag = 0;
-
-        for (CRUD crudElement :
-                crudList) {
-            System.out.println("crudElement.getCar() = "+crudElement.getCar());
-            System.out.println("car = " + car);
-            if (crudElement.getCar().equals(car)) {
-                System.out.println("Updated CRUD row: " + crudElement.toString());
-                CRUDwithDuplicatedFlag newListElement = new CRUDwithDuplicatedFlag();
-                newListElement.setCrud(crudElement);
-                newListElement.setFlag(duplicatedFlag);
-                cruDwithDuplicatedFlags.add(newListElement);
-                duplicatedFlag++;
-            } else {
-                System.out.println("crudElement not updated = " + crudElement.toString());
-            }
-        }
-        return cruDwithDuplicatedFlags;
-    }
 
     public List<CarInCRUD> returnCarsDisctinct() {
         List<CarInCRUD> carInCRUDList = em.createQuery("select distinct c.car " +
@@ -85,4 +62,5 @@ public class CRUDService {
     }
 
 
+    public List<>
 }

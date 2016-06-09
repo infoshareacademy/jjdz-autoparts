@@ -3,7 +3,7 @@ package javatar.model;
 import javax.persistence.*;
 
 @Entity
-public class CRUD {
+public class CRUD extends PartInCRUD {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -13,34 +13,7 @@ public class CRUD {
     @Embedded
     private CarInCRUD car;
 
-    private String partBrand;
-    private String partId;
-    private String partName;
-
-    public String getPartBrand() {
-        return partBrand;
-    }
-
-    public void setPartBrand(String partBrand) {
-        this.partBrand = partBrand;
-    }
-
-    public String getPartId() {
-        return partId;
-    }
-
-    public void setPartId(String partId) {
-        this.partId = partId;
-    }
-
-    public String getPartName() {
-        return partName;
-    }
-
-    public void setPartName(String partName) {
-        this.partName = partName;
-    }
-
+    @Embedded
     public CarInCRUD getCar() {
         return car;
     }
@@ -72,19 +45,5 @@ public class CRUD {
     public void setAllegroLink(String allegroLink) {
         this.allegroLink = allegroLink;
     }
-
-    @Override
-    public String toString() {
-        return "CRUD{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", allegroLink='" + allegroLink + '\'' +
-                ", car=" + car +
-                ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
-                ", partName='" + partName + '\'' +
-                '}';
-    }
-
 
 }
