@@ -59,20 +59,23 @@ public class CRUDService {
 
     }
 
-    public List<ListCarsParts> getCarsWithPart(List<CarInCRUD> cars) {
-        Integer i = 0;
+    public List<ListCarsParts> getCarsWithPart(List<CarInCRUD> cars, String user) {
+
         List<ListCarsParts> list = new ArrayList<>();
-        ListCarsParts carsParts = new ListCarsParts();
+
+
         for (CarInCRUD car :
                 cars) {
-            System.out.println("car in crud service = " + car.toString());
-            List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery").setParameter("carQuery", car).getResultList();
+
+            List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery and c.userName=:user").setParameter("carQuery", car).setParameter("user",user).getResultList();
+            ListCarsParts carsParts = new ListCarsParts();
             carsParts.setCarInCRUD(car);
             carsParts.setPartsInCRUD(carQuery);
-            System.out.println("carsParts = " + carsParts);
+
             list.add(carsParts);
+
+            System.out.println("List of cars with list of parts = " + list);
         }
-        System.out.println("List of cars with list of parts = " + list);
         return list;
 
     }

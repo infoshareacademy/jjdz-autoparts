@@ -37,14 +37,14 @@
                     <div class="col-lg-4">
                             ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
                     </div>
-                    <div class="col-lg-8">
-                        <c:forEach items="${list.partsInCRUD}" var="parts">
-                            <%--<li class="list-group-item">--%>
-                            <%--<input type="hidden" name="listId" value="${list.crud.id}"/>--%>
-                            ${parts.partBrand} ${parts.partName} ${parts.partId}
+                    <c:forEach items="${list.partsInCRUD}" var="parts">
+                        <div class="col-lg-8">
+                                <%--<li class="list-group-item">--%>
+                                <%--<input type="hidden" name="listId" value="${list.crud.id}"/>--%>
+                                ${parts.partBrand} ${parts.partName} ${parts.partId}       <%--Ilość: ${list.cnt}--%>
                             <input type="submit" value="Usuń z koszyka" name="remove"/>
-                        </c:forEach>
-                    </div>
+                        </div>
+                    </c:forEach>
                         <%--</li>--%>
                 </form>
             </c:forEach>

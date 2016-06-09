@@ -30,6 +30,9 @@ public class CartViewServlet extends HttpServlet {
     @Inject
     ListCarsParts listCarsParts;
 
+    @Inject
+    SessionData sessionData;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -38,11 +41,9 @@ public class CartViewServlet extends HttpServlet {
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
         System.out.println("cars before crudService = " + cars.toString());
-        List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars);
+        String user = sessionData.getUserData();
+        List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
         session.setAttribute("crudViewList", listCarsParts);
-
-
-     //   req.setAttribute("crudViewList", listCarsParts);
 
         req.setAttribute("cars", cars);
 

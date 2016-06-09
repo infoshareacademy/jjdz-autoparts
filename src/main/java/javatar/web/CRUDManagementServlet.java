@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -29,6 +30,8 @@ public class CRUDManagementServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
+    @Inject
+    SessionData sessionData;
 
 
     @Override
@@ -36,20 +39,22 @@ public class CRUDManagementServlet extends HttpServlet {
 
         System.out.println("CRUD servlet is running");
         req.setCharacterEncoding("UTF-8");
+        HttpSession session = req.getSession();
 
         String listId = req.getParameter("listId");
         crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
-        List<ListCarsParts> carsWithPart = crudService.getCarsWithPart(cars);
+        System.out.println("cars before crudService = " + cars.toString());
+        String user = sessionData.getUserData();
+        List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
+        session.setAttribute("crudViewList", listCarsParts);
 
-        req.setAttribute("crudViewList", carsWithPart);
         req.setAttribute("cars", cars);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);
+
+
     }
-
-
-
 }
