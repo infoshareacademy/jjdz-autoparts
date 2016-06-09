@@ -2,6 +2,8 @@ package javatar.web;
 
 
 import javatar.model.*;
+import javatar.model.CRUD.CarInCRUD;
+import javatar.model.CRUD.ListCarsParts;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,8 +29,7 @@ public class CRUDManagementServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
-    @EJB
-    GetCRUDwithDuplFlagService getValueWithFlag;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,13 +40,13 @@ public class CRUDManagementServlet extends HttpServlet {
         String listId = req.getParameter("listId");
         crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
 
-        List<CRUDwithDuplicatedFlag> crudViewList = getValueWithFlag.getCruDwithDuplicatedFlags();
-        req.setAttribute("crudViewList",crudViewList);
-
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
-        req.setAttribute("cars",cars);
+        List<ListCarsParts> carsWithPart = crudService.getCarsWithPart(cars);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
+        req.setAttribute("crudViewList", carsWithPart);
+        req.setAttribute("cars", cars);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);
     }
 

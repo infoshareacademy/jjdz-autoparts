@@ -1,4 +1,4 @@
-package javatar.model;
+package javatar.model.CRUD;
 
 import javax.persistence.Embeddable;
 

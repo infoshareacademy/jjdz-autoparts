@@ -1,4 +1,4 @@
-package javatar.model;
+package javatar.model.CRUD;
 
 import javax.persistence.Embeddable;
 
@@ -52,5 +52,14 @@ public class PartInCRUD {
         result = 31 * result + (getPartId() != null ? getPartId().hashCode() : 0);
         result = 31 * result + (getPartName() != null ? getPartName().hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "PartInCRUD{" +
+                "partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                '}';
     }
 }

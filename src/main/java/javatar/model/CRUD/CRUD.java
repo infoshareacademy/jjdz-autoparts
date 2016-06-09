@@ -1,4 +1,4 @@
-package javatar.model;
+package javatar.model.CRUD;
 
 import javax.persistence.*;
 
@@ -14,6 +14,8 @@ public class CRUD extends PartInCRUD {
     private CarInCRUD car;
 
     @Embedded
+    private PartInCRUD part;
+
     public CarInCRUD getCar() {
         return car;
     }
@@ -46,4 +48,11 @@ public class CRUD extends PartInCRUD {
         this.allegroLink = allegroLink;
     }
 
+    public PartInCRUD getPart() {
+        return part;
+    }
+
+    public void setPart(PartInCRUD part) {
+        this.part = part;
+    }
 }

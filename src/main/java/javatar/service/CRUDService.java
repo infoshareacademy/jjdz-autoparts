@@ -1,10 +1,15 @@
 package javatar.service;
 
 import javatar.model.*;
+import javatar.model.CRUD.CRUD;
+import javatar.model.CRUD.CarInCRUD;
+import javatar.model.CRUD.ListCarsParts;
+import javatar.model.CRUD.PartInCRUD;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -24,11 +29,13 @@ public class CRUDService {
         carInCRUD.setCarModel(formData.getCarModel());
         carInCRUD.setEngineLink(formData.getEngineLookupString());
         crud.setCar(carInCRUD);
-        crud.setAllegroLink(formData.getAllegroLink());
-        crud.setPartBrand(formData.getPartBrand());
-        crud.setPartName(formData.getPartName());
-        crud.setPartId(formData.getPartId());
         crud.setUserName(user);
+        crud.setAllegroLink(formData.getAllegroLink());
+        PartInCRUD part = new PartInCRUD();
+        part.setPartBrand(formData.getPartBrand());
+        part.setPartName(formData.getPartName());
+        part.setPartId(formData.getPartId());
+        crud.setPart(part);
 
 
         System.out.println("Result sent to DB: " + crud.toString());
@@ -38,17 +45,35 @@ public class CRUDService {
     }
 
     public void removeCRUDValuesFormDB(Long idToRemove) {
-        PartInCRUD partInCrud = em.find(CRUD.class, idToRemove);
-        em.remove(partInCrud);
+        CRUD crud = em.find(CRUD.class, idToRemove);
+        em.remove(crud);
     }
 
-    public List<PartInCRUD> getCRUDValuesFromDB() {
-        List<PartInCRUD> resultList = em.createQuery("select c " +
+    public List<CRUD> getCRUDValuesFromDB() {
+        List<CRUD> resultList = em.createQuery("select c " +
                         "from CRUD c " +
-                        "order by c.car.carBrand, c.car.carModel, c.car.carEngine,c.partBrand, c.partName, c.partId, c.id "
+                        "order by c.car.carBrand, c.car.carModel, c.car.carEngine,c.part.partBrand, c.part.partName, c.part.partId, c.id "
                 , CRUD.class).getResultList();
 
         return resultList;
+
+    }
+
+    public List<ListCarsParts> getCarsWithPart(List<CarInCRUD> cars) {
+        Integer i = 0;
+        List<ListCarsParts> list = new ArrayList<>();
+        ListCarsParts carsParts = new ListCarsParts();
+        for (CarInCRUD car :
+                cars) {
+            System.out.println("car in crud service = " + car.toString());
+            List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery").setParameter("carQuery", car).getResultList();
+            carsParts.setCarInCRUD(car);
+            carsParts.setPartsInCRUD(carQuery);
+            System.out.println("carsParts = " + carsParts);
+            list.add(carsParts);
+        }
+        System.out.println("List of cars with list of parts = " + list);
+        return list;
 
     }
 
@@ -62,5 +87,4 @@ public class CRUDService {
     }
 
 
-    public List<>
 }
