@@ -43,7 +43,7 @@ public class CartViewServlet extends HttpServlet {
 
         req.setAttribute("cars", cars);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
         dispatcher.forward(req, resp);
     }
 
