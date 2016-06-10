@@ -36,7 +36,12 @@
                 <form method="GET" action="CRUD">
                     <div class="col-lg-4">
                             ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
-                            ${singlePartToRemove.setCar(list.carInCRUD)}
+                            <%--${singlePartToRemove.setCar(list.carInCRUD)}--%>
+                                <input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" />
+                                <input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" />
+                                <input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}" />
+                                <input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}" />
+
                     </div>
 
                     <c:forEach items="${list.partsInCRUD}" var="parts">
@@ -44,9 +49,16 @@
                                 <%--<li class="list-group-item">--%>
                                 <%--<input type="hidden" name="parts" value="${parts}"/>--%>
                                 ${parts.partBrand} ${parts.partName} ${parts.partId} <%--Ilość: ${list.cnt}--%>
-                                ${singlePartToRemove.setPartsInCRUD(parts)}
-                                ${session.setAttribute("singlePartToRemove",singlePartToRemove)}
-                                <input type="hidden" name="singlePartToRemoveId" value="${singlePartToRemoveId}" />
+                                <%--${singlePartToRemove.setSinglePartToRemove(parts,list.carInCRUD)}--%>
+                                <%--${session.setAttribute("singlePartToRemove",singlePartToRemove)}--%>
+
+                                <%--<input type="hidden" name="singlePartToRemoveId" value="${singlePartToRemoveId}" />--%>
+
+                                    <input type="hidden" name="partBrand" value="${parts.partBrand}" />
+                                    <input type="hidden" name="partName" value="${parts.partName}" />
+                                    <input type="hidden" name="partId" value="${parts.partId}" />
+
+
                             <input type="submit" value="Usuń z koszyka" name="remove"/>
                         </div>
                     </c:forEach>

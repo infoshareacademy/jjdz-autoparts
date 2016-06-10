@@ -4,6 +4,7 @@ package javatar.web;
 import javatar.model.*;
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
+import javatar.model.CRUD.PartInCRUD;
 import javatar.model.CRUD.SinglePartToRemove;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
@@ -54,6 +55,19 @@ public class CRUDManagementServlet extends HttpServlet {
 //        System.out.println("Samochód i część z JSP = " + listCarsParts.getPartsInCRUD().toString());
 
 
+        CarInCRUD car = new CarInCRUD();
+        PartInCRUD part = new PartInCRUD();
+        car.setCarBrand(req.getParameter("carBrand"));
+        car.setCarEngine(req.getParameter("carEngine"));
+        car.setCarModel(req.getParameter("carModel"));
+        car.setEngineLink(req.getParameter("engineLink"));
+        part.setPartBrand(req.getParameter("partBrand"));
+        part.setPartId(req.getParameter("partId"));
+        part.setPartName(req.getParameter("partName"));
+
+        System.out.println("part.toString() = " + part.toString());
+        System.out.println("car = " + car.toString());
+
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
         System.out.println("cars before crudService = " + cars.toString());
         String user = sessionData.getUserData();
@@ -64,14 +78,14 @@ public class CRUDManagementServlet extends HttpServlet {
 
 //        Object singlePartToRemove = session.getAttribute("singlePartToRemove");
 //        System.out.println("singlePartToRemove.toString() = " + singlePartToRemove.toString());
-        String singlePartToRemoveId = req.getParameter("singlePartToRemoveId");
-        singlePartToRemove = (SinglePartToRemove) req.getSession().getAttribute(singlePartToRemoveId);
-//        req.getSession().removeAttribute("singlePartToRemove");
-//        req.getSession().setAttribute("singlePartToRemove", singlePartToRemove);
-//        req.setAttribute("singlePartToRemove", singlePartToRemove);
-
-        System.out.println("singlePartToRemoveId = " + singlePartToRemoveId);
-        System.out.println("singlePartToRemove = " + singlePartToRemove);
+//        String singlePartToRemoveId = req.getParameter("singlePartToRemoveId");
+//        singlePartToRemove = (SinglePartToRemove) req.getSession().getAttribute(singlePartToRemoveId);
+////        req.getSession().removeAttribute("singlePartToRemove");
+////        req.getSession().setAttribute("singlePartToRemove", singlePartToRemove);
+////        req.setAttribute("singlePartToRemove", singlePartToRemove);
+//
+//        System.out.println("singlePartToRemoveId = " + singlePartToRemoveId);
+//        System.out.println("singlePartToRemove = " + singlePartToRemove);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);
