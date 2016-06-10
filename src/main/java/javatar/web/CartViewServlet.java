@@ -2,6 +2,7 @@ package javatar.web;
 
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
+import javatar.model.CRUD.SinglePartToRemove;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @WebServlet(urlPatterns = "/Cart")
 public class CartViewServlet extends HttpServlet {
@@ -33,6 +35,9 @@ public class CartViewServlet extends HttpServlet {
     @Inject
     SessionData sessionData;
 
+    @Inject
+    SinglePartToRemove singlePartToRemove;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -46,6 +51,10 @@ public class CartViewServlet extends HttpServlet {
         session.setAttribute("crudViewList", listCarsParts);
 
         req.setAttribute("cars", cars);
+
+//        String singlePartToRemoveId = UUID.randomUUID().toString();
+//        req.getSession().setAttribute(singlePartToRemoveId, singlePartToRemove);
+//        req.setAttribute("singlePartToRemoveId", singlePartToRemoveId);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);

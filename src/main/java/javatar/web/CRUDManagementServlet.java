@@ -4,6 +4,7 @@ package javatar.web;
 import javatar.model.*;
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
+import javatar.model.CRUD.SinglePartToRemove;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,6 +34,12 @@ public class CRUDManagementServlet extends HttpServlet {
     @Inject
     SessionData sessionData;
 
+    @Inject
+    ListCarsParts listCarsParts;
+
+    @Inject
+    SinglePartToRemove singlePartToRemove;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,8 +48,11 @@ public class CRUDManagementServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        String listId = req.getParameter("listId");
-        crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
+//        String listId = req.getParameter("listId");
+//        crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
+
+//        System.out.println("Samochód i część z JSP = " + listCarsParts.getPartsInCRUD().toString());
+
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
         System.out.println("cars before crudService = " + cars.toString());
@@ -51,6 +61,17 @@ public class CRUDManagementServlet extends HttpServlet {
         session.setAttribute("crudViewList", listCarsParts);
 
         req.setAttribute("cars", cars);
+
+        Object singlePartToRemove = session.getAttribute("singlePartToRemove");
+        System.out.println("singlePartToRemove.toString() = " + singlePartToRemove.toString());
+//        String singlePartToRemoveId = req.getParameter("singlePartToRemoveId");
+//        singlePartToRemove = (SinglePartToRemove) req.getSession().getAttribute(singlePartToRemoveId);
+////        req.getSession().removeAttribute("singlePartToRemove");
+////        req.getSession().setAttribute("singlePartToRemove", singlePartToRemove);
+////        req.setAttribute("singlePartToRemove", singlePartToRemove);
+//
+//        System.out.println("singlePartToRemoveId = " + singlePartToRemoveId);
+//        System.out.println("singlePartToRemove = " + singlePartToRemove);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);
