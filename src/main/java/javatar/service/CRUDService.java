@@ -15,7 +15,6 @@ import java.util.List;
 @Stateless
 public class CRUDService {
 
-    private static final Integer DEFAULT_FLAG = 0;
     @PersistenceContext
     EntityManager em;
 
@@ -44,21 +43,6 @@ public class CRUDService {
 
     }
 
-    public void removeCRUDValuesFormDB(Long idToRemove) {
-        CRUD crud = em.find(CRUD.class, idToRemove);
-        em.remove(crud);
-    }
-
-    public List<CRUD> getCRUDValuesFromDB() {
-        List<CRUD> resultList = em.createQuery("select c " +
-                        "from CRUD c " +
-                        "order by c.car.carBrand, c.car.carModel, c.car.carEngine,c.part.partBrand, c.part.partName, c.part.partId, c.id "
-                , CRUD.class).getResultList();
-
-        return resultList;
-
-    }
-
     public List<ListCarsParts> getCarsWithPart(List<CarInCRUD> cars, String user) {
 
         List<ListCarsParts> list = new ArrayList<>();
@@ -67,7 +51,7 @@ public class CRUDService {
         for (CarInCRUD car :
                 cars) {
 
-            List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery and c.userName=:user").setParameter("carQuery", car).setParameter("user",user).getResultList();
+            List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery and c.userName=:user").setParameter("carQuery", car).setParameter("user", user).getResultList();
             ListCarsParts carsParts = new ListCarsParts();
             carsParts.setCarInCRUD(car);
             carsParts.setPartsInCRUD(carQuery);
@@ -90,4 +74,10 @@ public class CRUDService {
     }
 
 
+    public void removeFromCRUD(CarInCRUD inputCar, PartInCRUD inputPart, String user) {
+        List<Long> listOfIds = em.createQuery("select c.id from CRUD c where c.car=:carQuery and c.part=:partQuery and c.userName=:user")
+                .setParameter("carQuery", inputCar).setParameter("partQuery", inputPart).setParameter("user", user).getResultList();
+        CRUD crud = em.find(CRUD.class, listOfIds.get(0));
+        em.remove(crud);
+    }
 }

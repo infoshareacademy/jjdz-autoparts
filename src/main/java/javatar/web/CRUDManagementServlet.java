@@ -1,11 +1,10 @@
 package javatar.web;
 
 
-import javatar.model.*;
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
 import javatar.model.CRUD.PartInCRUD;
-import javatar.model.CRUD.SinglePartToRemove;
+import javatar.model.FormData;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,22 +37,12 @@ public class CRUDManagementServlet extends HttpServlet {
     @Inject
     ListCarsParts listCarsParts;
 
-    @Inject
-    SinglePartToRemove singlePartToRemove;
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         System.out.println("CRUD servlet is running");
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
-
-//        String listId = req.getParameter("listId");
-//        crudService.removeCRUDValuesFormDB(Long.parseLong(listId));
-
-//        System.out.println("Samochód i część z JSP = " + listCarsParts.getPartsInCRUD().toString());
-
 
         CarInCRUD car = new CarInCRUD();
         PartInCRUD part = new PartInCRUD();
@@ -68,9 +57,12 @@ public class CRUDManagementServlet extends HttpServlet {
         System.out.println("part.toString() = " + part.toString());
         System.out.println("car = " + car.toString());
 
+
+        String user = sessionData.getUserData();
+        crudService.removeFromCRUD(car,part,user);
+
         List<CarInCRUD> cars = crudService.returnCarsDisctinct();
         System.out.println("cars before crudService = " + cars.toString());
-        String user = sessionData.getUserData();
         List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
         session.setAttribute("crudViewList", listCarsParts);
 

@@ -34,27 +34,34 @@
         <ul class="list-group">
             <c:forEach items="${crudViewList}" var="list" varStatus="carsCount">
                 <form method="GET" action="CRUD">
-                    <div class="col-lg-4">
-                            ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
+                    <div class="row">
+                        <div class="col-lg-4 ">
+                                ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
 
-                        <input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" id="${carsCount}"/>
-                        <input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" id="${carsCount}"/>
-                        <input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}" id="${carsCount}"/>
-                        <input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}" id="${carsCount}"/>
+                            <input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" id="${carsCount}"/>
+                            <input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" id="${carsCount}"/>
+                            <input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}"
+                                   id="${carsCount}"/>
+                            <input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}"
+                                   id="${carsCount}"/>
 
-                    </div>
+                        </div>
 
-                    <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partsCount">
-                        <div class="col-lg-8">
+                        <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partsCount">
+                            <div class="col-lg-8 ">
+                                <div class="row">
 
-                                ${parts.partBrand} ${parts.partName} ${parts.partId} <%--Ilość: ${list.cnt}--%>
+                                        ${parts.partBrand} ${parts.partName} ${parts.partId} <%--Ilość: ${list.cnt}--%>
 
                                     <input type="submit" value="Usuń z koszyka" name="remove" id="${partsCount}"/>
-                                    <input type="hidden" name="partBrand" value="${parts.partBrand}" id="${partsCount}"/>
+                                    <input type="hidden" name="partBrand" value="${parts.partBrand}"
+                                           id="${partsCount}"/>
                                     <input type="hidden" name="partName" value="${parts.partName}" id="${partsCount}"/>
                                     <input type="hidden" name="partId" value="${parts.partId}" id="${partsCount}"/>
-                        </div>
-                    </c:forEach>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
                         <%--</li>--%>
                 </form>
             </c:forEach>
