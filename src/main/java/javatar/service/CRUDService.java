@@ -1,10 +1,7 @@
 package javatar.service;
 
 import javatar.model.*;
-import javatar.model.CRUD.CRUD;
-import javatar.model.CRUD.CarInCRUD;
-import javatar.model.CRUD.ListCarsParts;
-import javatar.model.CRUD.PartInCRUD;
+import javatar.model.CRUD.*;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -34,6 +31,7 @@ public class CRUDService {
         part.setPartBrand(formData.getPartBrand());
         part.setPartName(formData.getPartName());
         part.setPartId(formData.getPartId());
+        part.setRecordCount(0);
         crud.setPart(part);
 
 
@@ -80,4 +78,11 @@ public class CRUDService {
         CRUD crud = em.find(CRUD.class, listOfIds.get(0));
         em.remove(crud);
     }
+
+    public Integer countParts (CarInCRUD inputCar, PartInCRUD inputPart, String user) {
+        Integer recordSize = em.createQuery("select c.id from CRUD c where c.car=:carQuery and c.part=:partQuery and c.userName=:user")
+                .setParameter("carQuery", inputCar).setParameter("partQuery", inputPart).setParameter("user", user).getResultList().size();
+        return recordSize;
+    }
+
 }

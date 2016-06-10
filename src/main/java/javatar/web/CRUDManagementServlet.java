@@ -53,6 +53,7 @@ public class CRUDManagementServlet extends HttpServlet {
         part.setPartBrand(req.getParameter("partBrand"));
         part.setPartId(req.getParameter("partId"));
         part.setPartName(req.getParameter("partName"));
+        part.setRecordCount(0);
 
         System.out.println("part.toString() = " + part.toString());
         System.out.println("car = " + car.toString());
@@ -68,16 +69,6 @@ public class CRUDManagementServlet extends HttpServlet {
 
         req.setAttribute("cars", cars);
 
-//        Object singlePartToRemove = session.getAttribute("singlePartToRemove");
-//        System.out.println("singlePartToRemove.toString() = " + singlePartToRemove.toString());
-//        String singlePartToRemoveId = req.getParameter("singlePartToRemoveId");
-//        singlePartToRemove = (SinglePartToRemove) req.getSession().getAttribute(singlePartToRemoveId);
-////        req.getSession().removeAttribute("singlePartToRemove");
-////        req.getSession().setAttribute("singlePartToRemove", singlePartToRemove);
-////        req.setAttribute("singlePartToRemove", singlePartToRemove);
-//
-//        System.out.println("singlePartToRemoveId = " + singlePartToRemoveId);
-//        System.out.println("singlePartToRemove = " + singlePartToRemove);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);

@@ -7,6 +7,48 @@ public class PartInCRUD {
     protected String partBrand;
     protected String partId;
     protected String partName;
+    protected Integer recordCount;
+
+    @Override
+    public String toString() {
+        return "PartInCRUD{" +
+                "partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                ", size='" + recordCount + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PartInCRUD that = (PartInCRUD) o;
+
+        if (getPartBrand() != null ? !getPartBrand().equals(that.getPartBrand()) : that.getPartBrand() != null)
+            return false;
+        if (getPartId() != null ? !getPartId().equals(that.getPartId()) : that.getPartId() != null) return false;
+        return getPartName() != null ? getPartName().equals(that.getPartName()) : that.getPartName() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getPartBrand() != null ? getPartBrand().hashCode() : 0;
+        result = 31 * result + (getPartId() != null ? getPartId().hashCode() : 0);
+        result = 31 * result + (getPartName() != null ? getPartName().hashCode() : 0);
+        return result;
+    }
+
+    public Integer getRecordCount() {
+
+        return recordCount;
+    }
+
+    public void setRecordCount(Integer recordCount) {
+        this.recordCount = recordCount;
+    }
 
     public String getPartBrand() {
         return partBrand;
@@ -32,34 +74,4 @@ public class PartInCRUD {
         this.partName = partName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        PartInCRUD that = (PartInCRUD) o;
-
-        if (getPartBrand() != null ? !getPartBrand().equals(that.getPartBrand()) : that.getPartBrand() != null)
-            return false;
-        if (getPartId() != null ? !getPartId().equals(that.getPartId()) : that.getPartId() != null) return false;
-        return getPartName() != null ? getPartName().equals(that.getPartName()) : that.getPartName() == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getPartBrand() != null ? getPartBrand().hashCode() : 0;
-        result = 31 * result + (getPartId() != null ? getPartId().hashCode() : 0);
-        result = 31 * result + (getPartName() != null ? getPartName().hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "PartInCRUD{" +
-                "partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
-                ", partName='" + partName + '\'' +
-                '}';
-    }
 }
