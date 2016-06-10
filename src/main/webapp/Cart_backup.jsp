@@ -46,7 +46,7 @@
                                 ${parts.partBrand} ${parts.partName} ${parts.partId} <%--Ilość: ${list.cnt}--%>
                                 ${singlePartToRemove.setPartsInCRUD(parts)}
                                 ${session.setAttribute("singlePartToRemove",singlePartToRemove)}
-                                <%--<input type="hidden" name="singlePartToRemoveId" value="${singlePartToRemoveId}" />--%>
+                                <input type="hidden" name="singlePartToRemoveId" value="${singlePartToRemoveId}" />
                             <input type="submit" value="Usuń z koszyka" name="remove"/>
                         </div>
                     </c:forEach>

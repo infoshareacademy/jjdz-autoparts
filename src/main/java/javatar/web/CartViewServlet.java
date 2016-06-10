@@ -52,9 +52,9 @@ public class CartViewServlet extends HttpServlet {
 
         req.setAttribute("cars", cars);
 
-//        String singlePartToRemoveId = UUID.randomUUID().toString();
-//        req.getSession().setAttribute(singlePartToRemoveId, singlePartToRemove);
-//        req.setAttribute("singlePartToRemoveId", singlePartToRemoveId);
+        String singlePartToRemoveId = UUID.randomUUID().toString();
+        req.getSession().setAttribute(singlePartToRemoveId, singlePartToRemove);
+        req.setAttribute("singlePartToRemoveId", singlePartToRemoveId);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart_backup.jsp");
         dispatcher.forward(req, resp);

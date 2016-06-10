@@ -23,4 +23,12 @@ public class SinglePartToRemove implements Serializable{
     public void setPart(PartInCRUD part) {
         this.part = part;
     }
+
+    @Override
+    public String toString() {
+        return "SinglePartToRemove{" +
+                "car=" + car +
+                ", part=" + part +
+                '}';
+    }
 }
