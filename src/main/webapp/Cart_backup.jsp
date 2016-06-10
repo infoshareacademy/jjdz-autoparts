@@ -51,7 +51,7 @@
                             <div class="col-lg-8 ">
                                 <div class="row">
 
-                                        ${parts.partBrand} ${parts.partName} ${parts.partId} <%--Ilość: ${list.cnt}--%>
+                                        ${parts.partBrand} ${parts.partName} ${parts.partId}    Ilość: ${parts.recordCount}
 
                                     <input type="submit" value="Usuń z koszyka" name="remove" id="${partsCount}"/>
                                     <input type="hidden" name="partBrand" value="${parts.partBrand}"

@@ -62,7 +62,7 @@ public class CRUDManagementServlet extends HttpServlet {
         String user = sessionData.getUserData();
         crudService.removeFromCRUD(car,part,user);
 
-        List<CarInCRUD> cars = crudService.returnCarsDisctinct();
+        List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
         System.out.println("cars before crudService = " + cars.toString());
         List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
         session.setAttribute("crudViewList", listCarsParts);

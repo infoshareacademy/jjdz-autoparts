@@ -52,8 +52,19 @@ public class CRUDService {
             List carQuery = em.createQuery("select distinct c.part from CRUD c where c.car=:carQuery and c.userName=:user").setParameter("carQuery", car).setParameter("user", user).getResultList();
             ListCarsParts carsParts = new ListCarsParts();
             carsParts.setCarInCRUD(car);
-            carsParts.setPartsInCRUD(carQuery);
+            if (carQuery.size() > 0) {
+                for (Object part :
+                        carQuery) {
+                    PartInCRUD partInCrud = (PartInCRUD) part;
+                    Integer recordSize = em.createQuery("select c.id from CRUD c where c.car=:carQuery and c.part=:partQuery and c.userName=:user")
+                            .setParameter("carQuery", car).setParameter("partQuery", partInCrud).setParameter("user", user).getResultList().size();
+                    partInCrud.setRecordCount(recordSize);
+                    part = partInCrud;
 
+                }
+            }
+
+            carsParts.setPartsInCRUD(carQuery);
             list.add(carsParts);
 
             System.out.println("List of cars with list of parts = " + list);
@@ -63,10 +74,10 @@ public class CRUDService {
     }
 
 
-    public List<CarInCRUD> returnCarsDisctinct() {
+    public List<CarInCRUD> returnCarsDisctinct(String user) {
         List<CarInCRUD> carInCRUDList = em.createQuery("select distinct c.car " +
-                        "from CRUD c "
-                , CarInCRUD.class).getResultList();
+                        "from CRUD c where c.userName=:user "
+                , CarInCRUD.class).setParameter("user", user).getResultList();
         System.out.println("Lista aut: " + carInCRUDList.toString());
         return carInCRUDList;
     }
@@ -77,12 +88,6 @@ public class CRUDService {
                 .setParameter("carQuery", inputCar).setParameter("partQuery", inputPart).setParameter("user", user).getResultList();
         CRUD crud = em.find(CRUD.class, listOfIds.get(0));
         em.remove(crud);
-    }
-
-    public Integer countParts (CarInCRUD inputCar, PartInCRUD inputPart, String user) {
-        Integer recordSize = em.createQuery("select c.id from CRUD c where c.car=:carQuery and c.part=:partQuery and c.userName=:user")
-                .setParameter("carQuery", inputCar).setParameter("partQuery", inputPart).setParameter("user", user).getResultList().size();
-        return recordSize;
     }
 
 }

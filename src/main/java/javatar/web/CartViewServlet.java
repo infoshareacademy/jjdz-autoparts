@@ -35,9 +35,9 @@ public class CartViewServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        List<CarInCRUD> cars = crudService.returnCarsDisctinct();
-        LOGGER.log(Level.INFO,"cars before crudService = {}", cars.toString());
         String user = sessionData.getUserData();
+        List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
+        LOGGER.log(Level.INFO,"cars before crudService = {}", cars.toString());
         List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
         session.setAttribute("crudViewList", listCarsParts);
 
