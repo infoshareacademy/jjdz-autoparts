@@ -33,34 +33,37 @@
 
         <ul class="list-group">
             <c:forEach items="${crudViewList}" var="list" varStatus="carsCount">
-                <form method="GET" action="CRUD">
+                <form method="GET" action="CRUD" name="selectPart">
                     <div class="row">
                         <div class="col-lg-12 ">
                                 ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
 
-                            <input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" id="${carsCount}"/>
-                            <input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" id="${carsCount}"/>
-                            <input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}"
-                                   id="${carsCount}"/>
-                            <input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}"
-                                   id="${carsCount}"/>
+                                <%--<input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" id="${carsCount}"/>--%>
+                                <%--<input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" id="${carsCount}"/>--%>
+                                <%--<input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}"--%>
+                                <%--id="${carsCount}"/>--%>
+                                <%--<input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}"--%>
+                                <%--id="${carsCount}"/>--%>
 
                         </div>
                         <ul class="list-group">
-                            <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partCount" >
+                            <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partCount">
                                 <div class="col-lg-12 ">
                                     <div class="row">
-                                        <li class="list-group-item" name="partList">
+                                        <%--<li class="list-group-item" name="partList">--%>
 
                                                 ${parts.partBrand} ${parts.partName} ${parts.partId}
                                             Ilość: ${parts.recordCount}
 
-                                            <input type="submit" value="Usuń z koszyka" name="remove" id="${partCount.index}" inlist="partList"/>
-                                            <input type="hidden" name="partBrand" value="${parts.partBrand}" id="${partCount.index}" inlist="partList"/>
-                                            <input type="hidden" name="partName" value="${parts.partName}" id="${partCount.index}" inlist="partList"/>
-                                            <input type="hidden" name="partId" value="${parts.partId}" id="${partCount.index}" inlist="partList"/>
+                                            <input type="submit"
+                                                   value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};${list.carInCRUD.engineLink};;${parts.partBrand};${parts.partName};${parts.partId}"
+                                                   name="remove">Usuń z koszyka</input>
 
-                                        </li>
+                                                <%--<input type="hidden" name="partBrand" value="${parts.partBrand}" id="${partCount.index}" inlist="partList"/>--%>
+                                                <%--<input type="hidden" name="partName" value="${parts.partName}" id="${partCount.index}" inlist="partList"/>--%>
+                                                <%--<input type="hidden" name="partId" value="${parts.partId}" id="${partCount.index}" inlist="partList"/>--%>
+
+                                        <%--</li>--%>
                                     </div>
                                 </div>
                             </c:forEach>

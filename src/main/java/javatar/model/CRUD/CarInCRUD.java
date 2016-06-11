@@ -52,9 +52,7 @@ public class CarInCRUD {
             return false;
         if (getCarModel() != null ? !getCarModel().equals(carInCRUD.getCarModel()) : carInCRUD.getCarModel() != null)
             return false;
-        if (getCarEngine() != null ? !getCarEngine().equals(carInCRUD.getCarEngine()) : carInCRUD.getCarEngine() != null)
-            return false;
-        return getEngineLink() != null ? getEngineLink().equals(carInCRUD.getEngineLink()) : carInCRUD.getEngineLink() == null;
+        return getCarEngine() != null ? getCarEngine().equals(carInCRUD.getCarEngine()) : carInCRUD.getCarEngine() == null;
 
     }
 
@@ -63,7 +61,6 @@ public class CarInCRUD {
         int result = getCarBrand() != null ? getCarBrand().hashCode() : 0;
         result = 31 * result + (getCarModel() != null ? getCarModel().hashCode() : 0);
         result = 31 * result + (getCarEngine() != null ? getCarEngine().hashCode() : 0);
-        result = 31 * result + (getEngineLink() != null ? getEngineLink().hashCode() : 0);
         return result;
     }
 

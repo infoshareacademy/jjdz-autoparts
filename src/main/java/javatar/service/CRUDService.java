@@ -84,10 +84,17 @@ public class CRUDService {
 
 
     public void removeFromCRUD(CarInCRUD inputCar, PartInCRUD inputPart, String user) {
-        List<Long> listOfIds = em.createQuery("select c.id from CRUD c where c.car=:carQuery and c.part=:partQuery and c.userName=:user")
-                .setParameter("carQuery", inputCar).setParameter("partQuery", inputPart).setParameter("user", user).getResultList();
-        CRUD crud = em.find(CRUD.class, listOfIds.get(0));
-        em.remove(crud);
+        System.out.println("inputCar.toString() = " + inputCar.toString());
+        System.out.println("inputPart = " + inputPart.toString());
+        List<Long> listOfIds = em.createQuery("select c.id from CRUD c where c.car.carBrand=:carQuery and c.car.carModel=:carModel and c.part.partBrand=:partQuery and c.userName=:user")
+                .setParameter("carQuery", inputCar.getCarBrand())
+                .setParameter("partQuery", inputPart.getPartBrand())
+                .setParameter("user", user).getResultList();
+
+        if (listOfIds.size() > 0) {
+            CRUD crud = em.find(CRUD.class, listOfIds.get(0));
+            em.remove(crud);
+        }
     }
 
 }

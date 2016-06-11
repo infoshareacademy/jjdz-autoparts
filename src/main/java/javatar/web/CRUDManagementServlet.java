@@ -44,16 +44,37 @@ public class CRUDManagementServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
+        String remove = req.getParameter("remove");
+        System.out.println("remove = " + remove);
+        String[] split = remove.split(";;");
+        String entireCar = split[0];
+        String entirePart = split[1];
+
+        String[] carSplitted = entireCar.split(";");
+        String[] partSplitted = entirePart.split(";");
+
         CarInCRUD car = new CarInCRUD();
         PartInCRUD part = new PartInCRUD();
-        car.setCarBrand(req.getParameter("carBrand"));
-        car.setCarEngine(req.getParameter("carEngine"));
-        car.setCarModel(req.getParameter("carModel"));
-        car.setEngineLink(req.getParameter("engineLink"));
-        part.setPartBrand(req.getParameter("partBrand"));
-        part.setPartId(req.getParameter("partId"));
-        part.setPartName(req.getParameter("partName"));
+        car.setCarBrand(carSplitted[0]);
+        car.setCarEngine(carSplitted[2]);
+        car.setCarModel(carSplitted[1]);
+        car.setEngineLink(carSplitted[4]);
+        part.setPartBrand(partSplitted[0]);
+        part.setPartId(partSplitted[2]);
+        part.setPartName(partSplitted[1]);
         part.setRecordCount(0);
+
+
+//        CarInCRUD car = new CarInCRUD();
+//        PartInCRUD part = new PartInCRUD();
+//        car.setCarBrand(req.getParameter("carBrand"));
+//        car.setCarEngine(req.getParameter("carEngine"));
+//        car.setCarModel(req.getParameter("carModel"));
+//        car.setEngineLink(req.getParameter("engineLink"));
+//        part.setPartBrand(req.getParameter("partBrand"));
+//        part.setPartId(req.getParameter("partId"));
+//        part.setPartName(req.getParameter("partName"));
+//        part.setRecordCount(0);
 
         System.out.println("part.toString() = " + part.toString());
         System.out.println("car = " + car.toString());
