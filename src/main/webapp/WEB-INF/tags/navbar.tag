@@ -17,7 +17,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/jjdz-autoparts">Home</a></li>
+                <li><a href="/jjdz-autoparts">Home</a></li>
             </ul>
         </div>
     </div>
