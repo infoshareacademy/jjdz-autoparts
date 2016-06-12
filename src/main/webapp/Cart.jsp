@@ -55,9 +55,9 @@
                                                 ${parts.partBrand} ${parts.partName} ${parts.partId}
                                             Ilość: ${parts.recordCount}
 
-                                            <input type="submit"
+                                            <button type="submit"
                                                    value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
-                                                   name="remove">Usuń z koszyka</input>
+                                                   name="remove">Usuń z koszyka</button>
 
                                                 <%--<input type="hidden" name="partBrand" value="${parts.partBrand}" id="${partCount.index}" inlist="partList"/>--%>
                                                 <%--<input type="hidden" name="partName" value="${parts.partName}" id="${partCount.index}" inlist="partList"/>--%>
