@@ -83,12 +83,30 @@ public class CRUDService {
     }
 
 
-    public void removeFromCRUD(CarInCRUD inputCar, PartInCRUD inputPart, String user) {
-        System.out.println("inputCar.toString() = " + inputCar.toString());
-        System.out.println("inputPart = " + inputPart.toString());
-        List<Long> listOfIds = em.createQuery("select c.id from CRUD c where c.car.carBrand=:carQuery and c.car.carModel=:carModel and c.part.partBrand=:partQuery and c.userName=:user")
-                .setParameter("carQuery", inputCar.getCarBrand())
-                .setParameter("partQuery", inputPart.getPartBrand())
+    public void removeFromCRUD(String remove, String user) {
+        String[] split = remove.split(";;");
+        String entireCar = split[0];
+        String entirePart = split[1];
+
+        String[] carSplitted = entireCar.split(";");
+        String[] partSplitted = entirePart.split(";");
+
+        String carBrand = carSplitted[0];
+        String carEngine = carSplitted[2];
+        String carModel = carSplitted[1];
+        String partBrand = partSplitted[0];
+        String partId = partSplitted[2];
+        String partName = partSplitted[1];
+
+        List<Long> listOfIds = em.createQuery("select c.id from CRUD c where c.car.carBrand=:carBrand and c.car.carModel=:carModel and c.car.carEngine=:carEngine" +
+                " and c.part.partBrand=:partBrand and c.part.partName=:partName and c.part.partId=:partId" +
+                " and c.userName=:user")
+                .setParameter("carBrand", carBrand)
+                .setParameter("carModel", carModel)
+                .setParameter("carEngine", carEngine)
+                .setParameter("partBrand", partBrand)
+                .setParameter("partName", partName)
+                .setParameter("partId", partId)
                 .setParameter("user", user).getResultList();
 
         if (listOfIds.size() > 0) {
