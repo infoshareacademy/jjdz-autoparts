@@ -16,10 +16,6 @@ public class ProcessingUserInput {
 
         } else if (answer == 1) {
 
-            JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(userInput.GetSessionKey());
-            Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
-            return carFinder.FindingCarByAztecCodeAnswer(answerAztec);
-
         }
         return null;
 
