@@ -39,7 +39,7 @@ public class ReadingUserInput {
 //
 //        } else if (answer == 1) {
 //
-//            JsonParserAztecCode carFromAtenaApi = new JsonParserAztecCode(GetSessionKey());
+//            GetJsonFromAtenaApi carFromAtenaApi = new GetJsonFromAtenaApi(GetSessionKey());
 //            Car answerAztec = carFromAtenaApi.getUserCarData(carFromAtenaApi.getUserCar());
 //            return carFinder.FindingCarByAztecCodeAnswer(answerAztec);
 //
