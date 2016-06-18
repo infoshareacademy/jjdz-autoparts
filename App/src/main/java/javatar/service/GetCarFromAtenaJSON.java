@@ -8,9 +8,7 @@ import javatar.model.CarsModels;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ejb.Stateless;
 
-@Stateless
 public class GetCarFromAtenaJSON {
 
     private static final Logger LOGGER = LogManager.getLogger();
