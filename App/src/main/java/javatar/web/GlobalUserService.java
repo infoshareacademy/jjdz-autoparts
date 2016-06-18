@@ -34,6 +34,13 @@ public class GlobalUserService {
 
     }
 
+    public List<GlobalUser> getUsers(){
+        LOGGER.debug("Selecting all users from database");
+        return em.createQuery(
+                "select u from GlobalUser u"
+                , GlobalUser.class).getResultList();
+    }
+
     private boolean isExists (String email, AccountType type ) {
         LOGGER.debug("Checking if user exists");
         GlobalUser user = getGlobalUserByAccountAndEmail(email, type);

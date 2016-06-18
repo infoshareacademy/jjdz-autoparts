@@ -19,7 +19,9 @@ import java.io.IOException;
         "/AllegroLink",
         "/AddingToCart",
         "/Output.jsp",
-        "/logout"})
+        "/logout",
+        "/usersList",
+        "/AdministrationConsole.jsp"})
 public class AuthFilter implements Filter {
 
 

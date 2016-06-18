@@ -12,6 +12,8 @@ public class SessionData implements Serializable {
 
     private long userId;
 
+    private int isAdmin = 0;
+
     public long getUserId() {
         return userId;
     }
@@ -20,9 +22,11 @@ public class SessionData implements Serializable {
         return user;
     }
 
-    public void logIn(String user, long userId) {
+    public void logIn(String user, long userId, int isAdmin) {
         this.user = user;
         this.userId = userId;
+        this.isAdmin = isAdmin;
+
     }
 
     public void logout() {
@@ -32,5 +36,10 @@ public class SessionData implements Serializable {
     public boolean isLoggedIn() {
         return (user != null);
     }
+
+    public boolean isAdmin() {
+        return (isAdmin  == 1);
+    }
+
 
 }

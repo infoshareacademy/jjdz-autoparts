@@ -84,7 +84,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         LOGGER.debug("Global user mail: {} id: {} ", user.geteMail(), user.getId());
 
-        sessionData.logIn(user.getFirstName() + " " + user.getLastName(), user.getId());
+        sessionData.logIn(user.getFirstName() + " " + user.getLastName(), user.getId(), user.getAdministrator());
 
         resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
 
