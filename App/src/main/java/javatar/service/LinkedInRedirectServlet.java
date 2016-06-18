@@ -33,7 +33,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
     private final static String CLIENT_CONFIDENTIAL_ID = "XpW20vY3AXkmqoOI";
     private static final String PROTECTED_RESOURCE_URL = "https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address)";
 
-
     @Inject
     SessionData sessionData;
 
@@ -42,7 +41,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
         String error = req.getParameter("error");
         String errorDescription = req.getParameter("error_description");
