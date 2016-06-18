@@ -70,13 +70,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
         requestName.addHeader("x-li-format", "json");
         requestName.addHeader("Accept-Language", "en-EN");
 
-
-
-        String s = req.getParameter("error");
-        String s1 = req.getParameter("access_denied");
-
-        System.out.println(s + " " + s1);
-
         service.signRequest(accessToken, requestName);
 
         final Response response = requestName.send();
