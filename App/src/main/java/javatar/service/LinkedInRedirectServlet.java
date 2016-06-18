@@ -22,6 +22,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/LinkedInRedirect")
@@ -43,6 +44,17 @@ public class LinkedInRedirectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
+        String error = req.getParameter("error");
+        String errorDescription = req.getParameter("error_description");
+        LOGGER.debug("LinkedIN error code: ", error);
+        LOGGER.debug("LinkedIN error description: ", errorDescription);
+
+        if (null != error) {
+            resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
+            return;
+        }
+
         OAuth20Service service = new ServiceBuilder()
                 .apiKey(CLIENT_ID)
                 .apiSecret(CLIENT_CONFIDENTIAL_ID)
@@ -57,6 +69,13 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         requestName.addHeader("x-li-format", "json");
         requestName.addHeader("Accept-Language", "en-EN");
+
+
+
+        String s = req.getParameter("error");
+        String s1 = req.getParameter("access_denied");
+
+        System.out.println(s + " " + s1);
 
         service.signRequest(accessToken, requestName);
 
