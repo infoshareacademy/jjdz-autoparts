@@ -56,6 +56,44 @@
         </table>
     </div>
 
+    <%--<div id="forms">--%>
+    <%--<div class="row">--%>
+    <%--<form method="POST" action="updateUser" class="form-horizontal" role="form">--%>
+    <%--<div class="col-xs-12 col-lg-4">--%>
+
+    <%--<div class="form-group row lower">--%>
+    <%--<label class="col-lg-3 control-label"><b>Wybierz użytkownika</b></label>--%>
+    <%--<select name="userId" class="selectpicker show-tick form-control" data-live-search="true"--%>
+    <%--required>--%>
+    <%--<c:forEach items="${users}" var="users">--%>
+    <%--<option value="${users.id}">${users.eMail}</option>--%>
+    <%--</c:forEach>--%>
+    <%--</select>--%>
+    <%--</div>--%>
+    <%--<input class="col-lg-1 button-middle" type="submit" value="Modyfikuj">--%>
+
+    <%--</div>--%>
+    <%--</form>--%>
+    <%--<div class="col-xs-12 col-lg-4">--%>
+
+    <%--</div>--%>
+    <%--<div class="col-xs-12 col-lg-4">--%>
+
+    <%--</div>--%>
+    <%--<div class="col-xs-12 col-lg-4">--%>
+
+    <%--</div>--%>
+    <%--</div>--%>
+    <%--</div>--%>
+    <form method="POST" action="updateUser" role="form">
+        <select name="user" required>
+            <c:forEach items="${users}" var="users">
+                <option value="${users.id}">${users.eMail}</option>
+            </c:forEach>
+        </select>
+        <input type="submit" value="Modyfikuj">
+    </form>
+
 </div>
 
 </body>

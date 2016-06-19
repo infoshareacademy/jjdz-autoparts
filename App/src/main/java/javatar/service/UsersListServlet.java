@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/usersList")
-public class UsersListServlet extends HttpServlet{
+public class UsersListServlet extends HttpServlet {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -28,10 +28,26 @@ public class UsersListServlet extends HttpServlet{
 
         req.setCharacterEncoding("UTF-8");
 
-        LOGGER.debug("Creating users list");
+        LOGGER.debug("Selecting all users list");
         List<GlobalUser> users = globalUserService.getUsers();
 
+        LOGGER.debug("Selecting all admin users list");
+        List<GlobalUser> usersAdmin = globalUserService.getUsersAdmin();
+
+        LOGGER.debug("Selecting all not admin users list");
+        List<GlobalUser> usersNotAdmin = globalUserService.getUsersNotAdmin();
+
+        LOGGER.debug("Creating all users list with rights to reports");
+        List<GlobalUser> usersReports = globalUserService.getUsersReports();
+
+        LOGGER.debug("Creating all users list without rights to reports");
+        List<GlobalUser> usersNotReports = globalUserService.getUsersNotReports();
+
         req.setAttribute("users", users);
+        req.setAttribute("usersAdmin", usersAdmin);
+        req.setAttribute("usersNotAdmin", usersNotAdmin);
+        req.setAttribute("usersReports", usersReports);
+        req.setAttribute("usersNotReports", usersNotReports);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AdministrationConsole.jsp");
         dispatcher.forward(req, resp);
