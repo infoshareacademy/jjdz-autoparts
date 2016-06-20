@@ -29,8 +29,14 @@ public class SessionData implements Serializable {
 
     }
 
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
     public void logout() {
         this.user = null;
+        this.isAdmin=0;
+
     }
 
     public boolean isLoggedIn() {

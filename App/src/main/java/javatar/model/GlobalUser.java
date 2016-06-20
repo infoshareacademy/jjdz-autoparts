@@ -2,6 +2,8 @@ package javatar.model;
 
 import javax.persistence.*;
 
+import java.awt.*;
+
 import static javatar.model.AccountType.LINKEDIN;
 
 @Entity
@@ -30,7 +32,7 @@ public class GlobalUser {
         this.firstName = linkedInUser.getFirstName();
         this.lastName = linkedInUser.getLastName();
         this.eMail = linkedInUser.getEmailAddress();
-        this.administrator = linkedInUser.getEmailAddress().trim().equals("danielkepczynski@gmail.com") ? 1 : 0;
+        this.administrator = AdminEmail.getIsAdmin(linkedInUser.getEmailAddress().trim());
         this.reports = 0;
     }
 

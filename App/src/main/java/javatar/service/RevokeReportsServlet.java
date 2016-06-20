@@ -13,10 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//import static jdk.nashorn.internal.runtime.JSType.isNumber;
-
-@WebServlet(urlPatterns = "/updateUser")
-public class UpdateUserServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/revokeReports")
+public class RevokeReportsServlet extends HttpServlet {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -25,22 +23,19 @@ public class UpdateUserServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LOGGER.debug("Revoke reports rights");
 
-        if (Long.parseLong(req.getParameter("user")) > -200) {
-            long id = Long.parseLong(req.getParameter("user"));
+        String userId = req.getParameter("userId");
+        if (Validation.isInteger(userId)) {
+            long id = Long.parseLong(userId);
             LOGGER.debug("Id is valid. Updating user");
             GlobalUser user = globalUserService.getUserById(id);
-            user.setReports(1);
+            user.setReports(0);
             globalUserService.updateUser(user);
         } else {
             LOGGER.debug("User ID is not numeric");
         }
         resp.sendRedirect("usersList");
 
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
     }
 }

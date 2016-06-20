@@ -56,44 +56,71 @@
         </table>
     </div>
 
-    <%--<div id="forms">--%>
-    <%--<div class="row">--%>
-    <%--<form method="POST" action="updateUser" class="form-horizontal" role="form">--%>
-    <%--<div class="col-xs-12 col-lg-4">--%>
+<div id="adminForms">
+    <h1>Zarządzaj prawami do administrowania aplikacją</h1>
+    <div class="col-xs-12 col-lg-6">
+        <form method="POST" action="setAdminUser" class="form-horizontal" role="form">
+            <div class="form-group row lower">
+                <h3>Dodaj prawa administratora</h3>
+                <select name="userId" class="selectpicker show-tick form-control" data-live-search="true"
+                        required>
+                    <c:forEach items="${usersNotAdmin}" var="users">
+                        <option value="${usersNotAdmin.id}">${usersNotAdmin.eMail}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <input class="col-lg-6 button-middle" type="submit" value="Zatwierdź">
+        </form>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+        </form>
 
-    <%--<div class="form-group row lower">--%>
-    <%--<label class="col-lg-3 control-label"><b>Wybierz użytkownika</b></label>--%>
-    <%--<select name="userId" class="selectpicker show-tick form-control" data-live-search="true"--%>
-    <%--required>--%>
-    <%--<c:forEach items="${users}" var="users">--%>
-    <%--<option value="${users.id}">${users.eMail}</option>--%>
-    <%--</c:forEach>--%>
-    <%--</select>--%>
-    <%--</div>--%>
-    <%--<input class="col-lg-1 button-middle" type="submit" value="Modyfikuj">--%>
-
-    <%--</div>--%>
-    <%--</form>--%>
-    <%--<div class="col-xs-12 col-lg-4">--%>
-
-    <%--</div>--%>
-    <%--<div class="col-xs-12 col-lg-4">--%>
-
-    <%--</div>--%>
-    <%--<div class="col-xs-12 col-lg-4">--%>
-
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <form method="POST" action="updateUser" role="form">
-        <select name="user" required>
-            <c:forEach items="${users}" var="users">
-                <option value="${users.id}">${users.eMail}</option>
-            </c:forEach>
-        </select>
-        <input type="submit" value="Modyfikuj">
-    </form>
-
+        <form method="POST" action="revokeAdmin" class="form-horizontal" role="form">
+            <div class="form-group row lower">
+                <h3>Odbierz prawa administratora</h3>
+                <select name="userId" class="selectpicker show-tick form-control" data-live-search="true"
+                        required>
+                    <c:forEach items="${usersAdmin}" var="usersAdmin">
+                        <option value="${usersAdmin.id}">${usersAdmin.eMail}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <input class="col-lg-6 button-middle" type="submit" value="Zatwierdź">
+        </form>
+    </div>
+</div>
+<div class="reportsForms">
+    <h1>Zarządzaj prawami do raportów</h1>
+    <div class="col-xs-12 col-lg-6">
+        <form method="POST" action="setReportsUser" class="form-horizontal" role="form">
+            <div class="form-group row lower">
+                <h3>Dodaj prawo do raportów</h3>
+                <select name="userId" class="selectpicker show-tick form-control" data-live-search="true"
+                        required>
+                    <c:forEach items="${usersNotReports}" var="usersNotReports">
+                        <option value="${usersNotReports.id}">${usersNotReports.eMail}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <input class="col-lg-6 button-middle" type="submit" value="Zatwierdź">
+        </form>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+        <form method="POST" action="revokeReports" class="form-horizontal" role="form">
+            <div class="form-group row lower">
+                <h3>Odbierz prawo do raportów</h3>
+                <select name="userId" class="selectpicker show-tick form-control" data-live-search="true"
+                        required>
+                    <c:forEach items="${usersReports}" var="usersReports">
+                        <option value="${usersReports.id}">${usersReports.eMail}</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <input class="col-lg-6 button-middle" type="submit" value="Zatwierdź">
+        </form>
+    </div>
+</div>
+</div>
 </div>
 
 </body>
