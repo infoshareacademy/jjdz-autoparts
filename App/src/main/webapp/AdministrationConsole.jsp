@@ -74,7 +74,6 @@
         </div>
         <div class="col-xs-12 col-lg-6">
 
-
             <form method="POST" action="revokeAdmin" class="form-horizontal" role="form">
                 <div class="form-group row lower">
                     <h3>Odbierz prawa administratora</h3>
@@ -122,6 +121,6 @@
         </div>
     </div>
 </div>
-</div>
+
 
 </body>

@@ -18,7 +18,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/revokeAdmin")
 public class RevokeAdminServlet extends HttpServlet {
 
-
     private static final Logger LOGGER = LogManager.getLogger();
 
     @EJB
@@ -46,10 +45,11 @@ public class RevokeAdminServlet extends HttpServlet {
             }
         } else {
             LOGGER.debug("User ID is not numeric. ID: ", userId);
+            resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
         }
 
 
-        resp.sendRedirect("usersList");
+
 
     }
 
