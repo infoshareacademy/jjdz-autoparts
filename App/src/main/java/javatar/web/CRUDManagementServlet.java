@@ -44,23 +44,25 @@ public class CRUDManagementServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        CarInCRUD car = new CarInCRUD();
-        PartInCRUD part = new PartInCRUD();
-        car.setCarBrand(req.getParameter("carBrand"));
-        car.setCarEngine(req.getParameter("carEngine"));
-        car.setCarModel(req.getParameter("carModel"));
-        car.setEngineLink(req.getParameter("engineLink"));
-        part.setPartBrand(req.getParameter("partBrand"));
-        part.setPartId(req.getParameter("partId"));
-        part.setPartName(req.getParameter("partName"));
-        part.setRecordCount(0);
+        String remove = req.getParameter("remove");
+        System.out.println("remove = " + remove);
 
-        System.out.println("part.toString() = " + part.toString());
-        System.out.println("car = " + car.toString());
+//        CarInCRUD car = new CarInCRUD();
+//        PartInCRUD part = new PartInCRUD();
+//        car.setCarBrand(req.getParameter("carBrand"));
+//        car.setCarEngine(req.getParameter("carEngine"));
+//        car.setCarModel(req.getParameter("carModel"));
+//        car.setEngineLink(req.getParameter("engineLink"));
+//        part.setPartBrand(req.getParameter("partBrand"));
+//        part.setPartId(req.getParameter("partId"));
+//        part.setPartName(req.getParameter("partName"));
+//        part.setRecordCount(0);
+
+
 
 
         String user = sessionData.getUserData();
-        crudService.removeFromCRUD(car,part,user);
+        crudService.removeFromCRUD(remove,user);
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
         System.out.println("cars before crudService = " + cars.toString());
