@@ -51,6 +51,10 @@
                                                     value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
                                                     name="remove">Usuń z koszyka
                                             </button>
+                                            <button type="submit"
+                                                    value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
+                                                    name="add">Dodaj do koszyka
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
