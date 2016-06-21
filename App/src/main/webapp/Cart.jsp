@@ -43,12 +43,15 @@
                             <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partCount">
                                 <div class="col-lg-12 ">
                                     <div class="row">
-                                                ${parts.partBrand} ${parts.partName} ${parts.partId}
-                                            Ilość: ${parts.recordCount}
-
+                                        <div class="col-lg-5">
+                                                ${parts.partBrand} ${parts.partName} ${parts.partId}</div>
+                                        <div class="col-lg-2">Ilość: ${parts.recordCount}</div>
+                                        <div class="col-lg-5">
                                             <button type="submit"
-                                                   value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
-                                                   name="remove">Usuń z koszyka</button>
+                                                    value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
+                                                    name="remove">Usuń z koszyka
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -71,24 +74,21 @@
     </div>
 </form>
 <form metod="GET" action="PartFirstCategory">
-    <ul class="list-group">
-        <c:forEach items="${cars}" var="cars" varStatus="carsSelectCount">
-            <div class="col-lg-4">
+    <%--<ul class="list-group">--%>
+    <c:forEach items="${cars}" var="cars" varStatus="carsSelectCount">
+        <div class="container">
+            <div class="forms-template">
+                <p>Wyszukaj nową część dla samochodu o marce: ${cars.carBrand}, modelu: ${cars.carModel},
+                    pojemności
+                    silnika: ${cars.carEngine}</p>
+                <button type="submit"
+                        value="${cars.engineLink};${cars.carModel};${cars.carBrand}"
+                        name="search">Wyszukaj
+                </button>
             </div>
-            <div class="container">
-                <div class="forms-template">
-                    <li class="list-group-item">
-                        <p>Wyszukaj nową część dla samochodu o marce: ${cars.carBrand}, modelu: ${cars.carModel},
-                            pojemności
-                            silnika: ${cars.carEngine}</p>
-                        <button type="submit"
-                                value="${cars.engineLink};${cars.carModel};${cars.carBrand}"
-                                name="search">Wyszukaj</button>
-                    </li>
-                </div>
-            </div>
-        </c:forEach>
-    </ul>
+        </div>
+    </c:forEach>
+    <%--</ul>--%>
 </form>
 
 <form method="POST" action="Output.jsp">
