@@ -2825,4 +2825,976 @@
 [m[37m  2016-06-12 17:30:49,911  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
 [m[37m  2016-06-12 17:30:49,916  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5a59ca5e
 [m[37m  2016-06-12 17:30:50,073  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:53,349  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 20:58:54,181  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:54,185  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,186  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,284  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 20:58:54,285  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 20:58:54,285  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,285  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:54,296  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:54,296  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 20:58:54,297  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 20:58:54,299  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 20:58:54,305  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 20:58:54,579  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:54,580  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,580  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,586  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 20:58:54,587  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 20:58:54,587  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,587  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:54,592  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 20:58:54,593  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 20:58:54,593  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 20:58:54,593  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 20:58:54,595  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 20:58:54,745  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:54,746  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,746  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,747  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,747  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:54,750  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:54,754  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:54,757  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:54,758  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 20:58:54,758  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 20:58:54,758  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 20:58:54,759  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 20:58:54,865  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:54,866  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,866  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,866  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,867  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:54,871  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:54,875  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 20:58:54,875  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 20:58:54,875  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 20:58:54,876  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 20:58:54,877  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 20:58:54,979  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:54,980  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,980  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,981  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:54,981  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:54,981  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 20:58:54,982  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 20:58:54,982  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 20:58:54,983  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 20:58:55,097  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:55,097  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:55,098  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:55,100  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 20:58:55,101  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 20:58:55,101  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:55,101  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:55,104  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:55,108  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:55,108  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 20:58:55,109  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 20:58:55,109  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 20:58:55,111  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 20:58:55,210  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:55,213  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 20:58:56,190  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 20:58:56,199  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 20:58:56,303  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:56,304  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:56,308  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,312  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,316  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,317  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 20:58:56,319  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 20:58:56,425  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:56,426  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:56,426  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 20:58:56,427  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 20:58:56,549  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:56,550  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:56,620  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,628  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 20:58:56,629  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 20:58:56,631  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 20:58:56,779  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 20:58:56,780  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:56,783  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 20:58:56,783  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 20:58:56,784  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 20:58:56,784  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 20:58:56,788  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,791  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 20:58:56,792  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 20:58:56,792  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 20:58:58,098  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 20:58:58,757  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 20:58:58,759  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 20:58:58,794  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 20:58:58,841  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 20:58:58,852  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 20:58:58,853  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:15:09,922  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 21:15:10,678  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:10,683  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:10,684  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:10,778  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:15:10,778  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:15:10,779  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:10,779  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:10,789  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:10,790  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:15:10,790  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:15:10,793  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:15:10,798  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 21:15:11,028  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,028  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,029  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,035  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:15:11,035  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:15:11,035  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,035  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:11,041  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:15:11,041  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:15:11,041  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:15:11,042  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:15:11,043  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 21:15:11,172  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,173  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,174  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,174  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,175  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:11,178  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,182  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,185  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,186  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:15:11,186  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:15:11,186  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:15:11,188  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 21:15:11,291  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,292  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,292  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,293  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,293  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:11,297  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,301  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:15:11,301  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:15:11,301  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:15:11,302  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:15:11,303  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 21:15:11,406  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,407  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,407  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,407  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,408  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:11,408  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:15:11,408  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:15:11,409  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:15:11,410  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 21:15:11,557  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,558  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,558  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,560  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:15:11,561  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:15:11,561  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:11,562  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:11,564  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,566  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:11,567  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:15:11,567  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:15:11,567  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:15:11,569  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 21:15:11,672  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:11,674  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:15:12,628  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:15:12,638  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 21:15:12,742  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:12,743  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:12,747  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:12,750  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:12,755  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:12,755  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:15:12,757  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 21:15:12,862  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:12,862  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:12,863  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:15:12,864  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 21:15:12,976  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:12,976  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:12,980  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:12,983  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:15:12,984  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:15:12,985  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 21:15:13,094  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:15:13,095  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:13,097  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:15:13,098  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:15:13,098  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:15:13,098  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:15:13,102  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:13,106  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:15:13,106  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:15:13,106  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:15:13,362  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:15:13,830  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:15:13,831  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:15:13,871  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:15:13,915  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:15:13,926  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:15:13,927  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:17:19,842  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@67e2d983
+[m[37m  2016-06-21 21:17:19,845  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@67e2d983
+[m[37m  2016-06-21 21:17:21,624  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:21,631  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,632  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,662  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:21,667  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,668  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,848  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:21,849  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:21,849  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,849  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:21,852  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:21,853  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:21,853  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:21,854  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:21,859  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:21,860  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:17:21,861  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:17:21,866  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:21,866  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:17:21,867  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:17:21,881  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:17:21,882  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:17:21,889  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7e5afaa6
+[m[37m  2016-06-21 21:17:21,891  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7e5afaa6
+[m[37m  2016-06-21 21:17:22,230  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,232  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,233  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,256  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:17:22,256  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:17:22,256  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,257  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,266  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:22,267  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,267  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,270  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:17:22,276  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@57d7f8ca
+[m[37m  2016-06-21 21:17:22,295  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,297  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,298  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,312  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:17:22,313  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:17:22,313  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,314  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,323  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:22,324  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,324  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,327  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:17:22,331  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@57d7f8ca
+[m[37m  2016-06-21 21:17:22,444  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,450  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,451  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,452  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,453  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,456  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,459  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,463  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,464  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:22,464  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:22,465  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:17:22,467  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71238fc2
+[m[37m  2016-06-21 21:17:22,503  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,504  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,504  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,505  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,505  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,509  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,513  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,517  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,518  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:22,518  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:22,519  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:17:22,520  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71238fc2
+[m[37m  2016-06-21 21:17:22,572  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,572  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,573  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,573  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,574  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,578  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,582  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:22,583  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:22,583  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:22,584  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:17:22,585  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@bd4dc25
+[m[37m  2016-06-21 21:17:22,641  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,642  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,642  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,643  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,643  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,647  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,651  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:22,653  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:22,654  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:22,655  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:17:22,658  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@bd4dc25
+[m[37m  2016-06-21 21:17:22,707  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,707  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,708  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,708  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,708  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,709  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,709  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,709  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:17:22,710  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@4d465b11
+[m[37m  2016-06-21 21:17:22,784  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,785  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,785  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,785  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,786  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,786  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,786  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:22,786  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:17:22,787  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@4d465b11
+[m[37m  2016-06-21 21:17:22,813  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,814  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,815  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,818  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:22,819  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:22,819  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,820  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,823  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,827  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,828  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:22,828  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:22,828  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:17:22,830  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@73e22a3d
+[m[37m  2016-06-21 21:17:22,888  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,889  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,889  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,892  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:22,892  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:22,893  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:22,893  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:22,897  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,900  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:22,901  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:22,901  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:22,901  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:17:22,903  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@73e22a3d
+[m[37m  2016-06-21 21:17:22,950  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:22,953  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:17:23,002  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:23,004  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:17:24,025  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:17:24,031  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@35aea049
+[m[37m  2016-06-21 21:17:24,060  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:17:24,065  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@35aea049
+[m[37m  2016-06-21 21:17:24,171  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,171  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,175  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,180  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,196  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,197  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:24,199  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1da2cb77
+[m[37m  2016-06-21 21:17:24,206  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,207  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,212  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,217  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,223  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,223  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:17:24,226  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1da2cb77
+[m[37m  2016-06-21 21:17:24,369  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,370  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,370  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,370  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:24,371  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@6cd28fa7
+[m[37m  2016-06-21 21:17:24,370  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,372  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:17:24,374  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@6cd28fa7
+[m[37m  2016-06-21 21:17:24,477  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,479  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,484  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,488  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:24,489  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:24,491  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@618425b5
+[m[37m  2016-06-21 21:17:24,548  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,548  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,568  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,571  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:17:24,572  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:17:24,573  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@618425b5
+[m[37m  2016-06-21 21:17:24,652  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,652  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:24,656  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:24,656  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:24,657  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:24,657  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,661  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,665  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,666  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:24,666  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:24,691  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:17:24,692  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:24,694  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:17:24,695  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:17:24,695  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:17:24,695  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:17:24,699  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,702  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:17:24,703  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:17:24,703  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:17:26,040  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:17:26,049  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:17:26,879  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:17:26,881  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:17:26,893  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:17:26,895  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:17:26,922  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:17:26,936  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:17:26,992  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:17:26,997  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:17:27,038  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:17:27,039  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[32m  2016-06-21 21:17:27,040  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:17:27,041  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:21:17,265  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@67e2d983
+[m[37m  2016-06-21 21:21:18,033  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,036  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,037  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,131  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:21:18,132  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:21:18,132  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,132  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,143  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,144  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:21:18,144  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:21:18,147  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:21:18,151  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7e5afaa6
+[m[37m  2016-06-21 21:21:18,428  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,429  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,429  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,435  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:21:18,435  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:21:18,436  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,436  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,441  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:21:18,441  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:21:18,442  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:21:18,442  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:21:18,444  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@57d7f8ca
+[m[37m  2016-06-21 21:21:18,632  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,633  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,633  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,634  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,635  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,638  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,642  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,644  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,645  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:21:18,645  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:21:18,646  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:21:18,647  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71238fc2
+[m[37m  2016-06-21 21:21:18,747  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,748  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,748  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,748  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,749  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,753  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,757  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:21:18,757  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:21:18,758  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:21:18,758  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:21:18,759  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@bd4dc25
+[m[37m  2016-06-21 21:21:18,859  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,859  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,860  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,860  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,860  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,861  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:21:18,861  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:21:18,861  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:21:18,862  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@4d465b11
+[m[37m  2016-06-21 21:21:18,982  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:18,983  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,983  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,986  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:21:18,986  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:21:18,987  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:18,987  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:18,990  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,992  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:18,992  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:21:18,993  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:21:18,993  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:21:18,995  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@73e22a3d
+[m[37m  2016-06-21 21:21:19,091  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:19,094  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:21:20,070  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:21:20,078  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@35aea049
+[m[37m  2016-06-21 21:21:20,182  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:20,183  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:20,187  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,191  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,195  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,196  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:21:20,197  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1da2cb77
+[m[37m  2016-06-21 21:21:20,302  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:20,303  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:20,303  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:21:20,304  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@6cd28fa7
+[m[37m  2016-06-21 21:21:20,441  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:20,441  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:20,445  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,449  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:21:20,450  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:21:20,451  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@618425b5
+[m[37m  2016-06-21 21:21:20,581  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:21:20,581  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:20,585  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:21:20,585  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:21:20,586  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:21:20,586  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:21:20,590  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,594  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:21:20,594  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:21:20,595  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:21:21,033  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:21:21,535  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:21:21,537  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:21:21,575  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:21:21,620  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:21:21,654  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:21:21,654  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:26:24,419  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 21:26:25,188  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:25,191  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,192  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,286  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:26:25,286  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:26:25,286  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,287  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:25,297  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:25,297  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:26:25,298  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:26:25,300  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:26:25,305  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 21:26:25,547  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:25,548  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,548  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,553  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:26:25,554  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:26:25,554  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,554  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:25,558  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:26:25,559  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:26:25,559  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:26:25,560  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:26:25,561  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 21:26:25,696  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:25,697  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,697  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,702  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,702  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:25,705  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:25,709  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:25,712  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:25,712  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:26:25,713  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:26:25,713  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:26:25,715  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 21:26:25,812  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:25,813  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,813  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,814  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,814  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:25,818  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:25,821  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:26:25,822  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:26:25,822  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:26:25,822  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:26:25,824  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 21:26:25,921  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:25,921  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,921  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,922  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:25,922  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:25,922  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:26:25,922  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:26:25,923  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:26:25,924  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 21:26:26,040  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:26,041  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:26,041  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:26,044  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:26:26,045  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:26:26,045  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:26,045  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:26,048  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:26,051  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:26,052  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:26:26,052  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:26:26,052  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:26:26,054  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 21:26:26,151  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:26,153  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:26:37,475  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:26:37,482  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 21:26:37,592  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:37,593  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:37,597  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:37,601  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:37,605  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:37,606  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:26:37,608  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 21:26:37,745  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:37,745  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:37,745  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:26:37,748  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 21:26:37,907  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:37,912  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:37,916  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:37,921  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:26:37,922  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:26:37,924  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 21:26:38,057  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:26:38,058  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:38,061  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:26:38,062  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:26:38,062  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:26:38,063  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:26:38,067  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:38,071  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:26:38,077  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:26:38,078  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:26:38,586  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:26:40,588  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:26:40,597  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:26:40,633  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:26:40,675  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:26:40,690  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:26:40,690  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:34:31,269  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 21:34:32,071  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:32,074  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,075  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,177  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:34:32,177  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:34:32,178  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,178  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:32,189  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:32,189  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:34:32,189  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:34:32,192  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:34:32,197  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 21:34:32,477  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:32,478  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,478  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,484  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:34:32,484  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:34:32,484  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,485  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:32,489  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:34:32,490  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:34:32,490  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:34:32,490  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:34:32,492  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 21:34:32,659  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:32,660  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,660  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,661  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,661  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:32,664  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:32,668  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:32,671  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:32,671  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:34:32,671  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:34:32,672  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:34:32,673  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 21:34:32,774  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:32,776  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,778  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,778  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,779  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:32,784  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:32,789  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:34:32,790  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:34:32,790  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:34:32,791  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:34:32,793  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 21:34:32,892  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:32,893  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,894  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,894  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:32,895  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:32,895  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:34:32,895  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:34:32,896  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:34:32,897  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 21:34:33,019  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:33,024  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:33,026  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:33,029  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:34:33,029  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:34:33,030  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:33,030  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:33,033  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:33,037  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:33,037  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:34:33,038  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:34:33,038  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:34:33,043  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 21:34:33,142  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:33,145  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:34:34,115  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:34:34,126  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 21:34:34,232  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:34,233  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:34,237  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,241  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:34:34,241  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:34:34,243  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 21:34:34,352  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:34,353  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:34,356  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:34:34,357  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:34:34,357  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:34:34,358  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:34,361  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,365  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,365  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:34:34,365  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:34:34,366  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 21:34:34,524  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:34,524  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:34,528  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,532  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,536  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:34:34,536  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:34:34,537  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 21:34:35,915  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:34:35,915  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:34:35,915  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[32m  2016-06-21 21:34:38,581  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:34:39,606  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:34:39,608  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:34:39,646  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:34:39,690  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:34:39,702  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:34:39,702  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:40:15,983  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 21:40:16,773  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:16,776  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:16,777  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:16,875  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:40:16,876  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:40:16,876  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:16,877  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:16,888  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:16,889  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:40:16,889  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:40:16,892  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:40:16,898  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 21:40:17,112  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,113  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,113  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,118  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:40:17,118  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:40:17,119  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,119  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:17,123  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:40:17,123  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:40:17,123  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:40:17,124  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:40:17,125  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 21:40:17,293  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,294  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,294  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,295  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,295  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:17,298  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,301  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,305  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,305  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:40:17,305  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:40:17,306  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:40:17,307  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 21:40:17,407  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,408  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,408  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,408  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,409  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:17,413  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,417  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:40:17,417  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:40:17,417  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:40:17,418  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:40:17,419  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 21:40:17,518  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,518  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,519  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,519  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,519  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:17,520  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:40:17,520  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:40:17,520  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:40:17,521  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 21:40:17,637  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,638  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,638  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,641  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:40:17,641  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:40:17,641  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:17,642  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:17,644  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,647  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:17,648  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:40:17,648  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:40:17,648  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:40:17,650  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 21:40:17,746  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:17,749  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:40:18,620  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:40:18,627  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 21:40:18,730  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:18,730  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:18,734  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:18,739  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:18,743  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:18,744  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:40:18,745  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 21:40:18,847  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:18,847  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:18,848  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:40:18,849  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 21:40:18,953  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:18,954  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:18,957  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:18,961  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:40:18,961  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:40:18,962  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 21:40:19,064  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:40:19,065  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:19,067  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:40:19,068  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:40:19,068  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:40:19,068  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:40:19,072  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:19,075  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:40:19,075  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:40:19,075  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:40:19,359  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:40:21,379  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:40:21,381  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:40:21,417  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:40:21,464  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:40:21,476  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:40:21,476  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
+[m[37m  2016-06-21 21:47:13,815  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@52aa2946
+[m[37m  2016-06-21 21:47:14,774  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:14,777  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:14,778  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:14,870  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:47:14,871  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:47:14,871  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:14,872  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:14,882  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:14,883  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:47:14,884  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Chłodzenie silnika;18689
+[m[37m  2016-06-21 21:47:14,886  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-chlodzenie-silnika-18689
+[m[37m  2016-06-21 21:47:14,892  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5403f35f
+[m[37m  2016-06-21 21:47:15,185  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,186  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,186  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Dwużlad&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,192  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Dwużlad
+[m[37m  2016-06-21 21:47:15,192  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Części samochodowe
+[m[37m  2016-06-21 21:47:15,192  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części samochodowe&apos;, id=&apos;620&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,193  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:15,197  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:47:15,197  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:47:15,197  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:47:15,198  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:47:15,199  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@581ac8a8
+[m[37m  2016-06-21 21:47:15,395  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,396  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,397  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,397  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice oleju&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,397  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:15,400  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,403  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,406  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,407  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:47:15,407  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:47:15,407  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodnice-chlodnice-oleju-251083
+[m[37m  2016-06-21 21:47:15,408  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@662b4c69
+[m[37m  2016-06-21 21:47:15,508  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,508  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,509  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,509  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Części karoserii&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Maski&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,509  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:15,513  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,517  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:47:15,518  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:47:15,518  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:47:15,519  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-czesci-karoserii-4094
+[m[37m  2016-06-21 21:47:15,520  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5fbdfdcf
+[m[37m  2016-06-21 21:47:15,619  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,619  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,620  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,620  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,620  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:15,620  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:47:15,621  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: czesci samochodowe 620
+[m[37m  2016-06-21 21:47:15,621  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;czesci-samochodowe-620
+[m[37m  2016-06-21 21:47:15,622  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@71def8f8
+[m[37m  2016-06-21 21:47:15,755  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,756  | [INFO ] j.s.CreateAllegroLink       [main:15] Input autopart element: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,756  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,759  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:47:15,759  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:47:15,760  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:15,760  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:15,763  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,765  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:15,765  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:47:15,766  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:47:15,766  | [INFO ] j.s.CreateAllegroLink       [main:32] Created allegro link: http:&#x2F;&#x2F;allegro.pl&#x2F;chlodzenie-silnika-chlodnice-18690
+[m[37m  2016-06-21 21:47:15,768  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@7133da86
+[m[37m  2016-06-21 21:47:15,871  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:15,873  | [INFO ] j.s.HtmlReader              [main:11] Input url: http:&#x2F;&#x2F;infoshareacademycom.2find.ru&#x2F;api&#x2F;v2?lang=polish
+[m[37m  2016-06-21 21:47:16,953  | [INFO ] j.s.HtmlReader              [main:25] Response has length: 70123
+[m[37m  2016-06-21 21:47:16,957  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@2fb3536e
+[m[37m  2016-06-21 21:47:17,062  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:17,063  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:17,068  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,072  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,075  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,076  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodnice Chłodnice oleju;251083
+[m[37m  2016-06-21 21:47:17,077  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@3f6b0be5
+[m[37m  2016-06-21 21:47:17,186  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:17,186  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:17,187  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe 620
+[m[37m  2016-06-21 21:47:17,188  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@5acf93bb
+[m[37m  2016-06-21 21:47:17,332  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:17,333  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:17,337  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,342  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 0
+[m[37m  2016-06-21 21:47:17,342  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: czesci samochodowe Części karoserii;4094
+[m[37m  2016-06-21 21:47:17,344  | [INFO ] j.s.XMLParser               [main:24] InputStream:java.io.BufferedInputStream@1af2d44a
+[m[37m  2016-06-21 21:47:17,522  | [INFO ] j.s.XMLParser               [main:49] Output list of allegro categories has size: 23879
+[m[37m  2016-06-21 21:47:17,522  | [INFO ] j.s.AllegroCategoryFinder   [main:57] Input autopart: Autopart{categoryList=[AutopartCategory{name=&apos;Układ chłodzenia&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:17,526  | [INFO ] j.s.AllegroCategoryFinder   [main:81] Old category name: Układ chłodzenia
+[m[37m  2016-06-21 21:47:17,526  | [INFO ] j.s.AllegroCategoryFinder   [main:84] New category name: Chłodzenie silnika
+[m[37m  2016-06-21 21:47:17,526  | [INFO ] j.s.AllegroCategoryFinder   [main:90] Autopart sent to MatchCategories function: Autopart{categoryList=[AutopartCategory{name=&apos;Chłodzenie silnika&apos;, id=&apos;18689&apos;, has_children=false, link=&apos;null&apos;}, AutopartCategory{name=&apos;Chłodnice&apos;, id=&apos;null&apos;, has_children=false, link=&apos;null&apos;}], name=&apos;null&apos;, brand=&apos;null&apos;, id=&apos;null&apos;}
+[m[37m  2016-06-21 21:47:17,527  | [INFO ] j.s.AllegroCategoryFinder   [main:25] Autoparts Catategory list containes 23879 elements
+[m[37m  2016-06-21 21:47:17,530  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,534  | [INFO ] j.s.AllegroCategoryFinder   [main:34] Filtered list of allegro categories has size: 1
+[m[37m  2016-06-21 21:47:17,535  | [INFO ] j.s.AllegroCategoryFinder   [main:50] Category found: Chłodzenie silnika Chłodnice;18690
+[m[37m  2016-06-21 21:47:17,535  | [INFO ] j.s.AllegroCategoryFinder   [main:100] MatchCategoryFromHashMap output String: Chłodzenie silnika Chłodnice;18690
+[m[32m  2016-06-21 21:47:19,539  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key absd
+[m[32m  2016-06-21 21:47:20,056  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:47:20,058  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:22] User session key abcd
+[m[32m  2016-06-21 21:47:20,095  | [DEBUG] j.s.GetJsonFromAtenaApi     [main:48] Downloaded json: {&quot;Dane&quot;:{&quot;ErrorText&quot;:&quot;Brak danych dla podanego sesji&quot;,&quot;Error&quot;:-4}}
+[m[32m  2016-06-21 21:47:20,159  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:22] Creating car from Atena JSON
+[m[32m  2016-06-21 21:47:20,190  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:26] Car created
+[m[32m  2016-06-21 21:47:20,191  | [DEBUG] j.s.GetCarFromAtenaJSON     [main:36] Wrong session key
 [m

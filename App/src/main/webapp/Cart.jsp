@@ -38,38 +38,22 @@
                         <div class="col-lg-12 ">
                                 ${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}
 
-                                <%--<input type="hidden" name="carBrand" value="${list.carInCRUD.carBrand}" id="${carsCount}"/>--%>
-                                <%--<input type="hidden" name="carModel" value="${list.carInCRUD.carModel}" id="${carsCount}"/>--%>
-                                <%--<input type="hidden" name="carEngine" value="${list.carInCRUD.carEngine}"--%>
-                                <%--id="${carsCount}"/>--%>
-                                <%--<input type="hidden" name="engineLink" value="${list.carInCRUD.engineLink}"--%>
-                                <%--id="${carsCount}"/>--%>
-
                         </div>
                         <ul class="list-group">
                             <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partCount">
                                 <div class="col-lg-12 ">
                                     <div class="row">
-                                        <%--<li class="list-group-item" name="partList">--%>
-
                                                 ${parts.partBrand} ${parts.partName} ${parts.partId}
                                             Ilość: ${parts.recordCount}
 
                                             <button type="submit"
                                                    value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId}"
                                                    name="remove">Usuń z koszyka</button>
-
-                                                <%--<input type="hidden" name="partBrand" value="${parts.partBrand}" id="${partCount.index}" inlist="partList"/>--%>
-                                                <%--<input type="hidden" name="partName" value="${parts.partName}" id="${partCount.index}" inlist="partList"/>--%>
-                                                <%--<input type="hidden" name="partId" value="${parts.partId}" id="${partCount.index}" inlist="partList"/>--%>
-
-                                        <%--</li>--%>
                                     </div>
                                 </div>
                             </c:forEach>
                         </ul>
                     </div>
-                        <%--</li>--%>
                 </form>
             </c:forEach>
 
@@ -97,11 +81,9 @@
                         <p>Wyszukaj nową część dla samochodu o marce: ${cars.carBrand}, modelu: ${cars.carModel},
                             pojemności
                             silnika: ${cars.carEngine}</p>
-                        <input type="submit" value="Wyszukaj"
-                               align="center" id="${carsSelectCount}"/>
-                        <input type="hidden" value="${cars.engineLink}" name="engine" id="${carsSelectCount}"/>
-                        <input type="hidden" value="${cars.carModel}" name="modelName" id="${carsSelectCount}"/>
-                        <input type="hidden" value="${cars.carBrand}" name="brandName" id="${carsSelectCount}"/>
+                        <button type="submit"
+                                value="${cars.engineLink};${cars.carModel};${cars.carBrand}"
+                                name="search">Wyszukaj</button>
                     </li>
                 </div>
             </div>
