@@ -27,6 +27,9 @@
                     </ul>
                 </c:when>
             </c:choose>
+            <ul class="nav navbar-nav">
+                <li><a href="/jjdz-autoparts/Cart">Koszyk</a></li>
+            </ul>
         </div>
     </div>
 </nav>

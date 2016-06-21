@@ -15,30 +15,30 @@ import static org.junit.Assert.*;
 
 public class CarIdentificationTest {
 
-    @Test
-    public void should_define_car_by_astec_code_answer() throws FileNotFoundException {
-        //given
-        CarIdentification ci = new CarIdentification();
-
-        Car car = new Car();
-        CarsBrands brand = new CarsBrands();
-        CarsModels model = new CarsModels();
-
-        brand.setName("VOLKSWAGEN");
-        model.setName("JETTA VII SportWagon");
-        car.setProductionYear(2015);
-        car.setEngineCapacity("999,00cm3");
-        car.setEnginePower("85,00KW");
-        car.setFuelType("P");
-        car.setCarsBrand(brand);
-        car.setCarsModel(model);
-
-        //when
-        Car carOut = ci.FindingCarByAztecCodeAnswer(car);
-
-        //then
-        System.out.println(carOut.toString());
-        assertThat(carOut.getEngineID(),is(equalTo("2h6l")));
-    }
+//    @Test
+//    public void should_define_car_by_astec_code_answer() throws FileNotFoundException {
+//        //given
+//        CarIdentification ci = new CarIdentification();
+//
+//        Car car = new Car();
+//        CarsBrands brand = new CarsBrands();
+//        CarsModels model = new CarsModels();
+//
+//        brand.setName("VOLKSWAGEN");
+//        model.setName("JETTA VII SportWagon");
+//        car.setProductionYear(2015);
+//        car.setEngineCapacity("999,00cm3");
+//        car.setEnginePower("85,00KW");
+//        car.setFuelType("P");
+//        car.setCarsBrand(brand);
+//        car.setCarsModel(model);
+//
+//        //when
+//        Car carOut = ci.FindingCarByAztecCodeAnswer(car);
+//
+//        //then
+//        System.out.println(carOut.toString());
+//        assertThat(carOut.getEngineID(),is(equalTo("2h6l")));
+//    }
 
 }
