@@ -30,16 +30,16 @@
 
     <h1>Wyszukiwarka części samochodowych</h1>
     <p class="lead">Zarządzaj swoim koszykiem</p>
-    <%--<div class="row">--%>
 
     <ul class="list-group">
         <c:forEach items="${crudViewList}" var="list" varStatus="carsCount">
             <form method="GET" action="CRUD" name="selectPart">
                 <div class="col-lg-12 row" align="center">
+                   <br>
                     <b>${list.carInCRUD.carBrand} ${list.carInCRUD.carModel} ${list.carInCRUD.carEngine}</b>
-                    <br>
+                    <br><br>
                 </div>
-                <ul class="list-group crud-forms button-middle ">
+                <ul class="list-group button-middle ">
                     <c:forEach items="${list.partsInCRUD}" var="parts" varStatus="partCount">
                         <div class="col-lg-12 ">
                             <div class="row">
@@ -71,10 +71,10 @@
     </ul>
 
     <div class="col-lg-12 row crud-forms lower" text-align="center">
-        <p class="lead">
+       <br>
+        <h4>
             Wyszukaj nową część dla:
-        </p>
-        <br><br>
+        </h4>
     </div>
 
     <form metod="GET" action="Brands">
