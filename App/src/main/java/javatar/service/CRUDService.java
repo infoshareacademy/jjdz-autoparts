@@ -117,29 +117,30 @@ public class CRUDService {
 
     public void addToCart(String add, String user) {
 
-        CRUD crud = new CRUD();
-        CarInCRUD carInCRUD = new CarInCRUD();
-        PartInCRUD partInCRUD = new PartInCRUD();
-
         String[] split = add.split(";;");
         String entireCar = split[0];
         String entirePart = split[1];
-//        String allegroLink = split[0];
+        String engineLink = split[2];
 
         String[] carSplitted = entireCar.split(";");
         String[] partSplitted = entirePart.split(";");
 
+        CRUD crud = new CRUD();
+        CarInCRUD carInCRUD = new CarInCRUD();
         carInCRUD.setCarBrand(carSplitted[0]);
         carInCRUD.setCarModel(carSplitted[1]);
         carInCRUD.setCarEngine(carSplitted[2]);
-        partInCRUD.setPartBrand(partSplitted[0]);
-        partInCRUD.setPartName(partSplitted[1]);
-        partInCRUD.setPartId(partSplitted[2]);
-        partInCRUD.setRecordCount(0);
-        crud.setPart(partInCRUD);
+        carInCRUD.setEngineLink(engineLink);
         crud.setCar(carInCRUD);
-        crud.setAllegroLink("");
         crud.setUserName(user);
+//        crud.setAllegroLink(formData.getAllegroLink());
+        PartInCRUD part = new PartInCRUD();
+        part.setPartBrand(partSplitted[0]);
+        part.setPartName(partSplitted[1]);
+        part.setPartId(partSplitted[2]);
+        //part.setRecordCount(0);
+        crud.setPart(part);
+
 
         em.persist(crud);
     }
