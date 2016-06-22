@@ -1,7 +1,12 @@
 package javatar.service;
 
-import javatar.model.*;
-import javatar.model.CRUD.*;
+import javatar.model.CRUD.CRUD;
+import javatar.model.CRUD.CarInCRUD;
+import javatar.model.CRUD.ListCarsParts;
+import javatar.model.CRUD.PartInCRUD;
+import javatar.model.FormData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,15 +14,17 @@ import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Stateless
 public class CRUDService {
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @PersistenceContext
     EntityManager em;
 
 
     public void sendResults(FormData formData, String user) {
-
         CRUD crud = new CRUD();
         CarInCRUD carInCRUD = new CarInCRUD();
         carInCRUD.setCarBrand(formData.getCarBrand());
@@ -34,8 +41,7 @@ public class CRUDService {
         part.setRecordCount(0);
         crud.setPart(part);
 
-
-        System.out.println("Result sent to DB: " + crud.toString());
+        LOGGER.info("Adding part to DB: {}", crud.toString());
 
         em.persist(crud);
 
@@ -44,7 +50,6 @@ public class CRUDService {
     public List<ListCarsParts> getCarsWithPart(List<CarInCRUD> cars, String user) {
 
         List<ListCarsParts> list = new ArrayList<>();
-
 
         for (CarInCRUD car :
                 cars) {
@@ -66,8 +71,7 @@ public class CRUDService {
 
             carsParts.setPartsInCRUD(carQuery);
             list.add(carsParts);
-
-            System.out.println("List of cars with list of parts = " + list);
+            LOGGER.info("List of cars with list of parts = {}", list);
         }
         return list;
 
@@ -78,7 +82,7 @@ public class CRUDService {
         List<CarInCRUD> carInCRUDList = em.createQuery("select distinct c.car " +
                         "from CRUD c where c.userName=:user "
                 , CarInCRUD.class).setParameter("user", user).getResultList();
-        System.out.println("Lista aut: " + carInCRUDList.toString());
+        LOGGER.info("Lista aut: {}", carInCRUDList.toString());
         return carInCRUDList;
     }
 
@@ -112,6 +116,7 @@ public class CRUDService {
         if (listOfIds.size() > 0) {
             CRUD crud = em.find(CRUD.class, listOfIds.get(0));
             em.remove(crud);
+            LOGGER.info("Part {} {} {} removed from DB", partBrand, partName, partId);
         }
     }
 
@@ -133,14 +138,13 @@ public class CRUDService {
         carInCRUD.setEngineLink(engineLink);
         crud.setCar(carInCRUD);
         crud.setUserName(user);
-//        crud.setAllegroLink(formData.getAllegroLink());
         PartInCRUD part = new PartInCRUD();
         part.setPartBrand(partSplitted[0]);
         part.setPartName(partSplitted[1]);
         part.setPartId(partSplitted[2]);
-        //part.setRecordCount(0);
         crud.setPart(part);
 
+        LOGGER.info("Adding part to DB: {}", crud.toString());
 
         em.persist(crud);
     }
