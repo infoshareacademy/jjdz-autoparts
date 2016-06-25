@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 @Ignore
 @RunWith(Arquillian.class)
-public class GlobalUserServiceTest {
+public class GlobalUserServiceIT {
 
     @Deployment
     public static WebArchive deployment() {
