@@ -1,6 +1,7 @@
 package javatar.web;
 
 import javatar.model.FormData;
+import javatar.model.report.SendDataToModule;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,6 +27,9 @@ public class ShoppingCartServlet extends HttpServlet {
     @Inject
     SessionData sessionData;
 
+    @Inject
+    SendDataToModule send;
+
     @EJB
     CRUDService crudService;
 
@@ -42,6 +46,8 @@ public class ShoppingCartServlet extends HttpServlet {
 
         crudService.sendResults(formData,
                 sessionData.getUserData());
+
+        send.sendSelectedPart(formData);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
