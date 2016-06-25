@@ -17,35 +17,36 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <version>1.1.0.Alpha7</version>
+            <!--<plugin>-->
+                <!--<groupId>org.wildfly.plugins</groupId>-->
+                <!--<artifactId>wildfly-maven-plugin</artifactId>-->
+                <!--<version>1.1.0.Alpha7</version>-->
 
-                <!--<configuration>-->
+                <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
 
-                    <!--<beforeDeployment>-->
+                    <!--&lt;!&ndash;<beforeDeployment>&ndash;&gt;-->
 
-                        <!--<commands>-->
+                        <!--&lt;!&ndash;<commands>&ndash;&gt;-->
 
-                            <!--<command>data-source add &#45;&#45;jndi-name=java:jboss/datasources/financesDS &#45;&#45;name=financesDS-->
+                            <!--&lt;!&ndash;<command>data-source add &#45;&#45;jndi-name=java:jboss/datasources/financesDS &#45;&#45;name=financesDS&ndash;&gt;-->
 
-                                <!--&#45;&#45;connection-url=jdbc:h2:file:~/finances;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1-->
+                                <!--&lt;!&ndash;&#45;&#45;connection-url=jdbc:h2:file:~/finances;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1&ndash;&gt;-->
 
-                                <!--&#45;&#45;driver-name=h2 &#45;&#45;user-name=sa &#45;&#45;password=sa-->
+                                <!--&lt;!&ndash;&#45;&#45;driver-name=h2 &#45;&#45;user-name=sa &#45;&#45;password=sa&ndash;&gt;-->
 
-                            <!--</command>-->
+                            <!--&lt;!&ndash;</command>&ndash;&gt;-->
 
-                        <!--</commands>-->
+                        <!--&lt;!&ndash;</commands>&ndash;&gt;-->
 
-                    <!--</beforeDeployment>-->
+                    <!--&lt;!&ndash;</beforeDeployment>&ndash;&gt;-->
 
-                <!--</configuration>-->
+                <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
 
-            </plugin>
+            <!--</plugin>-->
         </plugins>
     </build>
 
@@ -53,6 +54,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- See https://docs.jboss.org/wildfly/plugins/maven/1.1.0.Alpha7/apidocs/org/wildfly/plugin/server/AddUser.html#set%28java.lang.String%29 -->
         <wildfly.add-user>admin:Admin#70365:group:ManagementRealm:false</wildfly.add-user>
     </properties>
