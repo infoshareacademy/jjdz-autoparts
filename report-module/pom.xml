@@ -24,10 +24,16 @@
       <version>7.0</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.2</version>
+    </dependency>
   </dependencies>
 
+
   <build>
-    <finalName>jee-reports</finalName>
+    <finalName>report-module</finalName>
     <plugins>
       <plugin>
         <groupId>org.wildfly.plugins</groupId>
