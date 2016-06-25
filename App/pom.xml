@@ -17,6 +17,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+
                 </configuration>
             </plugin>
 
@@ -53,6 +54,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- See https://docs.jboss.org/wildfly/plugins/maven/1.1.0.Alpha7/apidocs/org/wildfly/plugin/server/AddUser.html#set%28java.lang.String%29 -->
         <wildfly.add-user>admin:Admin#70365:group:ManagementRealm:false</wildfly.add-user>
     </properties>
