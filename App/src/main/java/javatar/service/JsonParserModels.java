@@ -5,9 +5,11 @@ import com.google.gson.GsonBuilder;
 import javatar.model.CarsModels;
 import javatar.model.DataCarsModels;
 
+import javax.ejb.Stateless;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+@Stateless
 public class JsonParserModels {
 //    public void main(String[] args) throws ClassNotFoundException, IOException {
 //        String inFile = args[0];
@@ -18,18 +20,18 @@ public class JsonParserModels {
 //
 //    }
 
-    final FileReader reader;
 
-    public JsonParserModels(String filename) throws FileNotFoundException {
-        //default filename
-        reader = new FileReader(filename);
+    public JsonParserModels() {
     }
 
-    public String searchCarId(String nameToken, int date) throws FileNotFoundException,NullPointerException {
+    public String searchModelId(String nameToken, int date) throws FileNotFoundException,NullPointerException {
         Gson gson = new GsonBuilder().create();
         String modelID = new String();
 
-        DataCarsModels models = gson.fromJson(reader, DataCarsModels.class);
+
+        String url = "http://infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
+
+        DataCarsModels models = parser.parseModelFile(url);
 
         for (CarsModels c : models.getData()) {
             if (c.getEnd_year() == null) {

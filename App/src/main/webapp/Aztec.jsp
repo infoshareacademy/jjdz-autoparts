@@ -31,7 +31,7 @@
                 <label class="col-lg-3 control-label"><b>Podaj klucz sesji użytkownika z aplikacji AtenaAztec</b></label>
 
                 <div class="col-lg-6">
-                    <input type="key" class="form-control">
+                    <input name="apiKey" type="key" class="form-control">
                 </div>
                 <input class="col-lg-1 button-middle" type="submit" value="OK">
             </div>
