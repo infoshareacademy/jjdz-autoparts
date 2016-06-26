@@ -13,12 +13,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
+import java.net.URI;
 
 @WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {
@@ -34,7 +34,6 @@ public class ShoppingCartServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -47,13 +46,21 @@ public class ShoppingCartServlet extends HttpServlet {
 
         crudService.sendResults(formData,
                 sessionData.getUserData());
+//
+//        Client c = ClientBuilder.newClient();
+//
+//        WebTarget target = c.target("http://localhost:18080/report-module/api/searched/part");
+//
+//        Response response = target.request().post(Entity.entity(formData, MediaType.APPLICATION_JSON_TYPE));
 
-        Client c = ClientBuilder.newClient();
+        URI uri = UriBuilder.fromUri("http://localhost:18080/report-module/api/searched/part").build();
 
-        WebTarget target = c.target("http://localhost:8080/jee-reports/api/searched/part");
+        Response post = ClientBuilder.newClient()
+                .target(uri)
+                .request()
+                .post(Entity.json(formData));
 
-        target.request().buildPost(Entity.entity(formData, MediaType.APPLICATION_JSON_TYPE))
-                .invoke();
+        System.out.println("response = " + post.getStatus());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

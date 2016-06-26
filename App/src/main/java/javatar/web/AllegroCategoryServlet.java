@@ -1,6 +1,7 @@
 package javatar.web;
 
 import javatar.model.*;
+import javatar.model.report.PartForReportModule;
 import javatar.service.CreateAllegroLink;
 import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
+import java.net.URI;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -68,6 +74,20 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartName(name);
 
         formDataTableService.sendResults();
+
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData);
+
+        System.out.println("reportPart.toString() = " + reportPart.toString());
+
+        URI uri = UriBuilder.fromUri("http://jboss_report:8080/report-module/api/searched/part").build();
+
+        Response post = ClientBuilder.newClient()
+                .target(uri)
+                .request()
+                .post(Entity.json(reportPart));
+
+        System.out.println("response = " + post.getStatus());
+
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 
