@@ -10,7 +10,7 @@ public class StorePart {
     @PersistenceContext
     EntityManager em;
 
-    public Long save (PartModel part){
+    public Long save (PartForReportModule part){
         em.persist(part);
         return part.getId();
     }

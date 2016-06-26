@@ -21,8 +21,10 @@ public class GetSearchedPart   {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response readPartFromJson (@NotNull PartForReportModule part){
 
-//        Long id = store.save(part);
         System.out.println("part.toString() = " + part.toString());
+        Long id = store.save(part);
+        System.out.println("id = " + id);
+
 
         return Response.noContent().build();
     }

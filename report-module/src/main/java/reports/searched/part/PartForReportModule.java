@@ -6,9 +6,17 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
 public class PartForReportModule {
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
 
     String carBrand;
     String carModel;
@@ -24,15 +32,12 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     LocalDateTime dateTime;
 
-    public PartForReportModule() {
+    public Long getId() {
+        return id;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCarBrand() {
@@ -107,10 +112,19 @@ public class PartForReportModule {
         this.userId = userId;
     }
 
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
     @Override
     public String toString() {
         return "PartForReportModule{" +
-                "carBrand='" + carBrand + '\'' +
+                "id=" + id +
+                ", carBrand='" + carBrand + '\'' +
                 ", carModel='" + carModel + '\'' +
                 ", carEngine='" + carEngine + '\'' +
                 ", partBrand='" + partBrand + '\'' +
