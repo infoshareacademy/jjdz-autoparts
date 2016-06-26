@@ -1,13 +1,13 @@
 version: '2'
 services:
-  sql:
+  sql_report:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: report
     networks:
       - report_network
-  jboss:
+  jboss_report:
     build: ./jboss
     ports:
       - 18080:8080
