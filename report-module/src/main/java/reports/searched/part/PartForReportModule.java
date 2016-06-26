@@ -52,6 +52,12 @@ public class PartForReportModule {
     public PartForReportModule() {
     }
 
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     public Long getId() {
         return id;
     }
@@ -140,4 +146,18 @@ public class PartForReportModule {
         this.userId = userId;
     }
 
+    @Override
+    public String toString() {
+        return "PartForReportModule{" +
+                "carBrand='" + carBrand + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carEngine='" + carEngine + '\'' +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                ", allegroLink='" + allegroLink + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }
