@@ -34,7 +34,7 @@ public class GetCarFromAtenaJSON {
 
         if (aztecError.equals(ERROR_BAD_SESSION_FROM_ATENA)) {
             LOGGER.debug("Wrong session key");
-            System.exit(-1);
+//            System.exit(-1);
             return null;
         }
 
