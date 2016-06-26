@@ -6,9 +6,17 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
 public class PartForReportModule {
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
 
     String carBrand;
     String carModel;
@@ -24,7 +32,32 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     LocalDateTime dateTime;
 
+    @Override
+    public String toString() {
+        return "PartForReportModule{" +
+                "id=" + id +
+                ", carBrand='" + carBrand + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carEngine='" + carEngine + '\'' +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                ", allegroLink='" + allegroLink + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userId='" + userId + '\'' +
+                ", dateTime=" + dateTime +
+                '}';
+    }
+
     public PartForReportModule() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public LocalDateTime getDateTime() {
@@ -107,19 +140,4 @@ public class PartForReportModule {
         this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "PartForReportModule{" +
-                "carBrand='" + carBrand + '\'' +
-                ", carModel='" + carModel + '\'' +
-                ", carEngine='" + carEngine + '\'' +
-                ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
-                ", partName='" + partName + '\'' +
-                ", allegroLink='" + allegroLink + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userId='" + userId + '\'' +
-                ", dateTime=" + dateTime +
-                '}';
-    }
 }
