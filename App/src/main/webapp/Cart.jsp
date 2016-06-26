@@ -55,7 +55,7 @@
                                     </button>
                                     <button type="submit"
                                             value="${list.carInCRUD.carBrand};${list.carInCRUD.carModel};${list.carInCRUD.carEngine};;${parts.partBrand};${parts.partName};${parts.partId};;${list.carInCRUD.engineLink}"
-                                            name="add"><i class="fa fa-plus" aria-hidden="true"></i>
+                                            name="add"><i class="fa fa-plus" aria-hidden="true" autofocus></i>
 
                                     </button>
 

@@ -4,6 +4,7 @@ import javatar.model.*;
 import javatar.model.report.PartForReportModule;
 import javatar.service.CreateAllegroLink;
 import javatar.service.FormDataTableService;
+import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,12 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
-import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -80,14 +76,8 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         System.out.println("reportPart.toString() = " + reportPart.toString());
 
-        URI uri = UriBuilder.fromUri("http://jboss_report:8080/report-module/api/searched/part").build();
-
-        Response post = ClientBuilder.newClient()
-                .target(uri)
-                .request()
-                .post(Entity.json(reportPart));
-
-        System.out.println("response = " + post.getStatus());
+        PostChosenPart post = new PostChosenPart();
+        post.postSearchedValues(reportPart);
 
 
         LOGGER.info("Created allegro link: {}", allegroLink);
@@ -100,4 +90,6 @@ public class AllegroCategoryServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
     }
+
+
 }

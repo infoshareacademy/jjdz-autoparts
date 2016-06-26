@@ -59,7 +59,7 @@
                 </select>
             </div>
 
-            <input class="col-lg-1 button-middle" type="submit" value="OK">
+            <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
         </div>
     </form>
 </div>

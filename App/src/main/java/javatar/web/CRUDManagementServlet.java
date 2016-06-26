@@ -3,7 +3,6 @@ package javatar.web;
 
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
-import javatar.model.CRUD.PartInCRUD;
 import javatar.model.FormData;
 import javatar.service.CRUDService;
 import org.apache.logging.log4j.LogManager;
@@ -64,7 +63,9 @@ public class CRUDManagementServlet extends HttpServlet {
             if (isNotEmpty(add)) {
                 crudService.addToCart(add, user);
                 LOGGER.info("Adding part = {}", add);
+
             }
+
         }
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
