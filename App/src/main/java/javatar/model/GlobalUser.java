@@ -1,5 +1,7 @@
 package javatar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 import java.awt.*;
@@ -21,6 +23,7 @@ public class GlobalUser {
     //    @Column(name = "Usr_eMail")
     private String eMail;
     //    @Column(name = "Usr_accountType")
+    @JsonIgnore
     private AccountType accountType;
 
     private int administrator;
