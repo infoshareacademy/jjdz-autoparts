@@ -1,5 +1,11 @@
 package javatar.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum AccountType {
-    LINKEDIN, GOOGLE, FACEBOOK
+
+    @JsonProperty("LINKEDIN")
+    LINKEDIN,
+    GOOGLE,
+    FACEBOOK
 }
