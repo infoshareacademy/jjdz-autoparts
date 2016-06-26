@@ -1,6 +1,13 @@
 package reports.searched.part;
 
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
+import java.time.LocalDateTime;
+
 public class PartForReportModule {
 
     String carBrand;
@@ -13,19 +20,19 @@ public class PartForReportModule {
     String userName;
     String userId;
 
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    LocalDateTime dateTime;
+
     public PartForReportModule() {
     }
 
-    public PartForReportModule(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, String allegroLink, String userName, String userId) {
-        this.carBrand = carBrand;
-        this.carModel = carModel;
-        this.carEngine = carEngine;
-        this.partBrand = partBrand;
-        this.partId = partId;
-        this.partName = partName;
-        this.allegroLink = allegroLink;
-        this.userName = userName;
-        this.userId = userId;
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public String getCarBrand() {
@@ -111,7 +118,8 @@ public class PartForReportModule {
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
                 ", userName='" + userName + '\'' +
-                ", userId=" + userId +
+                ", userId='" + userId + '\'' +
+                ", dateTime=" + dateTime +
                 '}';
     }
 }

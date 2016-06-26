@@ -1,7 +1,13 @@
 package javatar.model.report;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import javatar.model.FormData;
 import javatar.web.SessionData;
+
+import java.time.LocalDateTime;
 
 public class PartForReportModule {
 
@@ -15,7 +21,11 @@ public class PartForReportModule {
     public String userName;
     public String userId;
 
-    public PartForReportModule(FormData formData, SessionData sessionData) {
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    public LocalDateTime dateTime;
+
+    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime) {
         this.carBrand = formData.getCarBrand();
         this.carModel = formData.getCarModel();
         this.carEngine = formData.getCarEngine();
@@ -25,6 +35,7 @@ public class PartForReportModule {
         this.allegroLink = formData.getAllegroLink();
         this.userName = sessionData.getUserData();
         this.userId = String.valueOf(sessionData.getUserId());
+        this.dateTime = dateTime;
     }
 
     @Override
