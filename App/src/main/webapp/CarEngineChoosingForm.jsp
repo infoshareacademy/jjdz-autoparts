@@ -53,7 +53,7 @@
                     </c:forEach>
                 </select>
             </div>
-            <input class="col-lg-1 button-middle" type="submit" value="OK">
+            <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
         </div>
         <input type="hidden" value=" ${modelName}" name="modelName"/>
         <input type="hidden" value="  ${brandName}" name="brandName"/>

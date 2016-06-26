@@ -13,12 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
-import java.net.URI;
 
 @WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {
@@ -46,21 +41,6 @@ public class ShoppingCartServlet extends HttpServlet {
 
         crudService.sendResults(formData,
                 sessionData.getUserData());
-//
-//        Client c = ClientBuilder.newClient();
-//
-//        WebTarget target = c.target("http://localhost:18080/report-module/api/searched/part");
-//
-//        Response response = target.request().post(Entity.entity(formData, MediaType.APPLICATION_JSON_TYPE));
-
-        URI uri = UriBuilder.fromUri("http://localhost:18080/report-module/api/searched/part").build();
-
-        Response post = ClientBuilder.newClient()
-                .target(uri)
-                .request()
-                .post(Entity.json(formData));
-
-        System.out.println("response = " + post.getStatus());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
