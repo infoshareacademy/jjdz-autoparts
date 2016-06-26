@@ -32,7 +32,7 @@ ADD http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.39/mysql-conn
 
 WORKDIR $JBOSS_HOME
 
-EXPOSE 18080
+EXPOSE 8080
 
 EXPOSE 9990
 
