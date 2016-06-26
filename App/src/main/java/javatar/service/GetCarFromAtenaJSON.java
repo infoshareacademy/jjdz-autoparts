@@ -8,9 +8,7 @@ import javatar.model.CarsModels;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ejb.Stateless;
 
-@Stateless
 public class GetCarFromAtenaJSON {
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -36,7 +34,7 @@ public class GetCarFromAtenaJSON {
 
         if (aztecError.equals(ERROR_BAD_SESSION_FROM_ATENA)) {
             LOGGER.debug("Wrong session key");
-            System.exit(-1);
+//            System.exit(-1);
             return null;
         }
 

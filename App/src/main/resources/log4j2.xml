@@ -8,7 +8,6 @@
             <PatternLayout>
                 <Pattern>%highlight{  %d  | [%-5level] %-27logger{1.} [%t:%line] %enc{%msg}%n%throwable}{FATAL=white, ERROR=red, WARN=yellow, INFO=white, DEBUG=green, TRACE=cyan}</Pattern>
             </PatternLayout>
-            <!--<SizeBasedTriggeringPolicy size="500"></SizeBasedTriggeringPolicy>-->
         </File>
 
     </Appenders>

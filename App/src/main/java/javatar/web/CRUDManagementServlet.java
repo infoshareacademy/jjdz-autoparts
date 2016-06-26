@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(urlPatterns = "/CRUD")
 public class CRUDManagementServlet extends HttpServlet {
@@ -44,23 +45,27 @@ public class CRUDManagementServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
 
-        CarInCRUD car = new CarInCRUD();
-        PartInCRUD part = new PartInCRUD();
-        car.setCarBrand(req.getParameter("carBrand"));
-        car.setCarEngine(req.getParameter("carEngine"));
-        car.setCarModel(req.getParameter("carModel"));
-        car.setEngineLink(req.getParameter("engineLink"));
-        part.setPartBrand(req.getParameter("partBrand"));
-        part.setPartId(req.getParameter("partId"));
-        part.setPartName(req.getParameter("partName"));
-        part.setRecordCount(0);
-
-        System.out.println("part.toString() = " + part.toString());
-        System.out.println("car = " + car.toString());
-
+        Map<String, String[]> parameterMap = req.getParameterMap();
+        LOGGER.info("parameterMap = {}", parameterMap.toString());
 
         String user = sessionData.getUserData();
-        crudService.removeFromCRUD(car,part,user);
+
+        if (parameterMap.containsKey("remove")) {
+
+            String remove = req.getParameter("remove");
+            if (isNotEmpty(remove)) {
+                crudService.removeFromCRUD(remove, user);
+                LOGGER.info("Removing part = {}", remove);
+            }
+        }
+        if (parameterMap.containsKey("add")) {
+            String add = req.getParameter("add");
+
+            if (isNotEmpty(add)) {
+                crudService.addToCart(add, user);
+                LOGGER.info("Adding part = {}", add);
+            }
+        }
 
         List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
         System.out.println("cars before crudService = " + cars.toString());
@@ -74,5 +79,9 @@ public class CRUDManagementServlet extends HttpServlet {
         dispatcher.forward(req, resp);
 
 
+    }
+
+    private boolean isNotEmpty(String stringParam) {
+        return !stringParam.isEmpty();
     }
 }

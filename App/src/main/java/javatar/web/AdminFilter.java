@@ -10,24 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter({"/Brands",
-        "/Cart",
-        "/Models",
-        "/Engines",
-        "/PartFirstCategory",
-        "/PartCategory",
-        "/AllegroLink",
-        "/AddingToCart",
-        "/Output.jsp",
-        "/logout",
-        "/usersList",
+@WebFilter({"/usersList",
         "/AdministrationConsole.jsp",
         "/setAdminUser",
         "/revokeAdmin",
         "/setReportsUser",
         "/revokeReports"})
-public class AuthFilter implements Filter {
-
+public class AdminFilter implements Filter {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -36,12 +25,11 @@ public class AuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        if (!sessionData.isLoggedIn()) {
-
+        if (!sessionData.isAdmin()) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             HttpServletResponse httpServletResponse = (HttpServletResponse) response;
             httpServletResponse.sendRedirect("/jjdz-autoparts");
-            LOGGER.debug("User is empty. Redirecting to main page");
+            LOGGER.debug("User is not an admin. Redirecting to main page");
             return;
         }
 
