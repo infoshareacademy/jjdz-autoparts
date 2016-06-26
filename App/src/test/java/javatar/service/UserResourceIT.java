@@ -32,8 +32,6 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-
-//@Ignore
 @RunWith(Arquillian.class)
 public class UserResourceIT {
 
@@ -58,18 +56,13 @@ public class UserResourceIT {
                 .addClass(AccountType.class)
                 .addClass(UserResource.class)
                 .addClass(AdminEmail.class);
-        // .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
-
 
     @EJB
     GlobalUserService globalUserService;
 
-    //static URI create_user_location = ;
-
     @PersistenceContext
     EntityManager em;
-
 
     @Test
     @InSequence(1)
@@ -85,12 +78,10 @@ public class UserResourceIT {
 
         globalUserService.getGLobalUser(linkedInUser);
 
-
         List<GlobalUser> list = em.createQuery("from GlobalUser", GlobalUser.class).getResultList();
 
         assertThat(list.size(), is(1));
     }
-
 
     @Test
     @InSequence(2)
