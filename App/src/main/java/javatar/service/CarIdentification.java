@@ -1,14 +1,11 @@
 package javatar.service;
 
-import javatar.model.Car;
-import javatar.model.CarsBrands;
-import javatar.model.CarsEngineAndFuel;
-import javatar.model.CarsModels;
+import javatar.model.*;
 
+import javax.ejb.EJB;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -19,51 +16,20 @@ public class CarIdentification {
     public CarIdentification() {
     }
 
-    public Car FindingCarByAztecCodeAnswer(Car carIn) throws FileNotFoundException {
+    public Car FindingCarByAztecCodeAnswer(CarFromAztecData apiAnswer) throws FileNotFoundException {
 
+        Car foundCar = new Car();
 
-        CarsBrands carInBrand = carIn.getCarsBrand();
-        CarsModels canInModel = carIn.getCarsModel();
-        String carInEngineCapacity = carIn.getEngineCapacity();
-        String carInFuelType = carIn.getFuelType();
-        String carInEnginePower = carIn.getEnginePower();
-        int carInProductionYear = carIn.getProductionYear();
-        //CarsEngineAndFuel carInEngine =carIn.getEngine();
-        CarsEngineAndFuel engineOut = new CarsEngineAndFuel();
+        String brandId = jsonParserBrands.searchCarId(apiAnswer.getCarBrand());
+        CarsBrands brand = new CarsBrands(brandId, apiAnswer.getCarBrand());
 
-        JsonParserBrands brands = new JsonParserBrands();
-        String carOutId = brands.searchCarId(carInBrand.getName());
-        JsonParserModels models = new JsonParserModels(mainPath + "/" + carOutId + ".json");
-        String modelOutId = models.searchCarId(canInModel.getName(), carInProductionYear);
-        JsonParserEngine engine = new JsonParserEngine(mainPath + "/" + modelOutId + ".json");
-        List<CarsEngineAndFuel> carEnginesList = engine.searchEngineTypeByTokens(carInFuelType, carInEngineCapacity, carInEnginePower);
+        String modelId = jsonParserModels.searchModelId(apiAnswer.getCarModel(), Integer.parseInt(apiAnswer.getProductionYear()));
+        CarsModels model = new CarsModels(modelId, apiAnswer.getCarModel());
 
+        foundCar.setCarsBrand(brand);
+        foundCar.setCarsModel(model);
 
-        if (carEnginesList.size() > 1) {
-            System.out.println("Znaleziono " + carEnginesList.size() + " typy silników pasujące do danych zawartych w kodzie Aztek");
-            System.out.println("Wybierz właściwy silnik i wprowadź jego numer");
-            for (int i = 0; i < carEnginesList.size(); i++) {
-                System.out.println(carEnginesList.get(i));
-                i++;
-            }
-            Scanner scanner = new Scanner(System.in);
-            int numberFromEnginesList = scanner.nextInt();
-            engineOut = carEnginesList.get(numberFromEnginesList);
-
-        } else {
-            engineOut = carEnginesList.get(0);
-        }
-
-        carInBrand.setId(carOutId);
-        canInModel.setId(modelOutId);
-//        carInEngine.setId(engineOut.getId());
-        carIn.setCarsBrand(carInBrand);
-        carIn.setCarsModel(canInModel);
-//        carIn.setEngine(carInEngine);
-        carIn.setEngineID(engineOut.getId());
-        System.out.println(carIn);
-
-        return carIn;
+        return foundCar;
     }
 
     public Car FindingCarManagement() throws IOException {
@@ -131,7 +97,7 @@ public class CarIdentification {
             model = modelSelection;
         }
 
-        modelFileNameOut = modelId.searchCarId(model, Integer.parseInt(year));
+        modelFileNameOut = modelId.searchModelId(model, Integer.parseInt(year));
         // }
         //------------------------------------------------------------------------------------------------------
         //CEngines and fuel section
