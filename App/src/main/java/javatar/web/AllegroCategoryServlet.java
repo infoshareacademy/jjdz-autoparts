@@ -21,6 +21,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -75,7 +76,7 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         formDataTableService.sendResults();
 
-        PartForReportModule reportPart = new PartForReportModule(formData,sessionData);
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now());
 
         System.out.println("reportPart.toString() = " + reportPart.toString());
 
