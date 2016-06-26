@@ -1,6 +1,7 @@
 package javatar.web;
 
 import javatar.model.*;
+import javatar.model.report.PartForReportModule;
 import javatar.service.CreateAllegroLink;
 import javatar.service.FormDataTableService;
 import org.apache.logging.log4j.LogManager;
@@ -74,12 +75,18 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         formDataTableService.sendResults();
 
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData);
+//        PartForReportModule partToSend = reportPart.mapFormDataToReportModuleFormat(formData, sessionData);
+//        System.out.println(partToSend.toString());
+
+        System.out.println("reportPart.toString() = " + reportPart.toString());
+
         URI uri = UriBuilder.fromUri("http://localhost:18080/report-module/api/searched/part").build();
 
         Response post = ClientBuilder.newClient()
                 .target(uri)
                 .request()
-                .post(Entity.json(formData));
+                .post(Entity.json(reportPart));
 
         System.out.println("response = " + post.getStatus());
 
