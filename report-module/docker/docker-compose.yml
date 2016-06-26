@@ -1,13 +1,13 @@
 version: '2'
 services:
-  sql:
+  sql_report:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: report
     networks:
-      - infoshare_network
-  jboss:
+      - report_network
+  jboss_report:
     build: ./jboss
     ports:
       - 18080:8080
@@ -16,8 +16,8 @@ services:
     volumes:
       - ../target/report-module.war:/opt/jboss/wildfly/standalone/deployments/report-module.war
     networks:
-      - infoshare_network
+      - report_network
 networks:
-  infoshare_network:
+  report_network:
     driver: bridge
 
