@@ -22,6 +22,7 @@ public class GetSearchedPart   {
     public Response readPartFromJson (@NotNull PartModel part){
 
         Long id = store.save(part);
+        System.out.println("id = " + id);
 
         return Response.noContent().build();
     }

@@ -14,7 +14,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
+import java.net.URI;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -68,6 +73,16 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartName(name);
 
         formDataTableService.sendResults();
+
+        URI uri = UriBuilder.fromUri("http://localhost:18080/report-module/api/searched/part").build();
+
+        Response post = ClientBuilder.newClient()
+                .target(uri)
+                .request()
+                .post(Entity.json(formData));
+
+        System.out.println("response = " + post.getStatus());
+
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 
