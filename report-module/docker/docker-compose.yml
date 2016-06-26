@@ -6,7 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: report
     networks:
-      - infoshare_network
+      - report_network
   jboss:
     build: ./jboss
     ports:
@@ -16,8 +16,8 @@ services:
     volumes:
       - ../target/report-module.war:/opt/jboss/wildfly/standalone/deployments/report-module.war
     networks:
-      - infoshare_network
+      - report_network
 networks:
-  infoshare_network:
+  report_network:
     driver: bridge
 
