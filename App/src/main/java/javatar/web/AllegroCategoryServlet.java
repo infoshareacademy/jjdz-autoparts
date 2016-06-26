@@ -76,12 +76,10 @@ public class AllegroCategoryServlet extends HttpServlet {
         formDataTableService.sendResults();
 
         PartForReportModule reportPart = new PartForReportModule(formData,sessionData);
-//        PartForReportModule partToSend = reportPart.mapFormDataToReportModuleFormat(formData, sessionData);
-//        System.out.println(partToSend.toString());
 
         System.out.println("reportPart.toString() = " + reportPart.toString());
 
-        URI uri = UriBuilder.fromUri("http://localhost:18080/report-module/api/searched/part").build();
+        URI uri = UriBuilder.fromUri("http://jboss_report:8080/report-module/api/searched/part").build();
 
         Response post = ClientBuilder.newClient()
                 .target(uri)
