@@ -5,15 +5,15 @@ import javatar.web.SessionData;
 
 public class PartForReportModule {
 
-    String carBrand;
-    String carModel;
-    String carEngine;
-    String partBrand;
-    String partId;
-    String partName;
-    String allegroLink;
-    String userName;
-    String userId;
+    public String carBrand;
+    public String carModel;
+    public String carEngine;
+    public String partBrand;
+    public String partId;
+    public String partName;
+    public String allegroLink;
+    public String userName;
+    public String userId;
 
     public PartForReportModule(FormData formData, SessionData sessionData) {
         this.carBrand = formData.getCarBrand();
