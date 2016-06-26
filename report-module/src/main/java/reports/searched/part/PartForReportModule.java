@@ -32,46 +32,12 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     LocalDateTime dateTime;
 
-    @Override
-    public String toString() {
-        return "PartForReportModule{" +
-                "id=" + id +
-                ", carBrand='" + carBrand + '\'' +
-                ", carModel='" + carModel + '\'' +
-                ", carEngine='" + carEngine + '\'' +
-                ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
-                ", partName='" + partName + '\'' +
-                ", allegroLink='" + allegroLink + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userId='" + userId + '\'' +
-                ", dateTime=" + dateTime +
-                '}';
-    }
-
-    public PartForReportModule() {
-    }
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
     }
 
     public String getCarBrand() {
@@ -146,10 +112,19 @@ public class PartForReportModule {
         this.userId = userId;
     }
 
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
     @Override
     public String toString() {
         return "PartForReportModule{" +
-                "carBrand='" + carBrand + '\'' +
+                "id=" + id +
+                ", carBrand='" + carBrand + '\'' +
                 ", carModel='" + carModel + '\'' +
                 ", carEngine='" + carEngine + '\'' +
                 ", partBrand='" + partBrand + '\'' +
@@ -157,7 +132,8 @@ public class PartForReportModule {
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
                 ", userName='" + userName + '\'' +
-                ", userId=" + userId +
+                ", userId='" + userId + '\'' +
+                ", dateTime=" + dateTime +
                 '}';
     }
 }
