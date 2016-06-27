@@ -17,21 +17,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AztecKey")
-public class AztecKeySearch extends HttpServlet {
+public class AztecKeySearchServlet extends HttpServlet {
 
     private static final Logger LOGGER = LogManager.getLogger();
-
+    // TODO: 27.06.16 bez tego ejb
     @EJB
     GetJsonFromAtenaApi getJsonFromAtenaApi;
 
+    // TODO: 27.06.16 zrobic bez tego ejb
     @EJB
     CarIdentification carIdentification;
 
     @EJB
     JsonParserEngine jsonParserEngine;
+
+    @EJB
+    BrandsJsonCache cache;
 
     @Inject
     FormData formData;
@@ -46,7 +51,43 @@ public class AztecKeySearch extends HttpServlet {
         String carDataFromAtenaApi = getJsonFromAtenaApi.getCarFromAtenaApi(userSessionApiKey);
         CarFromAztecData aztecData = getCarFromApiString(carDataFromAtenaApi);
         Car carFromApi = carIdentification.FindingCarByAztecCodeAnswer(aztecData);
-        List<CarsEngineAndFuel> engineList = jsonParserEngine.searchEngineTypeByTokens(carFromApi.getFuelType(), carFromApi.getEngineCapacity(), carFromApi.getEnginePower());
+
+        if (carFromApi.getCarsBrand() == null) {
+            req.setCharacterEncoding("UTF-8");
+            Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
+
+            req.setAttribute("brands", carsBrandsCollection);
+            LOGGER.info("carsBransdCollection has size: {}",carsBrandsCollection.size());
+            RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
+            dispatcher.forward(req, resp);
+        }
+
+        if (carFromApi.getCarsModel() == null)
+        {
+            req.setCharacterEncoding("UTF-8");
+
+            String brandName = carFromApi.getCarsBrand().getName();
+            String brandLink = carFromApi.getCarsBrand().getLink();
+
+            req.setAttribute("brandName", brandName);
+
+            formData.setCarBrand(brandName);
+
+            String url = "http://infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
+
+            LOGGER.info("Chosen model file name: {}; resources link: {}",brandName,url);
+            DataCarsModels dataCarsModels = parser.parseModelFile(url);
+            LOGGER.info("Data parsed on model file has size: {}",dataCarsModels.getData().size());
+            req.setAttribute("models", dataCarsModels.getData());
+
+            RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
+            dispatcher.forward(req, resp);
+        }
+
+        //// TODO: 27.06.16 jsonparser bez ejb
+        List<CarsEngineAndFuel> engineList = jsonParserEngine.searchEngineTypeByTokens(aztecData.getFuelType(), aztecData.getEngineCapacity(), aztecData.getEnginePower());
+
+        LOGGER.debug("engineList.size = " + engineList.size());
 
         if (engineList.size()>1)
         {
