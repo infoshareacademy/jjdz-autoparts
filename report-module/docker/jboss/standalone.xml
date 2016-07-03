@@ -295,9 +295,20 @@
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:jsf:1.0"/>
         <subsystem xmlns="urn:jboss:domain:mail:2.0">
-            <mail-session name="default" jndi-name="java:jboss/mail/Default">
-                <smtp-server outbound-socket-binding-ref="mail-smtp"/>
+            <!--<mail-session name="default" jndi-name="java:jboss/mail/Default">-->
+            <!--<smtp-server outbound-socket-binding-ref="mail-smtp"/>-->
+            <!--</mail-session>-->
+            <!--<mail-session jndi-name="java:/Mail" from="javaarm@gmail.com">-->
+            <!--<smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp-gmail">-->
+            <!--<login name="javaarm@gmail.com" password="your_password"/>-->
+            <!--</smtp-server>-->
+            <!--</mail-session>-->
+            <mail-session jndi-name="java:jboss/mail/Default" name="gmail">
+                <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp-gmail">
+                    <!--<login name="autoparts.reporting@gmail.com" password="autoparts"/>-->
+                </smtp-server>
             </mail-session>
+
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:naming:2.0">
             <remote-naming/>
@@ -407,8 +418,11 @@
         <socket-binding name="https" port="${jboss.https.port:8443}"/>
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
-        <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="localhost" port="25"/>
+        <!--<outbound-socket-binding name="mail-smtp">-->
+        <!--<remote-destination host="localhost" port="25"/>-->
+        <!--</outbound-socket-binding>-->
+        <outbound-socket-binding name="mail-smtp-gmail">
+            <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
     </socket-binding-group>
 </server>

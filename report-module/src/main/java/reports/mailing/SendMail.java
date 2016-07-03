@@ -5,39 +5,44 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Resource;
+import javax.ejb.Local;
 import javax.ejb.Stateless;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+import javax.naming.InitialContext;
 
 @Stateless
 public class SendMail {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    @Resource(name = "java:jboss/mail/gmail")
-    private Session session;
+    @Resource(mappedName = "java:jboss/mail/Default")
+    private Session mailSession;
 
     public void send(String addresses, String topic, String textMessage) {
 
         try {
 
-            Message message = new MimeMessage(session);
+            Message message = new MimeMessage(mailSession);
+            Address from = new InternetAddress("autoparts.reporting@gmail.com");
+            message.setFrom(from);
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(addresses));
             message.setSubject(topic);
-            message.setText(textMessage);
+            message.setContent(textMessage, "text/plain");
 
             Transport.send(message);
-            System.out.println("meesage sent");
+            System.out.println("message sent");
 
+        } catch (AddressException e) {
+            LOGGER.warn("Cannot send mail {}", e);
+            System.out.println("message not sent");
         } catch (MessagingException e) {
             LOGGER.warn( "Cannot send mail {}", e);
-            System.out.println("meesage not sent");
+            System.out.println("message not sent");
         }
     }
+
 
 }
