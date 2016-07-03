@@ -91,7 +91,7 @@ public class CreateAllegroLinkTest {
 
         String link = createAllegroLink.createAllegroLink(autopartAllegroListModel);
 
-        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-czesci-karoserii-4094")));
+        assertThat(link, is(equalTo("http://allegro.pl/czesci-karoserii-maski-254558")));
     }
 
     @Test
