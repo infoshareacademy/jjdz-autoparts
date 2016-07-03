@@ -1,7 +1,7 @@
 package javatar.web;
 
 import javatar.model.AllegroCategories;
-import javatar.service.XMLParser;
+import javatar.service.APIallegro.APIallegro;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,14 +20,16 @@ import java.util.List;
 public class AllegroCategoriesCache {
 
     private static final Logger LOGGER = LogManager.getLogger();
-    XMLParser xmlParser = new XMLParser();
+    //    XMLParser xmlParser = new XMLParser();
     List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
+    APIallegro apIallegro = new APIallegro();
 
     @PostConstruct
     public void initialize() {
 
         InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+        allegroCategoriesList = apIallegro.getAllegroCategoriesList();
+//        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
         LOGGER.info("allegroCategoriesList has size: {}", allegroCategoriesList.size());
 
     }
