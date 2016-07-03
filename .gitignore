@@ -1,3 +1,5 @@
+/jjdz-autoparts.iml
+/App/logs/app.log
 jboss/server/all/deploy/project.ext
 jboss/server/default/deploy/project.ext
 jboss/server/minimal/deploy/project.ext
@@ -15,7 +17,7 @@ jboss/server/minimal/data/**/*
 jboss/server/minimal/work/**/*
 
 # deployed package files #
-
+*.iml
 *.DEPLOYED
 
 .idea

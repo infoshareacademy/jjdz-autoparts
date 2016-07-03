@@ -1,8 +1,10 @@
 package javatar.web;
 
 import javatar.model.*;
+import javatar.model.report.PartForReportModule;
 import javatar.service.CreateAllegroLink;
 import javatar.service.FormDataTableService;
+import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
@@ -69,6 +72,14 @@ public class AllegroCategoryServlet extends HttpServlet {
 
         formDataTableService.sendResults();
 
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now());
+
+        System.out.println("reportPart.toString() = " + reportPart.toString());
+
+        PostChosenPart post = new PostChosenPart();
+        post.postSearchedValues(reportPart);
+
+
         LOGGER.info("Created allegro link: {}", allegroLink);
 
         req.setAttribute("allegroLink", allegroLink);
@@ -79,4 +90,6 @@ public class AllegroCategoryServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
     }
+
+
 }

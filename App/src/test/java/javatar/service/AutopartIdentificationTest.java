@@ -4,6 +4,7 @@ import javatar.model.Autopart;
 import javatar.model.AutopartCategory;
 import javatar.model.JsonAutopart;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -12,7 +13,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
-
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class AutopartIdentificationTest {
 

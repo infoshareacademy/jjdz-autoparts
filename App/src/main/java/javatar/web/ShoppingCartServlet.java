@@ -29,7 +29,6 @@ public class ShoppingCartServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

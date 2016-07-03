@@ -19,7 +19,13 @@ import java.io.IOException;
         "/AllegroLink",
         "/AddingToCart",
         "/Output.jsp",
-        "/logout"})
+        "/logout",
+        "/usersList",
+        "/AdministrationConsole.jsp",
+        "/setAdminUser",
+        "/revokeAdmin",
+        "/setReportsUser",
+        "/revokeReports"})
 public class AuthFilter implements Filter {
 
 
@@ -31,7 +37,6 @@ public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (!sessionData.isLoggedIn()) {
-
 
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             HttpServletResponse httpServletResponse = (HttpServletResponse) response;

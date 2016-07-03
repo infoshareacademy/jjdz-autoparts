@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-xs-6 col-lg-6">
                 <h2>Dodaj do koszyka</h2>
-                <input type="submit" name="part" value="${partName} ${partBrand} ${partId}"/>
+                <input autofocus type="submit" name="part" value="${partName} ${partBrand} ${partId}"/>
 
             </div><!--/.col-xs-6.col-lg-4-->
             <div class="col-xs-6 col-lg-6">

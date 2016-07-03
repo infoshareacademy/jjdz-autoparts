@@ -4,28 +4,27 @@ import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
+import javatar.service.APIallegro.APIallegro;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class CreateAllegroLinkTest {
     AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
     AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
-    XMLParser xmlParser = new XMLParser();
+    APIallegro apIallegro = new APIallegro();
     List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
     @Before
     public void initialize() {
-        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+        allegroCategoriesList = apIallegro.getAllegroCategoriesList();
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
     }
 
@@ -92,7 +91,7 @@ public class CreateAllegroLinkTest {
 
         String link = createAllegroLink.createAllegroLink(autopartAllegroListModel);
 
-        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-czesci-karoserii-4094")));
+        assertThat(link, is(equalTo("http://allegro.pl/czesci-karoserii-maski-254558")));
     }
 
     @Test

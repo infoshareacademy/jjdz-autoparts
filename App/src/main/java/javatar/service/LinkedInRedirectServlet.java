@@ -33,7 +33,6 @@ public class LinkedInRedirectServlet extends HttpServlet {
     private final static String CLIENT_CONFIDENTIAL_ID = "XpW20vY3AXkmqoOI";
     private static final String PROTECTED_RESOURCE_URL = "https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address)";
 
-
     @Inject
     SessionData sessionData;
 
@@ -42,6 +41,16 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String error = req.getParameter("error");
+        String errorDescription = req.getParameter("error_description");
+        LOGGER.debug("LinkedIN error code: ", error);
+        LOGGER.debug("LinkedIN error description: ", errorDescription);
+
+        if (null != error) {
+            resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
+            return;
+        }
 
         OAuth20Service service = new ServiceBuilder()
                 .apiKey(CLIENT_ID)
@@ -75,7 +84,7 @@ public class LinkedInRedirectServlet extends HttpServlet {
 
         LOGGER.debug("Global user mail: {} id: {} ", user.geteMail(), user.getId());
 
-        sessionData.logIn(user.getFirstName() + " " + user.getLastName(), user.getId());
+        sessionData.logIn(user.getFirstName() + " " + user.getLastName(), user.getId(), user.getAdministrator());
 
         resp.sendRedirect("http://localhost:8080/jjdz-autoparts/");
 
