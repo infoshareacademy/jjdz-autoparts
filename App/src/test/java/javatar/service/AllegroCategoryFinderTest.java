@@ -4,28 +4,27 @@ import javatar.model.AllegroCategories;
 import javatar.model.Autopart;
 import javatar.model.AutopartAllegroListModel;
 import javatar.model.AutopartCategory;
+import javatar.service.APIallegro.APIallegro;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class AllegroCategoryFinderTest {
 
     AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
-    XMLParser xmlParser = new XMLParser();
+    APIallegro apIallegro = new APIallegro();
     List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
     @Before
     public void initialize() {
-        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+        allegroCategoriesList = apIallegro.getAllegroCategoriesList();
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
     }
 
@@ -70,7 +69,7 @@ public class AllegroCategoryFinderTest {
         String s = allegroCategoryFinder.matchCategories(autopartAllegroListModel);
 
         //then
-       assertThat(s, is(equalTo("czesci samochodowe Części karoserii;4094")));
+        assertThat(s, is(equalTo("Części karoserii Maski;254558")));
     }
 
     @Test

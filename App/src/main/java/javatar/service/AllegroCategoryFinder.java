@@ -18,7 +18,12 @@ public class AllegroCategoryFinder {
 
         Autopart autopart = autopartAllegroListModel.getAutopart();
         List<AutopartCategory> autopartCategoryList = autopart.getCategoryList();
+//        List<AllegroCategories> allegroCategoriesList = autopartAllegroListModel.getAllegroCategories();
+
+
+
         List<AllegroCategories> allegroCategoriesList = autopartAllegroListModel.getAllegroCategories();
+
         String returnedData = "";
         List<String> outputCategories = new ArrayList<>();
 
