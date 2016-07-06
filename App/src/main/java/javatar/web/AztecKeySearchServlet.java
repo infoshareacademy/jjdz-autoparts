@@ -26,9 +26,6 @@ public class AztecKeySearchServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @EJB
-    JsonParserEngine jsonParserEngine;
-
-    @EJB
     BrandsJsonCache cache;
 
     @Inject
@@ -38,6 +35,9 @@ public class AztecKeySearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
+
+        String url;
+
         req.setCharacterEncoding("UTF-8");
 
         GetJsonFromAtenaApi getJsonFromAtenaApi = new GetJsonFromAtenaApi();
@@ -49,15 +49,15 @@ public class AztecKeySearchServlet extends HttpServlet {
         Car carFromApi = carIdentification.FindingCarByAztecCodeAnswer(aztecData);
 
         if (carFromApi.getCarsBrand() == null) {
-//            BrandsChoosingServlet brandsServ = new BrandsChoosingServlet();
-//            brandsServ.doGet(req, resp);
-            req.setCharacterEncoding("UTF-8");
-            Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
-
-            req.setAttribute("brands", carsBrandsCollection);
-            LOGGER.info("carsBransdCollection has size: {}",carsBrandsCollection.size());
-            RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
-            dispatcher.forward(req, resp);
+            BrandsChoosingServlet brandsServ = new BrandsChoosingServlet();
+            brandsServ.doGet(req, resp);
+//            req.setCharacterEncoding("UTF-8");
+//            Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
+//
+//            req.setAttribute("brands", carsBrandsCollection);
+//            LOGGER.info("carsBransdCollection has size: {}",carsBrandsCollection.size());
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
+//            dispatcher.forward(req, resp);
         }
 
         if (carFromApi.getCarsModel() == null)
@@ -71,7 +71,7 @@ public class AztecKeySearchServlet extends HttpServlet {
 
             formData.setCarBrand(brandName);
 
-            String url = "http://infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
+            url = "http://infoshareacademycom.2find.ru" + brandLink + "?lang=polish";
 
             LOGGER.info("Chosen model file name: {}; resources link: {}",brandName,url);
             DataCarsModels dataCarsModels = parser.parseModelFile(url);
@@ -82,8 +82,12 @@ public class AztecKeySearchServlet extends HttpServlet {
             dispatcher.forward(req, resp);
         }
 
-        //// TODO: 27.06.16 jsonparser bez ejb
-        List<CarsEngineAndFuel> engineList = jsonParserEngine.searchEngineTypeByTokens(aztecData.getFuelType(), aztecData.getEngineCapacity(), aztecData.getEnginePower());
+        String modelLink = carFromApi.getCarsModel().getLink();
+        url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
+
+        DataCarsEngineAndFuel engines = parser.parseEngineFile(url);
+
+        List<CarsEngineAndFuel> engineList = parser.searchEngineTypeByTokens(engines, aztecData.getFuelType(), aztecData.getEngineCapacity(), aztecData.getEnginePower());
 
         LOGGER.debug("engineList.size = " + engineList.size());
 
@@ -119,7 +123,7 @@ public class AztecKeySearchServlet extends HttpServlet {
             formData.setCarEngine(engineName);
             formData.setEngineLookupString(engineOut);
 
-            String url = "http://infoshareacademycom.2find.ru" + engineLink + "?lang=polish";
+            url = "http://infoshareacademycom.2find.ru" + engineLink + "?lang=polish";
 
             JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
             req.setAttribute("categories", autopartCategories.getData());
