@@ -24,13 +24,6 @@ import java.util.List;
 public class AztecKeySearchServlet extends HttpServlet {
 
     private static final Logger LOGGER = LogManager.getLogger();
-    // TODO: 27.06.16 bez tego ejb
-    @EJB
-    GetJsonFromAtenaApi getJsonFromAtenaApi;
-
-    // TODO: 27.06.16 zrobic bez tego ejb
-    @EJB
-    CarIdentification carIdentification;
 
     @EJB
     JsonParserEngine jsonParserEngine;
@@ -47,12 +40,17 @@ public class AztecKeySearchServlet extends HttpServlet {
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
 
+        GetJsonFromAtenaApi getJsonFromAtenaApi = new GetJsonFromAtenaApi();
+        CarIdentification carIdentification = new CarIdentification();
+
         String userSessionApiKey = req.getParameter("apiKey");
         String carDataFromAtenaApi = getJsonFromAtenaApi.getCarFromAtenaApi(userSessionApiKey);
         CarFromAztecData aztecData = getCarFromApiString(carDataFromAtenaApi);
         Car carFromApi = carIdentification.FindingCarByAztecCodeAnswer(aztecData);
 
         if (carFromApi.getCarsBrand() == null) {
+//            BrandsChoosingServlet brandsServ = new BrandsChoosingServlet();
+//            brandsServ.doGet(req, resp);
             req.setCharacterEncoding("UTF-8");
             Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
