@@ -78,9 +78,9 @@ public class UserResourceIT {
 
         globalUserService.getGLobalUser(linkedInUser);
 
-        List<GlobalUser> list = em.createQuery("from GlobalUser", GlobalUser.class).getResultList();
+        List<GlobalUser> users = em.createQuery("from GlobalUser", GlobalUser.class).getResultList();
 
-        assertThat(list.size(), is(1));
+        assertThat(users.size(), is(1));
     }
 
     @Test
@@ -101,6 +101,24 @@ public class UserResourceIT {
 
         assertThat(globalUser.geteMail(), is("danielkepczynski@gmail.com"));
 
+    }
+
+    @Test
+    @InSequence(3)
+    public void should_return_admin_user(){
+
+        List<GlobalUser> users = globalUserService.getUsersAdmin();
+
+        assertThat(users.size(), is(1));
+    }
+
+    @Test
+    @InSequence(4)
+    public void should_not_return_report_user(){
+
+        List<GlobalUser> users = globalUserService.getUsersReports();
+
+        assertThat(users.size(), is(0));
     }
 
 }
