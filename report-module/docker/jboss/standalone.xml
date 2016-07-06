@@ -140,7 +140,7 @@
                     </security>
                 </datasource>
                 <datasource jndi-name="java:/datasources/report" pool-name="report" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:mysql://sql:3306/report?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8 </connection-url>
+                    <connection-url>jdbc:mysql://sql_report:3306/report?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8 </connection-url>
                     <driver>mysql</driver>
                     <security>
                         <user-name>root</user-name>

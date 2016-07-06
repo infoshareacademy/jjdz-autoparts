@@ -13,11 +13,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/AddingToCart")
@@ -34,7 +29,6 @@ public class ShoppingCartServlet extends HttpServlet {
     @EJB
     CRUDService crudService;
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -47,13 +41,6 @@ public class ShoppingCartServlet extends HttpServlet {
 
         crudService.sendResults(formData,
                 sessionData.getUserData());
-
-        Client c = ClientBuilder.newClient();
-
-        WebTarget target = c.target("http://localhost:8080/jee-reports/api/searched/part");
-
-        target.request().buildPost(Entity.entity(formData, MediaType.APPLICATION_JSON_TYPE))
-                .invoke();
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
