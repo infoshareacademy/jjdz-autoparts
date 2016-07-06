@@ -10,7 +10,6 @@ import javax.ejb.Stateless;
 import java.io.*;
 import java.util.HashMap;
 
-@Stateless
 public class JsonParserBrands {
 
     final static String DEFAULT_FILENAME = "src/main/resources/json_data/v2.json";

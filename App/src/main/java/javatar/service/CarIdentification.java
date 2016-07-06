@@ -13,7 +13,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
 
-@Stateless
 public class CarIdentification {
 
     private static final Logger LOGGER = LogManager.getLogger();
