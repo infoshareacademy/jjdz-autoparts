@@ -49,6 +49,17 @@
 
 </form>
 
+<form method="POST" action="AddToFavourites">
+
+    <div class="container">
+        <div class="forms-template">
+            <input type="submit" value="Dodaj do ulubionych" align="center"/>
+        </div>
+
+    </div>
+
+</form>
+
 <form method="GET" action="Cart">
     <div class="container">
         <div class="forms-template">
