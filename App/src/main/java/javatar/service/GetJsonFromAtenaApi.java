@@ -7,9 +7,12 @@ import okhttp3.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.ejb.Singleton;
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import java.io.IOException;
 
+@Stateless
 public class GetJsonFromAtenaApi {
 
     private static final Logger LOGGER = LogManager.getLogger();

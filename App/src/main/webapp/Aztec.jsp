@@ -25,7 +25,7 @@
 
     <div class="starter-template">
         <h1>Wyszukiwarka części samochodowych</h1>
-        <form method="GET" action="AztecKey" class="form-horizontal" role="form">
+        <form method="POST" action="AztecKey" class="form-horizontal" role="form">
 
             <div class="form-group row lower">
                 <label class="col-lg-3 control-label"><b>Podaj klucz sesji użytkownika z aplikacji AtenaAztec</b></label>

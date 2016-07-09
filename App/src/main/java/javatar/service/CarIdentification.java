@@ -28,13 +28,18 @@ public class CarIdentification {
     public Car FindingCarByAztecCodeAnswer(CarFromAztecData apiAnswer) throws FileNotFoundException {
 
         LOGGER.debug("Looking for car: brand - " + apiAnswer.getCarBrand() + " ; model - " + apiAnswer.getCarModel());
+        System.out.println("Looking for car: brand - " + apiAnswer.getCarBrand() + " ; model - " + apiAnswer.getCarModel());
         Car foundCar = new Car();
 
-        Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
+        //Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
         CarsBrands brand = findBrand(apiAnswer.getCarBrand());
 
+        System.out.println(brand.toString());
+
         CarsModels model = findModel(brand.getLink(), apiAnswer.getCarModel());
+
+        System.out.println(model.toString());
 
         foundCar.setCarsBrand(brand);
         foundCar.setCarsModel(model);
@@ -65,7 +70,12 @@ public class CarIdentification {
 
     private CarsBrands findBrand(String carBrand) {
         LOGGER.debug("Looking for car brand: " + carBrand);
+
+        System.out.println("=============================================" + cache.returnBrandsCollection().size());
+
         Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
+
+        System.out.println("carsBrandsCollection " + carsBrandsCollection.size() + " }");
 
         for (CarsBrands brand :
                 carsBrandsCollection) {

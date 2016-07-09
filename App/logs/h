@@ -1,0 +1,181 @@
+michalcymerys@iSA-szkolenie05:~/workspace/jjdz-autoparts/App/docker$ docker-compose up jboss
+WARNING: Found orphan containers (docker_jboss_report_1, docker_sql_report_1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+Creating docker_jboss_1
+Attaching to docker_jboss_1
+jboss_1  | =========================================================================
+jboss_1  |
+jboss_1  |   JBoss Bootstrap Environment
+jboss_1  |
+jboss_1  |   JBOSS_HOME: /opt/jboss/wildfly
+jboss_1  |
+jboss_1  |   JAVA: /opt/jdk/bin/java
+jboss_1  |
+jboss_1  |   JAVA_OPTS:  -server -Xms1024m -Xmx1024m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+jboss_1  |
+jboss_1  | =========================================================================
+jboss_1  |
+jboss_1  | Listening for transport dt_socket at address: 5005
+jboss_1  | 15:23:01,206 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final
+jboss_1  | 15:23:01,390 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+jboss_1  | 15:23:01,468 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: WildFly Full 10.0.0.Final (WildFly Core 2.0.10.Final) starting
+jboss_1  | 15:23:02,973 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 17) WFLYDR0001: Content added at location /opt/jboss/wildfly/standalone/data/content/c4/8d36e1d96f5b9af88cecff9be496ce21d9f4e7/content
+jboss_1  | 15:23:02,992 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+jboss_1  | 15:23:03,017 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.3.4.Final
+jboss_1  | 15:23:03,033 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.3.4.Final
+jboss_1  | 15:23:03,093 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 4.0.18.Final
+jboss_1  | 15:23:03,156 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 37) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+jboss_1  | 15:23:03,160 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+jboss_1  | 15:23:03,158 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 38) WFLYCLINF0001: Activating Infinispan subsystem.
+jboss_1  | 15:23:03,185 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 44) WFLYJSF0007: Activated the following JSF Implementations: [main]
+jboss_1  | 15:23:03,211 INFO  [org.jboss.as.connector] (MSC service thread 1-6) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.2.Final)
+jboss_1  | 15:23:03,215 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = h2
+jboss_1  | 15:23:03,215 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) WFLYNAM0001: Activating Naming Subsystem
+jboss_1  | 15:23:03,244 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 33) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+jboss_1  | 15:23:03,246 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0018: Started Driver service with driver-name = mysql
+jboss_1  | 15:23:03,251 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 54) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+jboss_1  | 15:23:03,261 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 53) WFLYSEC0002: Activating Security Subsystem
+jboss_1  | 15:23:03,273 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=4.9.4.Final
+jboss_1  | 15:23:03,306 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) WFLYWS0002: Activating WebServices Extension
+jboss_1  | 15:23:03,340 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 1.3.15.Final starting
+jboss_1  | 15:23:03,341 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0003: Undertow 1.3.15.Final starting
+jboss_1  | 15:23:03,444 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-7) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+jboss_1  | 15:23:03,445 INFO  [org.jboss.as.naming] (MSC service thread 1-5) WFLYNAM0003: Starting Naming Service
+jboss_1  | 15:23:03,590 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) WFLYUT0014: Creating file handler for path '/opt/jboss/wildfly/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+jboss_1  | 15:23:03,597 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0012: Started server default-server.
+jboss_1  | 15:23:03,597 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0018: Host default-host starting
+jboss_1  | 15:23:03,609 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+jboss_1  | 15:23:03,612 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+jboss_1  | 15:23:03,704 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTP listener default listening on 0.0.0.0:8080
+jboss_1  | 15:23:03,839 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+jboss_1  | 15:23:03,843 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:/datasources/autoparts]
+jboss_1  | 15:23:04,044 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/wildfly/standalone/deployments
+jboss_1  | 15:23:04,060 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "jjdz-autoparts.war" (runtime-name: "jjdz-autoparts.war")
+jboss_1  | 15:23:04,245 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Mahou' 8.1.0.Final
+jboss_1  | 15:23:04,349 INFO  [org.jboss.ws.common.management] (MSC service thread 1-7) JBWS022052: Starting JBossWS 5.1.3.Final (Apache CXF 3.1.4)
+jboss_1  | 15:23:05,429 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for autoparts
+jboss_1  | 15:23:05,561 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'jjdz-autoparts.war#autoparts'
+jboss_1  | 15:23:05,627 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 58) HHH000204: Processing PersistenceUnitInfo [
+jboss_1  | 	name: autoparts
+jboss_1  | 	...]
+jboss_1  | 15:23:05,705 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment jjdz-autoparts.war
+jboss_1  | 15:23:05,723 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 58) HHH000412: Hibernate Core {5.0.7.Final}
+jboss_1  | 15:23:05,727 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000206: hibernate.properties not found
+jboss_1  | 15:23:05,730 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 58) HHH000021: Bytecode provider name : javassist
+jboss_1  | 15:23:05,778 INFO  [org.hibernate.orm.deprecation] (ServerService Thread Pool -- 58) HHH90000001: Found usage of deprecated setting for specifying Scanner [hibernate.ejb.resource_scanner]; use [hibernate.archive.scanner] instead
+jboss_1  | 15:23:05,799 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 58) HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+jboss_1  | 15:23:05,854 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-8) HV000001: Hibernate Validator 5.2.3.Final
+jboss_1  | 15:23:05,991 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'GetJsonFromAtenaApi' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/GetJsonFromAtenaApi!javatar.service.GetJsonFromAtenaApi
+jboss_1  | 	java:app/jjdz-autoparts/GetJsonFromAtenaApi!javatar.service.GetJsonFromAtenaApi
+jboss_1  | 	java:module/GetJsonFromAtenaApi!javatar.service.GetJsonFromAtenaApi
+jboss_1  | 	java:global/jjdz-autoparts/GetJsonFromAtenaApi
+jboss_1  | 	java:app/jjdz-autoparts/GetJsonFromAtenaApi
+jboss_1  | 	java:module/GetJsonFromAtenaApi
+jboss_1  |
+jboss_1  | 15:23:05,992 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'JsonParserModels' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/JsonParserModels!javatar.service.JsonParserModels
+jboss_1  | 	java:app/jjdz-autoparts/JsonParserModels!javatar.service.JsonParserModels
+jboss_1  | 	java:module/JsonParserModels!javatar.service.JsonParserModels
+jboss_1  | 	java:global/jjdz-autoparts/JsonParserModels
+jboss_1  | 	java:app/jjdz-autoparts/JsonParserModels
+jboss_1  | 	java:module/JsonParserModels
+jboss_1  |
+jboss_1  | 15:23:05,998 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'GlobalUserService' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/GlobalUserService!javatar.web.GlobalUserService
+jboss_1  | 	java:app/jjdz-autoparts/GlobalUserService!javatar.web.GlobalUserService
+jboss_1  | 	java:module/GlobalUserService!javatar.web.GlobalUserService
+jboss_1  | 	java:global/jjdz-autoparts/GlobalUserService
+jboss_1  | 	java:app/jjdz-autoparts/GlobalUserService
+jboss_1  | 	java:module/GlobalUserService
+jboss_1  |
+jboss_1  | 15:23:06,001 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'FindingTokenInJsonService' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/FindingTokenInJsonService!javatar.service.FindingTokenInJsonService
+jboss_1  | 	java:app/jjdz-autoparts/FindingTokenInJsonService!javatar.service.FindingTokenInJsonService
+jboss_1  | 	java:module/FindingTokenInJsonService!javatar.service.FindingTokenInJsonService
+jboss_1  | 	java:global/jjdz-autoparts/FindingTokenInJsonService
+jboss_1  | 	java:app/jjdz-autoparts/FindingTokenInJsonService
+jboss_1  | 	java:module/FindingTokenInJsonService
+jboss_1  |
+jboss_1  | 15:23:06,004 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'BrandsJsonCache' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/BrandsJsonCache!javatar.web.BrandsJsonCache
+jboss_1  | 	java:app/jjdz-autoparts/BrandsJsonCache!javatar.web.BrandsJsonCache
+jboss_1  | 	java:module/BrandsJsonCache!javatar.web.BrandsJsonCache
+jboss_1  | 	java:global/jjdz-autoparts/BrandsJsonCache
+jboss_1  | 	java:app/jjdz-autoparts/BrandsJsonCache
+jboss_1  | 	java:module/BrandsJsonCache
+jboss_1  |
+jboss_1  | 15:23:06,004 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'AllegroCategoriesCache' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/AllegroCategoriesCache!javatar.web.AllegroCategoriesCache
+jboss_1  | 	java:app/jjdz-autoparts/AllegroCategoriesCache!javatar.web.AllegroCategoriesCache
+jboss_1  | 	java:module/AllegroCategoriesCache!javatar.web.AllegroCategoriesCache
+jboss_1  | 	java:global/jjdz-autoparts/AllegroCategoriesCache
+jboss_1  | 	java:app/jjdz-autoparts/AllegroCategoriesCache
+jboss_1  | 	java:module/AllegroCategoriesCache
+jboss_1  |
+jboss_1  | 15:23:06,004 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'FormDataTableService' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/FormDataTableService!javatar.service.FormDataTableService
+jboss_1  | 	java:app/jjdz-autoparts/FormDataTableService!javatar.service.FormDataTableService
+jboss_1  | 	java:module/FormDataTableService!javatar.service.FormDataTableService
+jboss_1  | 	java:global/jjdz-autoparts/FormDataTableService
+jboss_1  | 	java:app/jjdz-autoparts/FormDataTableService
+jboss_1  | 	java:module/FormDataTableService
+jboss_1  |
+jboss_1  | 15:23:06,004 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'UserResource' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/UserResource!javatar.service.UserResource
+jboss_1  | 	java:app/jjdz-autoparts/UserResource!javatar.service.UserResource
+jboss_1  | 	java:module/UserResource!javatar.service.UserResource
+jboss_1  | 	java:global/jjdz-autoparts/UserResource
+jboss_1  | 	java:app/jjdz-autoparts/UserResource
+jboss_1  | 	java:module/UserResource
+jboss_1  |
+jboss_1  | 15:23:06,004 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'CRUDService' in deployment unit 'deployment "jjdz-autoparts.war"' are as follows:
+jboss_1  |
+jboss_1  | 	java:global/jjdz-autoparts/CRUDService!javatar.service.CRUDService
+jboss_1  | 	java:app/jjdz-autoparts/CRUDService!javatar.service.CRUDService
+jboss_1  | 	java:module/CRUDService!javatar.service.CRUDService
+jboss_1  | 	java:global/jjdz-autoparts/CRUDService
+jboss_1  | 	java:app/jjdz-autoparts/CRUDService
+jboss_1  | 	java:module/CRUDService
+jboss_1  |
+jboss_1  | 15:23:06,860 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+jboss_1  | 15:23:06,864 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+jboss_1  | 15:23:06,865 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+jboss_1  | 15:23:06,868 INFO  [org.infinispan.configuration.cache.EvictionConfigurationBuilder] (ServerService Thread Pool -- 58) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+jboss_1  | 15:23:06,902 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 6.0)
+jboss_1  | 15:23:06,905 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0006: Starting Services for CDI deployment: jjdz-autoparts.war
+jboss_1  | 15:23:06,951 INFO  [org.jboss.weld.Version] (MSC service thread 1-8) WELD-000900: 2.3.2 (Final)
+jboss_1  | 15:23:07,008 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = jjdz-autoparts.war_com.mysql.cj.jdbc.Driver_6_0
+jboss_1  | 15:23:07,015 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0009: Starting weld service for deployment jjdz-autoparts.war
+jboss_1  | 15:23:07,211 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 58) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'jjdz-autoparts.war#autoparts'
+jboss_1  | 15:23:07,313 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0002: Started client-mappings cache from ejb container
+jboss_1  | 15:23:07,473 ERROR [stderr] (ServerService Thread Pool -- 58) Sat Jul 09 15:23:07 GMT 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+jboss_1  | 15:23:07,679 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 58) HHH000400: Using dialect: javatar.model.CustomMysqlDialect
+jboss_1  | 15:23:07,730 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 58) Envers integration enabled? : true
+jboss_1  | 15:23:08,217 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] (ServerService Thread Pool -- 58) HHH000227: Running hbm2ddl schema export
+jboss_1  | 15:23:08,223 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: drop table if exists CRUD
+jboss_1  | 15:23:08,242 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: drop table if exists FormDataTable
+jboss_1  | 15:23:08,248 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: drop table if exists GlobalUser
+jboss_1  | 15:23:08,257 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: drop table if exists hibernate_sequence
+jboss_1  | 15:23:08,264 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: create table CRUD (id bigint not null, allegroLink varchar(255), carBrand varchar(255), carEngine varchar(255), carModel varchar(255), engineLink varchar(255), partBrand varchar(255), partId varchar(255), partName varchar(255), userName varchar(255), primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+jboss_1  | 15:23:08,274 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: create table FormDataTable (id bigint not null, allegroLink varchar(255), carBrand varchar(255), carEngine varchar(255), carModel varchar(255), engineLookupString varchar(255), partBrand varchar(255), partId varchar(255), partName varchar(255), localDateTime datetime, userName varchar(255), primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+jboss_1  | 15:23:08,290 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: create table GlobalUser (id bigint not null, accountType integer, administrator integer not null, eMail varchar(255), firstName varchar(255), lastName varchar(255), reports integer not null, primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+jboss_1  | 15:23:08,302 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: create table hibernate_sequence (next_val bigint) ENGINE=InnoDB DEFAULT CHARSET=utf8
+jboss_1  | 15:23:08,320 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: insert into hibernate_sequence values ( 1 )
+jboss_1  | 15:23:08,325 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: insert into hibernate_sequence values ( 1 )
+jboss_1  | 15:23:08,327 INFO  [stdout] (ServerService Thread Pool -- 58) Hibernate: insert into hibernate_sequence values ( 1 )
+jboss_1  | 15:23:08,330 INFO  [org.hibernate.tool.hbm2ddl.SchemaExport] (ServerService Thread Pool -- 58) HHH000230: Schema export complete
+jboss_1  | 15:23:09,911 INFO  [stdout] (ServerService Thread Pool -- 59) brands.getData().size(): { 675 }
+jboss_1  | 15:23:23,133 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 60) RESTEASY002225: Deploying javax.ws.rs.core.Application: class javatar.RestApplication
+jboss_1  | 15:23:23,168 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 60) WFLYUT0021: Registered web context: /jjdz-autoparts
+jboss_1  | 15:23:23,232 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "jjdz-autoparts.war" (runtime-name : "jjdz-autoparts.war")
+jboss_1  | 15:23:23,361 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://0.0.0.0:9990/management
+jboss_1  | 15:23:23,362 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://0.0.0.0:9990
+jboss_1  | 15:23:23,362 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.0.0.Final (WildFly Core 2.0.10.Final) started in 22466ms - Started 659 of 927 services (383 services are lazy, passive or on-demand)
