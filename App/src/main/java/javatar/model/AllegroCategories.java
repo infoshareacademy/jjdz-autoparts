@@ -73,6 +73,14 @@ public class AllegroCategories {
         this.catIsProductCatalogueEnabled = catIsProductCatalogueEnabled;
     }
 
+    public AllegroCategories(Integer catId, String catName, Integer catParent, Integer catPosition, Integer catIsProductCatalogueEnabled) {
+        this.catId = catId;
+        this.catName = catName;
+        this.catParent = catParent;
+        this.catPosition = catPosition;
+        this.catIsProductCatalogueEnabled = catIsProductCatalogueEnabled;
+    }
+
     @Override
     public String toString() {
         return "AllegroCategories{" +

@@ -1,14 +1,10 @@
 package javatar.service;
 
-import javatar.model.AllegroCategories;
-import javatar.model.Autopart;
-import javatar.model.AutopartAllegroListModel;
-import javatar.model.AutopartCategory;
-import javatar.service.APIallegro.APIallegro;
+import javatar.model.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -19,12 +15,28 @@ public class AllegroCategoryFinderTest {
 
     AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
-    APIallegro apIallegro = new APIallegro();
-    List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
     @Before
     public void initialize() {
-        allegroCategoriesList = apIallegro.getAllegroCategoriesList();
+        AllegroCategories cat1 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodnice")
+                .setCatId(18690)
+                .setCatParent(18689)
+                .build();
+
+        AllegroCategories cat2 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodnice oleju")
+                .setCatId(251083)
+                .setCatParent(18690)
+                .build();
+
+        AllegroCategories cat4 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodzenie silnika")
+                .setCatId(18689)
+                .setCatParent(620)
+                .build();
+
+        List<AllegroCategories> allegroCategoriesList = Arrays.asList(cat1, cat2,  cat4);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
     }
 
@@ -50,26 +62,6 @@ public class AllegroCategoryFinderTest {
         //then
         assertThat(s, is(equalTo("Chłodnice Chłodnice oleju;251083")));
 
-    }
-
-    @Test
-    public void test_match_2_categories() throws Exception {
-
-        //given
-        Autopart autopart = new Autopart();
-        AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Części karoserii");
-        autopart.addCategoryToList(categoryListElement);
-        AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("Maski");
-        autopart.addCategoryToList(categoryListElement2);
-        autopartAllegroListModel.setAutopart(autopart);
-
-        //when
-        String s = allegroCategoryFinder.matchCategories(autopartAllegroListModel);
-
-        //then
-        assertThat(s, is(equalTo("Części karoserii Maski;254558")));
     }
 
     @Test

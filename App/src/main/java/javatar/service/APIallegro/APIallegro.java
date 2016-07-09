@@ -6,7 +6,9 @@ import allegroApi.AllegroWebApiServiceLocator;
 import allegroApi.CatInfoType;
 import allegroApi.holders.ArrayOfCatsHolder;
 import javatar.model.AllegroCategories;
+import javatar.model.AllegroCategoriesBuilder;
 
+import javax.ejb.Stateless;
 import javax.xml.rpc.ServiceException;
 import javax.xml.rpc.holders.LongHolder;
 import javax.xml.rpc.holders.StringHolder;
@@ -14,6 +16,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Stateless
 public class APIallegro {
 
     public List<AllegroCategories> getAllegroCategoriesList() {
@@ -36,12 +39,13 @@ public class APIallegro {
 
             for (CatInfoType catType :
                     catInfoTypes) {
-                AllegroCategories allegroCategory = new AllegroCategories();
-                allegroCategory.setCatId(catType.getCatId());
-                allegroCategory.setCatName(catType.getCatName());
-                allegroCategory.setCatParent(catType.getCatParent());
-                allegroCategory.setCatIsProductCatalogueEnabled(catType.getCatIsProductCatalogueEnabled());
-                allegroCategory.setCatPosition(catType.getCatPosition());
+                AllegroCategories allegroCategory = new AllegroCategoriesBuilder()
+                        .setCatId(catType.getCatId())
+                        .setCatName(catType.getCatName())
+                        .setCatParent(catType.getCatParent())
+                        .setCatIsProductCatalogueEnabled(catType.getCatIsProductCatalogueEnabled())
+                        .setCatPosition(catType.getCatPosition())
+                        .build();
                 allegroCategoriesList.add(allegroCategory);
 
             }

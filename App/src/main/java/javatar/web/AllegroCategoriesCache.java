@@ -6,10 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Lock;
-import javax.ejb.LockType;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+import javax.ejb.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +17,14 @@ public class AllegroCategoriesCache {
 
     private static final Logger LOGGER = LogManager.getLogger();
     List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
-    APIallegro apIallegro = new APIallegro();
+
+    @EJB
+    APIallegro apIallegro;
+
+//    public AllegroCategoriesCache(final APIallegro apIallegro){
+//        this.apIallegro = apIallegro;
+//    }
+
 
     @PostConstruct
     public void initialize() {
@@ -30,8 +34,9 @@ public class AllegroCategoriesCache {
 
     }
 
-    public List<AllegroCategories> returnAllegroCategoriesFromFile() {
+    public List<AllegroCategories> getAllegroCategoriesList() {
         return allegroCategoriesList;
     }
+
 
 }
