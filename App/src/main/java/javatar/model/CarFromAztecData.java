@@ -85,5 +85,19 @@ public class CarFromAztecData {
     public void setEnginePower(String enginePower) {
         this.enginePower = enginePower;
     }
+
+    @Override
+    public String toString() {
+        return "CarFromAztecData{" +
+                "carModel='" + carModel + '\'' +
+                ", productionYear='" + productionYear + '\'' +
+                ", carBrand='" + carBrand + '\'' +
+                ", Error='" + Error + '\'' +
+                ", ErrorText='" + ErrorText + '\'' +
+                ", engineCapacity='" + engineCapacity + '\'' +
+                ", fuelType='" + fuelType + '\'' +
+                ", enginePower='" + enginePower + '\'' +
+                '}';
+    }
 }
 
