@@ -25,7 +25,10 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime dateTime;
 
-    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime) {
+    public PartSearchSource source;
+
+
+    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,PartSearchSource source) {
         this.carBrand = formData.getCarBrand();
         this.carModel = formData.getCarModel();
         this.carEngine = formData.getCarEngine();
@@ -36,6 +39,7 @@ public class PartForReportModule {
         this.userName = sessionData.getUserData();
         this.userId = String.valueOf(sessionData.getUserId());
         this.dateTime = dateTime;
+        this.source = source;
     }
 
     @Override
@@ -49,7 +53,9 @@ public class PartForReportModule {
                 ", partName='" + partName + '\'' +
                 ", allegroLink='" + allegroLink + '\'' +
                 ", userName='" + userName + '\'' +
-                ", userId=" + userId +
+                ", userId='" + userId + '\'' +
+                ", dateTime=" + dateTime +
+                ", source=" + source +
                 '}';
     }
 

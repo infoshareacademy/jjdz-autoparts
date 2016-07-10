@@ -1,7 +1,10 @@
 package javatar.web;
 
 import javatar.model.FormData;
+import javatar.model.report.PartForReportModule;
+import javatar.model.report.PartSearchSource;
 import javatar.service.CRUDService;
+import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {
@@ -41,6 +45,11 @@ public class ShoppingCartServlet extends HttpServlet {
 
         crudService.sendResults(formData,
                 sessionData.getUserData());
+
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), PartSearchSource.CART);
+
+        PostChosenPart post = new PostChosenPart();
+        post.postSearchedValues(reportPart);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

@@ -32,6 +32,8 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     LocalDateTime dateTime;
 
+    public PartSearchSource source;
+
     public Long getId() {
         return id;
     }
@@ -120,6 +122,14 @@ public class PartForReportModule {
         this.dateTime = dateTime;
     }
 
+    public PartSearchSource getSource() {
+        return source;
+    }
+
+    public void setSource(PartSearchSource source) {
+        this.source = source;
+    }
+
     @Override
     public String toString() {
         return "PartForReportModule{" +
@@ -134,6 +144,7 @@ public class PartForReportModule {
                 ", userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
                 ", dateTime=" + dateTime +
+                ", source=" + source +
                 '}';
     }
 }

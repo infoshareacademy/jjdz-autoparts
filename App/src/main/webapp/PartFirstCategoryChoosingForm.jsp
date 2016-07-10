@@ -35,16 +35,16 @@
     <form method="GET" action="PartCategory" class="form-horizontal" role="form">
         <div class="row">
             <p class="col-lg-6" align="right">Wybrana marka samochodu:</p>
-            <p class="col-lg-6" align="left"> ${brandName}</p>
+            <p class="col-lg-6" align="left"><c:out value="${brandName}"></c:out> </p>
 
         </div>
         <div class="row">
             <p class="col-lg-6" align="right"> Wybrany model samochodu:</p>
-            <p class="col-lg-6" align="left">${modelName}</p>
+            <p class="col-lg-6" align="left"><c:out value="${modelName}"/></p>
         </div>
         <div class="row">
             <p class="col-lg-6" align="right">Wybrany silnik:</p>
-            <p class="col-lg-6" align="left"> ${engineName}</p>
+            <p class="col-lg-6" align="left"> <c:out value="${engineName}"/></p>
 
         </div>
 
@@ -54,7 +54,7 @@
 
                 <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
                     <c:forEach items="${categories}" var="category">
-                        <option value="${category.name};${category.link};${category.has_children}">${category.name}</option>
+                        <option value="${category.name};${category.link};${category.has_children}"><c:out value="${category.name}"/></option>
                     </c:forEach>
                 </select>
             </div>

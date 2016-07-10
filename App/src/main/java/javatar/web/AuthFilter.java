@@ -25,7 +25,8 @@ import java.io.IOException;
         "/setAdminUser",
         "/revokeAdmin",
         "/setReportsUser",
-        "/revokeReports"})
+        "/revokeReports",
+        "/CRUD"})
 public class AuthFilter implements Filter {
 
 

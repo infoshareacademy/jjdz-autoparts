@@ -44,7 +44,7 @@
                 <select name="brand" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${brands}" var="brand">
                         <option
-                                value="${brand.name};${brand.link}">${brand.name}</option>
+                                value="${brand.name};${brand.link}"><c:out value="${brand.name}"/></option>
                     </c:forEach>
                 </select>
 
