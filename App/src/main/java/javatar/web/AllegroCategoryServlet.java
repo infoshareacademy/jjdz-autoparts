@@ -47,7 +47,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
-        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFromFile();
+        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.getAllegroCategoriesList();
 
         String autopartAsString = req.getParameter("part");
 

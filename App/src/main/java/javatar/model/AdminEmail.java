@@ -1,17 +1,18 @@
 package javatar.model;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class AdminEmail {
 
-    private static HashMap<String, Integer> emails = new HashMap<String, Integer>() {{
-        put("danielkepczynski@gmail.com", 1);
-        put("anetatruszczynska@wp.pl", 1);
-        put("michal.cymerys@gmail.com", 1);
+    private static HashSet<String> emails = new HashSet<String>() {{
+        add("danielkepczynski@gmail.com");
+        add("anetatruszczynska@wp.pl");
+        add("michal.cymerys@gmail.com");
     }};
 
     public static int getIsAdmin(String email){
-        return emails.containsKey(email) ? 1 : 0;
+        return emails.contains(email) ? 1 : 0;
     }
 
 
