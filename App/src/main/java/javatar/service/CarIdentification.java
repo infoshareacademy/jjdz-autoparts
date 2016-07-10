@@ -9,18 +9,16 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Scanner;
 
+@Stateless
 public class CarIdentification {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     @EJB
     BrandsJsonCache cache;
-
-    final String mainPath = "src/main/resources/json_data/";
 
     public CarIdentification() {
     }
@@ -37,7 +35,7 @@ public class CarIdentification {
 
         System.out.println(brand.toString());
 
-        CarsModels model = findModel(brand.getLink(), apiAnswer.getCarModel());
+        CarsModels model = findModel(brand.getLink(), apiAnswer.getCarModel(), apiAnswer.getProductionYear());
 
         System.out.println(model.toString());
 
@@ -49,7 +47,7 @@ public class CarIdentification {
         return foundCar;
     }
 
-    private CarsModels findModel(String link, String carModel) {
+    private CarsModels findModel(String link, String carModel, String productionYearString) {
         LOGGER.debug("Looking for car model: " + carModel);
         JsonParserAll parser = new JsonParserAll();
 
@@ -57,10 +55,21 @@ public class CarIdentification {
         DataCarsModels dataCarsModels = parser.parseModelFile(url);
         Collection<CarsModels> carsModelsCollection = dataCarsModels.getData();
 
+        Integer startYear;
+        Integer endYear;
+        Integer productionYear = Integer.parseInt(productionYearString);
+
         for (CarsModels model :
                 carsModelsCollection) {
-            if (model.getName().toUpperCase().contains(carModel.toUpperCase())){
-                LOGGER.info("Model found: " + model.toString());
+
+            startYear = model.getStart_year();
+            endYear = (model.getEnd_year() == null) ? LocalDateTime.now().getYear() : model.getEnd_year();
+
+            if (model.getName().toUpperCase().contains(carModel.toUpperCase())
+                    && startYear <= productionYear
+                    && endYear >= productionYear){
+
+                LOGGER.info("Found: " + model.toString());
                 return model;
             }
         }

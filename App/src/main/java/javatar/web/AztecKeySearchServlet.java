@@ -2,6 +2,7 @@ package javatar.web;
 
 import javatar.model.Car;
 import javatar.model.CarFromAztecData;
+import javatar.model.CarsBrands;
 import javatar.model.FormData;
 import javatar.service.CarIdentification;
 import javatar.service.GetJsonFromAtenaApi;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +30,9 @@ public class AztecKeySearchServlet extends HttpServlet {
     @EJB
     BrandsJsonCache cache;
 
+    @EJB
+    CarIdentification carIdentification;
+
     @Inject
     FormData formData;
 
@@ -38,6 +43,7 @@ public class AztecKeySearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         JsonParserAll parser = new JsonParserAll();
+        Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
         String url;
 
@@ -45,8 +51,9 @@ public class AztecKeySearchServlet extends HttpServlet {
 
         System.out.println("zaczynamy");
 
+        System.out.println("cache return collection size: " + carsBrandsCollection.size());
         //GetJsonFromAtenaApi getJsonFromAtenaApi = new GetJsonFromAtenaApi();
-        CarIdentification carIdentification = new CarIdentification();
+        //CarIdentification carIdentification = new CarIdentification();
 
         String userSessionApiKey = req.getParameter("apiKey");
 
@@ -151,7 +158,7 @@ public class AztecKeySearchServlet extends HttpServlet {
 
     private CarFromAztecData getCarFromApiString(String apiString) {
         CarFromAztecData carFromApi = new CarFromAztecData();
-
+// jwesli error inny niz 0 to elo
         String[] apiStringArray = apiString.split(",\"");
 
         for (String property : apiStringArray) {
