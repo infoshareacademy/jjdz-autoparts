@@ -1,4 +1,5 @@
-package javatar.service.APIallegro;
+package javatar.service.apiAllegro;
+
 
 import allegroApi.AllegroWebApiPortType;
 import allegroApi.AllegroWebApiService;

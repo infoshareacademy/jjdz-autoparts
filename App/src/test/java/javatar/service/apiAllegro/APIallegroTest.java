@@ -1,4 +1,4 @@
-package javatar.service.APIallegro;
+package javatar.service.apiAllegro;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;

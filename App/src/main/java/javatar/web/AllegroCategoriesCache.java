@@ -1,7 +1,7 @@
 package javatar.web;
 
 import javatar.model.AllegroCategories;
-import javatar.service.APIallegro.APIallegro;
+import javatar.service.apiAllegro.APIallegro;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +21,7 @@ public class AllegroCategoriesCache {
     @EJB
     APIallegro apIallegro;
 
-//    public AllegroCategoriesCache(final APIallegro apIallegro){
+//    public AllegroCategoriesCache(final apiAllegro apIallegro){
 //        this.apIallegro = apIallegro;
 //    }
 

@@ -2,7 +2,7 @@ package javatar.web;
 
 import javatar.model.AllegroCategories;
 import javatar.model.AllegroCategoriesBuilder;
-import javatar.service.APIallegro.APIallegro;
+import javatar.service.apiAllegro.APIallegro;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
