@@ -27,6 +27,8 @@ public class PartForReportModule {
 
     public PartSearchSource source;
 
+    public String token;
+
 
     public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,PartSearchSource source) {
         this.carBrand = formData.getCarBrand();
@@ -40,6 +42,7 @@ public class PartForReportModule {
         this.userId = String.valueOf(sessionData.getUserId());
         this.dateTime = dateTime;
         this.source = source;
+        this.token = "autoparts-app";
     }
 
     @Override
