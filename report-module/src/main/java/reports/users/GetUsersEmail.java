@@ -31,6 +31,11 @@ public class GetUsersEmail {
         return sb.toString();
     }
 
+    public static void main(String[] args) throws IOException {
+        String url = "http://localhost:8080/jjdz-autoparts/api/users/reports";
+        System.out.println(httpGet(url));
+    }
+
 
 
 
