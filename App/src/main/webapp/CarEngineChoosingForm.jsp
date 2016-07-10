@@ -36,12 +36,12 @@
 
         <div class="row">
             <p class="col-lg-6" align="right">Wybrana marka samochodu:</p>
-            <p class="col-lg-6" align="left"> ${brandName}</p>
+            <p class="col-lg-6" align="left"> <c:out value="${brandName}"/></p>
 
         </div>
         <div class="row">
             <p class="col-lg-6" align="right"> Wybrany model samochodu:</p>
-            <p class="col-lg-6" align="left">${modelName}</p>
+            <p class="col-lg-6" align="left"><c:out value="${modelName}"/></p>
         </div>
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz silnik</b></label>
@@ -49,7 +49,7 @@
 
                 <select name="engine" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${engines}" var="engine">
-                        <option value="${engine.name};${engine.link}">${engine.name}, ${engine.fuel}</option>
+                        <option value="${engine.name};${engine.link}"><c:out value="${engine.name}, ${engine.fuel}"/></option>
                     </c:forEach>
                 </select>
             </div>

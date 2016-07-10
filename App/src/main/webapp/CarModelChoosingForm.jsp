@@ -34,7 +34,7 @@
     <form method="GET" action="Engines" class="form-horizontal" role="form">
 
         <p class="col-lg-6" align="right"> Wybrana marka samochodu:</p>
-        <p class="col-lg-6" align="left"> ${brandName}</p>
+        <p class="col-lg-6" align="left"> <c:out value="${brandName}"/></p>
         <br>
 
         <div class="form-group row lower">
@@ -42,7 +42,7 @@
             <div class="col-lg-6">
                 <select name="model" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${models}" var="model">
-                        <option value="${model.name};${model.link}">${model.name}</option>
+                        <option value="${model.name};${model.link}"><c:out value="${model.name}"/></option>
                     </c:forEach>
                 </select>
             </div>

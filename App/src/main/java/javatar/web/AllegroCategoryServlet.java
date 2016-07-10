@@ -2,8 +2,8 @@ package javatar.web;
 
 import javatar.model.*;
 import javatar.model.report.PartForReportModule;
+import javatar.model.report.PartSearchSource;
 import javatar.service.CreateAllegroLink;
-import javatar.service.FormDataTableService;
 import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,8 +35,8 @@ public class AllegroCategoryServlet extends HttpServlet {
     @Inject
     SessionData sessionData;
 
-    @EJB
-    FormDataTableService formDataTableService;
+//    @EJB
+//    FormDataTableService formDataTableService;
 
     @EJB
     AllegroCategoriesCache allegroCategoriesCache;
@@ -70,9 +70,9 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartId(id);
         formData.setPartName(name);
 
-        formDataTableService.sendResults();
+//        formDataTableService.sendResults();
 
-        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now());
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), PartSearchSource.SEARCH);
 
         System.out.println("reportPart.toString() = " + reportPart.toString());
 
