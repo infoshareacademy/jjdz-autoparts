@@ -93,7 +93,7 @@ public class JsonParserAll {
         return part;
     }
 
-    public List<CarsEngineAndFuel> searchEngineTypeByTokens(DataCarsEngineAndFuel engines, String fuelType, String engineCapacity, String power ) {
+    public List<CarsEngineAndFuel> searchEngineTypeByTokens(DataCarsEngineAndFuel engines, String fuelType, String engineCapacity, String enginePower ) {
 
         String fuel_txt = "";
 
@@ -110,21 +110,27 @@ public class JsonParserAll {
         }
 
         String capacity_txt = engineCapacity.substring(0, engineCapacity.length() - 6);
-        String powerSubs = power.substring(0, power.length() - 5);
+//        String powerSubs = power.substring(0, power.length() - 5);
+        int power = Integer.parseInt(enginePower.split(",")[0]);
         int capacity = Integer.parseInt(capacity_txt);
 
         List<CarsEngineAndFuel> enginesList = engines.getData();
 
         final String finalFuel_txt = fuel_txt;
+//        List<CarsEngineAndFuel> blist = enginesList.stream()
+//                .filter(fuel -> fuel.getCcm().equals(capacity))
+//                .filter(f -> f.getFuel().equals(finalFuel_txt))
+//                .filter(f -> f.getKw().toString().equals(powerSubs))
+//                .collect(Collectors.toList());
         List<CarsEngineAndFuel> blist = enginesList.stream()
-                .filter(fuel -> fuel.getCcm().equals(capacity))
+                .filter(fuel -> Math.abs(fuel.getCcm() - capacity)<=20)
                 .filter(f -> f.getFuel().equals(finalFuel_txt))
-                .filter(f -> f.getKw().toString().equals(powerSubs))
+                .filter(f -> Math.abs(f.getKw()-power)<=20)
                 .collect(Collectors.toList());
 
         System.out.println(blist.toString());
         System.out.println(blist.size());
-        System.out.println(powerSubs);
+        System.out.println(power);
         System.out.println(capacity);
         System.out.println(fuel_txt);
         return blist;
