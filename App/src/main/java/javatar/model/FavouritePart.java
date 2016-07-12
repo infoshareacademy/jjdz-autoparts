@@ -5,25 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//User OneToMany FavouritePart
 @Entity
 public class FavouritePart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	private Integer userId;
+	private long userId;
 
 	private String partName;
 	private String partBrand;
 	private String partId;
 	private String partLink;
 
-	public Integer getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Integer userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 
@@ -57,5 +56,17 @@ public class FavouritePart {
 
 	public void setPartLink(String partLink) {
 		this.partLink = partLink;
+	}
+
+	@Override
+	public String toString() {
+		return "FavouritePart{" +
+				"id=" + id +
+				", userId=" + userId +
+				", partName='" + partName + '\'' +
+				", partBrand='" + partBrand + '\'' +
+				", partId='" + partId + '\'' +
+				", partLink='" + partLink + '\'' +
+				'}';
 	}
 }
