@@ -49,7 +49,7 @@
 
 </form>
 
-<form method="POST" action="AddToFavourites">
+<form method="POST" action="FavsMgmt">
 
     <div class="container">
         <div class="forms-template">
@@ -64,6 +64,15 @@
     <div class="container">
         <div class="forms-template">
             <input type="submit" value="Przejdź do koszyka" align="center"/>
+        </div>
+
+    </div>
+</form>
+
+<form method="GET" action="Favs">
+    <div class="container">
+        <div class="forms-template">
+            <input type="submit" value="Przejdź do ulubionych" align="center"/>
         </div>
 
     </div>
