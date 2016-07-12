@@ -48,17 +48,15 @@ public class AztecKeySearchServlet extends HttpServlet {
 
 		req.setCharacterEncoding("UTF-8");
 
-		System.out.println("zaczynamy");
-
-		System.out.println("cache return collection size: " + carsBrandsCollection.size());
+		LOGGER.info("cache return collection size: {}", carsBrandsCollection.size());
 
 		String userSessionApiKey = req.getParameter("apiKey");
 
-		System.out.println("user key: " + userSessionApiKey);
+		LOGGER.info("user key: {}", userSessionApiKey);
 
 		String carDataFromAtenaApi = getJsonFromAtenaApi.getCarFromAtenaApi(userSessionApiKey);
 
-		System.out.println("carDataFromAtenaApi: " + carDataFromAtenaApi);
+		LOGGER.info("carDataFromAtenaApi: {} ", carDataFromAtenaApi);
 
 		CarFromAztecData aztecData = getCarFromApiString(carDataFromAtenaApi);
 
@@ -67,7 +65,6 @@ public class AztecKeySearchServlet extends HttpServlet {
 
 		if (aztecData != null) {
 			carFromApi = carIdentification.FindingCarByAztecCodeAnswer(aztecData);
-			System.out.println(carFromApi.toString());
 		}
 
 
@@ -106,8 +103,6 @@ public class AztecKeySearchServlet extends HttpServlet {
 			List<CarsEngineAndFuel> engineList = carIdentification.findMatchingEngines(url, aztecData);
 
 			LOGGER.debug("engineList.size = " + engineList.size());
-
-			System.out.println("engineList.size = " + engineList.size());
 
 			if (engineList.size() > 1) {
 				req.setAttribute("modelName", carFromApi.getCarsModel());
@@ -166,7 +161,7 @@ public class AztecKeySearchServlet extends HttpServlet {
 		CarFromAztecData carFromApi = new CarFromAztecData();
 		carFromApi.setError("" + apiString.charAt(apiString.indexOf("\"Error\"") + 8));
 
-		System.out.println("Error Code: " + carFromApi.getError());
+		LOGGER.info("Error Code: {}", carFromApi.getError());
 
 		if (carFromApi.getError().equals("0")) {
 
@@ -210,18 +205,16 @@ public class AztecKeySearchServlet extends HttpServlet {
 	}
 
 	private String getPropertyValue(String property) {
-		System.out.println("getPropertyValue(" + property + ")");
+		LOGGER.info("getPropertyValue({})", property);
 
 		String value = property.split(":")[1];
-
-		System.out.println("value: " + value);
 
 		Pattern p = Pattern.compile("\\\".*?\\\"");
 		Matcher m = p.matcher(value);
 		if (m.find())
 			value = m.group().subSequence(1, m.group().length() - 1).toString();
 
-		System.out.println("value final: " + value);
+		LOGGER.info("Property {} value: {}", property,  value);
 		return value;
 	}
 }
