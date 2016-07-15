@@ -17,7 +17,6 @@ public class PartForReportModule {
     public String partBrand;
     public String partId;
     public String partName;
-    public String allegroLink;
     public String userName;
     public String userId;
 
@@ -25,24 +24,23 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime dateTime;
 
-    public PartSearchSource source;
+    public float weight;
 
     public String token;
 
 
-    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,PartSearchSource source) {
+    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,float weight) {
         this.carBrand = formData.getCarBrand();
         this.carModel = formData.getCarModel();
         this.carEngine = formData.getCarEngine();
         this.partBrand = formData.getPartBrand();
         this.partId = formData.getPartId();
         this.partName = formData.getPartName();
-        this.allegroLink = formData.getAllegroLink();
         this.userName = sessionData.getUserData();
         this.userId = String.valueOf(sessionData.getUserId());
         this.dateTime = dateTime;
-        this.source = source;
-        this.token = "autoparts-app";
+        this.weight = weight;
+        this.token = "autoparts";
     }
 
     @Override
@@ -54,11 +52,10 @@ public class PartForReportModule {
                 ", partBrand='" + partBrand + '\'' +
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
-                ", allegroLink='" + allegroLink + '\'' +
                 ", userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
                 ", dateTime=" + dateTime +
-                ", source=" + source +
+                ", weight=" + weight +
                 '}';
     }
 
