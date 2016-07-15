@@ -18,10 +18,16 @@ import java.util.List;
 @WebServlet(urlPatterns = "/Report")
 public class ReportSendingServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private final Logger LOGGER = LogManager.getLogger();
+
+//    @Inject
+//    Logger LOGGER;
 
     @EJB
     MostFrequentlySearchedPartsReport searchedParts;
+
+//    @EJB
+//    SessionScopedListOfReports sessionData;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,10 +38,21 @@ public class ReportSendingServlet extends HttpServlet {
         List<DTOwithSum> weeklyReport = searchedParts.getPartsForReport(LocalDateTime.now().minusDays(7l), LocalDateTime.now());
         List<DTOwithSum> hourReport = searchedParts.getPartsForReport(LocalDateTime.now().minusHours(1l), LocalDateTime.now());
 
+        LOGGER.info("hourReport = {}", hourReport.toString());
+        LOGGER.info("weeklyReport = {}", weeklyReport.toString());
+        LOGGER.info("dailyReport = {}" + dailyReport.toString());
 
-        System.out.println("hourReport.toString() = " + hourReport.toString());
-        System.out.println("weeklyReport = " + weeklyReport.toString());
-        System.out.println("dailyReport = " + dailyReport.toString());
+//        List<List<DTOwithSum>> list = new ArrayList<>();
+//        list.add(dailyReport);
+//        list.add(hourReport);
+//        list.add(weeklyReport);
+//        sessionData.setListList(list);
+
+
+
+        req.getSession().setAttribute("daily",dailyReport);
+        req.getSession().setAttribute("weekly",weeklyReport);
+        req.getSession().setAttribute("hour",hourReport);
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("MostFrequentlySearchedPart.jsp");

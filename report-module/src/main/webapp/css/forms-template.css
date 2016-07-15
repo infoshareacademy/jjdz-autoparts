@@ -1,0 +1,22 @@
+body {
+    padding-top: 50px;
+}
+
+.lower{
+    padding-top: 2em;
+}
+
+.button-middle {
+    position: relative;
+    top: 50%;
+}
+
+.forms-template{
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.crud-forms{
+    padding: 20px 15px;
+    text-align: center;
+}

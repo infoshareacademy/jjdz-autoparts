@@ -8,11 +8,8 @@ import reports.searched.part.model.PartForReportDTO;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @Stateless
@@ -35,7 +32,6 @@ public class MostFrequentlySearchedPartsReport {
                 .getResultList();
 
         LOGGER.info("DTO Number of parts from date: {} to date: {} is = {}", startDate, endDate, resultListDTO.size());
-        System.out.println("resultListDTO.toString() = " + resultListDTO.toString());
 
         List<DTOwithSum> dtosList = new ArrayList<>();
         for (PartForReportDTO part :
@@ -51,7 +47,7 @@ public class MostFrequentlySearchedPartsReport {
         }
 
         dtosList.sort((d1, d2) -> {
-            return d1.getSum().compareTo(d2.getSum());
+            return d2.getSum().compareTo(d1.getSum());
         });
 
         LOGGER.info("Sorted dtosList = {}", dtosList.toString());
