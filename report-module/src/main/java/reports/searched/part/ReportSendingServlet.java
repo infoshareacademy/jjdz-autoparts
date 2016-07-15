@@ -26,9 +26,6 @@ public class ReportSendingServlet extends HttpServlet {
     @EJB
     MostFrequentlySearchedParts searchedParts;
 
-//    @EJB
-//    SessionScopedListOfReports sessionData;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -42,18 +39,9 @@ public class ReportSendingServlet extends HttpServlet {
         LOGGER.info("weeklyReport = {}", weeklyReport.toString());
         LOGGER.info("dailyReport = {}" + dailyReport.toString());
 
-//        List<List<DTOwithSum>> list = new ArrayList<>();
-//        list.add(dailyReport);
-//        list.add(hourReport);
-//        list.add(weeklyReport);
-//        sessionData.setListList(list);
-
-
-
         req.getSession().setAttribute("daily",dailyReport);
         req.getSession().setAttribute("weekly",weeklyReport);
         req.getSession().setAttribute("hour",hourReport);
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("MostFrequentlySearchedPart.jsp");
         dispatcher.forward(req, resp);

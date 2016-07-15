@@ -37,7 +37,4 @@ public class StorePart {
         return data.getId();
     }
 
-    public PartForReportModule getPartById(Long id) {
-        return em.find(PartForReportModule.class, id);
-    }
 }
