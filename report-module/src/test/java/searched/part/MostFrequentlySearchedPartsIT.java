@@ -90,8 +90,8 @@ public class MostFrequentlySearchedPartsIT{
         List<DTOwithSum> partsForReport = parts.getPartsForReport(LocalDateTime.of(2016, 07, 14, 00, 00, 00), LocalDateTime.of(2016, 07, 15, 01, 00, 00));
 
         assertThat(partsForReport.size(), is(2));
-        assertThat(partsForReport.get(0).getSum(),is(0.5f));
-        assertThat(partsForReport.get(0).getSum(),is(0.2f));
+        assertThat(partsForReport.get(0).getPart().getCarBrand(),is("opel"));
+        assertThat(partsForReport.get(1).getPart().getPartName(),is("partName"));
     }
 
 }
