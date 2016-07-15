@@ -1,46 +1,42 @@
-package reports.searched.part;
+package reports.searched.part.model;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 public class PartForReportModule {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
 
-    String carBrand;
-    String carModel;
-    String carEngine;
-    String partBrand;
-    String partId;
-    String partName;
-    String allegroLink;
-    String userName;
-    String userId;
+    private String carBrand;
+    private String carModel;
+    private String carEngine;
+    private String partBrand;
+    private String partId;
+    private String partName;
+    private String allegroLink;
+    private String userName;
+    private String userId;
+
+    @Embedded
+    private PartSearchSource source;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    LocalDateTime dateTime;
+    private LocalDateTime dateTime;
 
-    @Ignore
-    String token;
+    private String token;
 
     public String getToken() {
         return token;
     }
-
-    public PartSearchSource source;
 
     public Long getId() {
         return id;
@@ -138,6 +134,10 @@ public class PartForReportModule {
         this.source = source;
     }
 
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "PartForReportModule{" +
@@ -156,4 +156,5 @@ public class PartForReportModule {
                 ", source=" + source +
                 '}';
     }
+
 }

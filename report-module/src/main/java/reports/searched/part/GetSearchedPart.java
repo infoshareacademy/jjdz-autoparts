@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import reports.searched.part.model.PartForReportModule;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;

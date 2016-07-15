@@ -1,4 +1,4 @@
-package reports.searched.part;
+package reports.searched.part.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

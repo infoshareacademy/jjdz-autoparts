@@ -1,5 +1,7 @@
 package reports.searched.part;
 
+import reports.searched.part.model.PartForReportModule;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +17,7 @@ public class StorePart {
         return part.getId();
     }
 
-    public PartModel getPartById (Long id){
-        return em.find(PartModel.class, id);
+    public PartForReportModule getPartById (Long id){
+        return em.find(PartForReportModule.class, id);
     }
 }
