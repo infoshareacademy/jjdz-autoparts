@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import reports.searched.part.model.DTOwithSum;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/Report")
 public class ReportSendingServlet extends HttpServlet {
@@ -26,7 +28,16 @@ public class ReportSendingServlet extends HttpServlet {
 
         req.setCharacterEncoding("UTF-8");
 
-        searchedParts.getPartsForReport(LocalDateTime.of(2016,06,01,00,00),LocalDateTime.of(2016,07,20,00,00));
+        List<DTOwithSum> dailyReport = searchedParts.getPartsForReport(LocalDateTime.now().minusDays(1l), LocalDateTime.now());
+        List<DTOwithSum> weeklyReport = searchedParts.getPartsForReport(LocalDateTime.now().minusDays(7l), LocalDateTime.now());
+        List<DTOwithSum> hourReport = searchedParts.getPartsForReport(LocalDateTime.now().minusHours(1l), LocalDateTime.now());
+
+
+        System.out.println("hourReport.toString() = " + hourReport.toString());
+        System.out.println("weeklyReport = " + weeklyReport.toString());
+        System.out.println("dailyReport = " + dailyReport.toString());
+
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("MostFrequentlySearchedPart.jsp");
         dispatcher.forward(req, resp);
     }
