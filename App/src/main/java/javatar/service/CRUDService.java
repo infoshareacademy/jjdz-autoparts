@@ -5,12 +5,17 @@ import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
 import javatar.model.CRUD.PartInCRUD;
 import javatar.model.FormData;
+import javatar.model.report.PartForReportModule;
+import javatar.model.report.ReportWeights;
+import javatar.service.report.PostChosenPart;
+import javatar.web.SessionData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,7 +125,7 @@ public class CRUDService {
         }
     }
 
-    public void addToCart(String add, String user) {
+    public void addToCart(String add, SessionData sessionData) {
 
         String[] split = add.split(";;");
         String entireCar = split[0];
@@ -137,7 +142,7 @@ public class CRUDService {
         carInCRUD.setCarEngine(carSplitted[2]);
         carInCRUD.setEngineLink(engineLink);
         crud.setCar(carInCRUD);
-        crud.setUserName(user);
+        crud.setUserName(sessionData.getUserData());
         PartInCRUD part = new PartInCRUD();
         part.setPartBrand(partSplitted[0]);
         part.setPartName(partSplitted[1]);
@@ -147,5 +152,12 @@ public class CRUDService {
         LOGGER.info("Adding part to DB: {}", crud.toString());
 
         em.persist(crud);
+
+        FormData formDataTmp = new FormData(carInCRUD.getCarBrand(),carInCRUD.getCarModel(),carInCRUD.getCarEngine(),part.getPartBrand(),part.getPartId(),part.getPartName(),"",engineLink);
+
+        PartForReportModule reportPart = new PartForReportModule(formDataTmp,sessionData, LocalDateTime.now(), new ReportWeights().getCART_WEIGHT());
+
+        PostChosenPart post = new PostChosenPart();
+        post.postSearchedValues(reportPart);
     }
 }
