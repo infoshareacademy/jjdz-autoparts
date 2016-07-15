@@ -152,6 +152,7 @@ public class PartForReportModule {
                 ", userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
                 ", dateTime=" + dateTime +
+                ", token='" + token + '\'' +
                 ", source=" + source +
                 '}';
     }

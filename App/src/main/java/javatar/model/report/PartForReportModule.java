@@ -42,7 +42,7 @@ public class PartForReportModule {
         this.userId = String.valueOf(sessionData.getUserId());
         this.dateTime = dateTime;
         this.source = source;
-        this.token = "autoparts-app";
+        this.token = "autoparts";
     }
 
     @Override

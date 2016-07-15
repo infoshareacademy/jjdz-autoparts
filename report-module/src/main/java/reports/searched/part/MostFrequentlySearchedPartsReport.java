@@ -1,7 +1,5 @@
 package reports.searched.part;
 
-import org.hibernate.sql.Select;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -37,5 +35,10 @@ public class MostFrequentlySearchedPartsReport {
                 .getResultList();
 
         System.out.println(" cart resultList.toString() = " + resultList.toString());
+    }
+
+    public void getAll(){
+        List resultList = em.createQuery("select p from PartForReportModule p ").getResultList();
+        System.out.println("resultList = " + resultList);
     }
 }

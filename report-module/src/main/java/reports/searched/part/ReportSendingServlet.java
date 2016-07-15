@@ -28,6 +28,7 @@ public class ReportSendingServlet extends HttpServlet {
 
         searchedParts.getCartPartsForReport(LocalDateTime.of(2016,06,01,00,00),LocalDateTime.of(2016,07,20,00,00));
         searchedParts.getSearchedPartsForReport(LocalDateTime.of(2016,06,01,00,00),LocalDateTime.of(2016,07,20,00,00));
+        searchedParts.getAll();
         RequestDispatcher dispatcher = req.getRequestDispatcher("MostFrequentlySearchedPart.jsp");
         dispatcher.forward(req, resp);
     }
