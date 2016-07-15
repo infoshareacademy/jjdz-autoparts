@@ -74,6 +74,20 @@ public class PartForReportModule {
         return token;
     }
 
+    public PartForReportModule(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, String userName, String userId, float weight, LocalDateTime dateTime, String token) {
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.carEngine = carEngine;
+        this.partBrand = partBrand;
+        this.partId = partId;
+        this.partName = partName;
+        this.userName = userName;
+        this.userId = userId;
+        this.weight = weight;
+        this.dateTime = dateTime;
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "PartForReportModule{" +

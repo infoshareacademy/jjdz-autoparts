@@ -43,7 +43,7 @@
     <ul class="list-group">
         <c:forEach items="${hour}" var="hour">
             <br class="row">
-            <b><c:out value="${hour.part.partBrand} ${hour.part.partName} ${hour.part.partId}"/> </b>
+            <b><c:out value="${hour.part.partName} ${hour.part.partBrand} ${hour.part.partId}"/> </b>
             <c:out value=" dla samochodu ${hour.part.carBrand} ${hour.part.carModel} ${hour.part.carEngine}"/>
 
         </c:forEach>
@@ -58,7 +58,7 @@
     <ul class="list-group">
         <c:forEach items="${daily}" var="daily">
             <br class="row">
-            <b><c:out value="${daily.part.partBrand} ${daily.part.partName} ${daily.part.partId}"/> </b>
+            <b><c:out value="${daily.part.partName} ${daily.part.partBrand} ${daily.part.partId}"/> </b>
             <c:out value=" dla samochodu ${daily.part.carBrand} ${daily.part.carModel} ${daily.part.carEngine}"/>
 
         </c:forEach>
@@ -73,7 +73,7 @@
     <ul class="list-group">
         <c:forEach items="${weekly}" var="weekly">
             <br class="row">
-            <b><c:out value="${weekly.part.partBrand} ${weekly.part.partName} ${weekly.part.partId}"/> </b>
+            <b><c:out value="${weekly.part.partName} ${weekly.part.partBrand} ${weekly.part.partId}"/> </b>
             <c:out value=" dla samochodu ${weekly.part.carBrand} ${weekly.part.carModel} ${weekly.part.carEngine}"/>
 
         </c:forEach>

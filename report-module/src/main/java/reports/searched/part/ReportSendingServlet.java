@@ -24,7 +24,7 @@ public class ReportSendingServlet extends HttpServlet {
 //    Logger LOGGER;
 
     @EJB
-    MostFrequentlySearchedPartsReport searchedParts;
+    MostFrequentlySearchedParts searchedParts;
 
 //    @EJB
 //    SessionScopedListOfReports sessionData;

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-public class MostFrequentlySearchedPartsReport {
+public class MostFrequentlySearchedParts {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -41,19 +41,19 @@ public class MostFrequentlySearchedPartsReport {
                     "where d.partDTO=:part")
                     .setParameter("part", part)
                     .getSingleResult();
-            dtosList.add(new DTOwithSum(part, Double.toString(sum)));
+            dtosList.add(new DTOwithSum(part, sum));
             LOGGER.info("dtosList = {}", dtosList.toString());
 
         }
 
         dtosList.sort((d1, d2) -> {
-            return d2.getSum().compareTo(d1.getSum());
+            return Double.compare(d2.getSum(),d1.getSum());
         });
 
         LOGGER.info("Sorted dtosList = {}", dtosList.toString());
 
-        if(dtosList.size()>9){
-            return dtosList.subList(0,9);
+        if(dtosList.size()>10){
+            return dtosList.subList(0,10);
         }
 
         return dtosList;
