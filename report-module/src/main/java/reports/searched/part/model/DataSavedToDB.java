@@ -21,6 +21,7 @@ public class DataSavedToDB {
 
     private String userName;
     private String userId;
+    private float weight;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
@@ -29,11 +30,12 @@ public class DataSavedToDB {
     public DataSavedToDB() {
     }
 
-    public DataSavedToDB(PartForReportDTO partDTO, String userName, String userId, LocalDateTime dateTime) {
+    public DataSavedToDB(PartForReportDTO partDTO, String userName, String userId, LocalDateTime dateTime, float weight) {
         this.partDTO = partDTO;
         this.userName = userName;
         this.userId = userId;
         this.dateTime = dateTime;
+        this.weight = weight;
     }
 
     public Long getId() {
@@ -54,5 +56,21 @@ public class DataSavedToDB {
 
     public LocalDateTime getDateTime() {
         return dateTime;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        return "DataSavedToDB{" +
+                "id=" + id +
+                ", partDTO=" + partDTO +
+                ", userName='" + userName + '\'' +
+                ", userId='" + userId + '\'' +
+                ", weight=" + weight +
+                ", dateTime=" + dateTime +
+                '}';
     }
 }

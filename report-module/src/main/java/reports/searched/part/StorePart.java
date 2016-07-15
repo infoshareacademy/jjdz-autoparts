@@ -15,12 +15,13 @@ public class StorePart {
     @PersistenceContext
     EntityManager em;
 
-    public Long save (PartForReportModule part){
+    public Long save(PartForReportModule part) {
 
         DataSavedToDB data = new DataSavedToDBBuilder()
                 .setDateTime(part.getDateTime())
                 .setUserId(part.getUserId())
                 .setUserName(part.getUserName())
+                .setWeight(part.getWeight())
                 .setPartDTO(new PartForReportDTOBuilder()
                         .setPartBrand(part.getPartBrand())
                         .setPartId(part.getPartId())
@@ -28,15 +29,15 @@ public class StorePart {
                         .setCarBrand(part.getCarBrand())
                         .setCarEngine(part.getCarEngine())
                         .setCarModel(part.getCarModel())
-                        .setWeight(part.getWeight())
                         .build()
-                        )
+                )
                 .build();
+
         em.persist(data);
         return data.getId();
     }
 
-    public PartForReportModule getPartById (Long id){
+    public PartForReportModule getPartById(Long id) {
         return em.find(PartForReportModule.class, id);
     }
 }

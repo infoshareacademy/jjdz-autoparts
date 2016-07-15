@@ -9,7 +9,6 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import java.time.LocalDateTime;
 public class PartForReportModule {
 
-
     private String carBrand;
     private String carModel;
     private String carEngine;
@@ -73,5 +72,22 @@ public class PartForReportModule {
 
     public String getToken() {
         return token;
+    }
+
+    @Override
+    public String toString() {
+        return "PartForReportModule{" +
+                "carBrand='" + carBrand + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carEngine='" + carEngine + '\'' +
+                ", partBrand='" + partBrand + '\'' +
+                ", partId='" + partId + '\'' +
+                ", partName='" + partName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userId='" + userId + '\'' +
+                ", weight=" + weight +
+                ", dateTime=" + dateTime +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

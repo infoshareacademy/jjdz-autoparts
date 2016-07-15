@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import reports.searched.part.model.DataSavedToDB;
 import reports.searched.part.model.PartForReportModule;
 import reports.searched.part.model.PartForReportDTO;
 
@@ -22,8 +23,8 @@ public class MostFrequentlySearchedPartsReport {
 
     public void getPartsForReport(LocalDateTime startDate, LocalDateTime endDate) {
 
-        List<PartForReportModule> resultList = em.createQuery("select p " +
-                "from DataReceivedFromApp p " +
+        List<DataSavedToDB> resultList = em.createQuery("select p " +
+                "from DataSavedToDB p " +
                 "where " +
                 "p.dateTime between :startDate and :endDate ")
                 .setParameter("startDate", startDate)
@@ -33,8 +34,8 @@ public class MostFrequentlySearchedPartsReport {
         LOGGER.info(" Number of parts from date: {} to date: {} is = {}", startDate, endDate, resultList.size());
         System.out.println("resultList.toString() = " + resultList.toString());
 
-        List<PartForReportDTO> resultListDTO = em.createQuery("select p.carBrand, p.carEngine, p.carModel, p.partBrand, p.partName, p.partId, p.weight " +
-                "from DataReceivedFromApp p " +
+        List<PartForReportDTO> resultListDTO = em.createQuery("select distinct p.partDTO " +
+                "from DataSavedToDB p " +
                 "where " +
                 "p.dateTime between :startDate and :endDate ")
                 .setParameter("startDate", startDate)
@@ -42,7 +43,7 @@ public class MostFrequentlySearchedPartsReport {
                 .getResultList();
 
         LOGGER.info("DTO Number of parts from date: {} to date: {} is = {}", startDate, endDate, resultListDTO.size());
-        System.out.println("resultListDTO.toString() = " + resultListDTO.get(0).toString());
+        System.out.println("resultListDTO.toString() = " + resultListDTO.toString());
 
     }
 

@@ -7,6 +7,7 @@ public class DataSavedToDBBuilder {
     private String userName;
     private String userId;
     private LocalDateTime dateTime;
+    private float weight;
 
     public DataSavedToDBBuilder setPartDTO(PartForReportDTO partDTO) {
         this.partDTO = partDTO;
@@ -28,7 +29,12 @@ public class DataSavedToDBBuilder {
         return this;
     }
 
+    public DataSavedToDBBuilder setWeight(float weight) {
+        this.weight = weight;
+        return this;
+    }
+
     public DataSavedToDB build() {
-        return new DataSavedToDB(partDTO, userName, userId, dateTime);
+        return new DataSavedToDB(partDTO, userName, userId, dateTime, weight);
     }
 }

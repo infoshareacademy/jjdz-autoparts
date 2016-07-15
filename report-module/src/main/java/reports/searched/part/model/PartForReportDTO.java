@@ -11,16 +11,14 @@ public class PartForReportDTO {
     private String partBrand;
     private String partName;
     private String partId;
-    private float weight;
 
-    public PartForReportDTO(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, float weight) {
+    public PartForReportDTO(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName) {
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.carEngine = carEngine;
         this.partBrand = partBrand;
         this.partId = partId;
         this.partName = partName;
-        this.weight = weight;
     }
 
     public PartForReportDTO() {
@@ -30,56 +28,48 @@ public class PartForReportDTO {
         return carBrand;
     }
 
-    public String getCarModel() {
-        return carModel;
-    }
-
-    public String getCarEngine() {
-        return carEngine;
-    }
-
-    public String getPartBrand() {
-        return partBrand;
-    }
-
-    public String getPartId() {
-        return partId;
-    }
-
-    public String getPartName() {
-        return partName;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
+    }
+
+    public String getCarModel() {
+        return carModel;
     }
 
     public void setCarModel(String carModel) {
         this.carModel = carModel;
     }
 
+    public String getCarEngine() {
+        return carEngine;
+    }
+
     public void setCarEngine(String carEngine) {
         this.carEngine = carEngine;
+    }
+
+    public String getPartBrand() {
+        return partBrand;
     }
 
     public void setPartBrand(String partBrand) {
         this.partBrand = partBrand;
     }
 
-    public void setPartId(String partId) {
-        this.partId = partId;
+    public String getPartName() {
+        return partName;
     }
 
     public void setPartName(String partName) {
         this.partName = partName;
     }
 
-    public void setWeight(float weight) {
-        this.weight = weight;
+    public String getPartId() {
+        return partId;
+    }
+
+    public void setPartId(String partId) {
+        this.partId = partId;
     }
 
     @Override
@@ -89,9 +79,8 @@ public class PartForReportDTO {
                 ", carModel='" + carModel + '\'' +
                 ", carEngine='" + carEngine + '\'' +
                 ", partBrand='" + partBrand + '\'' +
-                ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
-                ", count=" + weight +
+                ", partId='" + partId + '\'' +
                 '}';
     }
 }

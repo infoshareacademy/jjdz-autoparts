@@ -27,6 +27,7 @@ public class GetSearchedPart   {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response readPartFromJson (@NotNull PartForReportModule part){
 
+
         System.out.println("part.toString() = " + part.toString());
         if(part.getToken().equals("autoparts")){
             Long id = store.save(part);

@@ -7,7 +7,6 @@ public class PartForReportDTOBuilder {
     private String partBrand;
     private String partId;
     private String partName;
-    private float weight;
 
     public PartForReportDTOBuilder setCarBrand(String carBrand) {
         this.carBrand = carBrand;
@@ -39,12 +38,8 @@ public class PartForReportDTOBuilder {
         return this;
     }
 
-    public PartForReportDTOBuilder setWeight(float weight) {
-        this.weight = weight;
-        return this;
-    }
 
     public PartForReportDTO build() {
-        return new PartForReportDTO(carBrand, carModel, carEngine, partBrand, partId, partName, weight);
+        return new PartForReportDTO(carBrand, carModel, carEngine, partBrand, partId, partName);
     }
 }
