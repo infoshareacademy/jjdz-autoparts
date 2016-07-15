@@ -52,6 +52,10 @@ public class MostFrequentlySearchedPartsReport {
 
         LOGGER.info("Sorted dtosList = {}", dtosList.toString());
 
+        if(dtosList.size()>9){
+            return dtosList.subList(0,9);
+        }
+
         return dtosList;
     }
 

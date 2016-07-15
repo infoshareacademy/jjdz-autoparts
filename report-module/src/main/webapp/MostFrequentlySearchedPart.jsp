@@ -38,7 +38,7 @@
     <div class="form-group row lower">
 
         <div class="row">
-            <label class="control-label"><b>Raport z ostatniej godziny</b></label></div>
+            <h3 class="control-label"><b>Raport z ostatniej godziny</b></h3></div>
     </div>
     <ul class="list-group">
         <c:forEach items="${hour}" var="hour">
@@ -53,7 +53,7 @@
     <div class="form-group row lower">
 
         <div class="row">
-            <label class="control-label"><b>Raport z jednego dnia</b></label></div>
+            <h3 class="control-label"><b>Raport z jednego dnia</b></h3></div>
     </div>
     <ul class="list-group">
         <c:forEach items="${daily}" var="daily">
@@ -68,7 +68,7 @@
     <div class="form-group row lower">
 
         <div class="row">
-            <label class="control-label"><b>Raport z jednego tygodnia</b></label></div>
+            <h3 class="control-label"><b>Raport z jednego tygodnia</b></h3></div>
     </div>
     <ul class="list-group">
         <c:forEach items="${weekly}" var="weekly">
