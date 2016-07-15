@@ -6,13 +6,15 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Entity
 public class PartForReportModule {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String carBrand;
@@ -25,8 +27,7 @@ public class PartForReportModule {
     private String userName;
     private String userId;
 
-    @Embedded
-    private PartSearchSource source;
+    private int weight;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
@@ -126,21 +127,17 @@ public class PartForReportModule {
         this.dateTime = dateTime;
     }
 
-    public PartSearchSource getSource() {
-        return source;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setSource(PartSearchSource source) {
-        this.source = source;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     @Override
     public String toString() {
-        return "PartForReportModule{" +
+        return "PartForDataBase{" +
                 "id=" + id +
                 ", carBrand='" + carBrand + '\'' +
                 ", carModel='" + carModel + '\'' +
@@ -151,10 +148,8 @@ public class PartForReportModule {
                 ", allegroLink='" + allegroLink + '\'' +
                 ", userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
+                ", weight=" + weight +
                 ", dateTime=" + dateTime +
-                ", token='" + token + '\'' +
-                ", source=" + source +
                 '}';
     }
-
 }

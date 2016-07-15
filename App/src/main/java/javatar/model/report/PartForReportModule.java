@@ -25,12 +25,12 @@ public class PartForReportModule {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     public LocalDateTime dateTime;
 
-    public PartSearchSource source;
+    public double weight;
 
     public String token;
 
 
-    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,PartSearchSource source) {
+    public PartForReportModule(FormData formData, SessionData sessionData, LocalDateTime dateTime,double weight) {
         this.carBrand = formData.getCarBrand();
         this.carModel = formData.getCarModel();
         this.carEngine = formData.getCarEngine();
@@ -41,7 +41,7 @@ public class PartForReportModule {
         this.userName = sessionData.getUserData();
         this.userId = String.valueOf(sessionData.getUserId());
         this.dateTime = dateTime;
-        this.source = source;
+        this.weight = weight;
         this.token = "autoparts";
     }
 
@@ -58,7 +58,7 @@ public class PartForReportModule {
                 ", userName='" + userName + '\'' +
                 ", userId='" + userId + '\'' +
                 ", dateTime=" + dateTime +
-                ", source=" + source +
+                ", weight=" + weight +
                 '}';
     }
 
