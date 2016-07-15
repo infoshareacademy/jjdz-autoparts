@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import reports.searched.part.model.PartForReportModule;
 import reports.searched.part.model.PartForReportDTO;
 
 import javax.ejb.Stateless;
@@ -19,34 +20,30 @@ public class MostFrequentlySearchedPartsReport {
     EntityManager em;
 
 
-    public void getSearchedPartsForReport(LocalDateTime startDate, LocalDateTime endDate) {
-        List<PartForReportDTO> resultList = em.createQuery("select distinct p.carBrand, p.carModel, p.carEngine, p.partBrand, p.partId, p.partName, sum(p.weight) " +
-                "from PartForReportModule p " +
+    public void getPartsForReport(LocalDateTime startDate, LocalDateTime endDate) {
+
+        List<PartForReportModule> resultList = em.createQuery("select p " +
+                "from DataReceivedFromApp p " +
                 "where " +
-                "p.dateTime between :startDate and :endDate " +
-                "group by p.carBrand, p.carModel, p.carEngine, p.partBrand, p.partId, p.partName")
+                "p.dateTime between :startDate and :endDate ")
                 .setParameter("startDate", startDate)
                 .setParameter("endDate", endDate)
                 .getResultList();
 
-        System.out.println(" search resultList.toString() = " + resultList.toString());
-    }
+        LOGGER.info(" Number of parts from date: {} to date: {} is = {}", startDate, endDate, resultList.size());
+        System.out.println("resultList.toString() = " + resultList.toString());
 
-    public void getCartPartsForReport(LocalDateTime startDate, LocalDateTime endDate) {
-        List<PartForReportDTO> resultList = em.createQuery("select distinct p.carBrand, p.carModel, p.carEngine, p.partBrand, p.partId, p.partName, sum(p.weight) " +
-                "from PartForReportModule p " +
+        List<PartForReportDTO> resultListDTO = em.createQuery("select p.carBrand, p.carEngine, p.carModel, p.partBrand, p.partName, p.partId, p.weight " +
+                "from DataReceivedFromApp p " +
                 "where " +
-                "p.dateTime between :startDate and :endDate " +
-                "group by p.carBrand, p.carModel, p.carEngine, p.partBrand, p.partId, p.partName")
+                "p.dateTime between :startDate and :endDate ")
                 .setParameter("startDate", startDate)
                 .setParameter("endDate", endDate)
                 .getResultList();
 
-        System.out.println(" cart resultList.toString() = " + resultList.toString());
+        LOGGER.info("DTO Number of parts from date: {} to date: {} is = {}", startDate, endDate, resultListDTO.size());
+        System.out.println("resultListDTO.toString() = " + resultListDTO.get(0).toString());
+
     }
 
-    public void getAll() {
-        List resultList = em.createQuery("select p from PartForReportModule p ").getResultList();
-        System.out.println("resultList = " + resultList);
-    }
 }

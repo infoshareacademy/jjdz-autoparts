@@ -1,23 +1,29 @@
 package reports.searched.part.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class PartForReportDTO {
 
     private String carBrand;
     private String carModel;
     private String carEngine;
     private String partBrand;
-    private String partId;
     private String partName;
-    private int count;
+    private String partId;
+    private float weight;
 
-    public PartForReportDTO(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, int count) {
+    public PartForReportDTO(String carBrand, String carModel, String carEngine, String partBrand, String partId, String partName, float weight) {
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.carEngine = carEngine;
         this.partBrand = partBrand;
         this.partId = partId;
         this.partName = partName;
-        this.count = count;
+        this.weight = weight;
+    }
+
+    public PartForReportDTO() {
     }
 
     public String getCarBrand() {
@@ -44,8 +50,36 @@ public class PartForReportDTO {
         return partName;
     }
 
-    public int getCount() {
-        return count;
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public void setCarEngine(String carEngine) {
+        this.carEngine = carEngine;
+    }
+
+    public void setPartBrand(String partBrand) {
+        this.partBrand = partBrand;
+    }
+
+    public void setPartId(String partId) {
+        this.partId = partId;
+    }
+
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
     @Override
@@ -57,7 +91,7 @@ public class PartForReportDTO {
                 ", partBrand='" + partBrand + '\'' +
                 ", partId='" + partId + '\'' +
                 ", partName='" + partName + '\'' +
-                ", count=" + count +
+                ", count=" + weight +
                 '}';
     }
 }

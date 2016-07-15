@@ -6,53 +6,42 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
-public class PartForReportModule {
 
+@Entity
+public class DataSavedToDB {
 
-    private String carBrand;
-    private String carModel;
-    private String carEngine;
-    private String partBrand;
-    private String partId;
-    private String partName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Embedded
+    PartForReportDTO partDTO;
+
     private String userName;
     private String userId;
-
-    private float weight;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime dateTime;
 
-    private String token;
-
-    public PartForReportModule() {
+    public DataSavedToDB() {
     }
 
-
-    public String getCarBrand() {
-        return carBrand;
+    public DataSavedToDB(PartForReportDTO partDTO, String userName, String userId, LocalDateTime dateTime) {
+        this.partDTO = partDTO;
+        this.userName = userName;
+        this.userId = userId;
+        this.dateTime = dateTime;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public Long getId() {
+        return id;
     }
 
-    public String getCarEngine() {
-        return carEngine;
-    }
-
-    public String getPartBrand() {
-        return partBrand;
-    }
-
-    public String getPartId() {
-        return partId;
-    }
-
-    public String getPartName() {
-        return partName;
+    public PartForReportDTO getPartDTO() {
+        return partDTO;
     }
 
     public String getUserName() {
@@ -63,15 +52,7 @@ public class PartForReportModule {
         return userId;
     }
 
-    public float getWeight() {
-        return weight;
-    }
-
     public LocalDateTime getDateTime() {
         return dateTime;
-    }
-
-    public String getToken() {
-        return token;
     }
 }

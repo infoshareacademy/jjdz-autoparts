@@ -2,14 +2,14 @@ package javatar.model.report;
 
 
 public class ReportWeights {
-    private double SEARCH_WEIGHT = 0.7;
-    private double CART_WEIGHT = 1.0;
+    private float SEARCH_WEIGHT = 0.7f;
+    private float CART_WEIGHT = 1.0f;
 
-    public double getSEARCH_WEIGHT() {
+    public float getSEARCH_WEIGHT() {
         return SEARCH_WEIGHT;
     }
 
-    public double getCART_WEIGHT() {
+    public float getCART_WEIGHT() {
         return CART_WEIGHT;
     }
 }
