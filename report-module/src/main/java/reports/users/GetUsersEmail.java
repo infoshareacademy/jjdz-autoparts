@@ -1,14 +1,29 @@
 package reports.users;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mysql.cj.x.json.JsonArray;
+import org.json.JSONException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GetUsersEmail {
 
-    public static String httpGet(String urlStr) throws IOException {
+    private static final String userURL = "http://localhost:8080/jjdz-autoparts/api/users/reports";
+
+    public String getEmails() throws IOException {
+        String usersJSON = httpGet("http://localhost:8080/jjdz-autoparts/api/users/reports");
+        ArrayList<User> users = getUsers(usersJSON);
+        return getEmailsFromUsers(users);
+    }
+
+    private String httpGet(String urlStr) throws IOException {
         URL url = new URL(urlStr);
         HttpURLConnection conn =
                 (HttpURLConnection) url.openConnection();
@@ -17,7 +32,6 @@ public class GetUsersEmail {
             throw new IOException(conn.getResponseMessage());
         }
 
-        // Buffer the result into a string
         BufferedReader rd = new BufferedReader(
                 new InputStreamReader(conn.getInputStream()));
         StringBuilder sb = new StringBuilder();
@@ -31,13 +45,22 @@ public class GetUsersEmail {
         return sb.toString();
     }
 
-    public static void main(String[] args) throws IOException {
-        String url = "http://localhost:8080/jjdz-autoparts/api/users/reports";
-        System.out.println(httpGet(url));
+    private ArrayList<User> getUsers(String jsonArray) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        ArrayList<User> users = mapper.readValue(jsonArray, new TypeReference<ArrayList<User>>() {
+        });
+
+        return users;
     }
 
+    private String getEmailsFromUsers(ArrayList<User> users) {
+        String emails = "";
+        for (User user : users) {
+            emails += user.geteMail() + ";";
+        }
+        return emails.substring(emails.length() - 1).equals(";") ? emails.substring(0, emails.length() - 1) : emails;
 
-
-
+    }
 
 }
