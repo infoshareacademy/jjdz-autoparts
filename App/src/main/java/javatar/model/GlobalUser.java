@@ -16,18 +16,14 @@ public class GlobalUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Long id;
-    //    @Column(name = "Usr_Name")
     private String firstName;
-    //    @Column(name = "Usr_LastName")
     private String lastName;
-    //    @Column(name = "Usr_eMail")
     private String eMail;
-    //    @Column(name = "Usr_accountType")
     @JsonIgnore
     private AccountType accountType;
-
+    @JsonIgnore
     private int administrator;
-
+    @JsonIgnore
     private int reports;
 
     public GlobalUser(LinkedInUser linkedInUser) {
