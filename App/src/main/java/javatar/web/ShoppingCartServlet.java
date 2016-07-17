@@ -2,7 +2,7 @@ package javatar.web;
 
 import javatar.model.FormData;
 import javatar.model.report.PartForReportModule;
-import javatar.model.report.PartSearchSource;
+import javatar.model.report.ReportWeights;
 import javatar.service.CRUDService;
 import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
@@ -46,7 +46,7 @@ public class ShoppingCartServlet extends HttpServlet {
         crudService.sendResults(formData,
                 sessionData.getUserData());
 
-        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), PartSearchSource.CART);
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), new ReportWeights().getCART_WEIGHT());
 
         PostChosenPart post = new PostChosenPart();
         post.postSearchedValues(reportPart);

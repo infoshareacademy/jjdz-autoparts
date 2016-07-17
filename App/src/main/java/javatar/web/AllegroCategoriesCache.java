@@ -21,11 +21,6 @@ public class AllegroCategoriesCache {
     @EJB
     APIallegro apIallegro;
 
-//    public AllegroCategoriesCache(final apiAllegro apIallegro){
-//        this.apIallegro = apIallegro;
-//    }
-
-
     @PostConstruct
     public void initialize() {
 
