@@ -23,36 +23,51 @@
 <t:navbar></t:navbar>
 
 <div class="container lower forms-template">
-
-    <h1>Wyszukiwarka części samochodowych</h1>
-    <p class="lead">Twoje ulubione części</p>
-
-    <ul class="list-group">
-        <c:forEach items="${favouriteParts}" var="part" varStatus="favsCount">
-
-            <ul class="list-group button-middle ">
-                <div class="col-lg-12 ">
-                    <div class="row">
-                        <form method="GET" action="FavsMgmt" name="partToDelete">
-                            <div class="col-lg-12 row" align="center">
-                                <br>
-                                <c:out value="${part.partBrand}"/> <c:out value="${part.partName}"/> <c:out
-                                    value="${part.partId}"/> <a href="${part.partLink}">Wyszukaj w Allegro</a>
-                                <br><br>
-                            </div>
-                            <button type="submit"
-                                    value="${part.partId}"
-                                    name="remove"><i class="fa fa-trash" aria-hidden="true"/>
-
-                            </button>
-                        </form>
-                    </div>
+    <c:choose>
+        <c:when test="${!sessionData.isLoggedIn()}">
+            <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
+            <div class="row">
+                <div id="linkedIn" class="col-xs-12 col-lg-12">
+                    <p>
+                        <a href="LinkedInLogging">
+                            <img border="0" alt="W3Schools"
+                                 src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
+                                 width="215" height="41">
+                        </a>
+                    </p>
                 </div>
+            </div>
+        </c:when>
+
+        <c:otherwise>
+            <h1>Wyszukiwarka części samochodowych</h1>
+            <p class="lead">Twoje ulubione części</p>
+
+            <ul class="list-group">
+                <c:forEach items="${favouriteParts}" var="part" varStatus="favsCount">
+
+                    <ul class="list-group button-middle ">
+                        <div class="col-lg-12 ">
+                            <div class="row">
+                                <form method="GET" action="FavsMgmt" name="partToDelete">
+                                    <div class="col-lg-12 row" align="center">
+                                        <br>
+                                        <c:out value="${part.partBrand}"/> <c:out value="${part.partName}"/> <c:out
+                                            value="${part.partId}"/> <a href="${part.partLink}">Wyszukaj w Allegro</a>
+                                        <button type="submit"
+                                                value="${part.partId}"
+                                                name="remove"> Usuń z ulubionych
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                </c:forEach>
+
             </ul>
-        </c:forEach>
-
-    </ul>
-
+        </c:otherwise>
+    </c:choose>
 </div>
 <hr>
 <footer>

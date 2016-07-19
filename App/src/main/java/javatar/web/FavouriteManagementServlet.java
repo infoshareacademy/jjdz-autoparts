@@ -1,6 +1,7 @@
 package javatar.web;
 
 import javatar.model.FavouritePart;
+import javatar.model.FormData;
 import javatar.service.FavoutirePartService;
 
 import javax.inject.Inject;
@@ -22,6 +23,9 @@ public class FavouriteManagementServlet extends HttpServlet  {
 	@Inject
 	FavoutirePartService fps;
 
+	@Inject
+	FormData formData;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -41,6 +45,11 @@ public class FavouriteManagementServlet extends HttpServlet  {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		fps.addToFavourites();
+
+		req.setAttribute("allegroLink", formData.getAllegroLink());
+		req.setAttribute("partName", formData.getPartName());
+		req.setAttribute("partBrand", formData.getPartBrand());
+		req.setAttribute("partId", formData.getPartId());
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
 		dispatcher.forward(req, resp);

@@ -24,59 +24,52 @@
 </head>
 <body>
 
-<form method="POST" action="AddingToCart">
 
-    <t:navbar></t:navbar>
+<t:navbar></t:navbar>
 
-    <div class="container lower forms-template">
+<div class="container lower forms-template">
 
-        <h1>Wyszukiwarka części samochodowych</h1>
-        <p class="lead">Poniżej znajdują się wyniki</p>
-        <div class="row">
-            <div class="col-xs-6 col-lg-6">
-                <h2>Dodaj do koszyka</h2>
-                <input autofocus type="submit" name="part" value="${partName} ${partBrand} ${partId}"/>
-
-            </div><!--/.col-xs-6.col-lg-4-->
-            <div class="col-xs-6 col-lg-6">
-                <h2>Link allegro</h2>
-                <p><a href="${allegroLink}"><c:out value="${allegroLink}"/></a></p>
-            </div><!--/.col-xs-6.col-lg-4-->
-
+    <h1>Wyszukiwarka części samochodowych</h1>
+    <p class="lead">Poniżej znajdują się wyniki</p>
+    <div class="row">
+        <div class="col-xs-9 col-lg-9">
+            <h2><c:out value="${partName} ${partBrand} ${partId}"/></h2>
         </div>
-
+        <div class="col-xs-3 col-lg-3">
+            <form method="POST" action="AddingToCart">
+                <input autofocus type="submit" name="part" value="Dodaj do koszyka"/>
+            </form>
+            <c:choose>
+                <c:when test="${sessionData.isAdmin()}">
+                    <form method="POST" action="FavsMgmt">
+                        <input type="submit" value="Dodaj do ulubionych" align="center"/>
+                    </form>
+                </c:when>
+            </c:choose>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-9 col-lg-9">
+            <h2>Link allegro</h2>
+            <p><a href="${allegroLink}">${allegroLink}</a></p>
+        </div>
+        <div class="col-xs-3 col-lg-3">
+            <form method="GET" action="Cart">
+                <input type="submit" value="Przejdź do koszyka" align="center"/>
+            </form>
+            <c:choose>
+                <c:when test="${sessionData.isAdmin()}">
+                    <form method="GET" action="Favs">
+                        <input type="submit" value="Przejdź do ulubionych" align="center"/>
+                    </form>
+                </c:when>
+            </c:choose>
+        </div>
     </div>
 
-</form>
+</div>
 
-<form method="POST" action="FavsMgmt">
 
-    <div class="container">
-        <div class="forms-template">
-            <input type="submit" value="Dodaj do ulubionych" align="center"/>
-        </div>
-
-    </div>
-
-</form>
-
-<form method="GET" action="Cart">
-    <div class="container">
-        <div class="forms-template">
-            <input type="submit" value="Przejdź do koszyka" align="center"/>
-        </div>
-
-    </div>
-</form>
-
-<form method="GET" action="Favs">
-    <div class="container">
-        <div class="forms-template">
-            <input type="submit" value="Przejdź do ulubionych" align="center"/>
-        </div>
-
-    </div>
-</form>
 <hr>
 <footer>
     <div class="col-xs-2 col-lg-2" text-align="center">
