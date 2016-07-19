@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
@@ -28,6 +29,14 @@ public class FavoutirePartService {
 
 	public void addToFavourites()
 	{
+		FavouritePart partFromDb;
+
+		try {
+			partFromDb = find(formData.getPartId());
+		} catch (NoResultException e) {
+			partFromDb = null;
+		}
+
 		FavouritePart favouritePart = new FavouritePart();
 
 		favouritePart.setPartBrand(formData.getPartBrand());
@@ -36,9 +45,14 @@ public class FavoutirePartService {
 		favouritePart.setPartLink(formData.getAllegroLink());
 		favouritePart.setUserId(sessionData.getUserId());
 
-		LOGGER.info("Adding favourite part to DB: {}", favouritePart.toString());
+		if (partFromDb == null || !partFromDb.equals(favouritePart)) {
 
-		em.persist(favouritePart);
+			LOGGER.info("Adding favourite part to DB: {}", favouritePart.toString());
+
+			em.merge(favouritePart);
+		} else {
+			System.out.println("czesc juz jest w ulubionych");
+		}
 	}
 
 	public void removeFromFavourites(String partId)
@@ -48,10 +62,11 @@ public class FavoutirePartService {
 		em.remove(favouritePart);
 	}
 
-	public FavouritePart find(String partId) {
+	public FavouritePart find(String partId) throws NoResultException{
 		Query q = em.createQuery("select f from FavouritePart f where f.partId = :partId and f.userId = :userId", FavouritePart.class);
 		q.setParameter("partId", partId);
 		q.setParameter("userId", sessionData.getUserId());
+
 		return (FavouritePart) q.getSingleResult();
 	}
 

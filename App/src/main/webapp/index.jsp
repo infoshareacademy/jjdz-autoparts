@@ -21,63 +21,56 @@
 <body>
 <t:navbar></t:navbar>
 
-    <div class="container">
+<div class="container">
 
-        <div class="starter-template">
-            <h1>Wyszukiwarka części samochodowych</h1>
-            <c:choose>
-                <c:when test="${!sessionData.isLoggedIn()}">
-                    <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
-                </c:when>
-            </c:choose>
-            <div class="row">
+    <div class="starter-template">
+        <h1>Wyszukiwarka części samochodowych</h1>
+        <c:choose>
+            <c:when test="${!sessionData.isLoggedIn()}">
+                <p class="lead">Zaloguj się do naszego portalu przy wykorzystaniu mediów społecznościowych.</p>
+                <div class="row">
+                    <div id="linkedIn" class="col-xs-12 col-lg-12">
+                        <p>
+                            <a href="LinkedInLogging">
+                                <img border="0" alt="W3Schools"
+                                     src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
+                                     width="215" height="41">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </c:when>
 
-                <c:choose>
+            <c:otherwise>
+                <div id="user">
+                    <h1>Pomyślnie zalogowałeś się do portalu</h1>
+                    <h2>Witaj ${ sessionData.getUserData() }
+                    </h2>
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-6">
+                            <h3> Wyszukiwanie części</h3>
+                            <a href="Brands">
+                                <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
+                                     width="300" height="200">
+                            </a>
 
-                    <c:when test="${!sessionData.isLoggedIn()}">
-                        <div id="linkedIn" class="col-xs-12 col-lg-12">
-                            <p>
-                                <a href="LinkedInLogging">
-                                    <img border="0" alt="W3Schools"
-                                         src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/signin-button.png"
-                                         width="215" height="41">
-                                </a>
-                            </p>
                         </div>
-                    </c:when>
-
-                    <c:otherwise>
-                        <div id="user">
-                            <h1>Pomyślnie zalogowałeś się do portalu</h1>
-                            <h2>Witaj ${ sessionData.getUserData() }
-                            </h2>
-                            <div class="row">
-                                <div class="col-xs-12 col-lg-6">
-                                    <h3> Wyszukiwanie części</h3>
-                                    <a href="Brands">
-                                        <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
-                                             width="300" height="200">
-                                    </a>
-
-                                </div>
-                                <div class="col-xs-12 col-lg-6">
-                                    <h3>Wyloguj się</h3>
-                                    <a href="logout">
-                                        <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
-                                             width="218" height="88">
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="col-xs-12 col-lg-6">
+                            <h3>Wyloguj się</h3>
+                            <a href="logout">
+                                <img src="https://www.hscripts.com/freeimages/icons/menu-buttons/button9/set1/logout.gif"
+                                     width="218" height="88">
+                            </a>
                         </div>
-                    </c:otherwise>
+                    </div>
+                </div>
+            </c:otherwise>
 
-                </c:choose>
+        </c:choose>
 
-            </div>
-
-
-        </div>
     </div>
+
+</div>
 
 </body>
 
