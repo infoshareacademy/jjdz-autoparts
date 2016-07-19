@@ -30,7 +30,7 @@
 <div class="container lower forms-template">
 
     <h1>Wyszukiwarka części samochodowych</h1>
-    <p class="lead">Poniżej znajdują się wyniki</p>
+    <p class="lead">Znaleziona część: </p>
     <div class="row">
         <div class="col-xs-9 col-lg-9">
             <h2><c:out value="${partName} ${partBrand} ${partId}"/></h2>
