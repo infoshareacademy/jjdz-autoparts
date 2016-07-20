@@ -25,10 +25,13 @@ public class GetSearchedPart   {
     @POST
     @Path("/part")
     @Consumes(MediaType.APPLICATION_JSON)
+//    @Encoded(Charset=StandardCharsets.UTF_8)
+//    @Encoded(Charset="UTF_8")
+
     public Response readPartFromJson (@NotNull PartForReportModule part){
 
-
         System.out.println("part.toString() = " + part.toString());
+
         if(part.getToken().equals("autoparts")){
             Long id = store.save(part);
             System.out.println("id = " + id);

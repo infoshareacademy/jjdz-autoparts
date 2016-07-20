@@ -17,6 +17,8 @@ public class StorePart {
 
     public Long save(PartForReportModule part) {
 
+
+
         DataSavedToDB data = new DataSavedToDBBuilder()
                 .setDateTime(part.getDateTime())
                 .setUserId(part.getUserId())
@@ -32,8 +34,10 @@ public class StorePart {
                         .build()
                 )
                 .build();
+        System.out.println("data = " + data.toString());
 
         em.persist(data);
+        System.out.println("Data is saved");
         return data.getId();
     }
 
