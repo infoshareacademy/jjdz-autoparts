@@ -27,11 +27,11 @@ public class GetSearchedPart   {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response readPartFromJson (@NotNull PartForReportModule part){
 
+        LOGGER.info("part.toString() = {}", part.toString());
 
-        System.out.println("part.toString() = " + part.toString());
         if(part.getToken().equals("autoparts")){
             Long id = store.save(part);
-            System.out.println("id = " + id);
+            LOGGER.info("id = {}", id);
         } else {
             LOGGER.error("Someone else than autoparts app tried to send POST");
         }
