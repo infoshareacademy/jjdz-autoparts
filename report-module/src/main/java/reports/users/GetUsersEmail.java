@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+@Stateless
 public class GetUsersEmail {
 
     private static final String userURL = "http://localhost:8080/jjdz-autoparts/api/users/reports";
