@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-lg-6">
                                     <h3> Wyszukiwanie części</h3>
-                                    <a href="Brands">
+                                    <a href="FindMethod.jsp">
                                         <img src="http://coolspringscollision.com/wp-content/uploads/2014/10/genuine-parts1.png"
                                              width="300" height="200">
                                     </a>

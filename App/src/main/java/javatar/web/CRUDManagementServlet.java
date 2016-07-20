@@ -4,10 +4,7 @@ package javatar.web;
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
 import javatar.model.FormData;
-import javatar.model.report.PartForReportModule;
-import javatar.model.report.PartSearchSource;
 import javatar.service.CRUDService;
-import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -65,13 +61,8 @@ public class CRUDManagementServlet extends HttpServlet {
             String add = req.getParameter("add");
 
             if (isNotEmpty(add)) {
-                crudService.addToCart(add, user);
+                crudService.addToCart(add, sessionData);
                 LOGGER.info("Adding part = {}", add);
-
-                PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), PartSearchSource.CART);
-
-                PostChosenPart post = new PostChosenPart();
-                post.postSearchedValues(reportPart);
 
             }
 

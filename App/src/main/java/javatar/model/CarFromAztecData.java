@@ -54,6 +54,50 @@ public class CarFromAztecData {
         return enginePower;
     }
 
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
 
+    public void setProductionYear(String productionYear) {
+        this.productionYear = productionYear;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public void setError(String error) {
+        Error = error;
+    }
+
+    public void setErrorText(String errorText) {
+        ErrorText = errorText;
+    }
+
+    public void setEngineCapacity(String engineCapacity) {
+        this.engineCapacity = engineCapacity;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public void setEnginePower(String enginePower) {
+        this.enginePower = enginePower;
+    }
+
+    @Override
+    public String toString() {
+        return "CarFromAztecData{" +
+                "carModel='" + carModel + '\'' +
+                ", productionYear='" + productionYear + '\'' +
+                ", carBrand='" + carBrand + '\'' +
+                ", Error='" + Error + '\'' +
+                ", ErrorText='" + ErrorText + '\'' +
+                ", engineCapacity='" + engineCapacity + '\'' +
+                ", fuelType='" + fuelType + '\'' +
+                ", enginePower='" + enginePower + '\'' +
+                '}';
+    }
 }
 

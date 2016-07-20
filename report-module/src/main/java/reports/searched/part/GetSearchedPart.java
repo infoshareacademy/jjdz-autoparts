@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import reports.searched.part.model.PartForReportModule;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -26,10 +27,11 @@ public class GetSearchedPart   {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response readPartFromJson (@NotNull PartForReportModule part){
 
-        System.out.println("part.toString() = " + part.toString());
-        if(part.getToken()=="autoparts-app"){
+        LOGGER.info("part.toString() = {}", part.toString());
+
+        if(part.getToken().equals("autoparts")){
             Long id = store.save(part);
-            System.out.println("id = " + id);
+            LOGGER.info("id = {}", id);
         } else {
             LOGGER.error("Someone else than autoparts app tried to send POST");
         }

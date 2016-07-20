@@ -6,6 +6,7 @@ import javatar.model.CarsBrands;
 import javatar.model.DataCarsBrands;
 
 
+import javax.ejb.Stateless;
 import java.io.*;
 import java.util.HashMap;
 

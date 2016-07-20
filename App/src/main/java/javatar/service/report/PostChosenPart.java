@@ -16,7 +16,9 @@ public class PostChosenPart {
         Response post = ClientBuilder.newClient()
                 .target(uri)
                 .request()
+                .acceptEncoding("UTF-8")
                 .post(Entity.json(reportPart));
+
 
         System.out.println("response = " + post.getStatus());
     }
