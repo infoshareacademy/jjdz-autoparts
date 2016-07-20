@@ -30,6 +30,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="/jjdz-autoparts/Cart">Koszyk</a></li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:18080/report-module/Report">Raport</a></li>
+            </ul>
         </div>
     </div>
 </nav>
