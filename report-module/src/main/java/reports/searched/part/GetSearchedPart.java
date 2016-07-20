@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 @Path("/searched")
 public class GetSearchedPart   {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private final Logger LOGGER = LogManager.getLogger();
 
     @EJB
     StorePart store;

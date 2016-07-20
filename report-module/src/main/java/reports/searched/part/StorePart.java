@@ -14,13 +14,13 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class StorePart {
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
     @PersistenceContext
     EntityManager em;
 
-    public Long save(PartForReportModule part) {
 
+
+    public Long save(PartForReportModule part) {
+        final Logger LOGGER = LogManager.getLogger();
 
 
         DataSavedToDB data = new DataSavedToDBBuilder()
