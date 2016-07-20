@@ -1,5 +1,7 @@
 package reports.searched.part;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import reports.searched.part.model.DataSavedToDB;
 import reports.searched.part.model.DataSavedToDBBuilder;
 import reports.searched.part.model.PartForReportDTOBuilder;
@@ -11,6 +13,8 @@ import javax.persistence.PersistenceContext;
 
 @Stateless
 public class StorePart {
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @PersistenceContext
     EntityManager em;
@@ -34,10 +38,10 @@ public class StorePart {
                         .build()
                 )
                 .build();
-        System.out.println("data = " + data.toString());
+        LOGGER.info("data = {}", data.toString());
 
         em.persist(data);
-        System.out.println("Data is saved");
+        LOGGER.info("Data is saved");
         return data.getId();
     }
 
