@@ -25,6 +25,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="usersList">Administrator</a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="Favourites.jsp">Ulubione</a></li>
+                    </ul>
                 </c:when>
             </c:choose>
             <ul class="nav navbar-nav">
