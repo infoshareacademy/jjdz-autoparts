@@ -24,10 +24,16 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    SessionData sessionData;
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
 
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
@@ -72,7 +78,15 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
         String url = "http://infoshareacademycom.2find.ru" + engineLink + "?lang=polish";
 
         JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
+
+        if (autopartCategories == null) {
+            sessionData.setErrorMessage("BŁĄD! Brak części samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+
         req.setAttribute("categories", autopartCategories.getData());
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("PartFirstCategoryChoosingForm.jsp");
         dispatcher.forward(req, resp);

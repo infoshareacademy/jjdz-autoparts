@@ -16,6 +16,16 @@ public class SessionData implements Serializable {
 
     private String errorMessage;
 
+    private String warningMessage;
+
+    public String getWarningMessage() {
+        return warningMessage;
+    }
+
+    public void setWarningMessage(String warningMessage) {
+        this.warningMessage = warningMessage;
+    }
+
     public String getErrorMessage() {
         return errorMessage;
     }

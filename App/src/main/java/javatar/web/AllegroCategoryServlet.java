@@ -4,6 +4,7 @@ import javatar.model.*;
 import javatar.model.report.PartForReportModule;
 import javatar.model.report.ReportWeights;
 import javatar.service.CreateAllegroLink;
+import javatar.service.FormDataTableService;
 import javatar.service.report.PostChosenPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,6 +38,9 @@ public class AllegroCategoryServlet extends HttpServlet {
 
     @EJB
     AllegroCategoriesCache allegroCategoriesCache;
+
+    @EJB
+    FormDataTableService formDataTableService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -83,6 +87,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setAttribute("partId", id);
 
         sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
         if (allegroLink.length()<1 || allegroLink == null)
         {
             sessionData.setErrorMessage(sessionData.getErrorMessage() + "BŁĄD! Brak modeli samochodowych do wyświetlenia!/n");
@@ -99,6 +104,7 @@ public class AllegroCategoryServlet extends HttpServlet {
             LOGGER.error(sessionData.getErrorMessage());
         }
         req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

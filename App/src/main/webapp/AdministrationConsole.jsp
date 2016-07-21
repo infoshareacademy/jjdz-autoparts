@@ -21,6 +21,19 @@
 <div class="container lower forms-template">
 
     <h1 align="center">Lista użytkowników</h1>
+    <c:if test="${not empty errorMessage}">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <c:out value="${errorMessage}"/>
+        </div>
+    </c:if>
+    <c:if test="${not empty warningMessage}">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <c:out value="${warningMessage}"/>
+        </div>
+    </c:if>
     <div class="row">
         <table class="table table-bordered">
             <thead>

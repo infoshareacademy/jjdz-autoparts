@@ -34,6 +34,7 @@ public class PartCategoryChoosingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
         String categories;
@@ -83,6 +84,7 @@ public class PartCategoryChoosingServlet extends HttpServlet {
         }
 
         req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         dispatcher = req.getRequestDispatcher("PartCategoryChoosingForm.jsp");
         dispatcher.forward(req, resp);

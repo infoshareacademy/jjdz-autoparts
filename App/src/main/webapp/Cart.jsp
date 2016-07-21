@@ -30,7 +30,19 @@
 
     <h1>Wyszukiwarka części samochodowych</h1>
     <p class="lead">Zarządzaj swoim koszykiem</p>
-
+    <c:if test="${not empty errorMessage}">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <c:out value="${errorMessage}"/>
+        </div>
+    </c:if>
+    <c:if test="${not empty warningMessage}">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <c:out value="${warningMessage}"/>
+        </div>
+    </c:if>
     <ul class="list-group">
         <c:forEach items="${crudViewList}" var="list" varStatus="carsCount">
             <form method="GET" action="CRUD" name="selectPart">

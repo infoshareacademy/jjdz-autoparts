@@ -47,12 +47,14 @@ public class EnginesChoosingServlet extends HttpServlet {
         req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
 
         sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
         if (dataCarsEngineAndFuelModels.getData().isEmpty())
         {
             sessionData.setErrorMessage("BŁĄD! Brak silników samochodowych do wyświetlenia!");
             LOGGER.error(sessionData.getErrorMessage());
         }
         req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
         dispatcher.forward(req, resp);

@@ -26,7 +26,20 @@
     <div class="starter-template">
         <h1>Wyszukiwarka części samochodowych</h1>
         <form method="POST" action="AztecKey" class="form-horizontal" role="form">
-
+            <c:if test="${not empty errorMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${errorMessage}"/>
+                </div>
+            </c:if>
+            <c:if test="${not empty warningMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${warningMessage}"/>
+                </div>
+            </c:if>
             <div class="form-group row lower">
                 <label class="col-lg-3 control-label"><b>Podaj klucz sesji użytkownika z aplikacji AtenaAztec</b></label>
 

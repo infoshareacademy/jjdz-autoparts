@@ -48,12 +48,14 @@ public class ModelChoosingServlet extends HttpServlet {
         req.setAttribute("models", dataCarsModels.getData());
 
         sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
         if (dataCarsModels.getData().isEmpty())
         {
             sessionData.setErrorMessage("BŁĄD! Brak modeli samochodowych do wyświetlenia!");
             LOGGER.error(sessionData.getErrorMessage());
         }
         req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
         dispatcher.forward(req, resp);
