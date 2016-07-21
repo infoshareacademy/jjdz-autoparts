@@ -34,8 +34,6 @@ public class SessionData implements Serializable {
         this.errorMessage = errorMessage;
     }
 
-    private int isAdmin = 0;
-
     public long getUserId() {
         return userId;
     }
