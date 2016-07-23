@@ -34,11 +34,25 @@
     <form method="GET" action="Engines" class="form-horizontal" role="form">
 
         <p class="col-lg-6" align="right"> Wybrana marka samochodu:</p>
-        <p class="col-lg-6" align="left"> <c:out value="${brandName}"/></p>
+        <p class="col-lg-6" align="left"><c:out value="${brandName}"/></p>
         <br>
 
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz model samochodu</b></label>
+            <c:if test="${not empty errorMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${errorMessage}"/>
+                </div>
+            </c:if>
+            <c:if test="${not empty warningMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${warningMessage}"/>
+                </div>
+            </c:if>
             <div class="col-lg-6">
                 <select name="model" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${models}" var="model">
@@ -46,7 +60,9 @@
                     </c:forEach>
                 </select>
             </div>
-            <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
+            <c:if test="${empty errorMessage}">
+                <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
+            </c:if>
         </div>
     </form>
 </div>

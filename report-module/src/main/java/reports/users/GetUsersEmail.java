@@ -14,10 +14,10 @@ import java.util.ArrayList;
 @Stateless
 public class GetUsersEmail {
 
-    private static final String userURL = "http://localhost:8080/jjdz-autoparts/api/users/reports";
+    private static final String USER_URL = "http://localhost:8080/jjdz-autoparts/api/users/reports";
 
     public String getEmails() throws IOException {
-        String usersJSON = httpGet("http://localhost:8080/jjdz-autoparts/api/users/reports");
+        String usersJSON = httpGet(USER_URL);
         ArrayList<User> users = getUsers(usersJSON);
         return getEmailsFromUsers(users);
     }

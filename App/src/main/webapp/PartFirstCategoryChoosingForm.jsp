@@ -51,7 +51,20 @@
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz kategorię</b></label>
             <div class="col-lg-6">
-
+                <c:if test="${not empty errorMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${errorMessage}"/>
+                    </div>
+                </c:if>
+                <c:if test="${not empty warningMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${warningMessage}"/>
+                    </div>
+                </c:if>
                 <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.name};${category.link};${category.has_children}"><c:out value="${category.name}"/></option>
