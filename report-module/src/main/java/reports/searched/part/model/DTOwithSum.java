@@ -27,9 +27,7 @@ public class DTOwithSum {
 
     @Override
     public String toString() {
-        return "DTOwithSum{" +
-                "part=" + part +
-                ", sum=" + sum +
-                '}';
+        return
+                "Część: " + part.toString() + " Ilość: " + Math.round(sum) + "\n";
     }
 }

@@ -14,12 +14,12 @@ import java.util.ArrayList;
 @Stateless
 public class GetUsersEmail {
 
-    private static final String USER_URL = "http://localhost:8080/jjdz-autoparts/api/users/reports";
+    private final String userURL = "http://jboss:8080/jjdz-autoparts/api/users/reports";
 
-    public String getEmails() throws IOException {
-        String usersJSON = httpGet(USER_URL);
-        ArrayList<User> users = getUsers(usersJSON);
-        return getEmailsFromUsers(users);
+    public ArrayList<User> getEmails() throws IOException {
+        String usersJSON = httpGet(userURL);
+        return getUsers(usersJSON);
+
     }
 
     private String httpGet(String urlStr) throws IOException {
@@ -53,13 +53,6 @@ public class GetUsersEmail {
         return users;
     }
 
-    private String getEmailsFromUsers(ArrayList<User> users) {
-        String emails = "";
-        for (User user : users) {
-            emails += user.geteMail() + ";";
-        }
-        return emails.substring(emails.length() - 1).equals(";") ? emails.substring(0, emails.length() - 1) : emails;
 
-    }
 
 }
