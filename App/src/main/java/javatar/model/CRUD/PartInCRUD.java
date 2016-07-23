@@ -1,12 +1,15 @@
 package javatar.model.CRUD;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 
 @Embeddable
 public class PartInCRUD {
     protected String partBrand;
     protected String partId;
     protected String partName;
+
+    @Transient
     protected Integer recordCount;
 
     @Override

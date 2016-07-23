@@ -35,31 +35,44 @@
     <form method="GET" action="PartCategory" class="form-horizontal" role="form">
         <div class="row">
             <p class="col-lg-6" align="right">Wybrana marka samochodu:</p>
-            <p class="col-lg-6" align="left"> ${brandName}</p>
+            <p class="col-lg-6" align="left"><c:out value="${brandName}"></c:out> </p>
 
         </div>
         <div class="row">
             <p class="col-lg-6" align="right"> Wybrany model samochodu:</p>
-            <p class="col-lg-6" align="left">${modelName}</p>
+            <p class="col-lg-6" align="left"><c:out value="${modelName}"/></p>
         </div>
         <div class="row">
             <p class="col-lg-6" align="right">Wybrany silnik:</p>
-            <p class="col-lg-6" align="left"> ${engineName}</p>
+            <p class="col-lg-6" align="left"> <c:out value="${engineName}"/></p>
 
         </div>
 
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz kategorię</b></label>
             <div class="col-lg-6">
-
+                <c:if test="${not empty errorMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${errorMessage}"/>
+                    </div>
+                </c:if>
+                <c:if test="${not empty warningMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${warningMessage}"/>
+                    </div>
+                </c:if>
                 <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" name="category">
                     <c:forEach items="${categories}" var="category">
-                        <option value="${category.name};${category.link};${category.has_children}">${category.name}</option>
+                        <option value="${category.name};${category.link};${category.has_children}"><c:out value="${category.name}"/></option>
                     </c:forEach>
                 </select>
             </div>
 
-            <input class="col-lg-1 button-middle" type="submit" value="OK">
+            <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
         </div>
     </form>
 </div>

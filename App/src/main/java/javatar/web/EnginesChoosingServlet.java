@@ -3,8 +3,7 @@ package javatar.web;
 import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.FormData;
 import javatar.service.JsonParserAll;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -17,10 +16,13 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Engines")
 public class EnginesChoosingServlet extends HttpServlet {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(EnginesChoosingServlet.class);
 
     @Inject
     FormData formData;
+
+    @Inject
+    SessionData sessionData;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,6 +44,16 @@ public class EnginesChoosingServlet extends HttpServlet {
         LOGGER.info("Chosen brand file name: {}; chosen model file name: {}; resources link: {}",formData.getCarBrand(),modelName,url);
         DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
         req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+        if (dataCarsEngineAndFuelModels.getData().isEmpty())
+        {
+            sessionData.setErrorMessage("BŁĄD! Brak silników samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
         dispatcher.forward(req, resp);

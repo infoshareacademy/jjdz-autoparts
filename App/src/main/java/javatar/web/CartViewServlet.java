@@ -3,9 +3,9 @@ package javatar.web;
 import javatar.model.CRUD.CarInCRUD;
 import javatar.model.CRUD.ListCarsParts;
 import javatar.service.CRUDService;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -21,7 +21,7 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/Cart")
 public class CartViewServlet extends HttpServlet {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(CartViewServlet.class);
 
     @EJB
     CRUDService crudService;
@@ -37,7 +37,7 @@ public class CartViewServlet extends HttpServlet {
 
         String user = sessionData.getUserData();
         List<CarInCRUD> cars = crudService.returnCarsDisctinct(user);
-        LOGGER.log(Level.INFO,"cars before crudService = {}", cars.toString());
+        LOGGER.info("cars before crudService = {}", cars.toString());
         List<ListCarsParts> listCarsParts = crudService.getCarsWithPart(cars, user);
         session.setAttribute("crudViewList", listCarsParts);
 

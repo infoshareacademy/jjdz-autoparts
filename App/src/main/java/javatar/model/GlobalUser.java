@@ -1,6 +1,10 @@
 package javatar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+
+import java.awt.*;
 
 import static javatar.model.AccountType.LINKEDIN;
 
@@ -10,25 +14,44 @@ public class GlobalUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column( unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private Long id;
-//    @Column(name = "Usr_Name")
     private String firstName;
-//    @Column(name = "Usr_LastName")
     private String lastName;
-//    @Column(name = "Usr_eMail")
     private String eMail;
-//    @Column(name = "Usr_accountType")
+    @JsonIgnore
     private AccountType accountType;
+    @JsonIgnore
+    private int administrator;
+    @JsonIgnore
+    private int reports;
 
     public GlobalUser(LinkedInUser linkedInUser) {
         this.accountType = LINKEDIN;
         this.firstName = linkedInUser.getFirstName();
         this.lastName = linkedInUser.getLastName();
         this.eMail = linkedInUser.getEmailAddress();
+        this.administrator = AdminEmail.getIsAdmin(linkedInUser.getEmailAddress().trim());
+        this.reports = 0;
     }
 
     public GlobalUser() {
+    }
+
+    public int getAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(int administrator) {
+        this.administrator = administrator;
+    }
+
+    public int getReports() {
+        return reports;
+    }
+
+    public void setReports(int reports) {
+        this.reports = reports;
     }
 
     public AccountType getAccountType() {

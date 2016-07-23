@@ -1,31 +1,41 @@
 package javatar.service;
 
-import javatar.model.AllegroCategories;
-import javatar.model.Autopart;
-import javatar.model.AutopartAllegroListModel;
-import javatar.model.AutopartCategory;
+import javatar.model.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class CreateAllegroLinkTest {
-    AllegroCategoryFinder allegroCategoryFinder = new AllegroCategoryFinder();
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
     AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
-    XMLParser xmlParser = new XMLParser();
-    List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
     @Before
     public void initialize() {
-        InputStream allegroCategoriesFile = this.getClass().getResourceAsStream("/Allegro_cathegories_2016-02-13.xml");
-        allegroCategoriesList = xmlParser.allegroCategoryObject(allegroCategoriesFile);
+        AllegroCategories cat1 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodnice")
+                .setCatId(18690)
+                .setCatParent(18689)
+                .build();
+
+        AllegroCategories cat2 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodnice oleju")
+                .setCatId(251083)
+                .setCatParent(18690)
+                .build();
+
+        AllegroCategories cat4 = new AllegroCategoriesBuilder()
+                .setCatName("Chłodzenie silnika")
+                .setCatId(18689)
+                .setCatParent(620)
+                .build();
+
+        List<AllegroCategories> allegroCategoriesList = Arrays.asList(cat1, cat2,  cat4);
         autopartAllegroListModel.setAllegroCategories(allegroCategoriesList);
     }
 
@@ -75,24 +85,6 @@ public class CreateAllegroLinkTest {
 
         assertThat(link,is(equalTo("http://allegro.pl/chlodnice-chlodnice-oleju-251083")));
 
-    }
-
-    @Test
-    public void test_match_2_categories() throws Exception {
-
-        //given
-        Autopart autopart = new Autopart();
-        AutopartCategory categoryListElement = new AutopartCategory();
-        categoryListElement.setName("Części karoserii");
-        autopart.addCategoryToList(categoryListElement);
-        AutopartCategory categoryListElement2 = new AutopartCategory();
-        categoryListElement2.setName("Maski");
-        autopart.addCategoryToList(categoryListElement2);
-        autopartAllegroListModel.setAutopart(autopart);
-
-        String link = createAllegroLink.createAllegroLink(autopartAllegroListModel);
-
-        assertThat(link,is(equalTo("http://allegro.pl/czesci-samochodowe-czesci-karoserii-4094")));
     }
 
     @Test

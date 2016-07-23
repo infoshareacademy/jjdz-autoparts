@@ -1,5 +1,6 @@
-<%@tag description = "navbar"
-    pageEncoding = "UTF-8"
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@tag description="navbar"
+       pageEncoding="UTF-8"
 %>
 
 
@@ -18,6 +19,22 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/jjdz-autoparts">Home</a></li>
+            </ul>
+            <c:choose>
+                <c:when test="${sessionData.isAdmin()}">
+                    <ul class="nav navbar-nav">
+                        <li><a href="usersList">Administrator</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="Favourites.jsp">Ulubione</a></li>
+                    </ul>
+                </c:when>
+            </c:choose>
+            <ul class="nav navbar-nav">
+                <li><a href="/jjdz-autoparts/Cart">Koszyk</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:18080/report-module/Report">Raport</a></li>
             </ul>
         </div>
     </div>

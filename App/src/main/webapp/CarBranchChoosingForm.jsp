@@ -37,6 +37,20 @@
 
     <form method="GET" action="Models" class="form-horizontal" role="form">
 
+        <c:if test="${not empty errorMessage}">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <c:out value="${errorMessage}"/>
+            </div>
+        </c:if>
+        <c:if test="${not empty warningMessage}">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <c:out value="${warningMessage}"/>
+            </div>
+        </c:if>
+
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz markę samochodu</b></label>
 
@@ -44,12 +58,14 @@
                 <select name="brand" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${brands}" var="brand">
                         <option
-                                value="${brand.name};${brand.link}">${brand.name}</option>
+                                value="${brand.name};${brand.link}"><c:out value="${brand.name}"/></option>
                     </c:forEach>
                 </select>
 
             </div>
-            <input class="col-lg-1 button-middle" type="submit" value="OK">
+            <c:if test="${empty errorMessage}">
+                <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
+            </c:if>
         </div>
     </form>
 </div>

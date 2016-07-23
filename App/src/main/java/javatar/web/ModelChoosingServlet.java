@@ -3,8 +3,7 @@ package javatar.web;
 import javatar.model.DataCarsModels;
 import javatar.model.FormData;
 import javatar.service.JsonParserAll;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -17,10 +16,13 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Models")
 public class ModelChoosingServlet extends HttpServlet {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(ModelChoosingServlet.class);
 
     @Inject
     FormData formData;
+
+    @Inject
+    SessionData sessionData;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -43,6 +45,16 @@ public class ModelChoosingServlet extends HttpServlet {
         DataCarsModels dataCarsModels = parser.parseModelFile(url);
         LOGGER.info("Data parsed on model file has size: {}",dataCarsModels.getData().size());
         req.setAttribute("models", dataCarsModels.getData());
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+        if (dataCarsModels.getData().isEmpty())
+        {
+            sessionData.setErrorMessage("BŁĄD! Brak modeli samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
         dispatcher.forward(req, resp);

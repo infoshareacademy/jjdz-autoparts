@@ -2,8 +2,8 @@ package javatar.service;
 
 
 import javatar.web.SessionData;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LinkedInLogOut extends HttpServlet{
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(LinkedInLogOut.class);
 
     @Inject
     SessionData sessionData;

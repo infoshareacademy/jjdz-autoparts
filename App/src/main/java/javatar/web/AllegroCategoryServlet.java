@@ -1,10 +1,12 @@
 package javatar.web;
 
 import javatar.model.*;
+import javatar.model.report.PartForReportModule;
+import javatar.model.report.ReportWeights;
 import javatar.service.CreateAllegroLink;
 import javatar.service.FormDataTableService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import javatar.service.report.PostChosenPart;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -15,12 +17,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/AllegroLink")
 public class AllegroCategoryServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(AllegroCategoryServlet.class);
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Inject
@@ -33,10 +36,10 @@ public class AllegroCategoryServlet extends HttpServlet {
     SessionData sessionData;
 
     @EJB
-    FormDataTableService formDataTableService;
+    AllegroCategoriesCache allegroCategoriesCache;
 
     @EJB
-    AllegroCategoriesCache allegroCategoriesCache;
+    FormDataTableService formDataTableService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -44,7 +47,7 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         AutopartAllegroListModel autopartAllegroListModel = new AutopartAllegroListModel();
         Autopart autopart = new Autopart();
-        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.returnAllegroCategoriesFromFile();
+        List<AllegroCategories> allegroCategoriesList = allegroCategoriesCache.getAllegroCategoriesList();
 
         String autopartAsString = req.getParameter("part");
 
@@ -67,7 +70,13 @@ public class AllegroCategoryServlet extends HttpServlet {
         formData.setPartId(id);
         formData.setPartName(name);
 
-        formDataTableService.sendResults();
+        PartForReportModule reportPart = new PartForReportModule(formData,sessionData, LocalDateTime.now(), new ReportWeights().getSEARCH_WEIGHT() );
+
+        System.out.println("reportPart.toString() = " + reportPart.toString());
+
+        PostChosenPart post = new PostChosenPart();
+        post.postSearchedValues(reportPart);
+
 
         LOGGER.info("Created allegro link: {}", allegroLink);
 
@@ -76,7 +85,29 @@ public class AllegroCategoryServlet extends HttpServlet {
         req.setAttribute("partBrand", brand);
         req.setAttribute("partId", id);
 
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+        if (allegroLink.length()<1 || allegroLink == null)
+        {
+            sessionData.setErrorMessage(sessionData.getErrorMessage() + "BŁĄD! Brak modeli samochodowych do wyświetlenia!/n");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+
+        FormDataTable fdt = new FormDataTable();
+        fdt.setFormData(formData);
+        fdt.setUserName(sessionData.getUserData());
+        fdt.setLocalDateTime(LocalDateTime.now());
+        if (formDataTableService.isAnyFormDataTableFieldEmpty(fdt))
+        {
+            sessionData.setErrorMessage(sessionData.getErrorMessage() + "BŁĄD! Puste dane wysyłane do bazy!/n");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
     }
+
+
 }
