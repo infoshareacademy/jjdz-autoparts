@@ -1,7 +1,6 @@
 package reports.searched.part;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import reports.searched.part.model.DataSavedToDB;
 import reports.searched.part.model.DataSavedToDBBuilder;
 import reports.searched.part.model.PartForReportDTOBuilder;
@@ -14,14 +13,12 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class StorePart {
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
     @PersistenceContext
     EntityManager em;
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(StorePart.class);
+
     public Long save(PartForReportModule part) {
-
-
 
         DataSavedToDB data = new DataSavedToDBBuilder()
                 .setDateTime(part.getDateTime())

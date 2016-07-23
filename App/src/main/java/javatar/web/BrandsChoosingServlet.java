@@ -1,8 +1,7 @@
 package javatar.web;
 
 import javatar.model.CarsBrands;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -18,7 +17,7 @@ import java.util.Collection;
 @WebServlet(urlPatterns = "/Brands")
 public class BrandsChoosingServlet extends HttpServlet {
 
-	private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(BrandsChoosingServlet.class);
 
 	@EJB
 	BrandsJsonCache cache;

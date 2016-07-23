@@ -2,6 +2,7 @@ package reports.searched.part;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import reports.searched.part.model.DTOwithSum;
 import reports.searched.part.model.PartForReportDTO;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Stateless
 public class MostFrequentlySearchedParts {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(MostFrequentlySearchedParts.class);
 
     @PersistenceContext
     EntityManager em;

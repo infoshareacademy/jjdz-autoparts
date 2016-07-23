@@ -3,8 +3,8 @@ package javatar.service;
 import javatar.model.GlobalUser;
 import javatar.web.GlobalUserService;
 import javatar.web.SessionData;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -18,7 +18,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/revokeAdmin")
 public class RevokeAdminServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(RevokeAdminServlet.class);
 
     @EJB
     GlobalUserService globalUserService;

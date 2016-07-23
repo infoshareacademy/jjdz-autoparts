@@ -1,7 +1,7 @@
 package reports.searched.part;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import reports.searched.part.model.PartForReportModule;
 
 import javax.ejb.EJB;
@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 @Path("/searched")
 public class GetSearchedPart   {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(GetSearchedPart.class);
 
     @EJB
     StorePart store;
@@ -26,7 +26,6 @@ public class GetSearchedPart   {
     @Path("/part")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response readPartFromJson (@NotNull PartForReportModule part){
-
         LOGGER.info("part.toString() = {}", part.toString());
 
         if(part.getToken().equals("autoparts")){

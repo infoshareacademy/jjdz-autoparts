@@ -5,8 +5,7 @@ import javatar.model.report.PartForReportModule;
 import javatar.model.report.ReportWeights;
 import javatar.service.CRUDService;
 import javatar.service.report.PostChosenPart;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -22,7 +21,7 @@ import java.time.LocalDateTime;
 @WebServlet(urlPatterns = "/AddingToCart")
 public class ShoppingCartServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(ShoppingCartServlet.class);
 
     @Inject
     FormData formData;
@@ -36,6 +35,7 @@ public class ShoppingCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        LOGGER.info("Saving part data ... ");
         sessionData.setErrorMessage(null);
         sessionData.setWarningMessage(null);
 
@@ -54,6 +54,7 @@ public class ShoppingCartServlet extends HttpServlet {
         PostChosenPart post = new PostChosenPart();
         post.postSearchedValues(reportPart);
 
+        LOGGER.info("Data succesfully saved!");
         req.setAttribute("errorMessage", sessionData.getErrorMessage());
         req.setAttribute("warningMessage", sessionData.getWarningMessage());
 

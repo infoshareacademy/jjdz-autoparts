@@ -3,9 +3,7 @@ package javatar.web;
 import javatar.model.FormData;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.hibernate.annotations.SourceType;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -24,10 +22,10 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(PartFirstCategoryChoosingServlet.class);
     @Inject
     SessionData sessionData;
 
-    private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

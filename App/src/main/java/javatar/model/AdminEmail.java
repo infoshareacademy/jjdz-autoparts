@@ -6,7 +6,7 @@ public class AdminEmail {
 
     private static HashSet<String> emails = new HashSet<String>() {{
         add("danielkepczynski@gmail.com");
-        add("anetatruszczynska@wp.pl");
+        add("karbowska.aneta@gmail.com");
         add("michal.cymerys@gmail.com");
     }};
 

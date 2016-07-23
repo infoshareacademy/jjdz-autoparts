@@ -2,8 +2,8 @@ package javatar.web;
 
 import javatar.model.AllegroCategories;
 import javatar.service.apiAllegro.APIallegro;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.*;
@@ -15,7 +15,7 @@ import java.util.List;
 @Lock(LockType.READ)
 public class AllegroCategoriesCache {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(AllegroCategoriesCache.class);
     List<AllegroCategories> allegroCategoriesList = new ArrayList<>();
 
     @EJB
