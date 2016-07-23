@@ -36,6 +36,9 @@ public class ShoppingCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+
         req.setCharacterEncoding("UTF-8");
 
         req.setAttribute("partName", formData.getPartName());
@@ -50,6 +53,9 @@ public class ShoppingCartServlet extends HttpServlet {
 
         PostChosenPart post = new PostChosenPart();
         post.postSearchedValues(reportPart);
+
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);

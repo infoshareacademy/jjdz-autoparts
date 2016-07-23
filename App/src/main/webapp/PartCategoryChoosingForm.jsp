@@ -57,7 +57,21 @@
             <p class="col-lg-6" align="left"><c:out value="${categoryName}"/></p>
         </div>
         <div class="form-group row lower">
-            <label class="col-lg-3 control-label"><b>Wybierz model samochodu</b></label>
+            <label class="col-lg-3 control-label"><b>Wybierz kategorię:</b></label>
+            <c:if test="${not empty errorMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${errorMessage}"/>
+                </div>
+            </c:if>
+            <c:if test="${not empty warningMessage}">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <c:out value="${warningMessage}"/>
+                </div>
+            </c:if>
             <div class="col-lg-6">
                 <c:if test="${hasChildren == true}">
                     <select name="category" id="basic" class="selectpicker show-tick form-control" data-live-search="true">

@@ -40,6 +40,9 @@ public class CRUDManagementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+
         System.out.println("CRUD servlet is running");
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
@@ -74,6 +77,8 @@ public class CRUDManagementServlet extends HttpServlet {
         session.setAttribute("crudViewList", listCarsParts);
 
         req.setAttribute("cars", cars);
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Cart.jsp");
