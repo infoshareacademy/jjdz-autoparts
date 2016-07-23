@@ -14,7 +14,9 @@ import java.io.IOException;
         "/setAdminUser",
         "/revokeAdmin",
         "/setReportsUser",
-        "/revokeReports"})
+        "/revokeReports",
+        "/Favs",
+        "/FavsMgmt"})
 public class AdminFilter implements Filter {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(AdminFilter.class);
