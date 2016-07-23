@@ -36,6 +36,9 @@ public class ShoppingCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         LOGGER.info("Saving part data ... ");
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+
         req.setCharacterEncoding("UTF-8");
 
         req.setAttribute("partName", formData.getPartName());
@@ -52,6 +55,9 @@ public class ShoppingCartServlet extends HttpServlet {
         post.postSearchedValues(reportPart);
 
         LOGGER.info("Data succesfully saved!");
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("AllegroCategoryForm.jsp");
         dispatcher.forward(req, resp);
     }

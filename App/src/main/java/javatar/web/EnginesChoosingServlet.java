@@ -21,6 +21,9 @@ public class EnginesChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    SessionData sessionData;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -41,6 +44,16 @@ public class EnginesChoosingServlet extends HttpServlet {
         LOGGER.info("Chosen brand file name: {}; chosen model file name: {}; resources link: {}",formData.getCarBrand(),modelName,url);
         DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
         req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+        if (dataCarsEngineAndFuelModels.getData().isEmpty())
+        {
+            sessionData.setErrorMessage("BŁĄD! Brak silników samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
         dispatcher.forward(req, resp);

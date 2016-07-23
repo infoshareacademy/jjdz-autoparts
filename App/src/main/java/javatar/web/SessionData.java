@@ -14,6 +14,26 @@ public class SessionData implements Serializable {
 
     private int isAdmin = 0;
 
+    private String errorMessage;
+
+    private String warningMessage;
+
+    public String getWarningMessage() {
+        return warningMessage;
+    }
+
+    public void setWarningMessage(String warningMessage) {
+        this.warningMessage = warningMessage;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     public long getUserId() {
         return userId;
     }

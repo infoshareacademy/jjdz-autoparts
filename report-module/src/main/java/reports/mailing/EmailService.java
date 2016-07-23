@@ -24,10 +24,10 @@ public class EmailService {
     private String SMTP_AUTH_USER;
 
     public void sendMail(Email email) throws MessagingException, IOException {
-
-        Properties props = createProperties(SMTP_AUTH_USER);
         getParametersFromFile();
+        Properties props = createProperties();
         Session mailSession = createMailSession(props);
+        email.setSender(SMTP_AUTH_USER);
         MimeMessage message = createMessage(mailSession, email);
         sendMessage(mailSession, message);
     }
@@ -59,13 +59,13 @@ public class EmailService {
         }
     }
 
-    private Properties createProperties(String sender) {
+    private Properties createProperties() {
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtps");
         props.put("mail.smtp.host", SMTP_HOST_NAME);
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.from", sender);
+        props.put("mail.smtp.from", SMTP_AUTH_USER);
         props.put("mail.smtp.user", SMTP_AUTH_USER);
         props.put("mail.smtp.password", SMTP_AUTH_PWD);
         props.put("mail.smtp.debug", "true");

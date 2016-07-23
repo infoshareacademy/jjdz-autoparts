@@ -21,6 +21,9 @@ public class ModelChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
+    @Inject
+    SessionData sessionData;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -42,6 +45,16 @@ public class ModelChoosingServlet extends HttpServlet {
         DataCarsModels dataCarsModels = parser.parseModelFile(url);
         LOGGER.info("Data parsed on model file has size: {}",dataCarsModels.getData().size());
         req.setAttribute("models", dataCarsModels.getData());
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
+        if (dataCarsModels.getData().isEmpty())
+        {
+            sessionData.setErrorMessage("BŁĄD! Brak modeli samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
         dispatcher.forward(req, resp);

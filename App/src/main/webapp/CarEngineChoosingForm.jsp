@@ -46,14 +46,29 @@
         <div class="form-group row lower">
             <label class="col-lg-3 control-label"><b>Wybierz silnik</b></label>
             <div class="col-lg-6">
-
+                <c:if test="${not empty errorMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${errorMessage}"/>
+                    </div>
+                </c:if>
+                <c:if test="${not empty warningMessage}">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <c:out value="${warningMessage}"/>
+                    </div>
+                </c:if>
                 <select name="engine" id="basic" class="selectpicker show-tick form-control" data-live-search="true">
                     <c:forEach items="${engines}" var="engine">
                         <option value="${engine.name};${engine.link}"><c:out value="${engine.name}, ${engine.fuel}"/></option>
                     </c:forEach>
                 </select>
             </div>
-            <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
+            <c:if test="${empty errorMessage}">
+                <input class="col-lg-1 button-middle" type="submit" value="OK" autofocus>
+            </c:if>
         </div>
         <input type="hidden" value=" ${modelName}" name="modelName"/>
         <input type="hidden" value="  ${brandName}" name="brandName"/>

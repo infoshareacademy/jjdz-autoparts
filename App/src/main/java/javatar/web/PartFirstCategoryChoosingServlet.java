@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.Map;
 
 @WebServlet(urlPatterns = "/PartFirstCategory")
@@ -22,9 +23,15 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     FormData formData;
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(PartFirstCategoryChoosingServlet.class);
+    @Inject
+    SessionData sessionData;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        sessionData.setErrorMessage(null);
+        sessionData.setWarningMessage(null);
 
         JsonParserAll parser = new JsonParserAll();
         req.setCharacterEncoding("UTF-8");
@@ -69,7 +76,15 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
         String url = "http://infoshareacademycom.2find.ru" + engineLink + "?lang=polish";
 
         JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
+
+        if (autopartCategories == null) {
+            sessionData.setErrorMessage("BŁĄD! Brak części samochodowych do wyświetlenia!");
+            LOGGER.error(sessionData.getErrorMessage());
+        }
+
         req.setAttribute("categories", autopartCategories.getData());
+        req.setAttribute("errorMessage", sessionData.getErrorMessage());
+        req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("PartFirstCategoryChoosingForm.jsp");
         dispatcher.forward(req, resp);

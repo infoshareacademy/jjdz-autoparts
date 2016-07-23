@@ -38,11 +38,17 @@ public class AztecKeySearchServlet extends HttpServlet {
 	@EJB
 	GetJsonFromAtenaApi getJsonFromAtenaApi;
 
+	@Inject
+	SessionData sessionData;
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		JsonParserAll parser = new JsonParserAll();
 		Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
+
+		sessionData.setErrorMessage(null);
+		sessionData.setWarningMessage(null);
 
 		String url;
 
@@ -69,15 +75,18 @@ public class AztecKeySearchServlet extends HttpServlet {
 
 
 		if (carFromApi.getCarsBrand() == null) {
-			// TODO: 11.07.16 info dla użytkownika, że nie znaleziono branda
+			sessionData.setWarningMessage("Nie znaleziono pasującej marki samochodu. Wybierz ręcznie.");
 			req.setCharacterEncoding("UTF-8");
 
 			req.setAttribute("brands", carsBrandsCollection);
+			req.setAttribute("errorMessage", sessionData.getErrorMessage());
+			req.setAttribute("warningMessage", sessionData.getWarningMessage());
 			LOGGER.info("carsBransdCollection has size: {}", carsBrandsCollection.size());
 			RequestDispatcher dispatcher = req.getRequestDispatcher("CarBranchChoosingForm.jsp");
 			dispatcher.forward(req, resp);
 		} else if (carFromApi.getCarsModel() == null) {
 			req.setCharacterEncoding("UTF-8");
+			sessionData.setWarningMessage("Nie znaleziono pasującego modelu samochodu. Wybierz ręcznie.");
 
 			String brandName = carFromApi.getCarsBrand().getName();
 			String brandLink = carFromApi.getCarsBrand().getLink();
@@ -92,11 +101,12 @@ public class AztecKeySearchServlet extends HttpServlet {
 			DataCarsModels dataCarsModels = parser.parseModelFile(url);
 			LOGGER.info("Data parsed on model file has size: {}", dataCarsModels.getData().size());
 			req.setAttribute("models", dataCarsModels.getData());
+			req.setAttribute("errorMessage", sessionData.getErrorMessage());
+			req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher("CarModelChoosingForm.jsp");
 			dispatcher.forward(req, resp);
 		} else {
-
 			String modelLink = carFromApi.getCarsModel().getLink();
 			url = "http://infoshareacademycom.2find.ru" + modelLink + "?lang=polish";
 
@@ -105,6 +115,7 @@ public class AztecKeySearchServlet extends HttpServlet {
 			LOGGER.debug("engineList.size = " + engineList.size());
 
 			if (engineList.size() > 1) {
+				sessionData.setWarningMessage("Znaleziono więcej niż jeden pasujacy model silnika. Wybierz ręcznie.");
 				req.setAttribute("modelName", carFromApi.getCarsModel());
 				req.setAttribute("brandName", carFromApi.getCarsBrand());
 
@@ -112,6 +123,8 @@ public class AztecKeySearchServlet extends HttpServlet {
 				formData.setCarModel(carFromApi.getCarsModel().getName());
 
 				req.setAttribute("engines", engineList);
+				req.setAttribute("errorMessage", sessionData.getErrorMessage());
+				req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
 				dispatcher.forward(req, resp);
@@ -138,10 +151,13 @@ public class AztecKeySearchServlet extends HttpServlet {
 
 				JsonDataAutopartCategories autopartCategories = parser.parseCategoryFile(url);
 				req.setAttribute("categories", autopartCategories.getData());
+				req.setAttribute("errorMessage", sessionData.getErrorMessage());
+				req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher("PartFirstCategoryChoosingForm.jsp");
 				dispatcher.forward(req, resp);
 			} else {
+				sessionData.setWarningMessage("Nie znaleziono pasującego modelu silnika. Wybierz ręcznie.");
 				req.setAttribute("modelName", carFromApi.getCarsModel().getName());
 				req.setAttribute("brandName", carFromApi.getCarsBrand().getName());
 
@@ -150,6 +166,8 @@ public class AztecKeySearchServlet extends HttpServlet {
 
 				DataCarsEngineAndFuel dataCarsEngineAndFuelModels = parser.parseEngineFile(url);
 				req.setAttribute("engines", dataCarsEngineAndFuelModels.getData());
+				req.setAttribute("errorMessage", sessionData.getErrorMessage());
+				req.setAttribute("warningMessage", sessionData.getWarningMessage());
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher("CarEngineChoosingForm.jsp");
 				dispatcher.forward(req, resp);
@@ -199,6 +217,7 @@ public class AztecKeySearchServlet extends HttpServlet {
 			}
 			return carFromApi;
 		} else {
+			sessionData.setErrorMessage("Atena API Error");
 			return null;
 		}
 

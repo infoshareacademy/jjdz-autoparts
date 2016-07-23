@@ -74,13 +74,7 @@ public class PartForReportDTO {
 
     @Override
     public String toString() {
-        return "PartForReportDTO{" +
-                "carBrand='" + carBrand + '\'' +
-                ", carModel='" + carModel + '\'' +
-                ", carEngine='" + carEngine + '\'' +
-                ", partBrand='" + partBrand + '\'' +
-                ", partName='" + partName + '\'' +
-                ", partId='" + partId + '\'' +
-                '}';
+        return partName + " " + partBrand;
+
     }
 }
