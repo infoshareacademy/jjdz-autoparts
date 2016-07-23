@@ -2,8 +2,7 @@ package javatar.service;
 
 import javatar.model.GlobalUser;
 import javatar.web.GlobalUserService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -18,7 +17,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/usersList")
 public class UsersListServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(UsersListServlet.class);
 
     @EJB
     GlobalUserService globalUserService;

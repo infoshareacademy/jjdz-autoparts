@@ -1,7 +1,6 @@
 package javatar.web;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.*;
@@ -18,8 +17,7 @@ import java.io.IOException;
         "/revokeReports"})
 public class AdminFilter implements Filter {
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(AdminFilter.class);
     @Inject
     SessionData sessionData;
 

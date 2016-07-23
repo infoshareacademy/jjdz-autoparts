@@ -3,8 +3,7 @@ package javatar.service;
 import javatar.model.GlobalUser;
 import javatar.web.GlobalUserService;
 import javatar.web.SessionData;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -18,7 +17,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/setAdminUser")
 public class SetAdminUserServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(SetAdminUserServlet.class);
 
     @EJB
     GlobalUserService globalUserService;

@@ -3,8 +3,7 @@ package javatar.web;
 import javatar.model.DataCarsEngineAndFuel;
 import javatar.model.FormData;
 import javatar.service.JsonParserAll;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Engines")
 public class EnginesChoosingServlet extends HttpServlet {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(EnginesChoosingServlet.class);
 
     @Inject
     FormData formData;

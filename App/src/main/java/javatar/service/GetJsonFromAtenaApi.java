@@ -4,22 +4,18 @@ package javatar.service;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import javax.ejb.Singleton;
-import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import java.io.IOException;
 
 @Stateless
 public class GetJsonFromAtenaApi {
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(GetJsonFromAtenaApi.class);
 
     private final static String USER_KEY = "qY2?0Pw!";
-
 
     public String getCarFromAtenaApi(String userSessionKey) {
 

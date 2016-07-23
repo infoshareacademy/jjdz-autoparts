@@ -9,8 +9,8 @@ import javatar.model.report.PartForReportModule;
 import javatar.model.report.ReportWeights;
 import javatar.service.report.PostChosenPart;
 import javatar.web.SessionData;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,7 +23,7 @@ import java.util.List;
 @Stateless
 public class CRUDService {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LoggerFactory.getLogger(CRUDService.class);
 
     @PersistenceContext
     EntityManager em;

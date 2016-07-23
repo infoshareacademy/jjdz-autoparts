@@ -3,9 +3,7 @@ package javatar.web;
 import javatar.model.FormData;
 import javatar.model.JsonDataAutopartCategories;
 import javatar.service.JsonParserAll;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.hibernate.annotations.SourceType;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -15,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.Map;
 
 @WebServlet(urlPatterns = "/PartFirstCategory")
@@ -24,7 +21,7 @@ public class PartFirstCategoryChoosingServlet extends HttpServlet {
     @Inject
     FormData formData;
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(PartFirstCategoryChoosingServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -5,8 +5,7 @@ import javatar.model.report.PartForReportModule;
 import javatar.model.report.ReportWeights;
 import javatar.service.CreateAllegroLink;
 import javatar.service.report.PostChosenPart;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -23,7 +22,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/AllegroLink")
 public class AllegroCategoryServlet extends HttpServlet {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(AllegroCategoryServlet.class);
     CreateAllegroLink createAllegroLink = new CreateAllegroLink();
 
     @Inject
