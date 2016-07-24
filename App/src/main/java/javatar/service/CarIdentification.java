@@ -34,9 +34,13 @@ public class CarIdentification {
 
         foundCar.setCarsBrand(brand);
         foundCar.setCarsModel(model);
+        if (brand != null) {
+            LOGGER.debug("Found carBrand: " + foundCar.getCarsBrand().toString());
+        }
+        if (model != null) {
+            LOGGER.debug("Found carModel: " + foundCar.getCarsModel().toString());
+        }
 
-        LOGGER.debug("Found carBrand: " + foundCar.getCarsBrand().toString());
-        LOGGER.debug("Found carModel: " + foundCar.getCarsModel().toString());
         return foundCar;
     }
 
