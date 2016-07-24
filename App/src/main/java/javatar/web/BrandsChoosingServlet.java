@@ -1,6 +1,8 @@
 package javatar.web;
 
 import javatar.model.CarsBrands;
+import javatar.model.FormData;
+import javatar.model.FormPartCategories;
 import org.slf4j.LoggerFactory;
 
 import javax.ejb.EJB;
@@ -25,6 +27,12 @@ public class BrandsChoosingServlet extends HttpServlet {
 	@Inject
 	SessionData sessionData;
 
+	@Inject
+	FormData formData;
+
+	@Inject
+	FormPartCategories formPartCategories;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -35,6 +43,8 @@ public class BrandsChoosingServlet extends HttpServlet {
 	    *  odkomentowac, żeby pokazać, że działa obsługa błędów
         *  carsBrandsCollection = null;
 		*/
+		formData = new FormData();
+		formPartCategories.setPartCategories(null);
 		sessionData.setErrorMessage(null);
 		sessionData.setWarningMessage(null);
 		if (carsBrandsCollection == null || carsBrandsCollection.isEmpty()) {

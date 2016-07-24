@@ -41,14 +41,19 @@ public class AztecKeySearchServlet extends HttpServlet {
 	@Inject
 	SessionData sessionData;
 
+	@Inject
+	FormPartCategories formPartCategories;
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		JsonParserAll parser = new JsonParserAll();
 		Collection<CarsBrands> carsBrandsCollection = cache.returnBrandsCollection();
 
+		formData = new FormData();
 		sessionData.setErrorMessage(null);
 		sessionData.setWarningMessage(null);
+		formPartCategories.setPartCategories(null);
 
 		String url;
 
